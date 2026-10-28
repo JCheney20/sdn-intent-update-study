@@ -23,9 +23,15 @@ The retained text extraction `Revision_Protocol/inputs/spotlight-paper.md` is fr
 
 NetworkX 3.2.1 similarity/unweighted-path source snapshots and derived Panther/BFS material retain the [NetworkX copyright and BSD license](artifacts/SDN_Model_Comparison/source_fidelity/sources/networkx-license-3.2.1.txt). The corresponding source metadata identifies the upstream version. This includes the relevant portions of the Julia detector adaptation. No MIT grant here removes those notice, redistribution or endorsement conditions.
 
+## Vendored replication runtime sources
+
+`replication/vendor/julia/` contains runtime subsets of the pinned Julia packages, including their original license files and upstream revisions in `replication/VENDOR.json`. These are third-party sources, not newly MIT-licensed author code. Tests, examples and unrelated documentation are omitted; runtime content is byte-preserved. PythonCall, CondaPkg and the other packages retain their individual notices.
+
+`replication/vendor/mininet/` contains the pinned Mininet 2.3.1b4 Python module, `mnexec.c` and the upstream BSD-3-Clause `LICENSE`. Copyright and redistribution conditions remain intact. The Python runtime module was copied from the original pinned installation with caches excluded; upstream license/helper source were retrieved from the matching 2.3.1b4 tag. No compiled Mininet binary is redistributed here.
+
 ## External dependencies
 
-Julia, Python, NumPy, Matplotlib, Mininet, Open vSwitch, PythonCall, CondaPkg, Nixpkgs and other dependencies retain their respective licenses. This export includes version/lock/provenance records and the author's integration code, not their installed binaries or the Nix-store package trees. Fetch/install dependencies through their upstream distributions and honor their notices. Names in logs or metadata are not endorsements.
+Julia, Python, NumPy, Matplotlib, Mininet, Open vSwitch, PythonCall, CondaPkg, Nixpkgs and other dependencies retain their respective licenses. This export includes version/lock/provenance records, the author's integration code and the explicitly identified runtime source subsets above, not installed binaries or entire Nix-store package trees. Fetch/install dependencies through their upstream distributions and honor their notices. Names in logs or metadata are not endorsements.
 
 ## Material deliberately not redistributed
 

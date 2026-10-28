@@ -62,6 +62,13 @@ actual = {str(path.relative_to(ROOT)) for path in ARTIFACTS.rglob('*') if path.i
 assert actual == {row['path'] for row in inventory}, 'Unlisted/missing artifact files'
 assert not any(path.is_symlink() for path in ARTIFACTS.rglob('*'))
 
+vendor = json.loads((ROOT / 'replication/VENDOR.json').read_text())
+for name, expected in vendor['files'].items():
+    path = ROOT / 'replication/vendor' / name
+    assert path.resolve().is_relative_to(ROOT / 'replication/vendor') and not path.is_symlink()
+    assert digest(path) == expected, 'Vendored dependency changed: ' + name
+assert {str(p.relative_to(ROOT / 'replication/vendor')) for p in (ROOT / 'replication/vendor').rglob('*') if p.is_file()} == set(vendor['files'])
+
 with (MODEL / 'study/Primary_Results.csv').open(newline='') as stream:
     primary = list(csv.DictReader(stream))
 assert len(primary) == 92 and len(model['primary_cells']) == 12

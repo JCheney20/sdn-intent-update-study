@@ -1,0 +1,30 @@
+# Public replication protocol v2
+
+Declared 28 October 2026, before the new replication primary observations. This is a new replication layer, not a replacement of the frozen original studies.
+
+## Inputs and invariants
+
+The immutable `artifacts/` tree and its original export/source/output manifests remain unchanged. The computational kernels listed in `workspace.py` must remain byte-identical in each new workspace. Reference Python source, packet oracle, lifecycle/controller logic, cache sampling, model measurements, Cisco adapter, packet workers, relay and emulation controller are reused without algorithm changes.
+
+The repository includes the needed historical detector module and its attributed upstream snapshots. The earlier full 194-file study and two course-context files are not imported scientific prerequisites of these two studies. New workspace provenance checks bind the complete actually imported historical dependency closure instead. Their new manifest is explicitly labelled public replication provenance, not the original historical delivery manifest. No private assessment identifier is required.
+
+Pinned runtime subsets of the 16 Julia packages and Mininet Python source are under `vendor/`, with notices, upstream revisions and `VENDOR.json` file hashes. Native interpreters/tools remain external dependencies. Python versions are pinned in the native lock file and Nix metadata; Julia must be 1.13.1, Python 3.11.7 and OVS 3.2.1. Actual executable/library hashes and paths are recorded per environment. The native route does not invoke Nix; testing it on a NixOS host is not certification of a clean non-Nix OS.
+
+## Fresh outputs and adaptations
+
+Every replication requires a non-existing directory outside the checkout. Original attempt records, results and catalogue are not copied into the execution workspace. Existing primary attempts and existing phase attempts cannot be renewed. A failed run remains failed/partial; a corrected implementation needs a new replication ID and retained earlier records. There is no automatic selective primary retry.
+
+`adaptations.json` records original/adapted source hashes and diffs for launcher/provenance/record-location bindings. Environment component records and manifests are generated for the new workspace. Legacy filenames needed by unchanged kernels may remain as compatibility fixture locations; `REFERENCE_BINDING.json` identifies the freshly recaptured trace installed there. Before installation, every scientific reference choice is compared with the original fixture. Only the three measured timing fields in each plain/instrumented return tuple are excluded from equality; walks, scores, RNG states, graph/rules, selected pairs and alarms remain compared.
+
+## Prespecified sequence and acceptance
+
+1. Verify distributed evidence and vendored hashes. Refuse unexpected versions, changed kernels and unsupported resource isolation; no unbounded fallback.
+2. Fresh resource preflight, reference-environment inspection, oracle, differential and lifecycle controls. Execute the unchanged Python capture and exact Julia replay. Run fresh Cisco and fat-tree controller validation.
+3. Generate a fresh exact-plan catalogue and model source freeze from those new controller receipts and the new replay. Use the original grid, seeds, sampler and measurement boundaries: 18 sensitivity jobs / 576 records, native-reference review, 48 benchmark jobs, 12 primary cells / 92 rows. Run the original audit and coverage analysis.
+4. Independently validate embedded Python, normal and injected-failure namespace cleanup, Cisco static/queue/version controls and real inflight timing. Bind the new actual run IDs in the original audit interpreters. Generate new source/environment seals; do not reuse original validation successes as new observations.
+5. Freeze the original six-cell emulation grid and parameters with the new timing gate. Run the validation envelope and its audit before primary cells. Run each primary cell once, five warmed resident updates per cell, then the original independent packet audit. Verify an actual duplicate is refused without changing its consumed record.
+6. Compare all non-timing primary CSV columns, 576 deterministic sensitivity records, fixed-event coverage, plan identities, controller-check counts, replay-check count and emulation outcome/action/resource-row fields with the original evidence. Record new benchmark and packet timings descriptively; do not require equal wall-clock measurements.
+
+Original resources are retained: two CPUs (affinity 0,1), hard 2 GiB RAM, zero swap, 120 seconds per whole scientific job and one local job at a time. The original inner wrappers retain their slightly shorter shutdown deadlines. There is no aggregate runtime cap. Network operations remain inside new user/network/PID/mount namespaces with read-only host-facing sysfs/proc-sys boundaries. No sudo, host network reconfiguration, kernel-module loading, global installation or native package compilation is part of execution.
+
+Stop on any unexplained gate, timeout, semantic mismatch or incomplete cell. Preserve logs, manifests and partial outputs. A passing result is bounded scientific-outcome reproduction on the recorded host, not hardware/production/general-population validation. A clean checkout is not a clean operating system.

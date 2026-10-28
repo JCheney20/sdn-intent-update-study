@@ -1,0 +1,15 @@
+# CPython 3.11, x86_64 Linux: wheel/source artifact hashes from the checked native environment.
+contourpy==1.2.0 --hash=sha256:18fc2b4ed8e4a8fe849d18dce4bd3c7ea637758c6343a1f2bae1e9bd4c9f4686
+cycler==0.12.1 --hash=sha256:85cef7cff222d8644161529808465972e51340599459b8ac3ccbac5a854e0d30
+defusedxml==0.7.1 --hash=sha256:a352e7e428770286cc899e2542b6cdaedb2b4953ff269a210103ec58f6198a61
+fonttools==4.46.0 --hash=sha256:1a9f9cdd7ef63d1b8ac90db335762451452426b3207abd79f60da510cea62da5
+kiwisolver==1.4.5 --hash=sha256:040c1aebeda72197ef477a906782b5ab0d387642e93bda547336b8957c61022e
+matplotlib==3.8.2 --hash=sha256:5ba9cbd8ac6cf422f3102622b20f8552d601bf8837e49a3afed188d560152788
+networkx==3.2.1 --hash=sha256:f18c69adc97877c42332c170849c96cefa91881c99a7cb3e95b7c659ebdc1ec2
+numpy==1.26.2 --hash=sha256:96ca5482c3dbdd051bcd1fce8034603d6ebfc125a7bd59f55b40d8f5d246832b
+olefile==0.46 --hash=sha256:133b031eaf8fd2c9399b78b8bc5b8fcbe4c31e85295749bb17a87cba8f3c3964
+packaging==23.2 --hash=sha256:8c491190033a9af7e1d931d0b5dacc2ef47509b34dd0de67ed209b5203fc88c7
+Pillow==10.1.0 --hash=sha256:a646e48de237d860c36e0db37ecaecaa3619e6f3e9d5319e527ccbc8151df061
+pyparsing==3.1.1 --hash=sha256:32c7c0b711493c72ff18a981d24f28aaf9c1fb7ed5e9667c9e84e3db623bdbfb
+python-dateutil==2.8.2 --hash=sha256:961d03dc3453ebbc59dbdea9e4e11c5651520a876d0f4db161e8674aae935da9
+six==1.16.0 --hash=sha256:8abb2f1d86890a2dfb989f9a77cfcfd3e47c2a354b01111771326f8aa26e0254

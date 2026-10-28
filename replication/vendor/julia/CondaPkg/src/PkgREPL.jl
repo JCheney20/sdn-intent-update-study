@@ -1,0 +1,424 @@
+module PkgREPL
+
+import ..CondaPkg
+import Pkg
+import Markdown
+
+### parsing
+
+function parse_pkg(x::String)
+    m = match(
+        r"""
+^
+(?:([^\s\:]+)::)?  # channel
+([-_.A-Za-z0-9]+)  # name
+(?:\@?([<>=!0-9][^\s\#]*))?  # version
+(?:\#([^\s]+))?  # build
+$
+"""x,
+        x,
+    )
+    m === nothing && error("invalid conda package: $x")
+    channel = something(m.captures[1], "")
+    name = m.captures[2]
+    version = something(m.captures[3], "")
+    build = something(m.captures[4], "")
+    CondaPkg.PkgSpec(name, version = version, channel = channel, build = build)
+end
+
+function parse_pip_pkg(x::String; binary::String = "", editable = false)
+    m = match(
+        r"""
+^
+([-_.A-Za-z0-9]+)
+(\[([^\]]*)\])?
+([~!<>=@].*)?
+$
+"""x,
+        x,
+    )
+    m === nothing && error("invalid pip package: $x")
+    name = m.captures[1]
+    extras = split(something(m.captures[3], ""), ",", keepempty = false)
+    version = something(m.captures[4], "")
+    CondaPkg.PipPkgSpec(
+        name,
+        version = version,
+        binary = binary,
+        extras = extras,
+        editable = editable,
+    )
+end
+
+function parse_channel(x::String)
+    CondaPkg.ChannelSpec(x)
+end
+
+### options
+
+const force_opt = Pkg.REPLMode.OptionDeclaration([
+    :name => "force",
+    :short_name => "f",
+    :api => :force => true,
+])
+
+const binary_opt = Pkg.REPLMode.OptionDeclaration([
+    :name => "binary",
+    :takes_arg => true,
+    :api => :binary => identity,
+])
+
+const editable_opt = Pkg.REPLMode.OptionDeclaration([
+    :name => "editable",
+    :short_name => "e",
+    :takes_arg => false,
+    :api => :editable => true,
+])
+
+const dev_opt = Pkg.REPLMode.OptionDeclaration([:name => "dev", :api => :dev => true])
+
+### status
+
+function status()
+    CondaPkg.status()
+end
+
+const status_help = Markdown.parse("""
+```
+conda st|status
+```
+
+Display information about the Conda environment.
+""")
+
+const status_spec = Pkg.REPLMode.CommandSpec(
+    name = "status",
+    short_name = "st",
+    api = status,
+    help = status_help,
+    description = "information about the Conda environment",
+)
+
+### resolve
+
+function resolve(; force = false)
+    CondaPkg.resolve(force = force, interactive = true)
+end
+
+const resolve_help = Markdown.parse("""
+```
+conda [-f|--force] resolve
+```
+
+Ensure all Conda dependencies are installed into the environment.
+""")
+
+const resolve_spec = Pkg.REPLMode.CommandSpec(
+    name = "resolve",
+    api = resolve,
+    help = resolve_help,
+    description = "ensure all Conda dependencies are installed",
+    option_spec = [force_opt],
+)
+
+### update
+
+function update()
+    CondaPkg.update()
+end
+
+const update_help = Markdown.parse("""
+```
+conda update
+```
+
+Update Conda dependencies.
+""")
+
+const update_spec = Pkg.REPLMode.CommandSpec(
+    name = "update",
+    api = update,
+    help = update_help,
+    description = "update Conda dependencies",
+)
+
+### add
+
+function add(args; dev = false)
+    CondaPkg.add(parse_pkg.(args); dev)
+end
+
+const add_help = Markdown.parse("""
+```
+conda add [--dev] pkg ...
+```
+
+Add packages to the environment.
+
+**Examples**
+
+```
+pkg> conda add python
+pkg> conda add python>=3.5,<4       # version range
+pkg> conda add python@3.9.*|3.10.*  # version pattern
+pkg> conda add conda-forge::numpy   # channel
+pkg> conda add tensorflow#cpu*      # build string pattern
+```
+""")
+
+const add_spec = Pkg.REPLMode.CommandSpec(
+    name = "add",
+    api = add,
+    should_splat = false,
+    help = add_help,
+    description = "add Conda packages",
+    arg_count = 0 => Inf,
+    option_spec = [dev_opt],
+)
+
+### channel_add
+
+function channel_add(args; dev = false)
+    CondaPkg.add(parse_channel.(args); dev)
+end
+
+const channel_add_help = Markdown.parse("""
+```
+conda channel_add [--dev] channel ...
+```
+
+Add channels to the environment.
+
+**Examples**
+
+```
+pkg> conda channel_add conda-forge
+```
+""")
+
+const channel_add_spec = Pkg.REPLMode.CommandSpec(
+    name = "channel_add",
+    api = channel_add,
+    should_splat = false,
+    help = channel_add_help,
+    description = "add Conda channels",
+    arg_count = 0 => Inf,
+    option_spec = [dev_opt],
+)
+
+### pip_add
+
+function pip_add(args; binary = "", editable = false, dev = false)
+    CondaPkg.add([parse_pip_pkg(arg; binary, editable) for arg in args]; dev)
+end
+
+const pip_add_help = Markdown.parse("""
+```
+conda pip_add [--binary={only|no}] [--editable] [--dev] pkg ...
+```
+
+Add Pip packages to the environment.
+
+**Examples**
+
+```
+pkg> conda pip_add build
+pkg> conda pip_add build~=0.7                # version range
+pkg> conda pip_add pydantic[email,timezone]  # extras
+pkg> conda pip_add --binary=no nmslib        # always build from source
+pkg> conda pip_add --editable nmslib@/path/to/package_source  # install locally
+```
+""")
+
+const pip_add_spec = Pkg.REPLMode.CommandSpec(
+    name = "pip_add",
+    api = pip_add,
+    should_splat = false,
+    help = pip_add_help,
+    description = "add Pip packages",
+    arg_count = 0 => Inf,
+    option_spec = [binary_opt, editable_opt, dev_opt],
+)
+
+### rm
+
+function rm(args; dev = false)
+    CondaPkg.rm(parse_pkg.(args); dev)
+end
+
+const rm_help = Markdown.parse("""
+```
+conda rm|remove [--dev] pkg ...
+```
+
+Remove packages from the environment.
+
+**Examples**
+
+```
+pkg> conda rm python
+```
+""")
+
+const rm_spec = Pkg.REPLMode.CommandSpec(
+    name = "remove",
+    short_name = "rm",
+    api = rm,
+    should_splat = false,
+    help = rm_help,
+    description = "remove Conda packages",
+    arg_count = 0 => Inf,
+    option_spec = [dev_opt],
+)
+
+### channel_rm
+
+function channel_rm(args; dev = false)
+    CondaPkg.rm(parse_channel.(args); dev)
+end
+
+const channel_rm_help = Markdown.parse("""
+```
+conda channel_rm|channel_remove [--dev] channel ...
+```
+
+Remove channels from the environment.
+
+**Examples**
+
+```
+pkg> conda channel_rm conda-forge
+```
+""")
+
+const channel_rm_spec = Pkg.REPLMode.CommandSpec(
+    name = "channel_remove",
+    short_name = "channel_rm",
+    api = channel_rm,
+    should_splat = false,
+    help = channel_rm_help,
+    description = "remove Conda channels",
+    arg_count = 0 => Inf,
+    option_spec = [dev_opt],
+)
+
+### pip_rm
+
+function pip_rm(args; dev = false)
+    CondaPkg.rm(parse_pip_pkg.(args); dev)
+end
+
+const pip_rm_help = Markdown.parse("""
+```
+conda pip_rm|pip_remove [--dev] pkg ...
+```
+
+Remove Pip packages from the environment.
+
+**Examples**
+
+```
+pkg> conda pip_rm build
+```
+""")
+
+const pip_rm_spec = Pkg.REPLMode.CommandSpec(
+    name = "pip_remove",
+    short_name = "pip_rm",
+    api = pip_rm,
+    should_splat = false,
+    help = pip_rm_help,
+    description = "remove Pip packages",
+    arg_count = 0 => Inf,
+    option_spec = [dev_opt],
+)
+
+### gc
+
+function gc()
+    CondaPkg.gc()
+end
+
+const gc_help = Markdown.parse("""
+```
+conda gc
+```
+
+Delete any files no longer used by Conda.
+""")
+
+const gc_spec = Pkg.REPLMode.CommandSpec(
+    name = "gc",
+    api = gc,
+    help = gc_help,
+    description = "delete files no longer used by Conda",
+)
+
+### run
+
+function run(args)
+    try
+        CondaPkg.withenv() do
+            b = CondaPkg.backend()
+            if b in CondaPkg.CONDA_BACKENDS && args[1] == "conda"
+                Base.run(CondaPkg.conda_cmd(args[2:end]))
+            elseif b in CondaPkg.PIXI_BACKENDS && args[1] == "pixi"
+                Base.run(CondaPkg.pixi_cmd(args[2:end]))
+            else
+                Base.run(Cmd(args))
+            end
+        end
+    catch err
+        Base.display_error(err)
+    end
+end
+
+const run_help = Markdown.parse("""
+```
+conda run cmd ...
+```
+
+Run the given command in the Conda environment.
+
+You can do `conda run conda ...` to run whichever conda (or mamba or micromamba) executable
+that CondaPkg uses. Or in a pixi backend, do `conda run pixi ...` to run the pixi executable.
+""")
+
+const run_spec = Pkg.REPLMode.CommandSpec(
+    name = "run",
+    api = run,
+    should_splat = false,
+    help = run_help,
+    arg_count = 1 => Inf,
+    description = "run a command in the Conda environment",
+)
+
+### all specs
+
+const SPECS = Dict(
+    "st" => status_spec,
+    "status" => status_spec,
+    "resolve" => resolve_spec,
+    "up" => update_spec,
+    "update" => update_spec,
+    "add" => add_spec,
+    "remove" => rm_spec,
+    "rm" => rm_spec,
+    "channel_add" => channel_add_spec,
+    "channel_remove" => channel_rm_spec,
+    "channel_rm" => channel_rm_spec,
+    "pip_add" => pip_add_spec,
+    "pip_remove" => pip_rm_spec,
+    "pip_rm" => pip_rm_spec,
+    "gc" => gc_spec,
+    "run" => run_spec,
+)
+
+function __init__()
+    # add the commands to the repl
+    Pkg.REPLMode.SPECS["conda"] = SPECS
+    # update the help with the new commands
+    copy!(Pkg.REPLMode.help.content, Pkg.REPLMode.gen_help().content)
+end
+
+end
