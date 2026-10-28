@@ -86,7 +86,7 @@ class Replication:
         baseline = ROOT / 'artifacts/Literature_Review/CA1/Revision_Protocol' / TRACE
         assert reference_semantics(capture / 'trace.toml') == reference_semantics(baseline), 'Reference scientific choices differ from baseline'
         # Compatibility fixture filename is retained so every scientific kernel remains unchanged.
-        shutil.copy2(capture / 'trace.toml', w.model / TRACE)
+        w.bind_reference_trace(capture / 'trace.toml')
         write_json(w.output / 'REFERENCE_BINDING.json', {'new_capture': str(capture),
             'compatibility_fixture_path': TRACE, 'fresh_trace_sha256': sha(capture / 'trace.toml'),
             'baseline_trace_sha256': sha(baseline), 'all_scientific_choices_equal': True,

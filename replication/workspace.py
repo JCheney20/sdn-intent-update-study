@@ -82,6 +82,15 @@ class Workspace:
         for name, expected in vendor['files'].items():
             assert sha(ROOT / 'replication/vendor' / name) == expected, name
 
+    def bind_reference_trace(self, fresh):
+        settings_path = self.model / 'validation/Controller_Inputs.toml'
+        settings = tomllib.loads(settings_path.read_text())
+        shutil.copy2(fresh, self.model / TRACE)
+        observed = sha(self.model / TRACE)
+        if settings['reference_trace_sha256'] != observed:
+            self.replace('Literature_Review/CA1/Revision_Protocol/validation/Controller_Inputs.toml',
+                         settings['reference_trace_sha256'], observed)
+
     def checksum_file(self, relative, names):
         path = self.tree / relative
         path.write_text(''.join(f'{sha(path.parent / name)}  {name}\n' for name in names))

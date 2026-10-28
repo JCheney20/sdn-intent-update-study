@@ -45,6 +45,13 @@ class ProtocolTests(unittest.TestCase):
             w.prepare(config)
             self.assertFalse((w.model / 'study/attempts').exists())
             self.assertFalse((w.emu / 'Comparison/Manifest.json').exists())
+            fresh = Path(directory) / 'fresh-trace.toml'
+            fixture = w.model / 'reference_capture/runs/cos738-reference-capture-1792956866366487215/trace.toml'
+            fresh.write_text(fixture.read_text() + '\n# fresh capture provenance\n')
+            w.bind_reference_trace(fresh)
+            from workspace import sha
+            self.assertEqual(tomllib.loads((w.model / 'validation/Controller_Inputs.toml').read_text())['reference_trace_sha256'], sha(fixture))
+            w.kernel_check()
             self.assertNotIn('external_context_snapshots', (w.tree / 'SDN_Model_Comparison/Delivery_Manifest.json').read_text())
             with self.assertRaises(AssertionError):
                 w.prepare(config)
