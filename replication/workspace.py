@@ -55,7 +55,7 @@ def toml_value(value):
 
 class Workspace:
     def __init__(self, output):
-        self.output = Path(output).absolute()
+        self.output = Path(output).resolve()
         self.tree = self.output / 'work/artifacts'
         self.ca1 = self.tree / 'Literature_Review/CA1'
         self.model = self.ca1 / 'Revision_Protocol'
@@ -81,6 +81,7 @@ class Workspace:
         vendor = json.loads((ROOT / 'replication/VENDOR.json').read_text())
         for name, expected in vendor['files'].items():
             assert sha(ROOT / 'replication/vendor' / name) == expected, name
+        assert sha(self.emu / 'Interop/replication_isolate.sh') == sha(ROOT / 'replication/isolate.sh'), 'Isolation launcher changed'
 
     def bind_reference_trace(self, fresh):
         settings_path = self.model / 'validation/Controller_Inputs.toml'
@@ -98,6 +99,8 @@ class Workspace:
     def rebind_seal(self, relative):
         original = ROOT / 'artifacts' / relative
         names = [line.split('  ', 1)[1] for line in original.read_text().splitlines()]
+        if relative.endswith('Interop/Environment_Manifest.sha256'):
+            names.append('replication_isolate.sh')
         self.checksum_file(relative, names)
 
     def prepare(self, config):
@@ -144,6 +147,7 @@ class Workspace:
             new = f'("files",{len(files)})' if suffix.endswith('.jl') else f"('files',{len(files)})"
             self.replace(path, old, new)
         # Relocate launcher bindings; the scientific implementations above stay unchanged.
+        shutil.copy2(ROOT / 'replication/isolate.sh', self.emu / 'Interop/replication_isolate.sh')
         original_python = json.loads((ROOT / 'artifacts/Literature_Review/CA1/Revision_Protocol/reference_environment/referenceComponents.json').read_text())['interpreter']
         original_julia = tomllib.loads((ROOT / 'artifacts/Literature_Review/CA1/Revision_Protocol/study/Manifest.toml').read_text())['julia_executable']
         original_lib = str(Path(original_python).parent.parent / 'lib/libpython3.11.so')
@@ -155,7 +159,10 @@ class Workspace:
             for old, new in [(original_python, config['python']), (original_lib, config['python_lib']),
                              (old_mininet, mininet_module), (original_julia, config['julia'])]:
                 if old != new:
-                    self.replace(path, old, new)
+                    self.replace(path, old, shlex.quote(new))
+            base = '$PWD' if suffix == 'Interop/run.sh' else '$interop'
+            self.replace(path, 'bash "' + base + '/sandbox.sh"',
+                         'bash "' + base + '/replication_isolate.sh" "' + base + '/sandbox.sh"')
         reference = self.model / 'reference_environment'
         write_json(reference / 'referenceComponents.json', config['reference_components'])
         setup = {'schema_version': 2, 'status': 'REPLICATION_ENVIRONMENT_PINNED', 'route': config['route'],
@@ -187,4 +194,5 @@ class Workspace:
             'scientific_kernels': {name: sha(self.tree / name) for name in KERNELS},
             'public_historical_manifest_sha256': public_hash,
             'original_artifacts_are_read_only': True, 'original_attempts_reused': False,
-            'route': config['route'], 'private_course_context_required': False})
+            'route': config['route'], 'private_course_context_required': False,
+            'isolation_launcher_sha256': sha(self.emu / 'Interop/replication_isolate.sh')})

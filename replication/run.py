@@ -33,8 +33,23 @@ class Replication:
             *(entry['path'] + '/bin' for block in ['tool_components', 'interop_components'] for entry in config[block].values()), os.environ['PATH']])
         self.env.update(JULIA_PKG_OFFLINE='true', JULIA_LOAD_PATH='@stdlib',
                         JULIA_DEPOT_PATH=str(self.w.output / 'depot') + ':')
+        roots = [ROOT, Path(config['python']).parent.parent, Path(config['python']).resolve().parent.parent,
+                 Path(config['julia']).parent.parent,
+                 *(Path(v['path']) for block in ['tool_components', 'interop_components'] for v in config[block].values()),
+                 *(Path(p) for p in config.get('library_paths', []))]
+        readonly = []
+        for path in sorted({p.resolve() for p in roots}, key=lambda p: (len(p.parts), str(p))):
+            if path.is_relative_to(Path('/tmp')) and path != Path('/tmp') and not any(path.is_relative_to(parent) for parent in readonly):
+                assert not self.w.output.is_relative_to(path), 'Keep outputs outside runtime/source directories'
+                readonly.append(path)
+        bindings = [('ro', path) for path in readonly]
+        if self.w.output.is_relative_to(Path('/tmp')):
+            bindings.append(('rw', self.w.output))
+        assert not any('\n' in str(path) or '\t' in str(path) for _, path in bindings)
+        self.env['SDN_REPLICATION_TMP_BINDS'] = '\n'.join(mode + '\t' + str(path) for mode, path in bindings)
 
     def execute(self, args, cwd=None, expected=0, env=None):
+        self.w.kernel_check()
         args = list(map(str, args))
         ident = str(time.time_ns())
         folder = self.w.output / 'coordinator'
@@ -49,6 +64,7 @@ class Replication:
         if result.returncode != expected:
             print(result.stderr, end='', file=sys.stderr)
             raise RuntimeError(f'Command failed ({result.returncode}); retained log {folder / (ident + ".log")}')
+        self.w.kernel_check()
         return result.stdout
 
     def script(self, script, *args, expected=0, env=None):
@@ -76,6 +92,15 @@ class Replication:
         env.update(extra_env or {})
         return self.script(self.w.emu / 'scope.sh', 'replication-' + label,
                            'bash', self.w.emu / relative, *args, expected=expected, env=env)
+
+    def doctor(self):
+        bridge = self.emulation_job('doctor-bridge', 'Interop/run.sh', 'bridge')
+        network = self.emulation_job('doctor-network', 'Interop/run.sh', 'network')
+        data = tomllib.loads((network / 'network_smoke.toml').read_text())
+        assert data['status'] == 'PASS' and data['ovs_daemons_exited']
+        assert data['mininet_interfaces_removed'] and data['mininet_node_processes_reaped']
+        write_json(self.w.output / 'DOCTOR.json', {'status': 'PASS', 'bridge': str(bridge), 'network': str(network),
+            'configured_tmp_bindings': self.env['SDN_REPLICATION_TMP_BINDS'].splitlines()})
 
     def validation(self):
         w = self.w
@@ -170,7 +195,7 @@ class Replication:
         ledger = self.w.output / 'PHASES.json'
         phases = json.loads(ledger.read_text()) if ledger.exists() else {}
         assert name not in phases, 'Phase already attempted; preserve it and use a new replication ID after a failure'
-        order = ['validation', 'model', 'emulation', 'compare']
+        order = ['doctor', 'validation', 'model', 'emulation', 'compare']
         for prerequisite in order[:order.index(name)]:
             assert phases.get(prerequisite, {}).get('status') == 'PASS', prerequisite
         phases[name] = {'status': 'STARTED', 'started_ns': time.time_ns()}
@@ -201,7 +226,7 @@ def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--environment', required=True)
     parser.add_argument('--output', required=True)
-    parser.add_argument('--phase', choices=['prepare', 'validation', 'model', 'emulation', 'compare', 'all'], default='all')
+    parser.add_argument('--phase', choices=['prepare', 'doctor', 'validation', 'model', 'emulation', 'compare', 'all'], default='all')
     args = parser.parse_args()
     config = json.loads(Path(args.environment).read_text())
     assert config['source_checkout'] == str(ROOT), 'Configure the environment from this checkout'
@@ -216,7 +241,7 @@ def main():
             assert process.w.output.is_dir()
             assert (process.w.output / 'environment.json').read_text() == json.dumps(config, indent=2) + '\n'
         if args.phase != 'prepare':
-            for name in (['validation', 'model', 'emulation', 'compare'] if args.phase == 'all' else [args.phase]):
+            for name in (['doctor', 'validation', 'model', 'emulation', 'compare'] if args.phase == 'all' else [args.phase]):
                 process.phase(name)
 
 if __name__ == '__main__':

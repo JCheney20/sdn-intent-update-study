@@ -18,7 +18,7 @@ Every replication requires a non-existing directory outside the checkout. Origin
 
 ## Prespecified sequence and acceptance
 
-1. Verify distributed evidence and vendored hashes. Refuse unexpected versions, changed kernels and unsupported resource isolation; no unbounded fallback.
+1. Verify distributed evidence and vendored hashes. Refuse unexpected versions, changed kernels and unsupported resource isolation; no unbounded fallback. Run actual embedded-Python/network doctor controls before the model campaign. For `/tmp` checkouts/workspaces, a separate namespace-local wrapper restores only configured input/runtime directories read-only and the new output directory read-write after the unchanged sandbox creates its private tmpfs. The original sandbox's uid/namespace and sysfs/proc-sys checks remain byte-identical. Doctor packets are controls, never promoted to primary data.
 2. Fresh resource preflight, reference-environment inspection, oracle, differential and lifecycle controls. Execute the unchanged Python capture and exact Julia replay. Run fresh Cisco and fat-tree controller validation.
 3. Generate a fresh exact-plan catalogue and model source freeze from those new controller receipts and the new replay. Use the original grid, seeds, sampler and measurement boundaries: 18 sensitivity jobs / 576 records, native-reference review, 48 benchmark jobs, 12 primary cells / 92 rows. Run the original audit and coverage analysis.
 4. Independently validate embedded Python, normal and injected-failure namespace cleanup, Cisco static/queue/version controls and real inflight timing. Bind the new actual run IDs in the original audit interpreters. Generate new source/environment seals; do not reuse original validation successes as new observations.

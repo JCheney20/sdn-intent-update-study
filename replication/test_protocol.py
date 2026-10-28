@@ -9,7 +9,7 @@ import unittest
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 from workspace import ROOT, Workspace, toml_value
-from run import reference_semantics
+from run import reference_semantics, Replication
 from configure import python_env
 
 
@@ -35,7 +35,8 @@ class ProtocolTests(unittest.TestCase):
 
     def test_workspace_is_fresh_and_kernels_are_checked(self):
         original = ROOT / 'artifacts/Literature_Review/CA1'
-        config = {'route': 'unit-test', 'python': '/runtime/bin/python3.11', 'python_lib': '/runtime/lib/libpython3.11.so',
+        config = {'route': 'unit-test', 'python_sites': [], 'library_paths': [],
+                  'python': '/runtime/bin/python3.11', 'python_lib': '/runtime/lib/libpython3.11.so',
                   'julia': '/runtime/bin/julia',
                   'reference_components': {'interpreter': '/runtime/bin/python3.11', 'paths': [], 'sitePackages': ''},
                   'tool_components': json.loads((original / 'Emulation/Components.json').read_text()),
@@ -43,6 +44,10 @@ class ProtocolTests(unittest.TestCase):
         with tempfile.TemporaryDirectory() as directory:
             w = Workspace(Path(directory) / 'new')
             w.prepare(config)
+            process = Replication(w.output, config)
+            self.assertIn('rw\t' + str(w.output), process.env['SDN_REPLICATION_TMP_BINDS'])
+            self.assertEqual((w.emu / 'Interop/sandbox.sh').read_bytes(), (original / 'Emulation/Interop/sandbox.sh').read_bytes())
+            self.assertIn('replication_isolate.sh', (w.emu / 'Interop/run.sh').read_text())
             self.assertFalse((w.model / 'study/attempts').exists())
             self.assertFalse((w.emu / 'Comparison/Manifest.json').exists())
             fresh = Path(directory) / 'fresh-trace.toml'

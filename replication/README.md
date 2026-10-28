@@ -70,16 +70,19 @@ python3 -I -B replication/run.py \
   --output /path/outside/checkout/nix-replication-001
 ```
 
-For the native route use its environment JSON and a different fresh output path. The same script executes both routes. It runs resource preflight, oracle/lifecycle/controller validation, fresh original-reference capture and exact replay, a fresh model freeze/catalogue, the full sensitivity/benchmark/primary grid, original audit/coverage, then fresh emulation controls, timing, source freeze, envelope validation, six primary cells and the packet audit. Finally it compares deterministic scientific outcomes with the original evidence, not wall-clock timings.
+For the native route use its environment JSON and a different fresh output path. The same script executes both routes. It first runs real embedded-Python/network doctor controls, then resource preflight, oracle/lifecycle/controller validation, fresh original-reference capture and exact replay, a fresh model freeze/catalogue, the full sensitivity/benchmark/primary grid, original audit/coverage, then fresh emulation controls, timing, source freeze, envelope validation, six primary cells and the packet audit. Finally it compares deterministic scientific outcomes with the original evidence, not wall-clock timings.
 
 Each child scientific job has its own 120-second ceiling; the complete serialized campaign takes longer than 120 seconds. There is no cumulative runtime cap. The coordinator does not launch concurrent jobs.
 
-For inspection at stage barriers, use `--phase prepare`, then `--phase validation`, `--phase model`, `--phase emulation`, and `--phase compare`, always with the same environment/output pair. Each phase can be attempted once; prerequisites must have passed. `--phase all` is the default and requires a fresh directory. A failed phase is retained and cannot be silently renewed. After fixing a launcher/setup defect, start a new replication ID rather than selectively retrying its primary cell.
+For inspection at stage barriers, use `--phase prepare`, then `--phase doctor`, `--phase validation`, `--phase model`, `--phase emulation`, and `--phase compare`, always with the same environment/output pair. Each phase can be attempted once; prerequisites must have passed. `--phase all` is the default and requires a fresh directory. A failed phase is retained and cannot be silently renewed. After fixing a launcher/setup defect, start a new replication ID rather than selectively retrying its primary cell.
+
+Workspaces and checkouts may live under `/tmp`. The original sandbox's private tmpfs is retained: an added namespace-local wrapper re-exposes only the configured input/runtime directories read-only and the fresh output directory read-write after `/tmp` is hidden. It opens those directories before the mount and closes the descriptors after binding; it does not alter host mounts. The original sandbox's namespace/uid checks and read-only sysfs/proc-sys protections remain byte-identical. The doctor phase checks this actual path through real packets before expensive model jobs.
 
 ## Outputs and checks
 
 - `environment.json`, `INPUTS.json`, `adaptations.json`: exact runtime bindings, original kernel identities and every launcher/provenance patch.
 - `PHASES.json`, `commands.jsonl`, `coordinator/`: attempted phases and retained top-level stdout/stderr.
+- `DOCTOR.json`: early actual embedded-Python/network check and explicit temporary-directory bindings.
 - `REFERENCE_BINDING.json`, `VALIDATION.json`: fresh reference/correspondence gate locations and compatibility fixture binding.
 - `work/artifacts/...`: new workspaces, source freezes, catalogues, raw jobs, attempts, reports and audits. Original results/attempts are not reused as new observations.
 - `audits/`: separately bounded audit receipts.
