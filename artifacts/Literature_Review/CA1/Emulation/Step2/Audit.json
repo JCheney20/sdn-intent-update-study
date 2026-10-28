@@ -1,0 +1,486 @@
+{
+  "status": "PASS",
+  "checks": 800,
+  "summary": [
+    {
+      "mode": "static",
+      "run": "cos738-ovs-cisco-static-1793019493516907649",
+      "packet_controls": 19,
+      "driver_checks": 67,
+      "elapsed_seconds": 65.12177301105112,
+      "checkpoint_peak_bytes": 764710912
+    },
+    {
+      "mode": "queue",
+      "run": "cos738-ovs-cisco-queue-1793019558819216870",
+      "packet_controls": 1,
+      "driver_checks": 20,
+      "elapsed_seconds": 62.62833080405835,
+      "checkpoint_peak_bytes": 635805696
+    },
+    {
+      "mode": "version",
+      "run": "cos738-ovs-cisco-version-1793019621615437691",
+      "packet_controls": 12,
+      "driver_checks": 65,
+      "elapsed_seconds": 64.85695760301314,
+      "checkpoint_peak_bytes": 683778048
+    }
+  ],
+  "flow_counts": [
+    {
+      "mode": "static",
+      "label": "old-static",
+      "switch": "C2",
+      "logical_rows": 1,
+      "gate_flows": 3,
+      "helper_flows": 2,
+      "total_flows": 6
+    },
+    {
+      "mode": "static",
+      "label": "old-static",
+      "switch": "C1",
+      "logical_rows": 0,
+      "gate_flows": 0,
+      "helper_flows": 2,
+      "total_flows": 2
+    },
+    {
+      "mode": "static",
+      "label": "old-static",
+      "switch": "C3",
+      "logical_rows": 0,
+      "gate_flows": 0,
+      "helper_flows": 2,
+      "total_flows": 2
+    },
+    {
+      "mode": "static",
+      "label": "old-static",
+      "switch": "C4",
+      "logical_rows": 1,
+      "gate_flows": 0,
+      "helper_flows": 2,
+      "total_flows": 3
+    },
+    {
+      "mode": "static",
+      "label": "old-static",
+      "switch": "C5",
+      "logical_rows": 1,
+      "gate_flows": 0,
+      "helper_flows": 2,
+      "total_flows": 3
+    },
+    {
+      "mode": "static",
+      "label": "old-static",
+      "switch": "C6",
+      "logical_rows": 0,
+      "gate_flows": 0,
+      "helper_flows": 2,
+      "total_flows": 2
+    },
+    {
+      "mode": "static",
+      "label": "old-static",
+      "switch": "C7",
+      "logical_rows": 0,
+      "gate_flows": 0,
+      "helper_flows": 2,
+      "total_flows": 2
+    },
+    {
+      "mode": "static",
+      "label": "old-static",
+      "switch": "C8",
+      "logical_rows": 0,
+      "gate_flows": 0,
+      "helper_flows": 2,
+      "total_flows": 2
+    },
+    {
+      "mode": "static",
+      "label": "old-static",
+      "switch": "C9",
+      "logical_rows": 0,
+      "gate_flows": 0,
+      "helper_flows": 2,
+      "total_flows": 2
+    },
+    {
+      "mode": "static",
+      "label": "old-static",
+      "switch": "C10",
+      "logical_rows": 1,
+      "gate_flows": 0,
+      "helper_flows": 2,
+      "total_flows": 3
+    },
+    {
+      "mode": "static",
+      "label": "new-static",
+      "switch": "C2",
+      "logical_rows": 1,
+      "gate_flows": 3,
+      "helper_flows": 2,
+      "total_flows": 6
+    },
+    {
+      "mode": "static",
+      "label": "new-static",
+      "switch": "C1",
+      "logical_rows": 0,
+      "gate_flows": 0,
+      "helper_flows": 2,
+      "total_flows": 2
+    },
+    {
+      "mode": "static",
+      "label": "new-static",
+      "switch": "C3",
+      "logical_rows": 0,
+      "gate_flows": 0,
+      "helper_flows": 2,
+      "total_flows": 2
+    },
+    {
+      "mode": "static",
+      "label": "new-static",
+      "switch": "C4",
+      "logical_rows": 1,
+      "gate_flows": 0,
+      "helper_flows": 2,
+      "total_flows": 3
+    },
+    {
+      "mode": "static",
+      "label": "new-static",
+      "switch": "C5",
+      "logical_rows": 1,
+      "gate_flows": 0,
+      "helper_flows": 2,
+      "total_flows": 3
+    },
+    {
+      "mode": "static",
+      "label": "new-static",
+      "switch": "C6",
+      "logical_rows": 0,
+      "gate_flows": 0,
+      "helper_flows": 2,
+      "total_flows": 2
+    },
+    {
+      "mode": "static",
+      "label": "new-static",
+      "switch": "C7",
+      "logical_rows": 0,
+      "gate_flows": 0,
+      "helper_flows": 2,
+      "total_flows": 2
+    },
+    {
+      "mode": "static",
+      "label": "new-static",
+      "switch": "C8",
+      "logical_rows": 0,
+      "gate_flows": 0,
+      "helper_flows": 2,
+      "total_flows": 2
+    },
+    {
+      "mode": "static",
+      "label": "new-static",
+      "switch": "C9",
+      "logical_rows": 0,
+      "gate_flows": 0,
+      "helper_flows": 2,
+      "total_flows": 2
+    },
+    {
+      "mode": "static",
+      "label": "new-static",
+      "switch": "C10",
+      "logical_rows": 1,
+      "gate_flows": 0,
+      "helper_flows": 2,
+      "total_flows": 3
+    },
+    {
+      "mode": "queue",
+      "label": "queue-closed",
+      "switch": "C2",
+      "logical_rows": 1,
+      "gate_flows": 2,
+      "helper_flows": 2,
+      "total_flows": 5
+    },
+    {
+      "mode": "queue",
+      "label": "queue-closed",
+      "switch": "C1",
+      "logical_rows": 0,
+      "gate_flows": 0,
+      "helper_flows": 2,
+      "total_flows": 2
+    },
+    {
+      "mode": "queue",
+      "label": "queue-closed",
+      "switch": "C3",
+      "logical_rows": 0,
+      "gate_flows": 0,
+      "helper_flows": 2,
+      "total_flows": 2
+    },
+    {
+      "mode": "queue",
+      "label": "queue-closed",
+      "switch": "C4",
+      "logical_rows": 1,
+      "gate_flows": 0,
+      "helper_flows": 2,
+      "total_flows": 3
+    },
+    {
+      "mode": "queue",
+      "label": "queue-closed",
+      "switch": "C5",
+      "logical_rows": 1,
+      "gate_flows": 0,
+      "helper_flows": 2,
+      "total_flows": 3
+    },
+    {
+      "mode": "queue",
+      "label": "queue-closed",
+      "switch": "C6",
+      "logical_rows": 0,
+      "gate_flows": 0,
+      "helper_flows": 2,
+      "total_flows": 2
+    },
+    {
+      "mode": "queue",
+      "label": "queue-closed",
+      "switch": "C7",
+      "logical_rows": 0,
+      "gate_flows": 0,
+      "helper_flows": 2,
+      "total_flows": 2
+    },
+    {
+      "mode": "queue",
+      "label": "queue-closed",
+      "switch": "C8",
+      "logical_rows": 0,
+      "gate_flows": 0,
+      "helper_flows": 2,
+      "total_flows": 2
+    },
+    {
+      "mode": "queue",
+      "label": "queue-closed",
+      "switch": "C9",
+      "logical_rows": 0,
+      "gate_flows": 0,
+      "helper_flows": 2,
+      "total_flows": 2
+    },
+    {
+      "mode": "queue",
+      "label": "queue-closed",
+      "switch": "C10",
+      "logical_rows": 1,
+      "gate_flows": 0,
+      "helper_flows": 2,
+      "total_flows": 3
+    },
+    {
+      "mode": "queue",
+      "label": "queue-open",
+      "switch": "C2",
+      "logical_rows": 1,
+      "gate_flows": 3,
+      "helper_flows": 2,
+      "total_flows": 6
+    },
+    {
+      "mode": "version",
+      "label": "old-static",
+      "switch": "C2",
+      "logical_rows": 1,
+      "gate_flows": 3,
+      "helper_flows": 2,
+      "total_flows": 6
+    },
+    {
+      "mode": "version",
+      "label": "old-static",
+      "switch": "C1",
+      "logical_rows": 0,
+      "gate_flows": 0,
+      "helper_flows": 2,
+      "total_flows": 2
+    },
+    {
+      "mode": "version",
+      "label": "old-static",
+      "switch": "C3",
+      "logical_rows": 0,
+      "gate_flows": 0,
+      "helper_flows": 2,
+      "total_flows": 2
+    },
+    {
+      "mode": "version",
+      "label": "old-static",
+      "switch": "C4",
+      "logical_rows": 1,
+      "gate_flows": 0,
+      "helper_flows": 2,
+      "total_flows": 3
+    },
+    {
+      "mode": "version",
+      "label": "old-static",
+      "switch": "C5",
+      "logical_rows": 1,
+      "gate_flows": 0,
+      "helper_flows": 2,
+      "total_flows": 3
+    },
+    {
+      "mode": "version",
+      "label": "old-static",
+      "switch": "C6",
+      "logical_rows": 0,
+      "gate_flows": 0,
+      "helper_flows": 2,
+      "total_flows": 2
+    },
+    {
+      "mode": "version",
+      "label": "old-static",
+      "switch": "C7",
+      "logical_rows": 0,
+      "gate_flows": 0,
+      "helper_flows": 2,
+      "total_flows": 2
+    },
+    {
+      "mode": "version",
+      "label": "old-static",
+      "switch": "C8",
+      "logical_rows": 0,
+      "gate_flows": 0,
+      "helper_flows": 2,
+      "total_flows": 2
+    },
+    {
+      "mode": "version",
+      "label": "old-static",
+      "switch": "C9",
+      "logical_rows": 0,
+      "gate_flows": 0,
+      "helper_flows": 2,
+      "total_flows": 2
+    },
+    {
+      "mode": "version",
+      "label": "old-static",
+      "switch": "C10",
+      "logical_rows": 1,
+      "gate_flows": 0,
+      "helper_flows": 2,
+      "total_flows": 3
+    },
+    {
+      "mode": "version",
+      "label": "staged",
+      "switch": "C2",
+      "logical_rows": 2,
+      "gate_flows": 3,
+      "helper_flows": 2,
+      "total_flows": 7
+    },
+    {
+      "mode": "version",
+      "label": "staged",
+      "switch": "C4",
+      "logical_rows": 2,
+      "gate_flows": 0,
+      "helper_flows": 2,
+      "total_flows": 4
+    },
+    {
+      "mode": "version",
+      "label": "staged",
+      "switch": "C5",
+      "logical_rows": 2,
+      "gate_flows": 0,
+      "helper_flows": 2,
+      "total_flows": 4
+    },
+    {
+      "mode": "version",
+      "label": "staged",
+      "switch": "C10",
+      "logical_rows": 2,
+      "gate_flows": 0,
+      "helper_flows": 2,
+      "total_flows": 4
+    },
+    {
+      "mode": "version",
+      "label": "committed",
+      "switch": "C2",
+      "logical_rows": 2,
+      "gate_flows": 3,
+      "helper_flows": 2,
+      "total_flows": 7
+    },
+    {
+      "mode": "version",
+      "label": "cleaned",
+      "switch": "C2",
+      "logical_rows": 1,
+      "gate_flows": 3,
+      "helper_flows": 2,
+      "total_flows": 6
+    },
+    {
+      "mode": "version",
+      "label": "cleaned",
+      "switch": "C4",
+      "logical_rows": 1,
+      "gate_flows": 0,
+      "helper_flows": 2,
+      "total_flows": 3
+    },
+    {
+      "mode": "version",
+      "label": "cleaned",
+      "switch": "C5",
+      "logical_rows": 1,
+      "gate_flows": 0,
+      "helper_flows": 2,
+      "total_flows": 3
+    },
+    {
+      "mode": "version",
+      "label": "cleaned",
+      "switch": "C10",
+      "logical_rows": 1,
+      "gate_flows": 0,
+      "helper_flows": 2,
+      "total_flows": 3
+    }
+  ],
+  "primary_data": false,
+  "audit_source_sha256": "56737fb48af3fee46d7c451becb30b00b6e8151fde482362d26372cd35836bd9",
+  "source_trace_sha256": "7d3d14b4518454102a18fd870f3e3c499e213adda06ac99ad7da868cc5d47241",
+  "scope": "adapter controls only; finite observations, not timed handover or universal safety"
+}

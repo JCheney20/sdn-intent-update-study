@@ -1,0 +1,64 @@
+swap_max_bytes = 0
+cpu_period = 100000
+completed_utc = "2026-10-25T15:46:11.531"
+scope = "/user.slice/user-1000.slice/user@1000.service/app.slice/cos738-revision-1792943161034225970.scope"
+initial_budget_core_seconds = 600
+aggregate_reserved_core_seconds = 552
+memory_max_bytes = 2147483648
+mode = "oracle"
+python_reference_executed = false
+accounting = "immutable full two-core time-limit reservation plus 2 seconds margin; no refunds; includes failures/startup"
+julia_version = "1.13.1"
+reserved_core_seconds = 244
+process_ceiling_seconds = 120
+scope_memory_peak_bytes_at_checkpoint = 208781312
+cpu_quota = 200000
+primary_execution = false
+status = "PASS"
+elapsed_seconds_including_startup = 10.46999999997206
+scope_cpu_seconds = 10.32876
+
+[oracle]
+full_CCG_adapter_validated = false
+scope = "standalone raw-input Q/V oracle and listed defect controls; NOT production differential or Python replay"
+reduction = "single-probe projections under controller/packet independence; targeted joint Q/V projections checked; two-probe mask reduction checked against permutations through five switch batches"
+status = "PASS"
+checks = 2592
+production_transition_equivalence_validated = false
+python_reference_replay_validated = false
+
+    [[oracle.fixtures]]
+    packet_bound = 4
+    Q_V_probe_coverage_complete = true
+    controller_bound = 75
+    checks = 1058
+    ordinary_witness_confirmed = true
+    physical_ingress_admission_checked = true
+    probe_cases = 166
+    joint_probe_cases = 56
+    fixture = "cisco"
+    joint_boundary_state_visits = 7620
+    observation_horizon = 80
+    joint_projection_agreement = true
+    boundary_state_visits = 14281
+    [[oracle.fixtures]]
+    packet_bound = 5
+    Q_V_probe_coverage_complete = true
+    controller_bound = 126
+    checks = 1525
+    ordinary_witness_confirmed = true
+    physical_ingress_admission_checked = true
+    probe_cases = 270
+    joint_probe_cases = 64
+    fixture = "fat4"
+    joint_boundary_state_visits = 14172
+    observation_horizon = 132
+    joint_projection_agreement = true
+    boundary_state_visits = 37435
+
+[input_sha256]
+"Operational_Semantics_and_Bounds.md" = "c875818d84ec1e3ee44924e3d3721dfc1c4c6868e4794309dcc74f425b9c3519"
+"Handover_Bounds.toml" = "06689a5cf7c126e90293fa4d16ca02dab73f9e0d78e672e77f37be0f16a05fd4"
+"validation/run.sh" = "fdcae15131fee1520ce28a94e3637dd41f63c8962cfb9653879410ad81bf80ba"
+"validation/entry.jl" = "af796ecf9c4b175a230380b10953e4a809cae03fb0644233d7a5bde7e084646c"
+"validation/oracle.jl" = "058b65397b0382474174d0d9d69ba220b255f8260bbfb04ca4416dca6978f2c5"

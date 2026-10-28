@@ -1,0 +1,21 @@
+{
+  "study_id": "cisco-emulation-v1",
+  "validation_timing_run": "cos738-ovs-wire-timing-vector-1793079788777892588",
+  "procedures": ["ordinary", "Q", "V"],
+  "scenarios": ["nominal", "inflight"],
+  "cell_order": ["ordinary-nominal", "Q-nominal", "V-nominal", "V-inflight", "Q-inflight", "ordinary-inflight"],
+  "repetitions": 5,
+  "delay_ms": 250,
+  "drain_wait_ns": 1000000000,
+  "retirement_wait_ns": 1000000000,
+  "observation_window_ns": 2500000000,
+  "resident_poll_timeout_ns": 150000000,
+  "tail_settle_ns": 20000000,
+  "warm_order": ["ordinary-nominal", "ordinary-inflight", "Q-nominal", "Q-inflight", "V-nominal", "V-inflight"],
+  "validation_cell": "Q-inflight",
+  "extra_forwarding_rows": {"ordinary": 0, "Q": 0, "V": 1},
+  "resources": {"cpus": [0, 1], "cpu_max": "200000 100000", "memory_max_bytes": 2147483648, "swap_max_bytes": 0, "whole_job_seconds": 120},
+  "attempt_policy": "one validation-envelope attempt, then one primary attempt per cell; no selective retries",
+  "observation_semantics": "worker application monotonic receipt timestamps; one common deadline, late observations retained",
+  "wait_semantics": "fixed experimental operating parameters under declared tiny load, not H-derived or universal lifetime bounds"
+}

@@ -1,0 +1,23 @@
+[data]
+status = "PASS"
+mode = "analyze"
+index = 0
+rows = []
+primary_data = false
+
+    [data.resources]
+    swap_max_bytes = 0
+    memory_peak_at_checkpoint_bytes = 470564864
+    cpu_usage_seconds = 19.669016
+    cpu_max = "200000 100000"
+    scope = "/user.slice/user-1000.slice/user@1000.service/app.slice/cos738-study-analyze-0-1793000032836272027.scope"
+    memory_max_bytes = 2147483648
+
+    [data.summary]
+    population_equivalence_claim = false
+    primary_cells = 12
+    sensitivity_trials = 576
+    benchmark_jobs = 48
+    status = "PASS"
+    primary_rows = 92
+    pure_language_speedup_claim = false

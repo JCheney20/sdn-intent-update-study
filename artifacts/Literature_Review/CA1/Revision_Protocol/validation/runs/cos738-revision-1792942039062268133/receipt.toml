@@ -1,0 +1,25 @@
+swap_max_bytes = 0
+cpu_period = 100000
+completed_utc = "2026-10-25T15:27:22.862"
+scope = "/user.slice/user-1000.slice/user@1000.service/app.slice/cos738-revision-1792942039062268133.scope"
+initial_budget_core_seconds = 600
+aggregate_reserved_core_seconds = 64
+memory_max_bytes = 2147483648
+mode = "preflight"
+python_reference_executed = false
+accounting = "immutable full two-core time-limit reservation plus 2 seconds margin; no refunds; includes failures/startup"
+julia_version = "1.13.1"
+reserved_core_seconds = 64
+process_ceiling_seconds = 30
+scope_memory_peak_bytes_at_checkpoint = 233148416
+cpu_quota = 200000
+primary_execution = false
+status = "PASS"
+elapsed_seconds_including_startup = 3.7399999999906868
+scope_cpu_seconds = 3.534515
+
+[input_sha256]
+"Operational_Semantics_and_Bounds.md" = "c875818d84ec1e3ee44924e3d3721dfc1c4c6868e4794309dcc74f425b9c3519"
+"Handover_Bounds.toml" = "06689a5cf7c126e90293fa4d16ca02dab73f9e0d78e672e77f37be0f16a05fd4"
+"validation/run.sh" = "fdcae15131fee1520ce28a94e3637dd41f63c8962cfb9653879410ad81bf80ba"
+"validation/entry.jl" = "af796ecf9c4b175a230380b10953e4a809cae03fb0644233d7a5bde7e084646c"

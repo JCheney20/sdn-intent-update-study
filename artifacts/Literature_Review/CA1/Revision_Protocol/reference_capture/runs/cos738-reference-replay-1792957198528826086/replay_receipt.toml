@@ -1,0 +1,49 @@
+memory_peak_at_checkpoint_bytes = 529088512
+scope = "/user.slice/user-1000.slice/user@1000.service/app.slice/cos738-reference-replay-1792957198528826086.scope"
+all_method_controller_validation_passed = false
+status = "PASS"
+checks = 44800
+primary_data = false
+observability_and_replay_passed = true
+native_RNG_equivalence_established = false
+
+[[cases]]
+fixture = "cisco"
+noop = false
+states_checked = 43
+k = 3
+natural_tie_order_differences_on_replayed_walks = ["C8"]
+alarms = 1
+natural_tie_membership_differences_on_replayed_walks = []
+[[cases]]
+fixture = "cisco"
+noop = false
+states_checked = 198
+k = 20
+natural_tie_order_differences_on_replayed_walks = ["C1", "C2", "C3", "C4", "C5", "C6", "C7", "C8", "C9", "C10"]
+alarms = 2
+natural_tie_membership_differences_on_replayed_walks = []
+[[cases]]
+fixture = "fat4"
+noop = false
+states_checked = 236
+k = 3
+natural_tie_order_differences_on_replayed_walks = ["A0-0", "E1-1", "E3-1"]
+alarms = 4
+natural_tie_membership_differences_on_replayed_walks = ["A0-0", "E3-1"]
+[[cases]]
+fixture = "fat4"
+noop = false
+states_checked = 1403
+k = 20
+natural_tie_order_differences_on_replayed_walks = ["C0", "C1", "C2", "C3", "A0-0", "A0-1", "E0-0", "E0-1", "A1-0", "A1-1", "E1-0", "E1-1", "A2-0", "A2-1", "E2-0", "E2-1", "A3-0", "A3-1", "E3-0", "E3-1"]
+alarms = 4
+natural_tie_membership_differences_on_replayed_walks = ["C0", "C1", "C2", "C3", "A0-0", "A0-1", "E0-0", "E0-1", "A1-0", "A1-1", "E1-0", "E1-1", "A2-0", "A2-1", "E2-0", "E2-1", "A3-0", "A3-1", "E3-0", "E3-1"]
+[[cases]]
+fixture = "cisco"
+noop = true
+states_checked = 66
+k = 3
+natural_tie_order_differences_on_replayed_walks = []
+alarms = 0
+natural_tie_membership_differences_on_replayed_walks = []

@@ -1,0 +1,22 @@
+schema_version = 1
+status = "PROSPECTIVELY_FROZEN_CORRECTNESS_CAPTURE"
+seed = 20261025
+topologies = ["cisco", "fat4"]
+cache_k = [3, 20]
+path_length = 4
+weight = "None"
+entrypoint = "original detection helper; not CLI; actual helper arguments recorded"
+observability_equality = ["states_checked", "violations_found", "warning_log", "final_complete_RNG_state"]
+excluded_equality_fields = ["wall-clock timing", "first_violation_wall_time"]
+reseed_between_queries = false
+trace_hooks_may_draw_randomness = false
+replay_score_tolerance_ULP = 0
+reference_tie_decisions_allowed_only_for_equal_scores = true
+controls = ["k=1", "k=N", "k>N clamping", "repeated vertices", "all-zero boundary ties", "node/neighbor order reversal", "prefix mismatches", "no-op update", "corrupted walk/count/tie replay rejection"]
+stop_on_unexplained_observability_or_replay_mismatch = true
+primary_data = false
+
+[source_sha256]
+"sources/detector.py" = "c4530e74d33c5d64b32a68be613135c4e4b8be020bbe03448ce8cb5732019595"
+"sources/fattree.py" = "db8906f77813eb1a6b968b982b857ef43754ec9c716ee65453cf61a815e9d823"
+"sources/detectortypes.py" = "28de9f5822fd41dbe81fe445c66302a5d6c79422d1d55d39ce9b2b06ff320517"

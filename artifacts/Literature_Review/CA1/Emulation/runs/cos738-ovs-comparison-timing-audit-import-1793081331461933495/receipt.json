@@ -1,0 +1,19 @@
+{
+  "command": [
+    "bash",
+    "-c",
+    "mkdir -p \"$COS738_OVS_RUN_DIR/sources/Comparison\"; cp Comparison/audit.py Comparison/guard.py \"$COS738_OVS_RUN_DIR/sources/Comparison/\"; exec python3 -I -B Comparison/audit.py timing cos738-ovs-wire-timing-vector-1793079788777892588"
+  ],
+  "scope": "/user.slice/user-1000.slice/user@1000.service/app.slice/cos738-ovs-comparison-timing-audit-import-1793081331461933495.scope",
+  "affinity": [
+    0,
+    1
+  ],
+  "memory_max_bytes": 2147483648,
+  "swap_max_bytes": 0,
+  "cpu_max": "200000 100000",
+  "entry_sha256": "4acfbf624050990ba7593e363158dc3ea1db2d374a0f73735924904a039ded57",
+  "exit_code": 0,
+  "elapsed_seconds": 0.6649159559747204,
+  "memory_peak_at_checkpoint_bytes": 39989248
+}

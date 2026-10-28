@@ -1,0 +1,4 @@
+mode = "primary"
+index = 10
+detail = "none"
+supervised_elapsed_nanoseconds = 16583494994

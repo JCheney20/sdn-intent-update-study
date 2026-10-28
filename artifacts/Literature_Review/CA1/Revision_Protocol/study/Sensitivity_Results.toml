@@ -1,0 +1,134 @@
+descriptive_only = true
+
+[[comparisons]]
+alert_decision_differences = 13
+fixture = "cisco"
+qualification_differences_extra1 = 13
+reference_alerts = 23
+unsafe_release_outcome_differences = 13
+cache_membership_differences = 32
+candidate_alerts = 24
+configuration = "k3"
+implementation = "julia_weighted"
+seed_labels = 32
+[[comparisons]]
+alert_decision_differences = 14
+fixture = "cisco"
+qualification_differences_extra1 = 14
+reference_alerts = 23
+unsafe_release_outcome_differences = 14
+cache_membership_differences = 32
+candidate_alerts = 21
+configuration = "k3"
+implementation = "julia_neighbors"
+seed_labels = 32
+[[comparisons]]
+alert_decision_differences = 0
+fixture = "cisco"
+qualification_differences_extra1 = 0
+reference_alerts = 32
+unsafe_release_outcome_differences = 0
+cache_membership_differences = 32
+candidate_alerts = 32
+configuration = "k20"
+implementation = "julia_weighted"
+seed_labels = 32
+[[comparisons]]
+alert_decision_differences = 0
+fixture = "cisco"
+qualification_differences_extra1 = 0
+reference_alerts = 32
+unsafe_release_outcome_differences = 0
+cache_membership_differences = 32
+candidate_alerts = 32
+configuration = "k20"
+implementation = "julia_neighbors"
+seed_labels = 32
+[[comparisons]]
+alert_decision_differences = 0
+fixture = "cisco"
+qualification_differences_extra1 = 0
+reference_alerts = 32
+unsafe_release_outcome_differences = 0
+cache_membership_differences = 32
+candidate_alerts = 32
+configuration = "k3_adjacent"
+implementation = "julia_weighted"
+seed_labels = 32
+[[comparisons]]
+alert_decision_differences = 0
+fixture = "cisco"
+qualification_differences_extra1 = 0
+reference_alerts = 32
+unsafe_release_outcome_differences = 0
+cache_membership_differences = 32
+candidate_alerts = 32
+configuration = "k3_adjacent"
+implementation = "julia_neighbors"
+seed_labels = 32
+[[comparisons]]
+alert_decision_differences = 10
+fixture = "fat4"
+qualification_differences_extra1 = 10
+reference_alerts = 23
+unsafe_release_outcome_differences = 10
+cache_membership_differences = 32
+candidate_alerts = 27
+configuration = "k3"
+implementation = "julia_weighted"
+seed_labels = 32
+[[comparisons]]
+alert_decision_differences = 12
+fixture = "fat4"
+qualification_differences_extra1 = 12
+reference_alerts = 23
+unsafe_release_outcome_differences = 12
+cache_membership_differences = 32
+candidate_alerts = 23
+configuration = "k3"
+implementation = "julia_neighbors"
+seed_labels = 32
+[[comparisons]]
+alert_decision_differences = 0
+fixture = "fat4"
+qualification_differences_extra1 = 0
+reference_alerts = 32
+unsafe_release_outcome_differences = 0
+cache_membership_differences = 32
+candidate_alerts = 32
+configuration = "k20"
+implementation = "julia_weighted"
+seed_labels = 32
+[[comparisons]]
+alert_decision_differences = 0
+fixture = "fat4"
+qualification_differences_extra1 = 0
+reference_alerts = 32
+unsafe_release_outcome_differences = 0
+cache_membership_differences = 32
+candidate_alerts = 32
+configuration = "k20"
+implementation = "julia_neighbors"
+seed_labels = 32
+[[comparisons]]
+alert_decision_differences = 0
+fixture = "fat4"
+qualification_differences_extra1 = 0
+reference_alerts = 32
+unsafe_release_outcome_differences = 0
+cache_membership_differences = 32
+candidate_alerts = 32
+configuration = "k3_adjacent"
+implementation = "julia_weighted"
+seed_labels = 32
+[[comparisons]]
+alert_decision_differences = 0
+fixture = "fat4"
+qualification_differences_extra1 = 0
+reference_alerts = 32
+unsafe_release_outcome_differences = 0
+cache_membership_differences = 32
+candidate_alerts = 32
+configuration = "k3_adjacent"
+implementation = "julia_neighbors"
+seed_labels = 32

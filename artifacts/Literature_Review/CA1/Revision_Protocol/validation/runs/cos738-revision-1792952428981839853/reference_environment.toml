@@ -1,0 +1,29 @@
+status = "BLOCKED_PREREQUISITES"
+python_executable = "/run/current-system/sw/bin/python3"
+python_version = "3.15.0rc2"
+required_python_series = "3.11"
+python_series_matches = false
+requirements_sha256 = "3383c0986bacad73611b2c9a6968a05a672106c9380044dbb4ca4ae63ece3d16"
+isolated_mode = true
+artifact_executed = false
+third_party_imports_executed = false
+installation_or_network_attempted = false
+transitive_environment_validated = false
+
+[[dependencies]]
+name = "numpy"
+expected = "1.26.2"
+observed = "MISSING"
+matches = false
+
+[[dependencies]]
+name = "networkx"
+expected = "3.2.1"
+observed = "MISSING"
+matches = false
+
+[[dependencies]]
+name = "matplotlib"
+expected = "3.8.2"
+observed = "MISSING"
+matches = false

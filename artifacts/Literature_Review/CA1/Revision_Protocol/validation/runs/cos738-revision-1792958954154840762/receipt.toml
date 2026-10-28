@@ -1,0 +1,701 @@
+python_reference_executed = false
+julia_version = "1.13.1"
+process_ceiling_seconds = 120
+swap_max_bytes = 0
+cpu_period = 100000
+aggregate_reserved_core_seconds = 1540
+memory_max_bytes = 2147483648
+mode = "controllers-cisco"
+primary_execution = false
+completed_utc = "2026-10-25T20:09:40.936"
+scope = "/user.slice/user-1000.slice/user@1000.service/app.slice/cos738-revision-1792958954154840762.scope"
+aggregate_runtime_cap = "none"
+initial_budget_core_seconds = 600
+accounting = "documentary full two-core time-limit tickets plus 2 seconds margin; no cumulative stop; includes failures/startup"
+reserved_core_seconds = 244
+additional_budget_core_seconds = 2000
+scope_memory_peak_bytes_at_checkpoint = 421531648
+cpu_quota = 200000
+status = "PASS"
+elapsed_seconds_including_startup = 26.770000000018626
+scope_cpu_seconds = 26.49722
+
+[controllers]
+fixture = "cisco"
+unique_plan_evaluations = 8
+scheduler_history_and_progress_validated = true
+benchmarks_or_primary_executed = false
+integrated_source_slot_validated = true
+status = "PASS"
+checks = 227569
+primary_data = false
+
+    [[controllers.rows]]
+    method = "ordinary"
+    plan_status = "COMPLETE"
+    extra_rows = 0
+    cache_condition = "seed_independent"
+    branch = "ordinary"
+
+        [controllers.rows.independent]
+        probes = 1
+        peak_extra_rows = 0
+        total_probe_domain = 83
+        verdict = "FAIL"
+        coverage_complete = false
+        witness = "(node = \"C10\", incoming = \"C2\", tag = 0, epoch = 0, age = 1, status = :live, arrival = -999, admitted = 0, ended = -999, sourceip = 0x0a000000, destip = 0x0a000000) => @NamedTuple{node::String, incoming::String, tag::Int64, epoch::Int64, age::Int64, status::Symbol, arrival::Int64, admitted::Int64, ended::Int64, sourceip::UInt32, destip::UInt32}[(node = \"H10\", incoming = \"C5\", tag = 0, epoch = 0, age = 4, status = :wrong_delivery, arrival = -999, admitted = 0, ended = 3, sourceip = 0x0a000000, destip = 0x0a000000)]"
+        completion_round = 1
+        old_drained_at_claimed_completion = false
+
+        [controllers.rows.work]
+        history_peak = 0
+        guard_edges = 0
+        scheduler_reads = 0
+        history_rounds = 0
+        detector_pairs = 0
+        detector_searches = 0
+        guard_states = 0
+    [[controllers.rows]]
+    method = "Q"
+    plan_status = "COMPLETE"
+    extra_rows = 0
+    cache_condition = "seed_independent"
+    branch = "quiesce"
+
+        [controllers.rows.independent]
+        probes = 83
+        peak_extra_rows = 0
+        total_probe_domain = 83
+        verdict = "PASS"
+        coverage_complete = true
+        witness = ""
+        completion_round = 7
+        old_drained_at_claimed_completion = true
+
+        [controllers.rows.work]
+        history_peak = 0
+        guard_edges = 0
+        scheduler_reads = 0
+        history_rounds = 0
+        detector_pairs = 0
+        detector_searches = 0
+        guard_states = 0
+    [[controllers.rows]]
+    method = "V"
+    plan_status = "RESOURCE_BLOCKED"
+    extra_rows = 0
+    cache_condition = "seed_independent"
+    branch = "versioned"
+
+        [controllers.rows.independent]
+        probes = 0
+        peak_extra_rows = 0
+        verdict = "RESOURCE_BLOCKED"
+        coverage_complete = false
+
+        [controllers.rows.work]
+        history_peak = 0
+        guard_edges = 0
+        scheduler_reads = 0
+        history_rounds = 0
+        detector_pairs = 0
+        detector_searches = 0
+        guard_states = 0
+    [[controllers.rows]]
+    method = "CCG"
+    plan_status = "COMPLETE"
+    extra_rows = 0
+    cache_condition = "seed_independent"
+    branch = "ccg_inspired_no_rollback"
+
+        [controllers.rows.independent]
+        probes = 83
+        peak_extra_rows = 0
+        total_probe_domain = 83
+        verdict = "PASS"
+        coverage_complete = true
+        witness = ""
+        completion_round = 11
+        old_drained_at_claimed_completion = true
+
+        [controllers.rows.work]
+        history_peak = 2
+        guard_edges = 0
+        scheduler_reads = 64
+        history_rounds = 10
+        detector_pairs = 0
+        detector_searches = 0
+        guard_states = 0
+    [[controllers.rows]]
+    method = "guard"
+    plan_status = "RESOURCE_BLOCKED"
+    extra_rows = 0
+    cache_condition = "seed_independent"
+    branch = "guard_rejected"
+
+        [controllers.rows.independent]
+        probes = 0
+        peak_extra_rows = 0
+        verdict = "RESOURCE_BLOCKED"
+        coverage_complete = false
+
+        [controllers.rows.work]
+        history_peak = 0
+        guard_edges = 3
+        scheduler_reads = 0
+        history_rounds = 0
+        detector_pairs = 0
+        detector_searches = 0
+        guard_states = 3
+    [[controllers.rows]]
+    method = "ordinary"
+    plan_status = "COMPLETE"
+    extra_rows = 1
+    cache_condition = "seed_independent"
+    branch = "ordinary"
+
+        [controllers.rows.independent]
+        probes = 1
+        peak_extra_rows = 0
+        total_probe_domain = 83
+        verdict = "FAIL"
+        coverage_complete = false
+        witness = "(node = \"C10\", incoming = \"C2\", tag = 0, epoch = 0, age = 1, status = :live, arrival = -999, admitted = 0, ended = -999, sourceip = 0x0a000000, destip = 0x0a000000) => @NamedTuple{node::String, incoming::String, tag::Int64, epoch::Int64, age::Int64, status::Symbol, arrival::Int64, admitted::Int64, ended::Int64, sourceip::UInt32, destip::UInt32}[(node = \"H10\", incoming = \"C5\", tag = 0, epoch = 0, age = 4, status = :wrong_delivery, arrival = -999, admitted = 0, ended = 3, sourceip = 0x0a000000, destip = 0x0a000000)]"
+        completion_round = 1
+        old_drained_at_claimed_completion = false
+
+        [controllers.rows.work]
+        history_peak = 0
+        guard_edges = 0
+        scheduler_reads = 0
+        history_rounds = 0
+        detector_pairs = 0
+        detector_searches = 0
+        guard_states = 0
+    [[controllers.rows]]
+    method = "Q"
+    plan_status = "COMPLETE"
+    extra_rows = 1
+    cache_condition = "seed_independent"
+    branch = "quiesce"
+
+        [controllers.rows.independent]
+        probes = 83
+        peak_extra_rows = 0
+        total_probe_domain = 83
+        verdict = "PASS"
+        coverage_complete = true
+        witness = ""
+        completion_round = 7
+        old_drained_at_claimed_completion = true
+
+        [controllers.rows.work]
+        history_peak = 0
+        guard_edges = 0
+        scheduler_reads = 0
+        history_rounds = 0
+        detector_pairs = 0
+        detector_searches = 0
+        guard_states = 0
+    [[controllers.rows]]
+    method = "V"
+    plan_status = "COMPLETE"
+    extra_rows = 1
+    cache_condition = "seed_independent"
+    branch = "versioned"
+
+        [controllers.rows.independent]
+        probes = 83
+        peak_extra_rows = 1
+        total_probe_domain = 83
+        verdict = "PASS"
+        coverage_complete = true
+        witness = ""
+        completion_round = 7
+        old_drained_at_claimed_completion = true
+
+        [controllers.rows.work]
+        history_peak = 0
+        guard_edges = 0
+        scheduler_reads = 0
+        history_rounds = 0
+        detector_pairs = 0
+        detector_searches = 0
+        guard_states = 0
+    [[controllers.rows]]
+    method = "CCG"
+    plan_status = "COMPLETE"
+    extra_rows = 1
+    cache_condition = "seed_independent"
+    branch = "ccg_inspired_no_rollback"
+
+        [controllers.rows.independent]
+        probes = 83
+        peak_extra_rows = 0
+        total_probe_domain = 83
+        verdict = "PASS"
+        coverage_complete = true
+        witness = ""
+        completion_round = 11
+        old_drained_at_claimed_completion = true
+
+        [controllers.rows.work]
+        history_peak = 2
+        guard_edges = 0
+        scheduler_reads = 64
+        history_rounds = 10
+        detector_pairs = 0
+        detector_searches = 0
+        guard_states = 0
+    [[controllers.rows]]
+    method = "guard"
+    plan_status = "COMPLETE"
+    extra_rows = 1
+    cache_condition = "seed_independent"
+    branch = "guard_rejected"
+
+        [controllers.rows.independent]
+        probes = 83
+        peak_extra_rows = 1
+        total_probe_domain = 83
+        verdict = "PASS"
+        coverage_complete = true
+        witness = ""
+        completion_round = 7
+        old_drained_at_claimed_completion = true
+
+        [controllers.rows.work]
+        history_peak = 0
+        guard_edges = 3
+        scheduler_reads = 0
+        history_rounds = 0
+        detector_pairs = 0
+        detector_searches = 0
+        guard_states = 3
+    [[controllers.rows]]
+    method = "detector"
+    plan_status = "RESOURCE_BLOCKED"
+    extra_rows = 0
+    cache_condition = "captured_k3"
+    branch = "snapshot_alert"
+
+        [controllers.rows.independent]
+        probes = 0
+        peak_extra_rows = 0
+        verdict = "RESOURCE_BLOCKED"
+        coverage_complete = false
+
+        [controllers.rows.work]
+        history_peak = 0
+        guard_edges = 0
+        scheduler_reads = 0
+        history_rounds = 0
+        detector_pairs = 43
+        detector_searches = 170
+        guard_states = 0
+    [[controllers.rows]]
+    method = "guarded_detector"
+    plan_status = "RESOURCE_BLOCKED"
+    extra_rows = 0
+    cache_condition = "captured_k3"
+    branch = "snapshot_alert"
+
+        [controllers.rows.independent]
+        probes = 0
+        peak_extra_rows = 0
+        verdict = "RESOURCE_BLOCKED"
+        coverage_complete = false
+
+        [controllers.rows.work]
+        history_peak = 0
+        guard_edges = 0
+        scheduler_reads = 0
+        history_rounds = 0
+        detector_pairs = 43
+        detector_searches = 170
+        guard_states = 0
+    [[controllers.rows]]
+    method = "detector"
+    plan_status = "COMPLETE"
+    extra_rows = 1
+    cache_condition = "captured_k3"
+    branch = "snapshot_alert"
+
+        [controllers.rows.independent]
+        probes = 83
+        peak_extra_rows = 1
+        total_probe_domain = 83
+        verdict = "PASS"
+        coverage_complete = true
+        witness = ""
+        completion_round = 7
+        old_drained_at_claimed_completion = true
+
+        [controllers.rows.work]
+        history_peak = 0
+        guard_edges = 0
+        scheduler_reads = 0
+        history_rounds = 0
+        detector_pairs = 43
+        detector_searches = 170
+        guard_states = 0
+    [[controllers.rows]]
+    method = "guarded_detector"
+    plan_status = "COMPLETE"
+    extra_rows = 1
+    cache_condition = "captured_k3"
+    branch = "snapshot_alert"
+
+        [controllers.rows.independent]
+        probes = 83
+        peak_extra_rows = 1
+        total_probe_domain = 83
+        verdict = "PASS"
+        coverage_complete = true
+        witness = ""
+        completion_round = 7
+        old_drained_at_claimed_completion = true
+
+        [controllers.rows.work]
+        history_peak = 0
+        guard_edges = 0
+        scheduler_reads = 0
+        history_rounds = 0
+        detector_pairs = 43
+        detector_searches = 170
+        guard_states = 0
+    [[controllers.rows]]
+    method = "detector"
+    plan_status = "RESOURCE_BLOCKED"
+    extra_rows = 0
+    cache_condition = "captured_k20"
+    branch = "snapshot_alert"
+
+        [controllers.rows.independent]
+        probes = 0
+        peak_extra_rows = 0
+        verdict = "RESOURCE_BLOCKED"
+        coverage_complete = false
+
+        [controllers.rows.work]
+        history_peak = 0
+        guard_edges = 0
+        scheduler_reads = 0
+        history_rounds = 0
+        detector_pairs = 198
+        detector_searches = 660
+        guard_states = 0
+    [[controllers.rows]]
+    method = "guarded_detector"
+    plan_status = "RESOURCE_BLOCKED"
+    extra_rows = 0
+    cache_condition = "captured_k20"
+    branch = "snapshot_alert"
+
+        [controllers.rows.independent]
+        probes = 0
+        peak_extra_rows = 0
+        verdict = "RESOURCE_BLOCKED"
+        coverage_complete = false
+
+        [controllers.rows.work]
+        history_peak = 0
+        guard_edges = 0
+        scheduler_reads = 0
+        history_rounds = 0
+        detector_pairs = 198
+        detector_searches = 660
+        guard_states = 0
+    [[controllers.rows]]
+    method = "detector"
+    plan_status = "COMPLETE"
+    extra_rows = 1
+    cache_condition = "captured_k20"
+    branch = "snapshot_alert"
+
+        [controllers.rows.independent]
+        probes = 83
+        peak_extra_rows = 1
+        total_probe_domain = 83
+        verdict = "PASS"
+        coverage_complete = true
+        witness = ""
+        completion_round = 7
+        old_drained_at_claimed_completion = true
+
+        [controllers.rows.work]
+        history_peak = 0
+        guard_edges = 0
+        scheduler_reads = 0
+        history_rounds = 0
+        detector_pairs = 198
+        detector_searches = 660
+        guard_states = 0
+    [[controllers.rows]]
+    method = "guarded_detector"
+    plan_status = "COMPLETE"
+    extra_rows = 1
+    cache_condition = "captured_k20"
+    branch = "snapshot_alert"
+
+        [controllers.rows.independent]
+        probes = 83
+        peak_extra_rows = 1
+        total_probe_domain = 83
+        verdict = "PASS"
+        coverage_complete = true
+        witness = ""
+        completion_round = 7
+        old_drained_at_claimed_completion = true
+
+        [controllers.rows.work]
+        history_peak = 0
+        guard_edges = 0
+        scheduler_reads = 0
+        history_rounds = 0
+        detector_pairs = 198
+        detector_searches = 660
+        guard_states = 0
+    [[controllers.rows]]
+    method = "detector"
+    plan_status = "COMPLETE"
+    extra_rows = 0
+    cache_condition = "empty_branch_control"
+    branch = "snapshot_negative_unguarded"
+
+        [controllers.rows.independent]
+        probes = 1
+        peak_extra_rows = 0
+        total_probe_domain = 83
+        verdict = "FAIL"
+        coverage_complete = false
+        witness = "(node = \"C10\", incoming = \"C2\", tag = 0, epoch = 0, age = 1, status = :live, arrival = -999, admitted = 0, ended = -999, sourceip = 0x0a000000, destip = 0x0a000000) => @NamedTuple{node::String, incoming::String, tag::Int64, epoch::Int64, age::Int64, status::Symbol, arrival::Int64, admitted::Int64, ended::Int64, sourceip::UInt32, destip::UInt32}[(node = \"H10\", incoming = \"C5\", tag = 0, epoch = 0, age = 4, status = :wrong_delivery, arrival = -999, admitted = 0, ended = 3, sourceip = 0x0a000000, destip = 0x0a000000)]"
+        completion_round = 1
+        old_drained_at_claimed_completion = false
+
+        [controllers.rows.work]
+        history_peak = 0
+        guard_edges = 0
+        scheduler_reads = 0
+        history_rounds = 0
+        detector_pairs = 0
+        detector_searches = 0
+        guard_states = 0
+    [[controllers.rows]]
+    method = "guarded_detector"
+    plan_status = "RESOURCE_BLOCKED"
+    extra_rows = 0
+    cache_condition = "empty_branch_control"
+    branch = "guard_rejected"
+
+        [controllers.rows.independent]
+        probes = 0
+        peak_extra_rows = 0
+        verdict = "RESOURCE_BLOCKED"
+        coverage_complete = false
+
+        [controllers.rows.work]
+        history_peak = 0
+        guard_edges = 3
+        scheduler_reads = 0
+        history_rounds = 0
+        detector_pairs = 0
+        detector_searches = 0
+        guard_states = 3
+    [[controllers.rows]]
+    method = "detector"
+    plan_status = "COMPLETE"
+    extra_rows = 1
+    cache_condition = "empty_branch_control"
+    branch = "snapshot_negative_unguarded"
+
+        [controllers.rows.independent]
+        probes = 1
+        peak_extra_rows = 0
+        total_probe_domain = 83
+        verdict = "FAIL"
+        coverage_complete = false
+        witness = "(node = \"C10\", incoming = \"C2\", tag = 0, epoch = 0, age = 1, status = :live, arrival = -999, admitted = 0, ended = -999, sourceip = 0x0a000000, destip = 0x0a000000) => @NamedTuple{node::String, incoming::String, tag::Int64, epoch::Int64, age::Int64, status::Symbol, arrival::Int64, admitted::Int64, ended::Int64, sourceip::UInt32, destip::UInt32}[(node = \"H10\", incoming = \"C5\", tag = 0, epoch = 0, age = 4, status = :wrong_delivery, arrival = -999, admitted = 0, ended = 3, sourceip = 0x0a000000, destip = 0x0a000000)]"
+        completion_round = 1
+        old_drained_at_claimed_completion = false
+
+        [controllers.rows.work]
+        history_peak = 0
+        guard_edges = 0
+        scheduler_reads = 0
+        history_rounds = 0
+        detector_pairs = 0
+        detector_searches = 0
+        guard_states = 0
+    [[controllers.rows]]
+    method = "guarded_detector"
+    plan_status = "COMPLETE"
+    extra_rows = 1
+    cache_condition = "empty_branch_control"
+    branch = "guard_rejected"
+
+        [controllers.rows.independent]
+        probes = 83
+        peak_extra_rows = 1
+        total_probe_domain = 83
+        verdict = "PASS"
+        coverage_complete = true
+        witness = ""
+        completion_round = 7
+        old_drained_at_claimed_completion = true
+
+        [controllers.rows.work]
+        history_peak = 0
+        guard_edges = 3
+        scheduler_reads = 0
+        history_rounds = 0
+        detector_pairs = 0
+        detector_searches = 0
+        guard_states = 3
+    [[controllers.rows]]
+    method = "detector"
+    plan_status = "RESOURCE_BLOCKED"
+    extra_rows = 0
+    cache_condition = "all_hosts_branch_control"
+    branch = "snapshot_alert"
+
+        [controllers.rows.independent]
+        probes = 0
+        peak_extra_rows = 0
+        verdict = "RESOURCE_BLOCKED"
+        coverage_complete = false
+
+        [controllers.rows.work]
+        history_peak = 0
+        guard_edges = 0
+        scheduler_reads = 0
+        history_rounds = 0
+        detector_pairs = 198
+        detector_searches = 660
+        guard_states = 0
+    [[controllers.rows]]
+    method = "guarded_detector"
+    plan_status = "RESOURCE_BLOCKED"
+    extra_rows = 0
+    cache_condition = "all_hosts_branch_control"
+    branch = "snapshot_alert"
+
+        [controllers.rows.independent]
+        probes = 0
+        peak_extra_rows = 0
+        verdict = "RESOURCE_BLOCKED"
+        coverage_complete = false
+
+        [controllers.rows.work]
+        history_peak = 0
+        guard_edges = 0
+        scheduler_reads = 0
+        history_rounds = 0
+        detector_pairs = 198
+        detector_searches = 660
+        guard_states = 0
+    [[controllers.rows]]
+    method = "detector"
+    plan_status = "COMPLETE"
+    extra_rows = 1
+    cache_condition = "all_hosts_branch_control"
+    branch = "snapshot_alert"
+
+        [controllers.rows.independent]
+        probes = 83
+        peak_extra_rows = 1
+        total_probe_domain = 83
+        verdict = "PASS"
+        coverage_complete = true
+        witness = ""
+        completion_round = 7
+        old_drained_at_claimed_completion = true
+
+        [controllers.rows.work]
+        history_peak = 0
+        guard_edges = 0
+        scheduler_reads = 0
+        history_rounds = 0
+        detector_pairs = 198
+        detector_searches = 660
+        guard_states = 0
+    [[controllers.rows]]
+    method = "guarded_detector"
+    plan_status = "COMPLETE"
+    extra_rows = 1
+    cache_condition = "all_hosts_branch_control"
+    branch = "snapshot_alert"
+
+        [controllers.rows.independent]
+        probes = 83
+        peak_extra_rows = 1
+        total_probe_domain = 83
+        verdict = "PASS"
+        coverage_complete = true
+        witness = ""
+        completion_round = 7
+        old_drained_at_claimed_completion = true
+
+        [controllers.rows.work]
+        history_peak = 0
+        guard_edges = 0
+        scheduler_reads = 0
+        history_rounds = 0
+        detector_pairs = 198
+        detector_searches = 660
+        guard_states = 0
+
+[oracle]
+full_CCG_adapter_validated = false
+scope = "standalone raw-input Q/V oracle and listed defect controls; NOT production differential or Python replay"
+reduction = "single-probe projections under controller/packet independence; targeted joint Q/V projections checked; two-probe mask reduction checked against permutations through five switch batches"
+status = "PASS"
+checks = 2592
+production_transition_equivalence_validated = false
+python_reference_replay_validated = false
+
+    [[oracle.fixtures]]
+    packet_bound = 4
+    Q_V_probe_coverage_complete = true
+    controller_bound = 75
+    checks = 1058
+    ordinary_witness_confirmed = true
+    physical_ingress_admission_checked = true
+    probe_cases = 166
+    joint_probe_cases = 56
+    fixture = "cisco"
+    joint_boundary_state_visits = 7620
+    observation_horizon = 80
+    joint_projection_agreement = true
+    boundary_state_visits = 14281
+    [[oracle.fixtures]]
+    packet_bound = 5
+    Q_V_probe_coverage_complete = true
+    controller_bound = 126
+    checks = 1525
+    ordinary_witness_confirmed = true
+    physical_ingress_admission_checked = true
+    probe_cases = 270
+    joint_probe_cases = 64
+    fixture = "fat4"
+    joint_boundary_state_visits = 14172
+    observation_horizon = 132
+    joint_projection_agreement = true
+    boundary_state_visits = 37435
+
+[input_sha256]
+"Controller_Validation_Spec.md" = "1f13c78408febcd529c807c53c41499a5286f769e6c84b0d24b179dea532fa0c"
+"Operational_Semantics_and_Bounds.md" = "c875818d84ec1e3ee44924e3d3721dfc1c4c6868e4794309dcc74f425b9c3519"
+"lifecycle.jl" = "47bb711fd8b299804498e420508fe83a9bfae8aa52b130a504a2a4da1aae0311"
+"validation/Three_Stage_Authorization.toml" = "35efaea1ad63cf39e3dccd61c35e3d5251f0e0d3122c70cf35051026f0db923f"
+"validation/run.sh" = "91642da6bcb03c49bc617e724b8c51eef605c3ae95432684865a2db5054b30d3"
+"validation/Controller_Inputs.toml" = "7db62b3038d6a10b887f69fa9a57e99f894fd308c52b4467a48e5ccfff19bc5d"
+"reference_capture/runs/cos738-reference-capture-1792956866366487215/trace.toml" = "7d3d14b4518454102a18fd870f3e3c499e213adda06ac99ad7da868cc5d47241"
+"validation/oracle.jl" = "e5e631561ebbc5f75f71c5e25cfa8ef76304e3689b75817cc09a4846180e70cc"
+"validation/controller_checks.jl" = "ee764dcc8366885aeb96194a6ac4758f125b21366b40e0335f284e69a4195971"
+"../../../SDN_Model_Comparison/source_fidelity/detector.jl" = "bd0a86eeeda3e6c6d5b0c267397693c961e3e415a8337cb8538d24079b27a106"
+"handover.jl" = "ffe749d1802e5e60f25620b16f8d11db3010c4bcf411ef9224ceea8fbfd757c8"
+"controllers.jl" = "bea4c546272fb0e924ae821f391fd91d6c0616887953159d1342bfb07e0eb63e"
+"validation/entry.jl" = "eaf576ebd0f3be8f033af4cb592da0e7de42dc1b52ea0900547abc35c061c093"
+"validation/comparison_map.jl" = "aa9a202e8b980525aff95ee6fea514a1178966ef893de39ee860705d2c7bfd65"
+"Handover_Bounds.toml" = "06689a5cf7c126e90293fa4d16ca02dab73f9e0d78e672e77f37be0f16a05fd4"

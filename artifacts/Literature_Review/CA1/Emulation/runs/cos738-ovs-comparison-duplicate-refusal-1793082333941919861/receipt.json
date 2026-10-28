@@ -1,0 +1,20 @@
+{
+  "command": [
+    "bash",
+    "/home/justin/Documents/Hons/CyberSecurity/Solution_Architecture/Literature_Review/CA1/Emulation/Comparison/run.sh",
+    "primary",
+    "ordinary-nominal"
+  ],
+  "scope": "/user.slice/user-1000.slice/user@1000.service/app.slice/cos738-ovs-comparison-duplicate-refusal-1793082333941919861.scope",
+  "affinity": [
+    0,
+    1
+  ],
+  "memory_max_bytes": 2147483648,
+  "swap_max_bytes": 0,
+  "cpu_max": "200000 100000",
+  "entry_sha256": "4acfbf624050990ba7593e363158dc3ea1db2d374a0f73735924904a039ded57",
+  "exit_code": 2,
+  "elapsed_seconds": 0.05527825700119138,
+  "memory_peak_at_checkpoint_bytes": 19501056
+}

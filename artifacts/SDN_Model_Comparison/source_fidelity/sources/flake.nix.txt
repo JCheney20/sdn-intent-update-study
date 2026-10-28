@@ -1,0 +1,30 @@
+{
+  description = "A basic flake with a shell";
+  #inputs.nixpkgs.url = "github:NixOS/nixpkgs/nixpkgs-unstable";
+  inputs.nixpkgs.url = "github:NixOS/nixpkgs/nixos-23.11";
+  inputs.flake-utils.url = "github:numtide/flake-utils";
+
+  outputs = { self, nixpkgs, flake-utils }:
+    flake-utils.lib.eachDefaultSystem (system: let
+      pkgs = nixpkgs.legacyPackages.${system};
+    in {
+      devShells.default = pkgs.mkShell {
+        packages = with pkgs; [
+          bashInteractive
+          jupyter
+          python311
+	        python311Packages.networkx
+          python311Packages.matplotlib
+          python311Packages.scipy
+          python311Packages.pandas
+          python311Packages.numpy
+          # python311Packages.pymongo
+          python311Packages.seaborn
+          python311Packages.tqdm
+          python311Packages.memory-profiler
+          # python311Packages.jupyterlab-widgets
+          # python311Packages.ipywidgets
+        ];
+      };
+    });
+}

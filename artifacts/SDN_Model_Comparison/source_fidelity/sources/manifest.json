@@ -1,0 +1,44 @@
+[
+  {
+    "source": "https://zenodo.org/api/records/12735280/files/fattree.py/content",
+    "local": "fattree.py.txt",
+    "sha256": "db8906f77813eb1a6b968b982b857ef43754ec9c716ee65453cf61a815e9d823",
+    "zenodo_checksum": "md5:0f1b99bef0280c49893d49fafd110e74"
+  },
+  {
+    "source": "https://zenodo.org/api/records/12735280/files/detectortypes.py/content",
+    "local": "detectortypes.py.txt",
+    "sha256": "28de9f5822fd41dbe81fe445c66302a5d6c79422d1d55d39ce9b2b06ff320517",
+    "zenodo_checksum": "md5:d7a34dbe06571134518f653a66ebfa2a"
+  },
+  {
+    "source": "https://zenodo.org/api/records/12735280/files/requirements.txt/content",
+    "local": "requirements.txt.txt",
+    "sha256": "3383c0986bacad73611b2c9a6968a05a672106c9380044dbb4ca4ae63ece3d16",
+    "zenodo_checksum": "md5:b30c88eec38fd1e2f44d2cc0c2edabdc"
+  },
+  {
+    "source": "https://zenodo.org/api/records/12735280/files/flake.nix/content",
+    "local": "flake.nix.txt",
+    "sha256": "4265ea00a1940242c85cc01d24382cc146ebc60bfab2100f976649f7fdaaab55",
+    "zenodo_checksum": "md5:c9d14a95cf6cd083f83411dadfc40eb6"
+  },
+  {
+    "source": "https://zenodo.org/api/records/12735280/files/Dockerfile/content",
+    "local": "Dockerfile.txt",
+    "sha256": "585390d834f833fa009f164ea13be077deba2456b2dbc85b9c165c52d98e16db",
+    "zenodo_checksum": "md5:e7de45762a4ec7035113f33bc39bc528"
+  },
+  {
+    "source": "https://zenodo.org/api/records/12735280/files/detector.py/content",
+    "local": "detector.py.txt",
+    "sha256": "c4530e74d33c5d64b32a68be613135c4e4b8be020bbe03448ce8cb5732019595",
+    "zenodo_checksum": "md5:846ad27321b7d6400265ab1821a21b0e"
+  },
+  {
+    "source": "https://zenodo.org/api/records/12735280/files/README.md/content",
+    "local": "README.md.txt",
+    "sha256": "791d2edb805d5780793a8ae88cd5f74e89434a1d92f985f27d9386edf79f8fb6",
+    "zenodo_checksum": "md5:653b99b86227d9f2625e64dd0a7b130d"
+  }
+]

@@ -1,0 +1,720 @@
+[data]
+status = "PASS"
+mode = "primary"
+index = 0
+primary_data = true
+
+    [data.cell]
+    fixture = "cisco"
+    include_seed_independent_controls = true
+    extra_rows = 0
+    index = 0
+    configuration = "k3"
+    control_cell_index = 0
+
+    [data.resources]
+    swap_max_bytes = 0
+    memory_peak_at_checkpoint_bytes = 343072768
+    cpu_usage_seconds = 16.965617
+    cpu_max = "200000 100000"
+    scope = "/user.slice/user-1000.slice/user@1000.service/app.slice/cos738-study-primary-0-1792999830908724892.scope"
+    memory_max_bytes = 2147483648
+
+    [[data.caches]]
+    unaugmented_entries = 20
+    sample_paths_per_query = 82
+    augmentation_allocated_bytes = 0
+    adjacent_hosts = false
+    cache_entries = 20
+    cache_build_seconds = 0.091120671
+    API_calls_are_not_raw_entropy_draw_counts = true
+    cache_sha256 = "6393f1e0f28cfa8c42078f5238452e43d41a11e5e30e19f4cd523525f3f83449"
+    hop_API_calls = 3280
+    rng_final_sha256 = "f06cc2b75d6f7b80966b58738f5b94ab3a60bf909fa47a68db74d3a58d136713"
+    integer_start_API_calls = 820
+    k = 3
+    sampler = "weighted"
+    cache_build_allocated_bytes = 23113832
+    augmentation_seconds = 2.0e-7
+    seed = 20261025
+
+        [data.caches.cache]
+        C1 = ["C9", "H2"]
+        C9 = ["C10", "C2"]
+        C7 = ["C10", "C9"]
+        C10 = ["C7", "C9"]
+        C8 = ["C7", "C9"]
+        C6 = ["C9", "H4"]
+        C3 = ["C9", "H8"]
+        C2 = ["C9", "H7"]
+        C4 = ["C5", "H11"]
+        C5 = ["C4", "H10"]
+
+        [data.caches.cooccurrence_counts]
+        C1 = [10, 4, 1, 0, 0, 0, 1, 2, 8, 3, 3, 8, 0, 0, 2, 1, 1, 0, 0, 0, 0, 0]
+        C9 = [6, 18, 6, 3, 0, 10, 14, 13, 37, 20, 3, 4, 4, 4, 3, 6, 2, 3, 0, 0, 0, 1]
+        C7 = [1, 4, 4, 3, 1, 1, 18, 8, 11, 11, 0, 2, 0, 1, 0, 1, 3, 0, 0, 1, 0, 1]
+        C10 = [3, 7, 11, 9, 1, 3, 13, 10, 18, 28, 0, 2, 2, 1, 0, 2, 2, 4, 0, 0, 1, 2]
+        C8 = [0, 2, 5, 1, 0, 3, 14, 17, 14, 11, 0, 1, 0, 2, 0, 0, 0, 2, 0, 0, 0, 0]
+        C6 = [0, 2, 2, 0, 0, 13, 0, 1, 8, 1, 0, 0, 5, 9, 1, 0, 2, 0, 0, 0, 0, 0]
+        C3 = [1, 5, 20, 1, 0, 2, 3, 3, 14, 10, 1, 1, 2, 0, 0, 3, 8, 10, 0, 0, 0, 1]
+        C2 = [3, 25, 7, 2, 0, 2, 1, 1, 14, 8, 1, 7, 1, 1, 6, 6, 8, 2, 0, 0, 0, 1]
+        C4 = [1, 0, 3, 25, 13, 0, 3, 2, 2, 9, 0, 0, 0, 0, 0, 0, 1, 0, 8, 7, 11, 10]
+        C5 = [0, 0, 1, 13, 20, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1, 11, 13, 3, 4]
+
+        [data.caches.cache_order_before_augmentation]
+        C1 = ["H2", "C9"]
+        C9 = ["C10", "C2"]
+        C7 = ["C10", "C9"]
+        C10 = ["C9", "C7"]
+        C8 = ["C9", "C7"]
+        C6 = ["H4", "C9"]
+        C3 = ["C9", "H8"]
+        C2 = ["C9", "H7"]
+        C4 = ["C5", "H11"]
+        C5 = ["H10", "C4"]
+    [[data.caches]]
+    unaugmented_entries = 20
+    sample_paths_per_query = 82
+    augmentation_allocated_bytes = 0
+    adjacent_hosts = false
+    cache_entries = 20
+    cache_build_seconds = 0.000611826
+    API_calls_are_not_raw_entropy_draw_counts = true
+    cache_sha256 = "fa873e558bdfe530398eb95faabeda48e0595ab65ed2e7b35927cd819ee9d6fa"
+    hop_API_calls = 3280
+    rng_final_sha256 = "91cc63110a7dd0b738a6c5a1c332eb91762af57d995c94a507e18a85e6b2ffef"
+    integer_start_API_calls = 820
+    k = 3
+    sampler = "weighted"
+    cache_build_allocated_bytes = 1260864
+    augmentation_seconds = 1.81e-7
+    seed = 20261026
+
+        [data.caches.cache]
+        C1 = ["C9", "H2"]
+        C9 = ["C10", "C3"]
+        C7 = ["C10", "C8"]
+        C10 = ["C7", "C9"]
+        C8 = ["C7", "C9"]
+        C6 = ["C9", "H4"]
+        C3 = ["C9", "H8"]
+        C2 = ["C9", "H7"]
+        C4 = ["C5", "H12"]
+        C5 = ["C4", "H10"]
+
+        [data.caches.cooccurrence_counts]
+        C1 = [17, 10, 0, 1, 0, 3, 1, 0, 13, 2, 8, 11, 1, 0, 0, 2, 0, 0, 0, 0, 0, 0]
+        C9 = [9, 8, 15, 3, 2, 10, 6, 9, 34, 15, 3, 4, 4, 4, 2, 1, 6, 6, 0, 2, 0, 0]
+        C7 = [0, 5, 1, 0, 0, 0, 11, 8, 3, 9, 0, 0, 0, 0, 1, 1, 0, 1, 0, 0, 0, 0]
+        C10 = [1, 5, 10, 10, 2, 0, 11, 7, 11, 25, 0, 1, 0, 0, 1, 1, 4, 4, 1, 0, 4, 6]
+        C8 = [0, 5, 2, 0, 0, 1, 11, 16, 12, 10, 0, 1, 0, 1, 0, 1, 0, 1, 0, 0, 0, 0]
+        C6 = [2, 2, 1, 0, 0, 13, 1, 2, 10, 3, 1, 0, 7, 8, 0, 0, 0, 0, 0, 0, 0, 0]
+        C3 = [2, 8, 24, 2, 0, 2, 4, 1, 17, 11, 2, 0, 0, 1, 1, 3, 8, 11, 0, 0, 1, 0]
+        C2 = [5, 21, 6, 2, 0, 3, 0, 1, 12, 9, 2, 5, 1, 1, 6, 3, 9, 3, 0, 0, 0, 2]
+        C4 = [0, 0, 2, 25, 17, 0, 4, 2, 1, 9, 0, 0, 0, 0, 0, 0, 0, 0, 8, 6, 8, 11]
+        C5 = [0, 1, 1, 11, 14, 0, 0, 0, 0, 5, 0, 0, 0, 0, 1, 0, 0, 1, 6, 8, 1, 3]
+
+        [data.caches.cache_order_before_augmentation]
+        C1 = ["C9", "H2"]
+        C9 = ["C10", "C3"]
+        C7 = ["C10", "C8"]
+        C10 = ["C9", "C7"]
+        C8 = ["C9", "C7"]
+        C6 = ["C9", "H4"]
+        C3 = ["C9", "H8"]
+        C2 = ["C9", "H7"]
+        C4 = ["C5", "H12"]
+        C5 = ["C4", "H10"]
+    [[data.caches]]
+    unaugmented_entries = 20
+    sample_paths_per_query = 82
+    augmentation_allocated_bytes = 0
+    adjacent_hosts = false
+    cache_entries = 20
+    cache_build_seconds = 0.000603449
+    API_calls_are_not_raw_entropy_draw_counts = true
+    cache_sha256 = "46c3adcaf38b31e874fd43d821b1fb0d5c81a72dae32950a87eb12f8b2d46bfe"
+    hop_API_calls = 3280
+    rng_final_sha256 = "9010096cc1c2476c38b0b5b7232bb207d327eaff19e451ab6996f09f0d40eeb9"
+    integer_start_API_calls = 820
+    k = 3
+    sampler = "weighted"
+    cache_build_allocated_bytes = 1262128
+    augmentation_seconds = 1.4e-7
+    seed = 20261027
+
+        [data.caches.cache]
+        C1 = ["C9", "H2"]
+        C9 = ["C10", "C2"]
+        C7 = ["C10", "C8"]
+        C10 = ["C4", "C9"]
+        C8 = ["C10", "C9"]
+        C6 = ["C9", "H3"]
+        C3 = ["C9", "H8"]
+        C2 = ["C10", "C9"]
+        C4 = ["C5", "H11"]
+        C5 = ["C4", "H10"]
+
+        [data.caches.cooccurrence_counts]
+        C1 = [14, 5, 3, 0, 0, 1, 2, 1, 10, 1, 7, 7, 0, 0, 0, 1, 1, 1, 0, 0, 0, 0]
+        C9 = [9, 11, 9, 3, 0, 3, 10, 10, 29, 15, 4, 7, 3, 2, 0, 2, 4, 2, 0, 0, 1, 1]
+        C7 = [3, 4, 5, 7, 1, 1, 20, 10, 9, 17, 1, 0, 0, 1, 3, 0, 3, 0, 0, 0, 1, 2]
+        C10 = [2, 8, 12, 13, 4, 1, 5, 8, 12, 26, 0, 0, 0, 0, 0, 3, 3, 5, 0, 1, 6, 2]
+        C8 = [1, 8, 5, 1, 0, 1, 9, 16, 9, 13, 0, 1, 0, 0, 2, 1, 1, 1, 0, 0, 0, 0]
+        C6 = [1, 2, 2, 0, 0, 13, 2, 2, 8, 2, 0, 1, 9, 7, 0, 0, 0, 0, 0, 0, 0, 0]
+        C3 = [1, 5, 17, 1, 0, 0, 5, 4, 10, 7, 0, 0, 0, 0, 0, 3, 7, 8, 0, 0, 0, 0]
+        C2 = [5, 23, 7, 1, 0, 3, 5, 3, 14, 11, 2, 5, 1, 0, 3, 4, 6, 0, 0, 0, 0, 1]
+        C4 = [0, 0, 5, 27, 15, 0, 1, 1, 4, 11, 0, 0, 0, 0, 0, 0, 2, 1, 4, 7, 14, 10]
+        C5 = [0, 2, 1, 15, 16, 0, 0, 0, 0, 6, 0, 0, 0, 0, 0, 0, 0, 0, 6, 6, 5, 3]
+
+        [data.caches.cache_order_before_augmentation]
+        C1 = ["C9", "H2"]
+        C9 = ["C10", "C2"]
+        C7 = ["C10", "C8"]
+        C10 = ["C4", "C9"]
+        C8 = ["C10", "C9"]
+        C6 = ["H3", "C9"]
+        C3 = ["C9", "H8"]
+        C2 = ["C9", "C10"]
+        C4 = ["C5", "H11"]
+        C5 = ["C4", "H10"]
+
+    [[data.rows]]
+    plan_status = "COMPLETE"
+    qualified = false
+    decision_allocated_bytes = 2960
+    decision_seconds = 2.8925e-5
+    extra_rows = 0
+    independent_verdict = "FAIL"
+    proof_reuse = "exact validated plan family with unchanged kernel/fixture"
+    seed_independent = true
+    plan_fingerprint = "128b0bb4d7323cee90d2d3dd1c52e9728a4ffb4d11aaf8dffb646eb1a21ee837"
+    method = "ordinary"
+    branch = "ordinary"
+
+        [data.rows.work]
+        history_peak = 0
+        guard_edges = 0
+        scheduler_reads = 0
+        history_rounds = 0
+        detector_pairs = 0
+        detector_searches = 0
+        guard_states = 0
+
+        [data.rows.control_costs]
+        peak_extra_rows = 0
+        tag_mutations = 0
+        old_closure_ack_round = 1
+        boundary0_pending_wait_bound = 2
+        row_removals = 2
+        new_opening_ack_round = 1
+        gate_mutations = 2
+        boundary0_request_delivery_bound = 6
+        switch_batches = 2
+        completion_round = 1
+        request_bounds_are_conservative_not_measured_latency = true
+        row_insertions = 2
+
+            [data.rows.control_costs.peak_rows]
+            C10 = 1
+            C2 = 1
+            C4 = 1
+            C5 = 1
+
+        [data.rows.independent_evidence]
+        probes = 1
+        joint_sanity_cases = 1
+        total_probe_domain = 83
+        verdict = "FAIL"
+        coverage_complete = false
+        peak_extra_rows = 0
+        witness = "(node = \"C10\", incoming = \"C2\", tag = 0, epoch = 0, age = 1, status = :live, arrival = -999, admitted = 0, ended = -999, sourceip = 0x0a000000, destip = 0x0a000000) => @NamedTuple{node::String, incoming::String, tag::Int64, epoch::Int64, age::Int64, status::Symbol, arrival::Int64, admitted::Int64, ended::Int64, sourceip::UInt32, destip::UInt32}[(node = \"H10\", incoming = \"C5\", tag = 0, epoch = 0, age = 4, status = :wrong_delivery, arrival = -999, admitted = 0, ended = 3, sourceip = 0x0a000000, destip = 0x0a000000)]"
+        completion_round = 1
+        old_drained_at_claimed_completion = false
+    [[data.rows]]
+    plan_status = "COMPLETE"
+    qualified = true
+    decision_allocated_bytes = 3152
+    decision_seconds = 7.123e-6
+    extra_rows = 0
+    independent_verdict = "PASS"
+    proof_reuse = "exact validated plan family with unchanged kernel/fixture"
+    seed_independent = true
+    plan_fingerprint = "216364782fedf40ce92d2cd98a4a8801bb9a730fc9864c97b4a4406eb4056b98"
+    method = "Q"
+    branch = "quiesce"
+
+        [data.rows.work]
+        history_peak = 0
+        guard_edges = 0
+        scheduler_reads = 0
+        history_rounds = 0
+        detector_pairs = 0
+        detector_searches = 0
+        guard_states = 0
+
+        [data.rows.control_costs]
+        peak_extra_rows = 0
+        tag_mutations = 0
+        old_closure_ack_round = 1
+        boundary0_pending_wait_bound = 8
+        row_removals = 2
+        new_opening_ack_round = 7
+        gate_mutations = 2
+        boundary0_request_delivery_bound = 12
+        switch_batches = 4
+        completion_round = 7
+        request_bounds_are_conservative_not_measured_latency = true
+        row_insertions = 2
+
+            [data.rows.control_costs.peak_rows]
+            C10 = 1
+            C2 = 1
+            C4 = 1
+            C5 = 1
+
+        [data.rows.independent_evidence]
+        probes = 83
+        joint_sanity_cases = 1
+        total_probe_domain = 83
+        verdict = "PASS"
+        coverage_complete = true
+        peak_extra_rows = 0
+        witness = ""
+        completion_round = 7
+        old_drained_at_claimed_completion = true
+    [[data.rows]]
+    plan_status = "RESOURCE_BLOCKED"
+    qualified = false
+    decision_allocated_bytes = 560
+    decision_seconds = 1.433e-6
+    extra_rows = 0
+    independent_verdict = "RESOURCE_BLOCKED"
+    proof_reuse = "exact validated plan family with unchanged kernel/fixture"
+    seed_independent = true
+    plan_fingerprint = "3d796e9eb79e68bff4ee7a3a795b7cff898d0266e87aa1787998a8825d8aa3d3"
+    method = "V"
+    branch = "versioned"
+
+        [data.rows.work]
+        history_peak = 0
+        guard_edges = 0
+        scheduler_reads = 0
+        history_rounds = 0
+        detector_pairs = 0
+        detector_searches = 0
+        guard_states = 0
+
+        [data.rows.control_costs]
+        peak_extra_rows = 0
+        tag_mutations = 0
+        old_closure_ack_round = 0
+        boundary0_pending_wait_bound = -1
+        row_removals = 0
+        new_opening_ack_round = 0
+        gate_mutations = 0
+        boundary0_request_delivery_bound = -1
+        switch_batches = 0
+        completion_round = 0
+        request_bounds_are_conservative_not_measured_latency = true
+        row_insertions = 0
+
+            [data.rows.control_costs.peak_rows]
+            C10 = 1
+            C2 = 1
+            C4 = 1
+            C5 = 1
+
+        [data.rows.independent_evidence]
+        probes = 0
+        peak_extra_rows = 0
+        verdict = "RESOURCE_BLOCKED"
+        coverage_complete = false
+    [[data.rows]]
+    plan_status = "COMPLETE"
+    qualified = true
+    decision_allocated_bytes = 14038816
+    decision_seconds = 0.240514471
+    extra_rows = 0
+    independent_verdict = "PASS"
+    proof_reuse = "exact validated plan family with unchanged kernel/fixture"
+    seed_independent = true
+    plan_fingerprint = "e43ea876e14b6920ef1b17cfe57c51ba4dec59e32c36a7289391d37e2bfbcdc8"
+    method = "CCG"
+    branch = "ccg_inspired_no_rollback"
+
+        [data.rows.work]
+        history_peak = 2
+        guard_edges = 0
+        scheduler_reads = 64
+        history_rounds = 10
+        detector_pairs = 0
+        detector_searches = 0
+        guard_states = 0
+
+        [data.rows.control_costs]
+        peak_extra_rows = 0
+        tag_mutations = 0
+        old_closure_ack_round = 1
+        boundary0_pending_wait_bound = 12
+        row_removals = 2
+        new_opening_ack_round = 11
+        gate_mutations = 2
+        boundary0_request_delivery_bound = 16
+        switch_batches = 4
+        completion_round = 11
+        request_bounds_are_conservative_not_measured_latency = true
+        row_insertions = 2
+
+            [data.rows.control_costs.peak_rows]
+            C10 = 1
+            C2 = 1
+            C4 = 1
+            C5 = 1
+
+        [data.rows.independent_evidence]
+        probes = 83
+        joint_sanity_cases = 1
+        total_probe_domain = 83
+        verdict = "PASS"
+        coverage_complete = true
+        peak_extra_rows = 0
+        witness = ""
+        completion_round = 11
+        old_drained_at_claimed_completion = true
+    [[data.rows]]
+    plan_status = "RESOURCE_BLOCKED"
+    qualified = false
+    decision_allocated_bytes = 20363280
+    decision_seconds = 0.409248234
+    extra_rows = 0
+    independent_verdict = "RESOURCE_BLOCKED"
+    proof_reuse = "exact validated plan family with unchanged kernel/fixture"
+    seed_independent = true
+    plan_fingerprint = "3d796e9eb79e68bff4ee7a3a795b7cff898d0266e87aa1787998a8825d8aa3d3"
+    method = "guard"
+    branch = "guard_rejected"
+
+        [data.rows.work]
+        history_peak = 0
+        guard_edges = 3
+        scheduler_reads = 0
+        history_rounds = 0
+        detector_pairs = 0
+        detector_searches = 0
+        guard_states = 3
+
+        [data.rows.control_costs]
+        peak_extra_rows = 0
+        tag_mutations = 0
+        old_closure_ack_round = 0
+        boundary0_pending_wait_bound = -1
+        row_removals = 0
+        new_opening_ack_round = 0
+        gate_mutations = 0
+        boundary0_request_delivery_bound = -1
+        switch_batches = 0
+        completion_round = 0
+        request_bounds_are_conservative_not_measured_latency = true
+        row_insertions = 0
+
+            [data.rows.control_costs.peak_rows]
+            C10 = 1
+            C2 = 1
+            C4 = 1
+            C5 = 1
+
+        [data.rows.independent_evidence]
+        probes = 0
+        peak_extra_rows = 0
+        verdict = "RESOURCE_BLOCKED"
+        coverage_complete = false
+    [[data.rows]]
+    plan_status = "RESOURCE_BLOCKED"
+    qualified = false
+    decision_allocated_bytes = 8279160
+    decision_seconds = 0.178275749
+    extra_rows = 0
+    independent_verdict = "RESOURCE_BLOCKED"
+    proof_reuse = "exact validated plan family with unchanged kernel/fixture"
+    seed_independent = false
+    plan_fingerprint = "3d796e9eb79e68bff4ee7a3a795b7cff898d0266e87aa1787998a8825d8aa3d3"
+    method = "detector"
+    branch = "snapshot_alert"
+    seed = 20261025
+
+        [data.rows.work]
+        history_peak = 0
+        guard_edges = 0
+        scheduler_reads = 0
+        history_rounds = 0
+        detector_pairs = 43
+        detector_searches = 170
+        guard_states = 0
+
+        [data.rows.control_costs]
+        peak_extra_rows = 0
+        tag_mutations = 0
+        old_closure_ack_round = 0
+        boundary0_pending_wait_bound = -1
+        row_removals = 0
+        new_opening_ack_round = 0
+        gate_mutations = 0
+        boundary0_request_delivery_bound = -1
+        switch_batches = 0
+        completion_round = 0
+        request_bounds_are_conservative_not_measured_latency = true
+        row_insertions = 0
+
+            [data.rows.control_costs.peak_rows]
+            C10 = 1
+            C2 = 1
+            C4 = 1
+            C5 = 1
+
+        [data.rows.independent_evidence]
+        probes = 0
+        peak_extra_rows = 0
+        verdict = "RESOURCE_BLOCKED"
+        coverage_complete = false
+    [[data.rows]]
+    plan_status = "RESOURCE_BLOCKED"
+    qualified = false
+    decision_allocated_bytes = 295376
+    decision_seconds = 0.000371322
+    extra_rows = 0
+    independent_verdict = "RESOURCE_BLOCKED"
+    proof_reuse = "exact validated plan family with unchanged kernel/fixture"
+    seed_independent = false
+    plan_fingerprint = "3d796e9eb79e68bff4ee7a3a795b7cff898d0266e87aa1787998a8825d8aa3d3"
+    method = "guarded_detector"
+    branch = "snapshot_alert"
+    seed = 20261025
+
+        [data.rows.work]
+        history_peak = 0
+        guard_edges = 0
+        scheduler_reads = 0
+        history_rounds = 0
+        detector_pairs = 43
+        detector_searches = 170
+        guard_states = 0
+
+        [data.rows.control_costs]
+        peak_extra_rows = 0
+        tag_mutations = 0
+        old_closure_ack_round = 0
+        boundary0_pending_wait_bound = -1
+        row_removals = 0
+        new_opening_ack_round = 0
+        gate_mutations = 0
+        boundary0_request_delivery_bound = -1
+        switch_batches = 0
+        completion_round = 0
+        request_bounds_are_conservative_not_measured_latency = true
+        row_insertions = 0
+
+            [data.rows.control_costs.peak_rows]
+            C10 = 1
+            C2 = 1
+            C4 = 1
+            C5 = 1
+
+        [data.rows.independent_evidence]
+        probes = 0
+        peak_extra_rows = 0
+        verdict = "RESOURCE_BLOCKED"
+        coverage_complete = false
+    [[data.rows]]
+    plan_status = "RESOURCE_BLOCKED"
+    qualified = false
+    decision_allocated_bytes = 274696
+    decision_seconds = 0.000204626
+    extra_rows = 0
+    independent_verdict = "RESOURCE_BLOCKED"
+    proof_reuse = "exact validated plan family with unchanged kernel/fixture"
+    seed_independent = false
+    plan_fingerprint = "3d796e9eb79e68bff4ee7a3a795b7cff898d0266e87aa1787998a8825d8aa3d3"
+    method = "detector"
+    branch = "snapshot_alert"
+    seed = 20261026
+
+        [data.rows.work]
+        history_peak = 0
+        guard_edges = 0
+        scheduler_reads = 0
+        history_rounds = 0
+        detector_pairs = 43
+        detector_searches = 170
+        guard_states = 0
+
+        [data.rows.control_costs]
+        peak_extra_rows = 0
+        tag_mutations = 0
+        old_closure_ack_round = 0
+        boundary0_pending_wait_bound = -1
+        row_removals = 0
+        new_opening_ack_round = 0
+        gate_mutations = 0
+        boundary0_request_delivery_bound = -1
+        switch_batches = 0
+        completion_round = 0
+        request_bounds_are_conservative_not_measured_latency = true
+        row_insertions = 0
+
+            [data.rows.control_costs.peak_rows]
+            C10 = 1
+            C2 = 1
+            C4 = 1
+            C5 = 1
+
+        [data.rows.independent_evidence]
+        probes = 0
+        peak_extra_rows = 0
+        verdict = "RESOURCE_BLOCKED"
+        coverage_complete = false
+    [[data.rows]]
+    plan_status = "RESOURCE_BLOCKED"
+    qualified = false
+    decision_allocated_bytes = 295376
+    decision_seconds = 0.000218012
+    extra_rows = 0
+    independent_verdict = "RESOURCE_BLOCKED"
+    proof_reuse = "exact validated plan family with unchanged kernel/fixture"
+    seed_independent = false
+    plan_fingerprint = "3d796e9eb79e68bff4ee7a3a795b7cff898d0266e87aa1787998a8825d8aa3d3"
+    method = "guarded_detector"
+    branch = "snapshot_alert"
+    seed = 20261026
+
+        [data.rows.work]
+        history_peak = 0
+        guard_edges = 0
+        scheduler_reads = 0
+        history_rounds = 0
+        detector_pairs = 43
+        detector_searches = 170
+        guard_states = 0
+
+        [data.rows.control_costs]
+        peak_extra_rows = 0
+        tag_mutations = 0
+        old_closure_ack_round = 0
+        boundary0_pending_wait_bound = -1
+        row_removals = 0
+        new_opening_ack_round = 0
+        gate_mutations = 0
+        boundary0_request_delivery_bound = -1
+        switch_batches = 0
+        completion_round = 0
+        request_bounds_are_conservative_not_measured_latency = true
+        row_insertions = 0
+
+            [data.rows.control_costs.peak_rows]
+            C10 = 1
+            C2 = 1
+            C4 = 1
+            C5 = 1
+
+        [data.rows.independent_evidence]
+        probes = 0
+        peak_extra_rows = 0
+        verdict = "RESOURCE_BLOCKED"
+        coverage_complete = false
+    [[data.rows]]
+    plan_status = "RESOURCE_BLOCKED"
+    qualified = false
+    decision_allocated_bytes = 200672
+    decision_seconds = 0.000181643
+    extra_rows = 0
+    independent_verdict = "RESOURCE_BLOCKED"
+    proof_reuse = "exact validated plan family with unchanged kernel/fixture"
+    seed_independent = false
+    plan_fingerprint = "3d796e9eb79e68bff4ee7a3a795b7cff898d0266e87aa1787998a8825d8aa3d3"
+    method = "detector"
+    branch = "snapshot_alert"
+    seed = 20261027
+
+        [data.rows.work]
+        history_peak = 0
+        guard_edges = 0
+        scheduler_reads = 0
+        history_rounds = 0
+        detector_pairs = 22
+        detector_searches = 88
+        guard_states = 0
+
+        [data.rows.control_costs]
+        peak_extra_rows = 0
+        tag_mutations = 0
+        old_closure_ack_round = 0
+        boundary0_pending_wait_bound = -1
+        row_removals = 0
+        new_opening_ack_round = 0
+        gate_mutations = 0
+        boundary0_request_delivery_bound = -1
+        switch_batches = 0
+        completion_round = 0
+        request_bounds_are_conservative_not_measured_latency = true
+        row_insertions = 0
+
+            [data.rows.control_costs.peak_rows]
+            C10 = 1
+            C2 = 1
+            C4 = 1
+            C5 = 1
+
+        [data.rows.independent_evidence]
+        probes = 0
+        peak_extra_rows = 0
+        verdict = "RESOURCE_BLOCKED"
+        coverage_complete = false
+    [[data.rows]]
+    plan_status = "RESOURCE_BLOCKED"
+    qualified = false
+    decision_allocated_bytes = 179992
+    decision_seconds = 0.000171895
+    extra_rows = 0
+    independent_verdict = "RESOURCE_BLOCKED"
+    proof_reuse = "exact validated plan family with unchanged kernel/fixture"
+    seed_independent = false
+    plan_fingerprint = "3d796e9eb79e68bff4ee7a3a795b7cff898d0266e87aa1787998a8825d8aa3d3"
+    method = "guarded_detector"
+    branch = "snapshot_alert"
+    seed = 20261027
+
+        [data.rows.work]
+        history_peak = 0
+        guard_edges = 0
+        scheduler_reads = 0
+        history_rounds = 0
+        detector_pairs = 22
+        detector_searches = 88
+        guard_states = 0
+
+        [data.rows.control_costs]
+        peak_extra_rows = 0
+        tag_mutations = 0
+        old_closure_ack_round = 0
+        boundary0_pending_wait_bound = -1
+        row_removals = 0
+        new_opening_ack_round = 0
+        gate_mutations = 0
+        boundary0_request_delivery_bound = -1
+        switch_batches = 0
+        completion_round = 0
+        request_bounds_are_conservative_not_measured_latency = true
+        row_insertions = 0
+
+            [data.rows.control_costs.peak_rows]
+            C10 = 1
+            C2 = 1
+            C4 = 1
+            C5 = 1
+
+        [data.rows.independent_evidence]
+        probes = 0
+        peak_extra_rows = 0
+        verdict = "RESOURCE_BLOCKED"
+        coverage_complete = false

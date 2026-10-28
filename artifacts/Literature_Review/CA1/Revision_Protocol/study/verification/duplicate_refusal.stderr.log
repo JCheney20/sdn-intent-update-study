@@ -1,0 +1,2 @@
+mkdir: cannot create directory ‘attempts/primary-0’: File exists
+Primary cell already attempted; no automatic retry.

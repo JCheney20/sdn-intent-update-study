@@ -1,0 +1,872 @@
+[data]
+status = "PASS"
+mode = "primary"
+index = 9
+primary_data = true
+
+    [data.cell]
+    fixture = "fat4"
+    include_seed_independent_controls = true
+    extra_rows = 1
+    index = 9
+    configuration = "k3"
+    control_cell_index = 9
+
+    [data.resources]
+    swap_max_bytes = 0
+    memory_peak_at_checkpoint_bytes = 345444352
+    cpu_usage_seconds = 16.802393
+    cpu_max = "200000 100000"
+    scope = "/user.slice/user-1000.slice/user@1000.service/app.slice/cos738-study-primary-9-1792999982069296381.scope"
+    memory_max_bytes = 2147483648
+
+    [[data.caches]]
+    unaugmented_entries = 40
+    sample_paths_per_query = 141
+    augmentation_allocated_bytes = 0
+    adjacent_hosts = false
+    cache_entries = 40
+    cache_build_seconds = 0.09276362
+    API_calls_are_not_raw_entropy_draw_counts = true
+    cache_sha256 = "dfe682123c83442fa6f3a9e179af54e9c61528d7e5d86c714b22fbf84aca8815"
+    hop_API_calls = 11280
+    rng_final_sha256 = "cd933137fd1660cea7d46f5bd7d4bfdcd5cc6c7fae1dc8b0de1bb41113a83c00"
+    integer_start_API_calls = 2820
+    k = 3
+    sampler = "weighted"
+    cache_build_allocated_bytes = 27446776
+    augmentation_seconds = 3.71e-7
+    seed = 20261025
+
+        [data.caches.cache]
+        C0 = ["A1-0", "A2-0"]
+        A1-1 = ["C3", "E1-0"]
+        E1-0 = ["H1-0-0", "H1-0-1"]
+        A2-0 = ["E2-0", "E2-1"]
+        C2 = ["A2-1", "C3"]
+        E1-1 = ["A1-1", "H1-1-1"]
+        E3-1 = ["H3-1-0", "H3-1-1"]
+        A0-0 = ["E0-0", "E0-1"]
+        E2-1 = ["H2-1-0", "H2-1-1"]
+        A3-0 = ["C0", "E3-0"]
+        C1 = ["A2-0", "A3-0"]
+        A2-1 = ["E2-0", "E2-1"]
+        A1-0 = ["C0", "C1"]
+        E3-0 = ["A3-1", "H3-0-0"]
+        E0-1 = ["H0-1-0", "H0-1-1"]
+        A0-1 = ["C3", "E0-1"]
+        C3 = ["A1-1", "A3-1"]
+        E2-0 = ["H2-0-0", "H2-0-1"]
+        A3-1 = ["C3", "E3-1"]
+        E0-0 = ["A0-0", "H0-0-0"]
+
+        [data.caches.cooccurrence_counts]
+        C0 = [20, 6, 0, 0, 8, 0, 0, 0, 0, 1, 1, 0, 9, 1, 2, 1, 0, 2, 0, 0, 9, 0, 1, 0, 1, 4, 0, 3, 5, 0, 3, 1, 0, 2, 0, 1]
+        A1-1 = [1, 0, 8, 13, 1, 3, 0, 0, 0, 0, 0, 0, 3, 27, 15, 7, 5, 11, 2, 5, 1, 7, 3, 0, 0, 0, 0, 0, 0, 3, 1, 0, 1, 0, 0, 0]
+        E1-0 = [1, 1, 1, 2, 0, 0, 0, 0, 0, 0, 0, 0, 7, 8, 17, 11, 8, 4, 4, 0, 1, 0, 0, 0, 0, 1, 0, 0, 1, 1, 0, 0, 0, 0, 0, 0]
+        A2-0 = [9, 8, 0, 0, 6, 0, 1, 0, 1, 3, 1, 0, 5, 0, 0, 0, 0, 2, 0, 0, 29, 5, 12, 6, 7, 12, 7, 2, 2, 0, 0, 0, 0, 0, 0, 0]
+        C2 = [0, 0, 17, 9, 0, 2, 0, 0, 0, 0, 0, 0, 0, 7, 1, 0, 0, 1, 0, 0, 1, 14, 3, 0, 1, 4, 0, 1, 0, 8, 0, 0, 0, 4, 0, 1]
+        E1-1 = [1, 1, 2, 2, 0, 1, 0, 0, 0, 1, 0, 0, 8, 13, 5, 0, 1, 20, 8, 8, 0, 1, 0, 0, 0, 0, 0, 0, 1, 2, 0, 0, 0, 1, 0, 0]
+        C1 = [5, 20, 0, 0, 6, 0, 1, 1, 0, 1, 0, 0, 8, 0, 2, 0, 1, 1, 0, 1, 12, 0, 3, 0, 1, 1, 0, 0, 11, 1, 3, 0, 0, 3, 2, 1]
+        A2-1 = [1, 0, 8, 10, 0, 5, 2, 1, 0, 0, 0, 0, 0, 4, 0, 0, 0, 0, 0, 0, 3, 26, 11, 2, 4, 11, 7, 3, 1, 4, 0, 0, 0, 0, 0, 0]
+        A0-1 = [1, 0, 7, 9, 2, 18, 5, 3, 3, 9, 6, 0, 0, 6, 1, 0, 0, 0, 0, 0, 1, 3, 1, 0, 0, 0, 0, 0, 0, 2, 0, 0, 0, 0, 0, 0]
+        C3 = [1, 0, 7, 20, 0, 5, 2, 0, 0, 1, 0, 1, 0, 14, 3, 0, 0, 1, 0, 0, 1, 7, 2, 0, 0, 2, 0, 1, 0, 10, 2, 0, 0, 1, 0, 0]
+        E2-0 = [2, 3, 3, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 8, 8, 18, 10, 10, 4, 1, 2, 3, 0, 0, 0, 0, 0, 0, 0]
+        E3-1 = [3, 2, 0, 1, 1, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 9, 8, 6, 0, 2, 21, 11, 11]
+        A0-0 = [8, 6, 1, 1, 25, 7, 11, 3, 3, 13, 5, 5, 1, 1, 0, 0, 0, 1, 0, 0, 3, 1, 2, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 1, 0]
+        E2-1 = [0, 2, 2, 1, 0, 3, 0, 0, 0, 1, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 5, 6, 3, 1, 0, 16, 7, 8, 0, 0, 0, 0, 0, 0, 0, 0]
+        A3-0 = [8, 7, 0, 0, 6, 0, 1, 0, 0, 1, 0, 0, 3, 0, 0, 0, 0, 0, 0, 0, 3, 0, 0, 0, 0, 0, 0, 0, 19, 3, 9, 3, 2, 7, 1, 4]
+        A1-0 = [9, 11, 0, 0, 3, 1, 1, 0, 0, 2, 0, 1, 22, 3, 8, 3, 3, 6, 0, 2, 5, 0, 0, 0, 0, 0, 0, 0, 6, 0, 0, 0, 0, 3, 1, 1]
+        E3-0 = [0, 2, 2, 3, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 7, 13, 19, 12, 6, 4, 1, 0]
+        E0-1 = [1, 3, 1, 1, 6, 3, 3, 0, 1, 14, 7, 8, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 2, 1, 0, 0, 0, 1, 0, 0]
+        A3-1 = [0, 1, 1, 10, 0, 2, 1, 0, 0, 0, 0, 0, 0, 5, 1, 1, 0, 2, 0, 1, 0, 2, 0, 0, 0, 1, 0, 1, 4, 22, 7, 2, 2, 13, 6, 5]
+        E0-0 = [0, 2, 0, 1, 11, 7, 19, 10, 8, 8, 2, 2, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0]
+
+        [data.caches.cache_order_before_augmentation]
+        C0 = ["A2-0", "A1-0"]
+        A1-1 = ["E1-0", "C3"]
+        E1-0 = ["H1-0-0", "H1-0-1"]
+        A2-0 = ["E2-1", "E2-0"]
+        C2 = ["A2-1", "C3"]
+        E1-1 = ["A1-1", "H1-1-1"]
+        C1 = ["A2-0", "A3-0"]
+        A2-1 = ["E2-1", "E2-0"]
+        A0-1 = ["E0-1", "C3"]
+        C3 = ["A1-1", "A3-1"]
+        E2-0 = ["H2-0-1", "H2-0-0"]
+        E3-1 = ["H3-1-1", "H3-1-0"]
+        A0-0 = ["E0-1", "E0-0"]
+        E2-1 = ["H2-1-1", "H2-1-0"]
+        A3-0 = ["E3-0", "C0"]
+        A1-0 = ["C1", "C0"]
+        E3-0 = ["A3-1", "H3-0-0"]
+        E0-1 = ["H0-1-1", "H0-1-0"]
+        A3-1 = ["E3-1", "C3"]
+        E0-0 = ["A0-0", "H0-0-0"]
+    [[data.caches]]
+    unaugmented_entries = 40
+    sample_paths_per_query = 141
+    augmentation_allocated_bytes = 0
+    adjacent_hosts = false
+    cache_entries = 40
+    cache_build_seconds = 0.001760783
+    API_calls_are_not_raw_entropy_draw_counts = true
+    cache_sha256 = "c932d45baff4009383cbf1fe4ae2dc3a6cd0735da9142bc69a61883fd3046307"
+    hop_API_calls = 11280
+    rng_final_sha256 = "e82cd7b20181a242e9d44e234f486b93082b5f6859c7e3b44db2f7308231a626"
+    integer_start_API_calls = 2820
+    k = 3
+    sampler = "weighted"
+    cache_build_allocated_bytes = 5586368
+    augmentation_seconds = 1.61e-7
+    seed = 20261026
+
+        [data.caches.cache]
+        C0 = ["A2-0", "A3-0"]
+        A1-1 = ["C2", "C3"]
+        E1-0 = ["H1-0-0", "H1-0-1"]
+        A2-0 = ["C1", "E2-0"]
+        C2 = ["A0-1", "A3-1"]
+        E1-1 = ["A1-0", "H1-1-0"]
+        E3-1 = ["A3-0", "A3-1"]
+        A0-0 = ["A1-0", "C0"]
+        E2-1 = ["A2-0", "H2-1-1"]
+        A3-0 = ["C1", "E3-0"]
+        C1 = ["A0-0", "A3-0"]
+        A2-1 = ["C3", "E2-0"]
+        A1-0 = ["E1-0", "E1-1"]
+        E3-0 = ["A3-1", "H3-0-0"]
+        E0-1 = ["A0-1", "H0-1-0"]
+        A0-1 = ["E0-0", "E0-1"]
+        C3 = ["A0-1", "A3-1"]
+        E2-0 = ["A2-1", "H2-0-0"]
+        A3-1 = ["E3-0", "E3-1"]
+        E0-0 = ["A0-0", "H0-0-0"]
+
+        [data.caches.cooccurrence_counts]
+        C0 = [21, 6, 1, 0, 9, 0, 1, 1, 0, 1, 0, 0, 8, 0, 1, 0, 0, 0, 0, 0, 9, 1, 4, 1, 1, 2, 0, 1, 11, 1, 4, 1, 0, 2, 0, 2]
+        A1-1 = [0, 0, 9, 12, 0, 7, 1, 1, 0, 2, 1, 0, 2, 19, 8, 1, 1, 6, 2, 2, 0, 2, 0, 0, 0, 0, 0, 0, 0, 5, 1, 0, 0, 0, 0, 0]
+        E1-0 = [1, 1, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 8, 6, 20, 12, 11, 6, 1, 1, 0, 1, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+        A2-0 = [11, 11, 0, 1, 4, 1, 1, 0, 0, 0, 0, 0, 7, 0, 2, 1, 0, 1, 0, 0, 28, 6, 11, 3, 3, 10, 3, 5, 3, 0, 0, 0, 0, 1, 1, 0]
+        C2 = [1, 0, 17, 7, 0, 9, 2, 0, 0, 1, 0, 1, 0, 7, 3, 0, 1, 0, 0, 0, 1, 7, 3, 0, 1, 3, 1, 0, 1, 8, 2, 0, 0, 2, 0, 0]
+        E1-1 = [0, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 8, 6, 5, 1, 4, 18, 12, 7, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+        C1 = [1, 14, 0, 0, 10, 2, 3, 0, 0, 4, 2, 1, 3, 0, 2, 0, 2, 1, 0, 0, 4, 0, 1, 0, 1, 0, 0, 0, 7, 0, 1, 0, 0, 3, 1, 0]
+        A2-1 = [2, 0, 6, 12, 0, 4, 0, 0, 0, 2, 0, 1, 0, 2, 0, 0, 0, 1, 0, 1, 4, 25, 12, 6, 7, 7, 1, 3, 0, 7, 1, 0, 0, 0, 0, 0]
+        A0-1 = [0, 1, 5, 6, 4, 21, 9, 3, 4, 13, 5, 6, 0, 2, 0, 0, 0, 0, 0, 0, 0, 2, 2, 0, 0, 0, 0, 0, 1, 3, 1, 0, 0, 2, 0, 1]
+        C3 = [0, 0, 6, 20, 0, 12, 3, 2, 1, 2, 1, 0, 1, 9, 4, 1, 1, 0, 0, 0, 0, 8, 2, 0, 1, 1, 1, 0, 0, 9, 1, 1, 0, 1, 1, 0]
+        E2-0 = [2, 3, 2, 3, 0, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 7, 10, 15, 7, 4, 3, 0, 1, 2, 1, 0, 0, 0, 0, 0, 0]
+        E3-1 = [2, 2, 4, 0, 1, 0, 1, 0, 0, 0, 0, 0, 2, 2, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 0, 8, 8, 3, 0, 1, 14, 5, 5]
+        A0-0 = [14, 8, 1, 0, 19, 3, 5, 2, 1, 3, 1, 2, 9, 1, 0, 0, 0, 5, 0, 1, 2, 0, 0, 0, 0, 0, 0, 0, 5, 0, 0, 0, 0, 0, 0, 0]
+        E2-1 = [1, 4, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 7, 2, 2, 0, 0, 10, 5, 5, 1, 0, 0, 0, 0, 0, 0, 0]
+        A3-0 = [9, 10, 2, 0, 5, 0, 0, 0, 0, 1, 0, 1, 5, 0, 0, 0, 0, 1, 0, 0, 5, 0, 1, 0, 0, 0, 0, 0, 23, 7, 10, 3, 4, 7, 0, 2]
+        A1-0 = [5, 5, 1, 2, 4, 0, 0, 0, 0, 1, 0, 0, 22, 8, 17, 5, 2, 9, 3, 1, 5, 0, 2, 1, 0, 1, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0]
+        E3-0 = [2, 3, 1, 2, 1, 0, 1, 0, 0, 0, 0, 0, 1, 1, 1, 0, 0, 0, 0, 0, 1, 1, 0, 0, 0, 1, 0, 0, 6, 8, 15, 8, 4, 3, 1, 1]
+        E0-1 = [2, 1, 4, 5, 8, 14, 2, 1, 1, 19, 8, 5, 1, 0, 0, 0, 0, 0, 0, 0, 0, 4, 0, 0, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 0, 0]
+        A3-1 = [0, 2, 3, 2, 0, 1, 0, 0, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 0, 0, 0, 2, 0, 0, 0, 0, 0, 0, 6, 19, 14, 7, 3, 9, 3, 3]
+        E0-0 = [2, 2, 3, 0, 8, 6, 14, 7, 5, 2, 1, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0]
+
+        [data.caches.cache_order_before_augmentation]
+        C0 = ["A3-0", "A2-0"]
+        A1-1 = ["C3", "C2"]
+        E1-0 = ["H1-0-0", "H1-0-1"]
+        A2-0 = ["E2-0", "C1"]
+        C2 = ["A0-1", "A3-1"]
+        E1-1 = ["H1-1-0", "A1-0"]
+        C1 = ["A0-0", "A3-0"]
+        A2-1 = ["E2-0", "C3"]
+        A0-1 = ["E0-1", "E0-0"]
+        C3 = ["A0-1", "A3-1"]
+        E2-0 = ["A2-1", "H2-0-0"]
+        E3-1 = ["A3-1", "A3-0"]
+        A0-0 = ["C0", "A1-0"]
+        E2-1 = ["A2-0", "H2-1-1"]
+        A3-0 = ["E3-0", "C1"]
+        A1-0 = ["E1-0", "E1-1"]
+        E3-0 = ["H3-0-0", "A3-1"]
+        E0-1 = ["A0-1", "H0-1-0"]
+        A3-1 = ["E3-0", "E3-1"]
+        E0-0 = ["A0-0", "H0-0-0"]
+    [[data.caches]]
+    unaugmented_entries = 40
+    sample_paths_per_query = 141
+    augmentation_allocated_bytes = 0
+    adjacent_hosts = false
+    cache_entries = 40
+    cache_build_seconds = 0.004203451
+    API_calls_are_not_raw_entropy_draw_counts = true
+    cache_sha256 = "baa652cc4091efac9bb473f6f679714570bc181a3abb46fa10f8f2f25c3cfcb5"
+    hop_API_calls = 11280
+    rng_final_sha256 = "894f756021e8461088b0dfad5ceea67e6add80584b45f5c53ea559c892331277"
+    integer_start_API_calls = 2820
+    k = 3
+    sampler = "weighted"
+    cache_build_allocated_bytes = 5600736
+    augmentation_seconds = 1.6e-7
+    seed = 20261027
+
+        [data.caches.cache]
+        C0 = ["A2-0", "A3-0"]
+        A1-1 = ["C2", "E1-0"]
+        E1-0 = ["A1-1", "H1-0-0"]
+        A2-0 = ["C0", "E2-1"]
+        C2 = ["A0-1", "A1-1"]
+        E1-1 = ["A1-0", "H1-1-1"]
+        E3-1 = ["H3-1-0", "H3-1-1"]
+        A0-0 = ["E0-0", "E0-1"]
+        E2-1 = ["A2-0", "H2-1-1"]
+        A3-0 = ["E3-0", "E3-1"]
+        C1 = ["A0-0", "A3-0"]
+        A2-1 = ["C3", "E2-0"]
+        A1-0 = ["C1", "E1-0"]
+        E3-0 = ["H3-0-0", "H3-0-1"]
+        E0-1 = ["A0-0", "A0-1"]
+        A0-1 = ["C2", "E0-1"]
+        C3 = ["A1-1", "A2-1"]
+        E2-0 = ["A2-0", "H2-0-0"]
+        A3-1 = ["E3-0", "E3-1"]
+        E0-0 = ["A0-0", "H0-0-0"]
+
+        [data.caches.cooccurrence_counts]
+        C0 = [17, 5, 0, 0, 6, 0, 1, 1, 0, 2, 0, 0, 6, 0, 1, 0, 0, 3, 1, 0, 9, 0, 2, 0, 0, 2, 0, 0, 8, 1, 2, 0, 0, 2, 0, 0]
+        A1-1 = [1, 0, 8, 7, 0, 3, 0, 0, 0, 0, 0, 0, 4, 16, 8, 3, 2, 6, 2, 1, 0, 3, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0]
+        E1-0 = [1, 3, 5, 4, 1, 1, 0, 0, 0, 0, 0, 0, 10, 16, 23, 11, 7, 5, 0, 2, 0, 1, 0, 0, 0, 0, 0, 0, 1, 2, 1, 0, 0, 0, 0, 0]
+        A2-0 = [10, 6, 1, 1, 5, 0, 0, 0, 0, 2, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 24, 7, 9, 3, 0, 14, 5, 2, 4, 0, 1, 0, 0, 2, 0, 0]
+        C2 = [1, 0, 20, 8, 1, 10, 1, 0, 1, 3, 1, 0, 1, 10, 3, 0, 1, 3, 1, 0, 0, 8, 1, 0, 0, 0, 0, 0, 3, 7, 4, 0, 0, 2, 0, 0]
+        E1-1 = [3, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 11, 4, 6, 4, 0, 16, 5, 9, 1, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0]
+        C1 = [6, 14, 0, 0, 6, 0, 1, 0, 0, 3, 0, 1, 4, 0, 2, 0, 1, 0, 0, 0, 5, 0, 0, 0, 0, 0, 0, 0, 8, 1, 1, 0, 0, 4, 0, 0]
+        A2-1 = [2, 0, 6, 9, 0, 3, 0, 0, 0, 1, 0, 0, 1, 4, 0, 0, 0, 2, 0, 0, 5, 23, 11, 5, 2, 8, 0, 5, 0, 2, 1, 0, 1, 1, 0, 0]
+        A0-1 = [0, 0, 14, 11, 1, 30, 10, 3, 2, 17, 7, 8, 0, 3, 1, 0, 0, 0, 0, 0, 0, 4, 0, 0, 0, 2, 0, 2, 1, 5, 2, 0, 0, 3, 1, 0]
+        C3 = [0, 0, 6, 22, 1, 11, 5, 1, 0, 3, 0, 0, 0, 11, 2, 0, 1, 3, 0, 2, 0, 12, 3, 1, 0, 3, 0, 0, 0, 5, 3, 1, 1, 0, 0, 0]
+        E2-0 = [2, 1, 5, 1, 0, 2, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 9, 7, 17, 7, 6, 5, 2, 1, 1, 0, 0, 0, 0, 0, 0, 0]
+        E3-1 = [2, 3, 2, 2, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 8, 9, 4, 0, 0, 21, 14, 12]
+        A0-0 = [10, 12, 0, 0, 29, 0, 15, 5, 6, 12, 2, 5, 6, 0, 1, 0, 0, 2, 0, 1, 5, 0, 1, 0, 0, 1, 0, 0, 2, 0, 0, 0, 0, 0, 0, 0]
+        E2-1 = [4, 3, 1, 3, 1, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 12, 8, 4, 1, 0, 21, 8, 9, 1, 1, 0, 0, 0, 1, 0, 0]
+        A3-0 = [7, 7, 0, 1, 4, 0, 2, 0, 1, 1, 0, 1, 2, 0, 0, 0, 0, 0, 0, 0, 2, 1, 0, 0, 0, 2, 0, 0, 20, 4, 7, 1, 2, 9, 3, 3]
+        A1-0 = [11, 14, 1, 0, 5, 0, 0, 0, 0, 0, 0, 0, 24, 3, 12, 5, 5, 5, 0, 1, 6, 0, 0, 0, 0, 0, 0, 0, 6, 0, 1, 0, 0, 1, 0, 0]
+        E3-0 = [2, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 10, 6, 21, 10, 13, 5, 1, 2]
+        E0-1 = [3, 0, 1, 4, 8, 8, 5, 3, 0, 15, 4, 5, 1, 1, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 2, 0, 0, 0, 0, 0, 0]
+        A3-1 = [2, 1, 5, 5, 1, 1, 1, 0, 0, 0, 0, 0, 0, 4, 1, 1, 0, 1, 0, 0, 1, 1, 1, 1, 0, 0, 0, 0, 5, 14, 5, 1, 1, 6, 1, 0]
+        E0-0 = [1, 2, 1, 3, 10, 9, 20, 9, 7, 5, 3, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0]
+
+        [data.caches.cache_order_before_augmentation]
+        C0 = ["A2-0", "A3-0"]
+        A1-1 = ["E1-0", "C2"]
+        E1-0 = ["A1-1", "H1-0-0"]
+        A2-0 = ["E2-1", "C0"]
+        C2 = ["A1-1", "A0-1"]
+        E1-1 = ["A1-0", "H1-1-1"]
+        C1 = ["A3-0", "A0-0"]
+        A2-1 = ["E2-0", "C3"]
+        A0-1 = ["E0-1", "C2"]
+        C3 = ["A2-1", "A1-1"]
+        E2-0 = ["A2-0", "H2-0-0"]
+        E3-1 = ["H3-1-0", "H3-1-1"]
+        A0-0 = ["E0-0", "E0-1"]
+        E2-1 = ["A2-0", "H2-1-1"]
+        A3-0 = ["E3-1", "E3-0"]
+        A1-0 = ["C1", "E1-0"]
+        E3-0 = ["H3-0-1", "H3-0-0"]
+        E0-1 = ["A0-1", "A0-0"]
+        A3-1 = ["E3-1", "E3-0"]
+        E0-0 = ["A0-0", "H0-0-0"]
+
+    [[data.rows]]
+    plan_status = "COMPLETE"
+    qualified = false
+    decision_allocated_bytes = 4320
+    decision_seconds = 2.6169e-5
+    extra_rows = 1
+    independent_verdict = "FAIL"
+    proof_reuse = "exact validated plan family with unchanged kernel/fixture"
+    seed_independent = true
+    plan_fingerprint = "1a01d20480ff737f8e223b32ab905007bad000a2a518123c5b384487e7f54e7b"
+    method = "ordinary"
+    branch = "ordinary"
+
+        [data.rows.work]
+        history_peak = 0
+        guard_edges = 0
+        scheduler_reads = 0
+        history_rounds = 0
+        detector_pairs = 0
+        detector_searches = 0
+        guard_states = 0
+
+        [data.rows.control_costs]
+        peak_extra_rows = 0
+        tag_mutations = 0
+        old_closure_ack_round = 1
+        boundary0_pending_wait_bound = 2
+        row_removals = 3
+        new_opening_ack_round = 1
+        gate_mutations = 2
+        boundary0_request_delivery_bound = 7
+        switch_batches = 4
+        completion_round = 1
+        request_bounds_are_conservative_not_measured_latency = true
+        row_insertions = 3
+
+            [data.rows.control_costs.peak_rows]
+            C0 = 1
+            E0-0 = 1
+            A0-0 = 1
+            E3-1 = 1
+            A3-0 = 1
+            E3-0 = 1
+
+        [data.rows.independent_evidence]
+        probes = 1
+        joint_sanity_cases = 1
+        total_probe_domain = 135
+        verdict = "FAIL"
+        coverage_complete = false
+        peak_extra_rows = 0
+        witness = "(node = \"A0-0\", incoming = \"E0-0\", tag = 0, epoch = 0, age = 1, status = :live, arrival = -999, admitted = 0, ended = -999, sourceip = 0x0a000000, destip = 0x0a000000) => @NamedTuple{node::String, incoming::String, tag::Int64, epoch::Int64, age::Int64, status::Symbol, arrival::Int64, admitted::Int64, ended::Int64, sourceip::UInt32, destip::UInt32}[(node = \"H3-0-0\", incoming = \"E3-0\", tag = 0, epoch = 0, age = 5, status = :wrong_delivery, arrival = -999, admitted = 0, ended = 4, sourceip = 0x0a000000, destip = 0x0a000000)]"
+        completion_round = 1
+        old_drained_at_claimed_completion = false
+    [[data.rows]]
+    plan_status = "COMPLETE"
+    qualified = true
+    decision_allocated_bytes = 4512
+    decision_seconds = 7.274e-6
+    extra_rows = 1
+    independent_verdict = "PASS"
+    proof_reuse = "exact validated plan family with unchanged kernel/fixture"
+    seed_independent = true
+    plan_fingerprint = "7f2577f1ac8f0620dbf495bdb1d1a888e0cb99f5e8e40d3d9a78e80b173913ad"
+    method = "Q"
+    branch = "quiesce"
+
+        [data.rows.work]
+        history_peak = 0
+        guard_edges = 0
+        scheduler_reads = 0
+        history_rounds = 0
+        detector_pairs = 0
+        detector_searches = 0
+        guard_states = 0
+
+        [data.rows.control_costs]
+        peak_extra_rows = 0
+        tag_mutations = 0
+        old_closure_ack_round = 1
+        boundary0_pending_wait_bound = 9
+        row_removals = 3
+        new_opening_ack_round = 8
+        gate_mutations = 2
+        boundary0_request_delivery_bound = 14
+        switch_batches = 6
+        completion_round = 8
+        request_bounds_are_conservative_not_measured_latency = true
+        row_insertions = 3
+
+            [data.rows.control_costs.peak_rows]
+            C0 = 1
+            E0-0 = 1
+            A0-0 = 1
+            E3-1 = 1
+            A3-0 = 1
+            E3-0 = 1
+
+        [data.rows.independent_evidence]
+        probes = 135
+        joint_sanity_cases = 1
+        total_probe_domain = 135
+        verdict = "PASS"
+        coverage_complete = true
+        peak_extra_rows = 0
+        witness = ""
+        completion_round = 8
+        old_drained_at_claimed_completion = true
+    [[data.rows]]
+    plan_status = "COMPLETE"
+    qualified = true
+    decision_allocated_bytes = 1696
+    decision_seconds = 2.194e-6
+    extra_rows = 1
+    independent_verdict = "PASS"
+    proof_reuse = "exact validated plan family with unchanged kernel/fixture"
+    seed_independent = true
+    plan_fingerprint = "5aff90e38990e88595505508c0865ef72ce8ef74161e6b86d1182d516c5fd34e"
+    method = "V"
+    branch = "versioned"
+
+        [data.rows.work]
+        history_peak = 0
+        guard_edges = 0
+        scheduler_reads = 0
+        history_rounds = 0
+        detector_pairs = 0
+        detector_searches = 0
+        guard_states = 0
+
+        [data.rows.control_costs]
+        peak_extra_rows = 1
+        tag_mutations = 1
+        old_closure_ack_round = 2
+        boundary0_pending_wait_bound = 3
+        row_removals = 5
+        new_opening_ack_round = 2
+        gate_mutations = 2
+        boundary0_request_delivery_bound = 8
+        switch_batches = 11
+        completion_round = 8
+        request_bounds_are_conservative_not_measured_latency = true
+        row_insertions = 5
+
+            [data.rows.control_costs.peak_rows]
+            C0 = 2
+            E0-0 = 2
+            A0-0 = 2
+            E3-1 = 1
+            A3-0 = 2
+            E3-0 = 1
+
+        [data.rows.independent_evidence]
+        probes = 135
+        joint_sanity_cases = 1
+        total_probe_domain = 135
+        verdict = "PASS"
+        coverage_complete = true
+        peak_extra_rows = 1
+        witness = ""
+        completion_round = 8
+        old_drained_at_claimed_completion = true
+    [[data.rows]]
+    plan_status = "COMPLETE"
+    qualified = true
+    decision_allocated_bytes = 16221456
+    decision_seconds = 0.235260801
+    extra_rows = 1
+    independent_verdict = "PASS"
+    proof_reuse = "exact validated plan family with unchanged kernel/fixture"
+    seed_independent = true
+    plan_fingerprint = "781d222e1d5c546e1ebad7a60fe39a9a1f6cee5c6125f70217ec8b95d9e67cb7"
+    method = "CCG"
+    branch = "ccg_inspired_no_rollback"
+
+        [data.rows.work]
+        history_peak = 3
+        guard_edges = 0
+        scheduler_reads = 140
+        history_rounds = 12
+        detector_pairs = 0
+        detector_searches = 0
+        guard_states = 0
+
+        [data.rows.control_costs]
+        peak_extra_rows = 0
+        tag_mutations = 0
+        old_closure_ack_round = 1
+        boundary0_pending_wait_bound = 14
+        row_removals = 3
+        new_opening_ack_round = 13
+        gate_mutations = 2
+        boundary0_request_delivery_bound = 19
+        switch_batches = 6
+        completion_round = 13
+        request_bounds_are_conservative_not_measured_latency = true
+        row_insertions = 3
+
+            [data.rows.control_costs.peak_rows]
+            C0 = 1
+            E0-0 = 1
+            A0-0 = 1
+            E3-1 = 1
+            A3-0 = 1
+            E3-0 = 1
+
+        [data.rows.independent_evidence]
+        probes = 135
+        joint_sanity_cases = 1
+        total_probe_domain = 135
+        verdict = "PASS"
+        coverage_complete = true
+        peak_extra_rows = 0
+        witness = ""
+        completion_round = 13
+        old_drained_at_claimed_completion = true
+    [[data.rows]]
+    plan_status = "COMPLETE"
+    qualified = true
+    decision_allocated_bytes = 20937672
+    decision_seconds = 0.403583031
+    extra_rows = 1
+    independent_verdict = "PASS"
+    proof_reuse = "exact validated plan family with unchanged kernel/fixture"
+    seed_independent = true
+    plan_fingerprint = "5aff90e38990e88595505508c0865ef72ce8ef74161e6b86d1182d516c5fd34e"
+    method = "guard"
+    branch = "guard_rejected"
+
+        [data.rows.work]
+        history_peak = 0
+        guard_edges = 4
+        scheduler_reads = 0
+        history_rounds = 0
+        detector_pairs = 0
+        detector_searches = 0
+        guard_states = 4
+
+        [data.rows.control_costs]
+        peak_extra_rows = 1
+        tag_mutations = 1
+        old_closure_ack_round = 2
+        boundary0_pending_wait_bound = 3
+        row_removals = 5
+        new_opening_ack_round = 2
+        gate_mutations = 2
+        boundary0_request_delivery_bound = 8
+        switch_batches = 11
+        completion_round = 8
+        request_bounds_are_conservative_not_measured_latency = true
+        row_insertions = 5
+
+            [data.rows.control_costs.peak_rows]
+            C0 = 2
+            E0-0 = 2
+            A0-0 = 2
+            E3-1 = 1
+            A3-0 = 2
+            E3-0 = 1
+
+        [data.rows.independent_evidence]
+        probes = 135
+        joint_sanity_cases = 1
+        total_probe_domain = 135
+        verdict = "PASS"
+        coverage_complete = true
+        peak_extra_rows = 1
+        witness = ""
+        completion_round = 8
+        old_drained_at_claimed_completion = true
+    [[data.rows]]
+    plan_status = "COMPLETE"
+    qualified = true
+    decision_allocated_bytes = 13230088
+    decision_seconds = 0.220665222
+    extra_rows = 1
+    independent_verdict = "PASS"
+    proof_reuse = "exact validated plan family with unchanged kernel/fixture"
+    seed_independent = false
+    plan_fingerprint = "5aff90e38990e88595505508c0865ef72ce8ef74161e6b86d1182d516c5fd34e"
+    method = "detector"
+    branch = "snapshot_alert"
+    seed = 20261025
+
+        [data.rows.work]
+        history_peak = 0
+        guard_edges = 0
+        scheduler_reads = 0
+        history_rounds = 0
+        detector_pairs = 452
+        detector_searches = 1120
+        guard_states = 0
+
+        [data.rows.control_costs]
+        peak_extra_rows = 1
+        tag_mutations = 1
+        old_closure_ack_round = 2
+        boundary0_pending_wait_bound = 3
+        row_removals = 5
+        new_opening_ack_round = 2
+        gate_mutations = 2
+        boundary0_request_delivery_bound = 8
+        switch_batches = 11
+        completion_round = 8
+        request_bounds_are_conservative_not_measured_latency = true
+        row_insertions = 5
+
+            [data.rows.control_costs.peak_rows]
+            C0 = 2
+            E0-0 = 2
+            A0-0 = 2
+            E3-1 = 1
+            A3-0 = 2
+            E3-0 = 1
+
+        [data.rows.independent_evidence]
+        probes = 135
+        joint_sanity_cases = 1
+        total_probe_domain = 135
+        verdict = "PASS"
+        coverage_complete = true
+        peak_extra_rows = 1
+        witness = ""
+        completion_round = 8
+        old_drained_at_claimed_completion = true
+    [[data.rows]]
+    plan_status = "COMPLETE"
+    qualified = true
+    decision_allocated_bytes = 2044664
+    decision_seconds = 0.0012134
+    extra_rows = 1
+    independent_verdict = "PASS"
+    proof_reuse = "exact validated plan family with unchanged kernel/fixture"
+    seed_independent = false
+    plan_fingerprint = "5aff90e38990e88595505508c0865ef72ce8ef74161e6b86d1182d516c5fd34e"
+    method = "guarded_detector"
+    branch = "snapshot_alert"
+    seed = 20261025
+
+        [data.rows.work]
+        history_peak = 0
+        guard_edges = 0
+        scheduler_reads = 0
+        history_rounds = 0
+        detector_pairs = 452
+        detector_searches = 1120
+        guard_states = 0
+
+        [data.rows.control_costs]
+        peak_extra_rows = 1
+        tag_mutations = 1
+        old_closure_ack_round = 2
+        boundary0_pending_wait_bound = 3
+        row_removals = 5
+        new_opening_ack_round = 2
+        gate_mutations = 2
+        boundary0_request_delivery_bound = 8
+        switch_batches = 11
+        completion_round = 8
+        request_bounds_are_conservative_not_measured_latency = true
+        row_insertions = 5
+
+            [data.rows.control_costs.peak_rows]
+            C0 = 2
+            E0-0 = 2
+            A0-0 = 2
+            E3-1 = 1
+            A3-0 = 2
+            E3-0 = 1
+
+        [data.rows.independent_evidence]
+        probes = 135
+        joint_sanity_cases = 1
+        total_probe_domain = 135
+        verdict = "PASS"
+        coverage_complete = true
+        peak_extra_rows = 1
+        witness = ""
+        completion_round = 8
+        old_drained_at_claimed_completion = true
+    [[data.rows]]
+    plan_status = "COMPLETE"
+    qualified = true
+    decision_allocated_bytes = 1367232
+    decision_seconds = 0.000994176
+    extra_rows = 1
+    independent_verdict = "PASS"
+    proof_reuse = "exact validated plan family with unchanged kernel/fixture"
+    seed_independent = false
+    plan_fingerprint = "5aff90e38990e88595505508c0865ef72ce8ef74161e6b86d1182d516c5fd34e"
+    method = "detector"
+    branch = "snapshot_alert"
+    seed = 20261026
+
+        [data.rows.work]
+        history_peak = 0
+        guard_edges = 0
+        scheduler_reads = 0
+        history_rounds = 0
+        detector_pairs = 236
+        detector_searches = 588
+        guard_states = 0
+
+        [data.rows.control_costs]
+        peak_extra_rows = 1
+        tag_mutations = 1
+        old_closure_ack_round = 2
+        boundary0_pending_wait_bound = 3
+        row_removals = 5
+        new_opening_ack_round = 2
+        gate_mutations = 2
+        boundary0_request_delivery_bound = 8
+        switch_batches = 11
+        completion_round = 8
+        request_bounds_are_conservative_not_measured_latency = true
+        row_insertions = 5
+
+            [data.rows.control_costs.peak_rows]
+            C0 = 2
+            E0-0 = 2
+            A0-0 = 2
+            E3-1 = 1
+            A3-0 = 2
+            E3-0 = 1
+
+        [data.rows.independent_evidence]
+        probes = 135
+        joint_sanity_cases = 1
+        total_probe_domain = 135
+        verdict = "PASS"
+        coverage_complete = true
+        peak_extra_rows = 1
+        witness = ""
+        completion_round = 8
+        old_drained_at_claimed_completion = true
+    [[data.rows]]
+    plan_status = "COMPLETE"
+    qualified = true
+    decision_allocated_bytes = 1367232
+    decision_seconds = 0.001016889
+    extra_rows = 1
+    independent_verdict = "PASS"
+    proof_reuse = "exact validated plan family with unchanged kernel/fixture"
+    seed_independent = false
+    plan_fingerprint = "5aff90e38990e88595505508c0865ef72ce8ef74161e6b86d1182d516c5fd34e"
+    method = "guarded_detector"
+    branch = "snapshot_alert"
+    seed = 20261026
+
+        [data.rows.work]
+        history_peak = 0
+        guard_edges = 0
+        scheduler_reads = 0
+        history_rounds = 0
+        detector_pairs = 236
+        detector_searches = 588
+        guard_states = 0
+
+        [data.rows.control_costs]
+        peak_extra_rows = 1
+        tag_mutations = 1
+        old_closure_ack_round = 2
+        boundary0_pending_wait_bound = 3
+        row_removals = 5
+        new_opening_ack_round = 2
+        gate_mutations = 2
+        boundary0_request_delivery_bound = 8
+        switch_batches = 11
+        completion_round = 8
+        request_bounds_are_conservative_not_measured_latency = true
+        row_insertions = 5
+
+            [data.rows.control_costs.peak_rows]
+            C0 = 2
+            E0-0 = 2
+            A0-0 = 2
+            E3-1 = 1
+            A3-0 = 2
+            E3-0 = 1
+
+        [data.rows.independent_evidence]
+        probes = 135
+        joint_sanity_cases = 1
+        total_probe_domain = 135
+        verdict = "PASS"
+        coverage_complete = true
+        peak_extra_rows = 1
+        witness = ""
+        completion_round = 8
+        old_drained_at_claimed_completion = true
+    [[data.rows]]
+    plan_status = "COMPLETE"
+    qualified = true
+    decision_allocated_bytes = 2293592
+    decision_seconds = 0.001872573
+    extra_rows = 1
+    independent_verdict = "PASS"
+    proof_reuse = "exact validated plan family with unchanged kernel/fixture"
+    seed_independent = false
+    plan_fingerprint = "5aff90e38990e88595505508c0865ef72ce8ef74161e6b86d1182d516c5fd34e"
+    method = "detector"
+    branch = "snapshot_alert"
+    seed = 20261027
+
+        [data.rows.work]
+        history_peak = 0
+        guard_edges = 0
+        scheduler_reads = 0
+        history_rounds = 0
+        detector_pairs = 552
+        detector_searches = 1364
+        guard_states = 0
+
+        [data.rows.control_costs]
+        peak_extra_rows = 1
+        tag_mutations = 1
+        old_closure_ack_round = 2
+        boundary0_pending_wait_bound = 3
+        row_removals = 5
+        new_opening_ack_round = 2
+        gate_mutations = 2
+        boundary0_request_delivery_bound = 8
+        switch_batches = 11
+        completion_round = 8
+        request_bounds_are_conservative_not_measured_latency = true
+        row_insertions = 5
+
+            [data.rows.control_costs.peak_rows]
+            C0 = 2
+            E0-0 = 2
+            A0-0 = 2
+            E3-1 = 1
+            A3-0 = 2
+            E3-0 = 1
+
+        [data.rows.independent_evidence]
+        probes = 135
+        joint_sanity_cases = 1
+        total_probe_domain = 135
+        verdict = "PASS"
+        coverage_complete = true
+        peak_extra_rows = 1
+        witness = ""
+        completion_round = 8
+        old_drained_at_claimed_completion = true
+    [[data.rows]]
+    plan_status = "COMPLETE"
+    qualified = true
+    decision_allocated_bytes = 2572800
+    decision_seconds = 0.001906578
+    extra_rows = 1
+    independent_verdict = "PASS"
+    proof_reuse = "exact validated plan family with unchanged kernel/fixture"
+    seed_independent = false
+    plan_fingerprint = "5aff90e38990e88595505508c0865ef72ce8ef74161e6b86d1182d516c5fd34e"
+    method = "guarded_detector"
+    branch = "snapshot_alert"
+    seed = 20261027
+
+        [data.rows.work]
+        history_peak = 0
+        guard_edges = 0
+        scheduler_reads = 0
+        history_rounds = 0
+        detector_pairs = 552
+        detector_searches = 1364
+        guard_states = 0
+
+        [data.rows.control_costs]
+        peak_extra_rows = 1
+        tag_mutations = 1
+        old_closure_ack_round = 2
+        boundary0_pending_wait_bound = 3
+        row_removals = 5
+        new_opening_ack_round = 2
+        gate_mutations = 2
+        boundary0_request_delivery_bound = 8
+        switch_batches = 11
+        completion_round = 8
+        request_bounds_are_conservative_not_measured_latency = true
+        row_insertions = 5
+
+            [data.rows.control_costs.peak_rows]
+            C0 = 2
+            E0-0 = 2
+            A0-0 = 2
+            E3-1 = 1
+            A3-0 = 2
+            E3-0 = 1
+
+        [data.rows.independent_evidence]
+        probes = 135
+        joint_sanity_cases = 1
+        total_probe_domain = 135
+        verdict = "PASS"
+        coverage_complete = true
+        peak_extra_rows = 1
+        witness = ""
+        completion_round = 8
+        old_drained_at_claimed_completion = true

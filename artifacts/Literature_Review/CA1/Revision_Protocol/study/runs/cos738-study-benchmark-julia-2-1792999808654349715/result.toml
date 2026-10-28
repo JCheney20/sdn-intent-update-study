@@ -1,0 +1,23 @@
+[data]
+alarms = 4
+index = 2
+primary_data = false
+condition = 2
+implementation = "julia"
+elapsed_seconds = [0.001134473, 0.001028373, 0.001018845, 0.001011962, 0.001009878, 0.001037319, 0.001002995, 0.001009787, 0.000997284, 0.001039254, 0.000989379, 0.00097416, 0.000993657, 0.001024595, 0.001807675, 0.002016559, 0.001904408, 0.001829937, 0.002100578, 0.001892175]
+states_checked = 236
+mode = "benchmark"
+measurement = "warm"
+allocated_bytes = [1443984, 1443984, 1443984, 1443984, 1443984, 1443984, 1443984, 1443984, 1443984, 1443984, 1443984, 1443984, 1443984, 1443984, 1443984, 1443984, 1443984, 1443984, 1443984, 1723192]
+fixture = "fat4"
+k = 3
+status = "PASS"
+rows = []
+
+    [data.resources]
+    swap_max_bytes = 0
+    memory_peak_at_checkpoint_bytes = 243728384
+    cpu_usage_seconds = 9.150834
+    cpu_max = "200000 100000"
+    scope = "/user.slice/user-1000.slice/user@1000.service/app.slice/cos738-study-benchmark-julia-2-1792999808654349715.scope"
+    memory_max_bytes = 2147483648

@@ -1,0 +1,20 @@
+{
+  "command": [
+    "bash",
+    "/home/justin/Documents/Hons/CyberSecurity/Solution_Architecture/Literature_Review/CA1/Emulation/Comparison/run.sh",
+    "primary",
+    "Q-inflight"
+  ],
+  "scope": "/user.slice/user-1000.slice/user@1000.service/app.slice/cos738-ovs-comparison-primary-q-inflight-1793081933709231134.scope",
+  "affinity": [
+    0,
+    1
+  ],
+  "memory_max_bytes": 2147483648,
+  "swap_max_bytes": 0,
+  "cpu_max": "200000 100000",
+  "entry_sha256": "4acfbf624050990ba7593e363158dc3ea1db2d374a0f73735924904a039ded57",
+  "exit_code": 0,
+  "elapsed_seconds": 98.94895941310097,
+  "memory_peak_at_checkpoint_bytes": 681852928
+}

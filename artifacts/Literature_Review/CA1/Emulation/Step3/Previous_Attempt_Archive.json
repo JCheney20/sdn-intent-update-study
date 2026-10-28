@@ -1,0 +1,6 @@
+{
+  "reason": "approved Julia-side vector correction; preserve original relative-path seal",
+  "files": 70,
+  "manifest": "history/attempt1/Emulation/Step3/Timing_Attempt_Manifest.sha256",
+  "manifest_sha256": "4c37ab00cfab325a72909e0a1524edebcaed58ac187168523b4c390ea0622b10"
+}

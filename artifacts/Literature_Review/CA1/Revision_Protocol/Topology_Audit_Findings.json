@@ -1,0 +1,262 @@
+{
+  "method": "stdlib AST/JSON text analysis only; no third-party imports, reference execution or simulation",
+  "spotlight_generator_sha256": "db8906f77813eb1a6b968b982b857ef43754ec9c716ee65453cf61a815e9d823",
+  "both_archived_generators_byte_identical": true,
+  "generator_matches_frozen_reading_copy": true,
+  "detector_matches_frozen_reading_copy": true,
+  "artifact_nodes": {
+    "C1": {
+      "type": "core"
+    },
+    "C2": {
+      "type": "core"
+    },
+    "C3": {
+      "type": "core"
+    },
+    "C4": {
+      "type": "core"
+    },
+    "C5": {
+      "type": "core"
+    },
+    "C6": {
+      "type": "core"
+    },
+    "C7": {
+      "type": "core"
+    },
+    "C8": {
+      "type": "core"
+    },
+    "C9": {
+      "type": "core"
+    },
+    "C10": {
+      "type": "core"
+    },
+    "H1": {
+      "type": "host"
+    },
+    "H2": {
+      "type": "host"
+    },
+    "H3": {
+      "type": "host"
+    },
+    "H4": {
+      "type": "host"
+    },
+    "H5": {
+      "type": "host"
+    },
+    "H6": {
+      "type": "host"
+    },
+    "H7": {
+      "type": "host"
+    },
+    "H8": {
+      "type": "host"
+    },
+    "H9": {
+      "type": "host"
+    },
+    "H10": {
+      "type": "host"
+    },
+    "H11": {
+      "type": "host"
+    },
+    "H12": {
+      "type": "host"
+    }
+  },
+  "artifact_unique_undirected_edges": [
+    [
+      "C1",
+      "C9"
+    ],
+    [
+      "C1",
+      "H1"
+    ],
+    [
+      "C1",
+      "H2"
+    ],
+    [
+      "C10",
+      "C2"
+    ],
+    [
+      "C10",
+      "C3"
+    ],
+    [
+      "C10",
+      "C4"
+    ],
+    [
+      "C10",
+      "C7"
+    ],
+    [
+      "C10",
+      "C8"
+    ],
+    [
+      "C10",
+      "C9"
+    ],
+    [
+      "C2",
+      "C9"
+    ],
+    [
+      "C2",
+      "H2"
+    ],
+    [
+      "C2",
+      "H5"
+    ],
+    [
+      "C2",
+      "H6"
+    ],
+    [
+      "C2",
+      "H7"
+    ],
+    [
+      "C3",
+      "C9"
+    ],
+    [
+      "C3",
+      "H7"
+    ],
+    [
+      "C3",
+      "H8"
+    ],
+    [
+      "C4",
+      "C5"
+    ],
+    [
+      "C4",
+      "H11"
+    ],
+    [
+      "C4",
+      "H12"
+    ],
+    [
+      "C5",
+      "H10"
+    ],
+    [
+      "C5",
+      "H9"
+    ],
+    [
+      "C6",
+      "C9"
+    ],
+    [
+      "C6",
+      "H3"
+    ],
+    [
+      "C6",
+      "H4"
+    ],
+    [
+      "C7",
+      "C8"
+    ],
+    [
+      "C7",
+      "C9"
+    ],
+    [
+      "C8",
+      "C9"
+    ]
+  ],
+  "artifact_node_insertion_order": [
+    "C1",
+    "C2",
+    "C3",
+    "C4",
+    "C5",
+    "C6",
+    "C7",
+    "C8",
+    "C9",
+    "C10",
+    "H1",
+    "H2",
+    "H3",
+    "H4",
+    "H5",
+    "H6",
+    "H7",
+    "H8",
+    "H9",
+    "H10",
+    "H11",
+    "H12"
+  ],
+  "netviews_mapping": {
+    "s1": "C1",
+    "s2": "C2",
+    "s3": "C3",
+    "s4": "C4",
+    "s5": "C5",
+    "s6": "C6",
+    "s7": "C7",
+    "s8": "C8",
+    "s9": "C9",
+    "s10": "C10",
+    "h1": "H1",
+    "h2": "H2",
+    "h3": "H3",
+    "h4": "H4",
+    "sv1": "H5",
+    "sv2": "H6",
+    "sv3": "H7",
+    "sv4": "H8",
+    "sv5": "H9",
+    "sv6": "H10",
+    "sv7": "H11",
+    "sv8": "H12"
+  },
+  "netviews_switch_descriptions": {
+    "C7": "router",
+    "C8": "router",
+    "C9": "firewall",
+    "C10": "firewall",
+    "C1": "switch",
+    "C2": "switch",
+    "C3": "switch",
+    "C4": "switch",
+    "C5": "switch",
+    "C6": "ap"
+  },
+  "netviews_link_records": 29,
+  "netviews_unique_undirected_edges": 28,
+  "simple_graphs_equal_under_mapping": true,
+  "changed_detector_functions": [
+    "calculate_devices_on_path",
+    "do_packets_match",
+    "is_connector_node_str"
+  ],
+  "original_prep_functions_AST_equal": {
+    "prep_trial_cisco": true,
+    "prep_trial": true
+  },
+  "paper_eight_switch_twenty_node_input_recovered": false
+}

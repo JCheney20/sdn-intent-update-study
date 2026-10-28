@@ -1,0 +1,470 @@
+[data]
+status = "PASS"
+mode = "primary"
+index = 1
+primary_data = true
+
+    [data.cell]
+    fixture = "cisco"
+    include_seed_independent_controls = false
+    extra_rows = 0
+    index = 1
+    configuration = "k20"
+    control_cell_index = 0
+
+    [data.resources]
+    swap_max_bytes = 0
+    memory_peak_at_checkpoint_bytes = 350326784
+    cpu_usage_seconds = 15.985688
+    cpu_max = "200000 100000"
+    scope = "/user.slice/user-1000.slice/user@1000.service/app.slice/cos738-study-primary-1-1792999848257975067.scope"
+    memory_max_bytes = 2147483648
+
+    [[data.caches]]
+    unaugmented_entries = 190
+    sample_paths_per_query = 82
+    augmentation_allocated_bytes = 0
+    adjacent_hosts = false
+    cache_entries = 190
+    cache_build_seconds = 0.113830948
+    API_calls_are_not_raw_entropy_draw_counts = true
+    cache_sha256 = "ac2d52a34bb4cc8bede62fa7de5fe45ef252e700e0727035ebfe6388752fb983"
+    hop_API_calls = 3280
+    rng_final_sha256 = "f06cc2b75d6f7b80966b58738f5b94ab3a60bf909fa47a68db74d3a58d136713"
+    integer_start_API_calls = 820
+    k = 20
+    sampler = "weighted"
+    cache_build_allocated_bytes = 23120600
+    augmentation_seconds = 2.6e-7
+    seed = 20261025
+
+        [data.caches.cache]
+        C1 = ["C10", "C2", "C3", "C6", "C7", "C8", "C9", "H1", "H10", "H11", "H12", "H2", "H3", "H4", "H5", "H6", "H7", "H8", "H9"]
+        C9 = ["C1", "C10", "C2", "C3", "C4", "C6", "C7", "C8", "H1", "H10", "H11", "H12", "H2", "H3", "H4", "H5", "H6", "H7", "H8"]
+        C7 = ["C1", "C10", "C2", "C3", "C4", "C5", "C6", "C8", "C9", "H10", "H11", "H12", "H2", "H4", "H5", "H6", "H7", "H8", "H9"]
+        C10 = ["C1", "C2", "C3", "C4", "C5", "C6", "C7", "C8", "C9", "H10", "H11", "H12", "H2", "H3", "H4", "H6", "H7", "H8", "H9"]
+        C8 = ["C10", "C2", "C3", "C4", "C6", "C7", "C9", "H1", "H10", "H11", "H12", "H2", "H3", "H4", "H5", "H6", "H7", "H8", "H9"]
+        C6 = ["C10", "C2", "C3", "C5", "C7", "C8", "C9", "H1", "H10", "H11", "H12", "H2", "H3", "H4", "H5", "H6", "H7", "H8", "H9"]
+        C3 = ["C1", "C10", "C2", "C4", "C6", "C7", "C8", "C9", "H1", "H10", "H11", "H12", "H2", "H3", "H5", "H6", "H7", "H8", "H9"]
+        C2 = ["C1", "C10", "C3", "C4", "C6", "C7", "C8", "C9", "H1", "H10", "H11", "H12", "H2", "H3", "H4", "H5", "H6", "H7", "H8"]
+        C4 = ["C1", "C10", "C3", "C5", "C7", "C8", "C9", "H1", "H10", "H11", "H12", "H2", "H3", "H4", "H5", "H6", "H7", "H8", "H9"]
+        C5 = ["C10", "C3", "C4", "C6", "C7", "C8", "C9", "H1", "H10", "H11", "H12", "H2", "H3", "H4", "H5", "H6", "H7", "H8", "H9"]
+
+        [data.caches.cooccurrence_counts]
+        C1 = [10, 4, 1, 0, 0, 0, 1, 2, 8, 3, 3, 8, 0, 0, 2, 1, 1, 0, 0, 0, 0, 0]
+        C9 = [6, 18, 6, 3, 0, 10, 14, 13, 37, 20, 3, 4, 4, 4, 3, 6, 2, 3, 0, 0, 0, 1]
+        C7 = [1, 4, 4, 3, 1, 1, 18, 8, 11, 11, 0, 2, 0, 1, 0, 1, 3, 0, 0, 1, 0, 1]
+        C10 = [3, 7, 11, 9, 1, 3, 13, 10, 18, 28, 0, 2, 2, 1, 0, 2, 2, 4, 0, 0, 1, 2]
+        C8 = [0, 2, 5, 1, 0, 3, 14, 17, 14, 11, 0, 1, 0, 2, 0, 0, 0, 2, 0, 0, 0, 0]
+        C6 = [0, 2, 2, 0, 0, 13, 0, 1, 8, 1, 0, 0, 5, 9, 1, 0, 2, 0, 0, 0, 0, 0]
+        C3 = [1, 5, 20, 1, 0, 2, 3, 3, 14, 10, 1, 1, 2, 0, 0, 3, 8, 10, 0, 0, 0, 1]
+        C2 = [3, 25, 7, 2, 0, 2, 1, 1, 14, 8, 1, 7, 1, 1, 6, 6, 8, 2, 0, 0, 0, 1]
+        C4 = [1, 0, 3, 25, 13, 0, 3, 2, 2, 9, 0, 0, 0, 0, 0, 0, 1, 0, 8, 7, 11, 10]
+        C5 = [0, 0, 1, 13, 20, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1, 11, 13, 3, 4]
+
+        [data.caches.cache_order_before_augmentation]
+        C1 = ["H2", "C9", "C2", "H1", "C10", "H5", "C8", "H7", "H6", "C7", "C3", "H12", "H11", "H10", "H9", "H8", "H4", "H3", "C6"]
+        C9 = ["C10", "C2", "C7", "C8", "C6", "H6", "C3", "C1", "H4", "H3", "H2", "H8", "H5", "H1", "C4", "H7", "H12", "H11", "H10"]
+        C7 = ["C10", "C9", "C8", "C3", "C2", "H7", "C4", "H2", "H12", "H10", "H6", "H4", "C6", "C5", "C1", "H11", "H9", "H8", "H5"]
+        C10 = ["C9", "C7", "C3", "C8", "C4", "C2", "H8", "C6", "C1", "H12", "H7", "H6", "H3", "H2", "H11", "H4", "C5", "H10", "H9"]
+        C8 = ["C9", "C7", "C10", "C3", "C6", "H8", "H4", "C2", "H2", "C4", "H12", "H11", "H10", "H9", "H7", "H6", "H5", "H3", "H1"]
+        C6 = ["H4", "C9", "H3", "H7", "C3", "C2", "H5", "C10", "C8", "H12", "H11", "H10", "H9", "H8", "H6", "H2", "H1", "C7", "C5"]
+        C3 = ["C9", "H8", "C10", "H7", "C2", "H6", "C8", "C7", "H3", "C6", "H12", "H2", "H1", "C4", "C1", "H11", "H10", "H9", "H5"]
+        C2 = ["C9", "H7", "C10", "H2", "C3", "H6", "H5", "C1", "H8", "C6", "C4", "H12", "H4", "H3", "H1", "C8", "C7", "H11", "H10"]
+        C4 = ["C5", "H11", "H12", "C10", "H9", "H10", "C7", "C3", "C9", "C8", "H7", "C1", "H8", "H6", "H5", "H4", "H3", "H2", "H1"]
+        C5 = ["H10", "C4", "H9", "H12", "H11", "H8", "C10", "C3", "H7", "H6", "H5", "H4", "H3", "H2", "H1", "C9", "C8", "C7", "C6"]
+    [[data.caches]]
+    unaugmented_entries = 190
+    sample_paths_per_query = 82
+    augmentation_allocated_bytes = 0
+    adjacent_hosts = false
+    cache_entries = 190
+    cache_build_seconds = 0.000603018
+    API_calls_are_not_raw_entropy_draw_counts = true
+    cache_sha256 = "51556486c3b5fc975c49e378071f8743e720a9306daf5e90fbad68cbab0a7ac9"
+    hop_API_calls = 3280
+    rng_final_sha256 = "91cc63110a7dd0b738a6c5a1c332eb91762af57d995c94a507e18a85e6b2ffef"
+    integer_start_API_calls = 820
+    k = 20
+    sampler = "weighted"
+    cache_build_allocated_bytes = 1267264
+    augmentation_seconds = 1.6e-7
+    seed = 20261026
+
+        [data.caches.cache]
+        C1 = ["C10", "C2", "C4", "C6", "C7", "C8", "C9", "H1", "H10", "H11", "H12", "H2", "H3", "H4", "H5", "H6", "H7", "H8", "H9"]
+        C9 = ["C1", "C10", "C2", "C3", "C4", "C5", "C6", "C7", "C8", "H1", "H10", "H12", "H2", "H3", "H4", "H5", "H6", "H7", "H8"]
+        C7 = ["C10", "C2", "C3", "C5", "C6", "C8", "C9", "H1", "H10", "H11", "H12", "H2", "H3", "H4", "H5", "H6", "H7", "H8", "H9"]
+        C10 = ["C1", "C2", "C3", "C4", "C5", "C7", "C8", "C9", "H10", "H11", "H12", "H2", "H3", "H4", "H5", "H6", "H7", "H8", "H9"]
+        C8 = ["C10", "C2", "C3", "C5", "C6", "C7", "C9", "H1", "H10", "H11", "H12", "H2", "H3", "H4", "H5", "H6", "H7", "H8", "H9"]
+        C6 = ["C1", "C10", "C2", "C3", "C7", "C8", "C9", "H1", "H10", "H11", "H12", "H2", "H3", "H4", "H5", "H6", "H7", "H8", "H9"]
+        C3 = ["C1", "C10", "C2", "C4", "C6", "C7", "C8", "C9", "H1", "H10", "H11", "H12", "H3", "H4", "H5", "H6", "H7", "H8", "H9"]
+        C2 = ["C1", "C10", "C3", "C4", "C6", "C8", "C9", "H1", "H10", "H11", "H12", "H2", "H3", "H4", "H5", "H6", "H7", "H8", "H9"]
+        C4 = ["C10", "C3", "C5", "C6", "C7", "C8", "C9", "H1", "H10", "H11", "H12", "H2", "H3", "H4", "H5", "H6", "H7", "H8", "H9"]
+        C5 = ["C10", "C2", "C3", "C4", "C7", "C8", "C9", "H1", "H10", "H11", "H12", "H2", "H3", "H4", "H5", "H6", "H7", "H8", "H9"]
+
+        [data.caches.cooccurrence_counts]
+        C1 = [17, 10, 0, 1, 0, 3, 1, 0, 13, 2, 8, 11, 1, 0, 0, 2, 0, 0, 0, 0, 0, 0]
+        C9 = [9, 8, 15, 3, 2, 10, 6, 9, 34, 15, 3, 4, 4, 4, 2, 1, 6, 6, 0, 2, 0, 0]
+        C7 = [0, 5, 1, 0, 0, 0, 11, 8, 3, 9, 0, 0, 0, 0, 1, 1, 0, 1, 0, 0, 0, 0]
+        C10 = [1, 5, 10, 10, 2, 0, 11, 7, 11, 25, 0, 1, 0, 0, 1, 1, 4, 4, 1, 0, 4, 6]
+        C8 = [0, 5, 2, 0, 0, 1, 11, 16, 12, 10, 0, 1, 0, 1, 0, 1, 0, 1, 0, 0, 0, 0]
+        C6 = [2, 2, 1, 0, 0, 13, 1, 2, 10, 3, 1, 0, 7, 8, 0, 0, 0, 0, 0, 0, 0, 0]
+        C3 = [2, 8, 24, 2, 0, 2, 4, 1, 17, 11, 2, 0, 0, 1, 1, 3, 8, 11, 0, 0, 1, 0]
+        C2 = [5, 21, 6, 2, 0, 3, 0, 1, 12, 9, 2, 5, 1, 1, 6, 3, 9, 3, 0, 0, 0, 2]
+        C4 = [0, 0, 2, 25, 17, 0, 4, 2, 1, 9, 0, 0, 0, 0, 0, 0, 0, 0, 8, 6, 8, 11]
+        C5 = [0, 1, 1, 11, 14, 0, 0, 0, 0, 5, 0, 0, 0, 0, 1, 0, 0, 1, 6, 8, 1, 3]
+
+        [data.caches.cache_order_before_augmentation]
+        C1 = ["C9", "H2", "C2", "H1", "C6", "H6", "C10", "H3", "C7", "C4", "H12", "H11", "H10", "H9", "H8", "H7", "H5", "H4", "C8"]
+        C9 = ["C10", "C3", "C6", "C8", "C1", "C2", "H8", "H7", "C7", "H4", "H3", "H2", "H1", "C4", "H10", "H5", "C5", "H6", "H12"]
+        C7 = ["C10", "C8", "C2", "C9", "H8", "H6", "H5", "C3", "H12", "H11", "H10", "H9", "H7", "H4", "H3", "H2", "H1", "C6", "C5"]
+        C10 = ["C9", "C7", "C4", "C3", "C8", "H12", "C2", "H11", "H8", "H7", "C5", "H9", "H6", "H5", "H2", "C1", "H10", "H4", "H3"]
+        C8 = ["C9", "C7", "C10", "C2", "C3", "H8", "H6", "H4", "H2", "C6", "H12", "H11", "H10", "H9", "H7", "H5", "H3", "H1", "C5"]
+        C6 = ["C9", "H4", "H3", "C10", "C8", "C2", "C1", "H1", "C7", "C3", "H12", "H11", "H10", "H9", "H8", "H7", "H6", "H5", "H2"]
+        C3 = ["C9", "H8", "C10", "H7", "C2", "C7", "H6", "H1", "C6", "C4", "C1", "H11", "H5", "H4", "C8", "H12", "H10", "H9", "H3"]
+        C2 = ["C9", "H7", "C10", "H5", "C3", "H2", "C1", "H8", "H6", "C6", "H12", "H1", "C4", "H4", "H3", "C8", "H11", "H10", "H9"]
+        C4 = ["C5", "H12", "C10", "H11", "H9", "H10", "C7", "C8", "C3", "C9", "H8", "H7", "H6", "H5", "H4", "H3", "H2", "H1", "C6"]
+        C5 = ["C4", "H10", "H9", "C10", "H12", "H11", "H8", "H5", "C3", "C2", "H7", "H6", "H4", "H3", "H2", "H1", "C9", "C8", "C7"]
+    [[data.caches]]
+    unaugmented_entries = 190
+    sample_paths_per_query = 82
+    augmentation_allocated_bytes = 0
+    adjacent_hosts = false
+    cache_entries = 190
+    cache_build_seconds = 0.000584533
+    API_calls_are_not_raw_entropy_draw_counts = true
+    cache_sha256 = "b2d5685f8fb5d04250f0901b8e5934bedf5c73441bf8f530d12a5c2f511b1554"
+    hop_API_calls = 3280
+    rng_final_sha256 = "9010096cc1c2476c38b0b5b7232bb207d327eaff19e451ab6996f09f0d40eeb9"
+    integer_start_API_calls = 820
+    k = 20
+    sampler = "weighted"
+    cache_build_allocated_bytes = 1268528
+    augmentation_seconds = 1.6e-7
+    seed = 20261027
+
+        [data.caches.cache]
+        C1 = ["C10", "C2", "C3", "C6", "C7", "C8", "C9", "H1", "H10", "H11", "H12", "H2", "H3", "H4", "H5", "H6", "H7", "H8", "H9"]
+        C9 = ["C1", "C10", "C2", "C3", "C4", "C6", "C7", "C8", "H1", "H10", "H11", "H12", "H2", "H3", "H4", "H6", "H7", "H8", "H9"]
+        C7 = ["C1", "C10", "C2", "C3", "C4", "C5", "C6", "C8", "C9", "H1", "H10", "H11", "H12", "H4", "H5", "H6", "H7", "H8", "H9"]
+        C10 = ["C1", "C2", "C3", "C4", "C5", "C6", "C7", "C8", "C9", "H10", "H11", "H12", "H3", "H4", "H5", "H6", "H7", "H8", "H9"]
+        C8 = ["C1", "C10", "C2", "C3", "C4", "C6", "C7", "C9", "H10", "H11", "H12", "H2", "H3", "H4", "H5", "H6", "H7", "H8", "H9"]
+        C6 = ["C1", "C10", "C2", "C3", "C7", "C8", "C9", "H1", "H10", "H11", "H12", "H2", "H3", "H4", "H5", "H6", "H7", "H8", "H9"]
+        C3 = ["C1", "C10", "C2", "C4", "C7", "C8", "C9", "H1", "H10", "H11", "H12", "H2", "H3", "H4", "H5", "H6", "H7", "H8", "H9"]
+        C2 = ["C1", "C10", "C3", "C4", "C6", "C7", "C8", "C9", "H1", "H10", "H11", "H12", "H2", "H3", "H5", "H6", "H7", "H8", "H9"]
+        C4 = ["C10", "C3", "C5", "C6", "C7", "C8", "C9", "H1", "H10", "H11", "H12", "H2", "H3", "H4", "H5", "H6", "H7", "H8", "H9"]
+        C5 = ["C10", "C2", "C3", "C4", "C7", "C8", "C9", "H1", "H10", "H11", "H12", "H2", "H3", "H4", "H5", "H6", "H7", "H8", "H9"]
+
+        [data.caches.cooccurrence_counts]
+        C1 = [14, 5, 3, 0, 0, 1, 2, 1, 10, 1, 7, 7, 0, 0, 0, 1, 1, 1, 0, 0, 0, 0]
+        C9 = [9, 11, 9, 3, 0, 3, 10, 10, 29, 15, 4, 7, 3, 2, 0, 2, 4, 2, 0, 0, 1, 1]
+        C7 = [3, 4, 5, 7, 1, 1, 20, 10, 9, 17, 1, 0, 0, 1, 3, 0, 3, 0, 0, 0, 1, 2]
+        C10 = [2, 8, 12, 13, 4, 1, 5, 8, 12, 26, 0, 0, 0, 0, 0, 3, 3, 5, 0, 1, 6, 2]
+        C8 = [1, 8, 5, 1, 0, 1, 9, 16, 9, 13, 0, 1, 0, 0, 2, 1, 1, 1, 0, 0, 0, 0]
+        C6 = [1, 2, 2, 0, 0, 13, 2, 2, 8, 2, 0, 1, 9, 7, 0, 0, 0, 0, 0, 0, 0, 0]
+        C3 = [1, 5, 17, 1, 0, 0, 5, 4, 10, 7, 0, 0, 0, 0, 0, 3, 7, 8, 0, 0, 0, 0]
+        C2 = [5, 23, 7, 1, 0, 3, 5, 3, 14, 11, 2, 5, 1, 0, 3, 4, 6, 0, 0, 0, 0, 1]
+        C4 = [0, 0, 5, 27, 15, 0, 1, 1, 4, 11, 0, 0, 0, 0, 0, 0, 2, 1, 4, 7, 14, 10]
+        C5 = [0, 2, 1, 15, 16, 0, 0, 0, 0, 6, 0, 0, 0, 0, 0, 0, 0, 0, 6, 6, 5, 3]
+
+        [data.caches.cache_order_before_augmentation]
+        C1 = ["C9", "H2", "H1", "C2", "C3", "C7", "H8", "H7", "H6", "C10", "C8", "C6", "H12", "H11", "H10", "H9", "H5", "H4", "H3"]
+        C9 = ["C10", "C2", "C8", "C7", "C3", "C1", "H2", "H7", "H1", "H3", "C6", "C4", "H8", "H6", "H4", "H12", "H11", "H10", "H9"]
+        C7 = ["C10", "C8", "C9", "C4", "C3", "C2", "H7", "H5", "C1", "H12", "H11", "H4", "H1", "C6", "C5", "H10", "H9", "H8", "H6"]
+        C10 = ["C4", "C9", "C3", "C8", "C2", "H11", "H8", "C7", "C5", "H7", "H6", "H12", "C1", "H10", "C6", "H9", "H5", "H4", "H3"]
+        C8 = ["C10", "C9", "C7", "C2", "C3", "H5", "H8", "H7", "H6", "H2", "C6", "C4", "C1", "H12", "H11", "H10", "H9", "H4", "H3"]
+        C6 = ["H3", "C9", "H4", "C10", "C8", "C7", "C3", "C2", "H2", "C1", "H12", "H11", "H10", "H9", "H8", "H7", "H6", "H5", "H1"]
+        C3 = ["C9", "H8", "H7", "C10", "C7", "C2", "C8", "H6", "C4", "C1", "H12", "H11", "H10", "H9", "H5", "H4", "H3", "H2", "H1"]
+        C2 = ["C9", "C10", "C3", "H7", "H2", "C7", "C1", "H6", "H5", "C8", "C6", "H1", "H12", "H3", "C4", "H11", "H10", "H9", "H8"]
+        C4 = ["C5", "H11", "C10", "H12", "H10", "C3", "H9", "C9", "H7", "H8", "C8", "C7", "H6", "H5", "H4", "H3", "H2", "H1", "C6"]
+        C5 = ["C4", "H10", "H9", "C10", "H11", "H12", "C2", "C3", "H8", "H7", "H6", "H5", "H4", "H3", "H2", "H1", "C9", "C8", "C7"]
+
+    [[data.rows]]
+    plan_status = "RESOURCE_BLOCKED"
+    qualified = false
+    decision_allocated_bytes = 8656856
+    decision_seconds = 0.180720611
+    extra_rows = 0
+    independent_verdict = "RESOURCE_BLOCKED"
+    proof_reuse = "exact validated plan family with unchanged kernel/fixture"
+    seed_independent = false
+    plan_fingerprint = "3d796e9eb79e68bff4ee7a3a795b7cff898d0266e87aa1787998a8825d8aa3d3"
+    method = "detector"
+    branch = "snapshot_alert"
+    seed = 20261025
+
+        [data.rows.work]
+        history_peak = 0
+        guard_edges = 0
+        scheduler_reads = 0
+        history_rounds = 0
+        detector_pairs = 198
+        detector_searches = 660
+        guard_states = 0
+
+        [data.rows.control_costs]
+        peak_extra_rows = 0
+        tag_mutations = 0
+        old_closure_ack_round = 0
+        boundary0_pending_wait_bound = -1
+        row_removals = 0
+        new_opening_ack_round = 0
+        gate_mutations = 0
+        boundary0_request_delivery_bound = -1
+        switch_batches = 0
+        completion_round = 0
+        request_bounds_are_conservative_not_measured_latency = true
+        row_insertions = 0
+
+            [data.rows.control_costs.peak_rows]
+            C10 = 1
+            C2 = 1
+            C4 = 1
+            C5 = 1
+
+        [data.rows.independent_evidence]
+        probes = 0
+        peak_extra_rows = 0
+        verdict = "RESOURCE_BLOCKED"
+        coverage_complete = false
+    [[data.rows]]
+    plan_status = "RESOURCE_BLOCKED"
+    qualified = false
+    decision_allocated_bytes = 654008
+    decision_seconds = 0.000390678
+    extra_rows = 0
+    independent_verdict = "RESOURCE_BLOCKED"
+    proof_reuse = "exact validated plan family with unchanged kernel/fixture"
+    seed_independent = false
+    plan_fingerprint = "3d796e9eb79e68bff4ee7a3a795b7cff898d0266e87aa1787998a8825d8aa3d3"
+    method = "guarded_detector"
+    branch = "snapshot_alert"
+    seed = 20261025
+
+        [data.rows.work]
+        history_peak = 0
+        guard_edges = 0
+        scheduler_reads = 0
+        history_rounds = 0
+        detector_pairs = 198
+        detector_searches = 660
+        guard_states = 0
+
+        [data.rows.control_costs]
+        peak_extra_rows = 0
+        tag_mutations = 0
+        old_closure_ack_round = 0
+        boundary0_pending_wait_bound = -1
+        row_removals = 0
+        new_opening_ack_round = 0
+        gate_mutations = 0
+        boundary0_request_delivery_bound = -1
+        switch_batches = 0
+        completion_round = 0
+        request_bounds_are_conservative_not_measured_latency = true
+        row_insertions = 0
+
+            [data.rows.control_costs.peak_rows]
+            C10 = 1
+            C2 = 1
+            C4 = 1
+            C5 = 1
+
+        [data.rows.independent_evidence]
+        probes = 0
+        peak_extra_rows = 0
+        verdict = "RESOURCE_BLOCKED"
+        coverage_complete = false
+    [[data.rows]]
+    plan_status = "RESOURCE_BLOCKED"
+    qualified = false
+    decision_allocated_bytes = 674688
+    decision_seconds = 0.000365731
+    extra_rows = 0
+    independent_verdict = "RESOURCE_BLOCKED"
+    proof_reuse = "exact validated plan family with unchanged kernel/fixture"
+    seed_independent = false
+    plan_fingerprint = "3d796e9eb79e68bff4ee7a3a795b7cff898d0266e87aa1787998a8825d8aa3d3"
+    method = "detector"
+    branch = "snapshot_alert"
+    seed = 20261026
+
+        [data.rows.work]
+        history_peak = 0
+        guard_edges = 0
+        scheduler_reads = 0
+        history_rounds = 0
+        detector_pairs = 198
+        detector_searches = 660
+        guard_states = 0
+
+        [data.rows.control_costs]
+        peak_extra_rows = 0
+        tag_mutations = 0
+        old_closure_ack_round = 0
+        boundary0_pending_wait_bound = -1
+        row_removals = 0
+        new_opening_ack_round = 0
+        gate_mutations = 0
+        boundary0_request_delivery_bound = -1
+        switch_batches = 0
+        completion_round = 0
+        request_bounds_are_conservative_not_measured_latency = true
+        row_insertions = 0
+
+            [data.rows.control_costs.peak_rows]
+            C10 = 1
+            C2 = 1
+            C4 = 1
+            C5 = 1
+
+        [data.rows.independent_evidence]
+        probes = 0
+        peak_extra_rows = 0
+        verdict = "RESOURCE_BLOCKED"
+        coverage_complete = false
+    [[data.rows]]
+    plan_status = "RESOURCE_BLOCKED"
+    qualified = false
+    decision_allocated_bytes = 674688
+    decision_seconds = 0.00036558
+    extra_rows = 0
+    independent_verdict = "RESOURCE_BLOCKED"
+    proof_reuse = "exact validated plan family with unchanged kernel/fixture"
+    seed_independent = false
+    plan_fingerprint = "3d796e9eb79e68bff4ee7a3a795b7cff898d0266e87aa1787998a8825d8aa3d3"
+    method = "guarded_detector"
+    branch = "snapshot_alert"
+    seed = 20261026
+
+        [data.rows.work]
+        history_peak = 0
+        guard_edges = 0
+        scheduler_reads = 0
+        history_rounds = 0
+        detector_pairs = 198
+        detector_searches = 660
+        guard_states = 0
+
+        [data.rows.control_costs]
+        peak_extra_rows = 0
+        tag_mutations = 0
+        old_closure_ack_round = 0
+        boundary0_pending_wait_bound = -1
+        row_removals = 0
+        new_opening_ack_round = 0
+        gate_mutations = 0
+        boundary0_request_delivery_bound = -1
+        switch_batches = 0
+        completion_round = 0
+        request_bounds_are_conservative_not_measured_latency = true
+        row_insertions = 0
+
+            [data.rows.control_costs.peak_rows]
+            C10 = 1
+            C2 = 1
+            C4 = 1
+            C5 = 1
+
+        [data.rows.independent_evidence]
+        probes = 0
+        peak_extra_rows = 0
+        verdict = "RESOURCE_BLOCKED"
+        coverage_complete = false
+    [[data.rows]]
+    plan_status = "RESOURCE_BLOCKED"
+    qualified = false
+    decision_allocated_bytes = 654008
+    decision_seconds = 0.000350442
+    extra_rows = 0
+    independent_verdict = "RESOURCE_BLOCKED"
+    proof_reuse = "exact validated plan family with unchanged kernel/fixture"
+    seed_independent = false
+    plan_fingerprint = "3d796e9eb79e68bff4ee7a3a795b7cff898d0266e87aa1787998a8825d8aa3d3"
+    method = "detector"
+    branch = "snapshot_alert"
+    seed = 20261027
+
+        [data.rows.work]
+        history_peak = 0
+        guard_edges = 0
+        scheduler_reads = 0
+        history_rounds = 0
+        detector_pairs = 198
+        detector_searches = 660
+        guard_states = 0
+
+        [data.rows.control_costs]
+        peak_extra_rows = 0
+        tag_mutations = 0
+        old_closure_ack_round = 0
+        boundary0_pending_wait_bound = -1
+        row_removals = 0
+        new_opening_ack_round = 0
+        gate_mutations = 0
+        boundary0_request_delivery_bound = -1
+        switch_batches = 0
+        completion_round = 0
+        request_bounds_are_conservative_not_measured_latency = true
+        row_insertions = 0
+
+            [data.rows.control_costs.peak_rows]
+            C10 = 1
+            C2 = 1
+            C4 = 1
+            C5 = 1
+
+        [data.rows.independent_evidence]
+        probes = 0
+        peak_extra_rows = 0
+        verdict = "RESOURCE_BLOCKED"
+        coverage_complete = false
+    [[data.rows]]
+    plan_status = "RESOURCE_BLOCKED"
+    qualified = false
+    decision_allocated_bytes = 674688
+    decision_seconds = 0.000342005
+    extra_rows = 0
+    independent_verdict = "RESOURCE_BLOCKED"
+    proof_reuse = "exact validated plan family with unchanged kernel/fixture"
+    seed_independent = false
+    plan_fingerprint = "3d796e9eb79e68bff4ee7a3a795b7cff898d0266e87aa1787998a8825d8aa3d3"
+    method = "guarded_detector"
+    branch = "snapshot_alert"
+    seed = 20261027
+
+        [data.rows.work]
+        history_peak = 0
+        guard_edges = 0
+        scheduler_reads = 0
+        history_rounds = 0
+        detector_pairs = 198
+        detector_searches = 660
+        guard_states = 0
+
+        [data.rows.control_costs]
+        peak_extra_rows = 0
+        tag_mutations = 0
+        old_closure_ack_round = 0
+        boundary0_pending_wait_bound = -1
+        row_removals = 0
+        new_opening_ack_round = 0
+        gate_mutations = 0
+        boundary0_request_delivery_bound = -1
+        switch_batches = 0
+        completion_round = 0
+        request_bounds_are_conservative_not_measured_latency = true
+        row_insertions = 0
+
+            [data.rows.control_costs.peak_rows]
+            C10 = 1
+            C2 = 1
+            C4 = 1
+            C5 = 1
+
+        [data.rows.independent_evidence]
+        probes = 0
+        peak_extra_rows = 0
+        verdict = "RESOURCE_BLOCKED"
+        coverage_complete = false

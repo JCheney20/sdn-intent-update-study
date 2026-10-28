@@ -1,0 +1,11 @@
+schema_version = 1
+status = "FROZEN_VALIDATION_ONLY"
+reference_trace = "reference_capture/runs/cos738-reference-capture-1792956866366487215/trace.toml"
+reference_trace_sha256 = "7d3d14b4518454102a18fd870f3e3c499e213adda06ac99ad7da868cc5d47241"
+fixtures = ["cisco", "fat4"]
+extra_rows = [0, 1]
+methods = ["ordinary", "Q", "V", "CCG", "guard", "detector", "guarded_detector"]
+cache_conditions = ["captured_k3", "captured_k20", "empty_branch_control", "all_hosts_branch_control"]
+max_states = 10000
+source_slot_capacity = 1
+primary_data = false

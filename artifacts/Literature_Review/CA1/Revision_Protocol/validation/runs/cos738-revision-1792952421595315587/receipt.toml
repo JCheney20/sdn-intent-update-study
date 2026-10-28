@@ -1,0 +1,28 @@
+python_reference_executed = false
+julia_version = "1.13.1"
+process_ceiling_seconds = 30
+swap_max_bytes = 0
+cpu_period = 100000
+aggregate_reserved_core_seconds = 924
+memory_max_bytes = 2147483648
+mode = "preflight"
+primary_execution = false
+completed_utc = "2026-10-25T18:20:28.113"
+scope = "/user.slice/user-1000.slice/user@1000.service/app.slice/cos738-revision-1792952421595315587.scope"
+aggregate_runtime_cap = "none"
+initial_budget_core_seconds = 600
+accounting = "documentary full two-core time-limit tickets plus 2 seconds margin; no cumulative stop; includes failures/startup"
+reserved_core_seconds = 64
+additional_budget_core_seconds = 2000
+scope_memory_peak_bytes_at_checkpoint = 404451328
+cpu_quota = 200000
+status = "PASS"
+elapsed_seconds_including_startup = 6.489999999990687
+scope_cpu_seconds = 5.185964
+
+[input_sha256]
+"Operational_Semantics_and_Bounds.md" = "c875818d84ec1e3ee44924e3d3721dfc1c4c6868e4794309dcc74f425b9c3519"
+"validation/Three_Stage_Authorization.toml" = "35efaea1ad63cf39e3dccd61c35e3d5251f0e0d3122c70cf35051026f0db923f"
+"Handover_Bounds.toml" = "06689a5cf7c126e90293fa4d16ca02dab73f9e0d78e672e77f37be0f16a05fd4"
+"validation/run.sh" = "9dff77f85a442fac4c9b69211204db6d81eb9ec308d21d893cd15bcc32738f49"
+"validation/entry.jl" = "8315a0ff1cf7a55015b7436e735a6df61e499f5fd6dfff20dbbcea12667d8975"

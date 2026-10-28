@@ -1,0 +1,11 @@
+{
+  "mode": "primary",
+  "cell": "ordinary-inflight",
+  "run": "/home/justin/Documents/Hons/CyberSecurity/Solution_Architecture/Literature_Review/CA1/Emulation/runs/cos738-ovs-comparison-primary-ordinary-inflight-1793082032861303353",
+  "manifest_sha256": "906476a7eae8e12d97737c3715f5d7b38f39a7ce284f37d937f05d6b1456ee1b",
+  "status": "FINISHED",
+  "started_utc": "2026-10-27T06:20:33.033701+00:00",
+  "exit_code": 0,
+  "ended_utc": "2026-10-27T06:22:14.259029+00:00",
+  "result_status": "PASS"
+}

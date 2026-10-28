@@ -1,0 +1,22 @@
+schema_version = 1
+date = "2026-10-25"
+scope = "isolated Python reference environment for validation and matched baselines"
+isolated_provisioning_approved = true
+approval_answer = "Approve isolated provisioning (Recommended)"
+method = "Nix flake, not uv"
+method_quote = "A better way would be to create a nix flake with the specific packages using: nix flake init -t github:nix-community/templates#python"
+normal_nix_store_inputs_and_cache_downloads = true
+system_rebuild_or_global_profile_changes = false
+remote_compute = false
+package_pin_changes = false
+source_compilation_approved = false
+source_compilation_requires_separate_permission_and_resource_enforcement = true
+unrelated_notebook_packages = false
+
+[cache_backed_revision_decision]
+approval_answer = "Find cache-backed revision (Recommended)"
+retain_artifact_package_versions = true
+python_series = "3.11"
+record_interpreter_patch_and_native_library_changes = true
+nixpkgs_revision_search_and_adoption_approved = true
+source_compilation_approved = false

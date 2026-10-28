@@ -1,0 +1,4 @@
+Traceback (most recent call last):
+  File "/home/justin/Documents/Hons/CyberSecurity/Solution_Architecture/Literature_Review/CA1/Emulation/Comparison/audit.py", line 9, in <module>
+    from guard import HERE, CA1, check as check_freeze, sha
+ModuleNotFoundError: No module named 'guard'

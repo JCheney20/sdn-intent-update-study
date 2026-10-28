@@ -1,0 +1,11 @@
+{
+  "status": "PASS",
+  "artifact_executed": true,
+  "primary_data": false,
+  "observability_passed": true,
+  "cases": 5,
+  "queries": 60,
+  "trace_sha256": "7d3d14b4518454102a18fd870f3e3c499e213adda06ac99ad7da868cc5d47241",
+  "plain_timing_fields_excluded_from_equality": true,
+  "replay_validated": false
+}

@@ -1,0 +1,25 @@
+{
+  "command": [
+    "/nix/store/a2bpphzl20l866cp62i8ja35mbsprs66-julia-1.13.1/bin/julia",
+    "--startup-file=no",
+    "--history-file=no",
+    "--compiled-modules=no",
+    "--threads=1",
+    "--gcthreads=1",
+    "-e",
+    "bad(x)=x isa Expr && (x.head in (:error,:incomplete) || any(bad,x.args)); for f in ARGS; @assert !bad(Meta.parseall(read(f,String))); println(\"JULIA PARSE PASS \",f); end",
+    "/home/justin/Documents/Hons/CyberSecurity/Solution_Architecture/Literature_Review/CA1/Emulation/Comparison/controller.jl"
+  ],
+  "scope": "/user.slice/user-1000.slice/user@1000.service/app.slice/cos738-ovs-comparison-julia-parse-1793080949721779726.scope",
+  "affinity": [
+    0,
+    1
+  ],
+  "memory_max_bytes": 2147483648,
+  "swap_max_bytes": 0,
+  "cpu_max": "200000 100000",
+  "entry_sha256": "4acfbf624050990ba7593e363158dc3ea1db2d374a0f73735924904a039ded57",
+  "exit_code": 0,
+  "elapsed_seconds": 0.355252927984111,
+  "memory_peak_at_checkpoint_bytes": 141312000
+}

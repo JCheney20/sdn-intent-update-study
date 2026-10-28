@@ -1,0 +1,4 @@
+mode = "benchmark-python"
+index = 1
+detail = "cold-3"
+supervised_elapsed_nanoseconds = 1383156358

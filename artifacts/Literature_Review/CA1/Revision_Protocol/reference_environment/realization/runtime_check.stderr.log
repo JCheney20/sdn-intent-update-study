@@ -1,0 +1,2 @@
+/nix/store/fwwggg5lnxxn2qvw02d5rkfhqw6mspdn-python3.11-numpy-1.26.2/lib/python3.11/site-packages/numpy/__config__.py:149: UserWarning: Install `pyyaml` for better output
+  warnings.warn("Install `pyyaml` for better output", stacklevel=1)

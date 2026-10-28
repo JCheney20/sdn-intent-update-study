@@ -1,0 +1,31 @@
+schema_version = 1
+date = "2026-10-25"
+provisioning_method = "Nix flake and signed cached runtime components; no uv"
+template = "github:nix-community/templates#python"
+template_revision = "f7c00bd957e47e349b45ba94ba6143163a82306f"
+nixpkgs_revision = "dddccde11a6c6be45f58a76828a5f48d58262e9a"
+previous_nixpkgs_revision = "7f7306271be20e53f3d9bdc0aafc3a93be4314f5"
+status = "RUNTIME_IMPORTS_VERIFIED_REFERENCE_REPLAY_PENDING"
+cache_runtime_components_realized = true
+realized_runtime_components = 16
+recorded_store_closure_paths = 65
+runtime_check = "realization/runtime_check.json"
+combined_wrapper_policy = "Do not build; use recorded components via Nixpkgs standard NIX_PYTHONPATH through bounded run_reference.py"
+python_version = "3.11.7"
+previous_python_version = "3.11.6"
+revision_change_authority = "User selected Find cache-backed revision (Recommended); retain artifact package versions and Python 3.11; record patch/native-library changes"
+matched_direct_and_transitive_package_versions = 14
+additional_runtime_pins = "Full Nix expansion also includes artifact-pinned olefile 0.46 and defusedxml 0.7.1; tkinter 3.11.7 is a Python stdlib component"
+reference_imports_executed = true
+artifact_executed = false
+source_compilation_executed = false
+uv_used_for_provisioning = false
+combined_withPackages_wrapper_built = false
+resource_boundary = "Clients use 2 CPUs/2 GiB/zero swap/120s. Cache copying is allowed; no builds. Shared daemon operations are not claimed to inherit client cgroups."
+
+[input_sha256]
+"flake.nix" = "944da8fca8c776f65da9f112f2991fc7fad3b2ac3c415a0f524d4575857a007a"
+"flake.lock" = "1a414c63ca8260ba742310ceeb7261123917feadfb8804b9a4913b20eef2ccaa"
+"referenceVersions.json" = "c5bf1dd4a280b09bfee44b420cb65b74772e1543d7bd67a6687abaeb1a9fd893"
+"transitiveVersions.json" = "d1eec29ec90255e0ebd253d90c924640318ee841bbf898616d0a8853a4a7a06b"
+"referenceComponents.json" = "773e03d82871d5e6f6db26e44344d1c6ba736864995ccaeecdc326ad6c366426"

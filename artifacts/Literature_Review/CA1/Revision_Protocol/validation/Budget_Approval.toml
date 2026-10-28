@@ -1,0 +1,16 @@
+schema_version = 1
+date = "2026-10-25"
+initial_core_seconds = 600
+additional_core_seconds = 2000
+cumulative_core_seconds = 2600
+prior_reserved_core_seconds = 552
+approval_quote = "You are allowed another 2000 core-seconds"
+scope = "local environment and tiny correctness/reference-replay/independent-oracle validation only"
+max_cpu_cores = 2
+memory_max_bytes = 2147483648
+swap_max_bytes = 0
+max_process_seconds = 120
+refunds_allowed = false
+historical_campaign_reset = false
+installations_downloads_approved = false
+sensitivity_benchmark_primary_approved = false

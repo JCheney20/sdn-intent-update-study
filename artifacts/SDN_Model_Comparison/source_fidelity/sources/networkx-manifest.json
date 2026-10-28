@@ -1,0 +1,17 @@
+[
+  {
+    "source": "https://raw.githubusercontent.com/networkx/networkx/networkx-3.2.1/networkx/algorithms/similarity.py",
+    "local": "networkx-similarity-3.2.1.txt",
+    "sha256": "639191975356f88155ab0a2039d1c9b3e4801e6a6fd5281f37b30817bcbca1d4"
+  },
+  {
+    "source": "https://raw.githubusercontent.com/networkx/networkx/networkx-3.2.1/networkx/algorithms/shortest_paths/unweighted.py",
+    "local": "networkx-unweighted-3.2.1.txt",
+    "sha256": "12e89988711010eac5669994326e764e100d8f27d679684a60522b9efbbd1bfb"
+  },
+  {
+    "source": "https://raw.githubusercontent.com/networkx/networkx/networkx-3.2.1/LICENSE.txt",
+    "local": "networkx-license-3.2.1.txt",
+    "sha256": "50b5a27cb43f7a20cede7aa7b9ab2033552e0412c9a1fde51d38885c1417e95f"
+  }
+]

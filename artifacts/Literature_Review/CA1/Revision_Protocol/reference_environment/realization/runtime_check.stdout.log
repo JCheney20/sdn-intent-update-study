@@ -1,0 +1,1 @@
+PASS: actual Python 3.11.7 imports and 14 package pins; Nix components=16

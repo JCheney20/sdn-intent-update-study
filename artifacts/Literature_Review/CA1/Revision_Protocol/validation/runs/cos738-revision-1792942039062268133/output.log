@@ -1,0 +1,2 @@
+LIMITS_OK memory=2147483648 swap=0 quota=200000/100000 affinity=0,1 Julia_workers=1 scope=/user.slice/user-1000.slice/user@1000.service/app.slice/cos738-revision-1792942039062268133.scope
+RESULT PASS elapsed=3.7399999999906868 CPU=3.534515 peak=233148416 reserved_total=64/600

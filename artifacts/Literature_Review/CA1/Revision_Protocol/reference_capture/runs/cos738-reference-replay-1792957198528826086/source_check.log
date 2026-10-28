@@ -1,0 +1,14 @@
+run.sh: OK
+capture.py: OK
+Capture_Plan.toml: OK
+sources/detector.py: OK
+sources/detectortypes.py: OK
+sources/fattree.py: OK
+../reference_environment/run_reference.py: OK
+../reference_environment/Setup_Status.toml: OK
+../reference_environment/flake.nix: OK
+../reference_environment/flake.lock: OK
+../reference_environment/referenceComponents.json: OK
+replay.jl: OK
+../../../../SDN_Model_Comparison/source_fidelity/detector.jl: OK
+/home/justin/Documents/Hons/CyberSecurity/Solution_Architecture/Literature_Review/CA1/Revision_Protocol/reference_capture/runs/cos738-reference-capture-1792956866366487215/trace.toml: OK

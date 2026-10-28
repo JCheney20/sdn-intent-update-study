@@ -1,0 +1,11 @@
+run.sh: OK
+capture.py: OK
+Capture_Plan.toml: OK
+sources/detector.py: OK
+sources/detectortypes.py: OK
+sources/fattree.py: OK
+../reference_environment/run_reference.py: OK
+../reference_environment/Setup_Status.toml: OK
+../reference_environment/flake.nix: OK
+../reference_environment/flake.lock: OK
+../reference_environment/referenceComponents.json: OK

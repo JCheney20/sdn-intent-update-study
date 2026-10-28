@@ -1,0 +1,4 @@
+mode = "benchmark-julia"
+index = 0
+detail = "cold-4"
+supervised_elapsed_nanoseconds = 9795856630

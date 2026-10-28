@@ -1,0 +1,102 @@
+{
+  "retrieved_at": "2026-10-25T13:29:12.041833+00:00",
+  "mode": "public source download for reading; no downloaded code executed",
+  "audit_date": "2026-10-25",
+  "retrieval_notes": "Initial batch timestamp is above; subsequent GitHub objects were captured on the same audit date. A whole-repository recursive tree exceeded a 4 MiB read cap and was discarded; only targeted subtrees were retained. No clone, dependency installation or source-code execution. HEAD endpoints are mutable; captured immutable Git tree identities are recorded below.",
+  "files": {
+    "zenodo-versions.json": {
+      "url": "https://zenodo.org/api/records/12735280/versions",
+      "bytes": 18547,
+      "sha256": "506e9418d5267b6bc5d36f3134d2dab7d8123c58c193e6f846a2ca57f5f3aa62",
+      "md5": "7a25b50898e44cdb59f8d81e4054ba3b"
+    },
+    "fattree-11642350.py.txt": {
+      "url": "https://zenodo.org/api/records/11642350/files/fattree.py/content",
+      "bytes": 5438,
+      "sha256": "db8906f77813eb1a6b968b982b857ef43754ec9c716ee65453cf61a815e9d823",
+      "md5": "0f1b99bef0280c49893d49fafd110e74"
+    },
+    "fattree-12735280.py.txt": {
+      "url": "https://zenodo.org/api/records/12735280/files/fattree.py/content",
+      "bytes": 5438,
+      "sha256": "db8906f77813eb1a6b968b982b857ef43754ec9c716ee65453cf61a815e9d823",
+      "md5": "0f1b99bef0280c49893d49fafd110e74"
+    },
+    "detector-11642350.py.txt": {
+      "url": "https://zenodo.org/api/records/11642350/files/detector.py/content",
+      "bytes": 36327,
+      "sha256": "04133cb3ce0e7bdf9282ee82593d84567b58b4de4cb334ce130d8cf58d3c5ee6",
+      "md5": "26793984af4d43e1d99f88999c82dcb3"
+    },
+    "detector-12735280.py.txt": {
+      "url": "https://zenodo.org/api/records/12735280/files/detector.py/content",
+      "bytes": 38054,
+      "sha256": "c4530e74d33c5d64b32a68be613135c4e4b8be020bbe03448ce8cb5732019595",
+      "md5": "846ad27321b7d6400265ab1821a21b0e"
+    },
+    "spotlight-paper.md": {
+      "url": "https://web.mit.edu/ha22286/www/papers/CCS24.pdf",
+      "bytes": 100741,
+      "sha256": "01ca04910bf0ccdf89c5b14788df86a676649fec35f07e98888c82c0166725ab",
+      "kind": "provider-extracted text, not byte-identical PDF; figures not visually verified"
+    },
+    "netviews-paper.md": {
+      "url": "https://enck.org/pubs/anjum-sacmat22.pdf",
+      "bytes": 81797,
+      "sha256": "f01c58320c71efdbe9d6b7ddc62c7b2f0fec490381e4c4471841e7b06a295e9f",
+      "kind": "provider-extracted text, not byte-identical PDF; figures not visually verified"
+    },
+    "msnetviews-paper.md": {
+      "url": "https://bradreaves.net/publication/asr%2B23/asr%2B23.pdf",
+      "bytes": 80963,
+      "sha256": "f5f6baf1a6d0cba864fbe23d9b31e18650aceb84196401f149ecc9c19e2abb63",
+      "kind": "provider-extracted text, not byte-identical PDF; figures not visually verified"
+    },
+    "ss-netviews-repo.json": {
+      "url": "https://api.github.com/repos/netviews/ss-netviews",
+      "bytes": 6380,
+      "sha256": "e9ef58509782450ddc628a06dbb25f9a8c460a1abbcab62ed094b5a94f6c40a3"
+    },
+    "ss-netviews-root-tree.json": {
+      "url": "https://api.github.com/repos/netviews/ss-netviews/git/trees/HEAD",
+      "bytes": 1693,
+      "sha256": "66b54f11f132ba4c994fb1e2b2fcc87cf07441912a3c4cad35860ebd8c458b9c",
+      "git_tree_sha": "629d39b3334d4b01dd9a453d25be3c4abd85f795"
+    },
+    "ms-netviews-root-tree.json": {
+      "url": "https://api.github.com/repos/netviews/ms-netviews/git/trees/HEAD",
+      "bytes": 1691,
+      "sha256": "cebb4d0bea4e75cdc67e9b6f4a82d94e12c520be7bf6a131cb500aaffdbb9be6",
+      "git_tree_sha": "cd4d133546328e097670a534248f3f180dac344c"
+    },
+    "ss-netviews-input-files-tree.json": {
+      "url": "https://api.github.com/repos/netviews/ss-netviews/git/trees/bbe67e59f4061fb7569bcb0b8f4ec27919064230?recursive=1",
+      "bytes": 10389,
+      "sha256": "c743d261c24867123611e0e66c660572680c5a0f6fd5b47cc94d4aea465370ff",
+      "git_tree_sha": "bbe67e59f4061fb7569bcb0b8f4ec27919064230"
+    },
+    "ms-netviews-topology-json-tree.json": {
+      "url": "https://api.github.com/repos/netviews/ms-netviews/git/trees/d6f87fd86babec40519abad490dc41a1aebd89ee?recursive=1",
+      "bytes": 46720,
+      "sha256": "8889786637a8762bb0ea5a7a50ea0f70cbbe452ab199f7cdb9e268f23e00d137",
+      "git_tree_sha": "d6f87fd86babec40519abad490dc41a1aebd89ee"
+    },
+    "netviews-cisco-blob.json": {
+      "url": "https://api.github.com/repos/netviews/ss-netviews/git/blobs/019bfbe7c491ae430f1af87010c4919b570ee4d0",
+      "bytes": 8442,
+      "sha256": "1a23e709a24a69c482675db0b9a330eda502c3e3390e5292cb63ff087e9778b0"
+    },
+    "netviews-cisco-topology.json": {
+      "url": "https://api.github.com/repos/netviews/ss-netviews/git/blobs/019bfbe7c491ae430f1af87010c4919b570ee4d0",
+      "bytes": 5919,
+      "sha256": "3f1e57f22c88802c2ce4b1af220369e94754967e50a39d546cd9348159b20378",
+      "kind": "base64-decoded content of recorded Git blob; verified Git blob object hash"
+    },
+    "psi-paper.md": {
+      "url": "https://www.ndss-symposium.org/wp-content/uploads/2017/09/ndss201702A-2YuPaper.pdf",
+      "bytes": 89900,
+      "sha256": "ea2c8232ccda7fc9e4aecc8fc87271a908ff53262311f9f9f8fbfb436ecbfdac",
+      "kind": "provider-extracted text, not byte-identical PDF; figures not visually verified"
+    }
+  }
+}

@@ -1,0 +1,1091 @@
+#!/usr/bin/env python3
+
+from argparse import ArgumentParser
+from csv import writer
+from copy import copy
+from functools import cache
+from time import time, sleep
+from itertools import combinations, pairwise
+import logging
+from sys import stderr, argv
+from typing import Generator
+
+from datetime import datetime
+from fattree import *
+from detectortypes import *
+import matplotlib.pyplot as plt
+from networkx import (
+    DiGraph,
+    draw,
+    panther_similarity,
+    shortest_path,
+    spring_layout,
+)
+from networkx.classes.digraph import deepcopy
+from networkx.exception import NetworkXNoPath
+
+DEFAULT_LOG_FILE = "detector.log"
+
+logger = logging.getLogger(__name__)
+
+PANTHER = True
+
+
+def draw_topo(topo: DiGraph):
+    pos = spring_layout(topo)  # Position nodes using a spring layout
+    color_map = []
+    for node in topo:
+        if "-" in node:
+            color_map.append(NodeColor.CONNECTOR.value)
+        elif node[0] == "h":
+            color_map.append(NodeColor.HOST.value)
+        elif node[0] == "s":
+            color_map.append(NodeColor.SWITCH.value)
+
+    draw(
+        topo,
+        pos,
+        with_labels=True,
+        # node_color="skyblue",
+        node_color=color_map,
+        node_size=1500,
+        font_size=12,
+        font_weight="bold",
+        font_color="black",
+    )
+    plt.show()
+
+
+def switch_has_updates(switch: Switch) -> bool:
+    return len(switch.new_flowrules_add) > 0 or len(switch.new_flowrules_rm) > 0
+
+
+def unique_subsets(lst: list[Switch]) -> Generator[tuple[Switch, ...], None, None]:
+    # filter out switches that have no updates
+    switches_with_updates = list(filter(switch_has_updates, lst))
+    for i in range(len(switches_with_updates) + 1):
+        yield from combinations(switches_with_updates, i)
+
+
+def connect_nodes(topo: DiGraph, from_dev: Node, to_dev: Node) -> None:
+    topo.add_edge(from_dev.mac, to_dev.mac)
+
+
+def disconnect_nodes(topo: DiGraph, from_dev: Node, to_dev: Node) -> None:
+    topo.remove_edge(from_dev.mac, to_dev.mac)
+
+
+def add_switch(topo: DiGraph, new_dev: Node) -> None:
+    add_node(topo, new_dev)
+
+
+def add_host(topo: DiGraph, new_dev: Node) -> None:
+    add_node(topo, new_dev)
+
+
+def add_connector(topo: DiGraph, new_dev: Node) -> None:
+    add_node(topo, new_dev)
+
+
+def add_node(topo: DiGraph, new_dev: Node) -> None:
+    topo.add_node(new_dev.mac)
+
+
+def make_connection_node(
+    topo: DiGraph, from_switch: Device, to_switch: Device
+) -> ConnectionNode:
+    conn_node = ConnectionNode(from_switch, to_switch)
+    if conn_node not in topo:
+        add_connector(topo, conn_node)
+
+    return conn_node
+
+
+def ingress_connection(topo: DiGraph, from_dev: Device, to_switch: Switch) -> None:
+    match from_dev:
+        case Switch():
+            conn_node = make_connection_node(topo, from_dev, to_switch)
+            connect_nodes(topo, conn_node, to_switch)
+        case Host():
+            connect_nodes(topo, from_dev, to_switch)
+        case _:
+            raise ConnectionException(f"Unable to connect {from_dev} from {to_switch}")
+
+
+def egress_connection(topo: DiGraph, from_switch: Switch, to_dev: Device) -> None:
+    match to_dev:
+        case Switch():
+            conn_node = make_connection_node(topo, from_switch, to_dev)
+            connect_nodes(topo, from_switch, conn_node)
+        case Host():
+            connect_nodes(topo, from_switch, to_dev)
+        case _:
+            raise ConnectionException(f"Unable to connect {from_switch} to {to_dev}")
+
+
+def ingress_disconnection(topo: DiGraph, from_dev: Device, to_switch: Switch) -> None:
+    match from_dev:
+        case Switch():
+            conn_node = make_connection_node(topo, from_dev, to_switch)
+            disconnect_nodes(topo, conn_node, to_switch)
+        case Host():
+            disconnect_nodes(topo, from_dev, to_switch)
+        case _:
+            raise ConnectionException(
+                f"Unable to disconnect {from_dev} from {to_switch}"
+            )
+
+
+def egress_disconnection(topo: DiGraph, from_switch: Switch, to_dev: Device) -> None:
+    match to_dev:
+        case Switch():
+            conn_node = make_connection_node(topo, from_switch, to_dev)
+            disconnect_nodes(topo, from_switch, conn_node)
+        case Host():
+            disconnect_nodes(topo, from_switch, to_dev)
+        case _:
+            raise ConnectionException(
+                f"Unable to disconnect {from_switch} from {to_dev}"
+            )
+
+
+def build_initial_topology(
+    all_switches: list[Switch], all_hosts: list[Host]
+) -> DiGraph:
+    topology = DiGraph()
+
+    for host in all_hosts:
+        add_host(topology, host)
+
+    # Add the initial set of rules for all switches
+    for switch in all_switches:
+        add_switch(topology, switch)
+        for flowrule in switch.init_flowrules:
+            if flowrule.action is Action.INIT:
+                # add egress rule from this switch to somewhere else
+                egress_connection(topology, switch, flowrule.egress)
+
+                # add ingress rule from somewhere else to this switch
+                ingress_connection(topology, flowrule.ingress, switch)
+
+    return topology
+
+
+def build_final_topology(
+    init_topo: DiGraph, all_switches: tuple[Switch, ...]
+) -> DiGraph:
+    return update_topology(init_topo, all_switches)
+
+
+def update_topology(
+    init_topology: DiGraph, updated_switches: tuple[Switch, ...]
+) -> DiGraph:
+    topo_copy = deepcopy(init_topology)
+    for switch in updated_switches:
+        for flowrule in switch.new_flowrules_rm:
+            logger.info("Removing flow rule: %s", flowrule)
+            # remove egress rule from this switch to somewhere else
+            egress_disconnection(topo_copy, switch, flowrule.egress)
+
+            # remove ingress rule from somewhere else to this switch
+            ingress_disconnection(topo_copy, flowrule.ingress, switch)
+
+        for flowrule in switch.new_flowrules_add:
+            logger.info("Adding flow rule: %s", flowrule)
+            # add egress rule from this switch to somewhere else
+            egress_connection(topo_copy, switch, flowrule.egress)
+
+            # add ingress rule from somewhere else to this switch
+            ingress_connection(topo_copy, flowrule.ingress, switch)
+
+    return topo_copy
+
+
+def generate_host_pairs(lst: list[Host]) -> Generator[tuple[Host, Host], None, None]:
+    yield from combinations(lst, 2)
+
+
+@cache
+def shortest_path_memoize(topo: DiGraph, source: str, target: str) -> list[Any]:
+    try:
+        # NOTE ignore type hint warning, we are providing both the source and dest,
+        # so networkx promises to return a list
+        return shortest_path(topo, source=source, target=target)
+    except NetworkXNoPath:
+        return []
+
+
+def is_connected(
+    host1: Host, host2: Host, updated_switches: tuple[Switch, ...], topo: DiGraph
+) -> ConnectionStatus:
+    path = shortest_path_memoize(topo, source=host1.mac, target=host2.mac)
+
+    return ConnectionStatus(
+        host1,
+        host2,
+        Connectivity.CONNECTED if path else Connectivity.DISCONNECTED,
+        ConnectivityExpectation.UNKNOWN,
+        path,
+        updated_switches,
+        topo,
+    )
+
+
+def report_extra_connectivity(
+    host1: Host,
+    host2: Host,
+    switch_subset: tuple[Switch, ...],
+    topo: DiGraph,
+    draw_graph: bool = True,
+):
+    updates = ",".join([str(s) for s in switch_subset])
+    logger.warning(
+        "ALERT: Extra connectivity found between %s and %s for update %s",
+        host1.mac,
+        host2.mac,
+        updates,
+    )
+
+    if draw_graph:
+        draw_topo(topo)
+
+
+def detect_extra_connectivity_of_pair(
+    host1: Host,
+    host2: Host,
+    init_topo: DiGraph,
+    final_topo: DiGraph,
+    switch_subset: tuple[Switch, ...],
+    updated_topo: DiGraph,
+) -> ConnectionStatus:
+    orig_connection = is_connected(host1, host2, switch_subset, init_topo)
+    new_connection = is_connected(host1, host2, switch_subset, updated_topo)
+    final_connection = is_connected(host1, host2, switch_subset, final_topo)
+
+    logger.debug(
+        "%s -> %s; initial connectivity: %s; new connectivity: %s",
+        host1.mac,
+        host2.mac,
+        orig_connection.status.name,
+        new_connection.status.name,
+    )
+
+    if (
+        orig_connection.status == Connectivity.CONNECTED
+        or final_connection.status == Connectivity.CONNECTED
+    ):
+        # connected but not a problem because it was either initially connected or will
+        # be connected after update completes
+        return ConnectionStatus(
+            host1,
+            host2,
+            Connectivity.CONNECTED,
+            ConnectivityExpectation.NORMAL,
+            [],
+            switch_subset,
+            updated_topo,
+        )
+
+    elif new_connection.status == Connectivity.DISCONNECTED:
+        # did not become connected
+        return ConnectionStatus(
+            host1,
+            host2,
+            Connectivity.DISCONNECTED,
+            ConnectivityExpectation.NORMAL,
+            [],
+            switch_subset,
+            updated_topo,
+        )
+
+    elif new_connection.status == Connectivity.CONNECTED:
+        # two devices have become connected that were not connected initially and
+        # will not become connected after update completes
+        new_connection.expectation = ConnectivityExpectation.EXTRA
+        return new_connection
+    else:
+        raise ConnectionException("If this is hit, all cases were not accounted for")
+
+
+def find_extra_connectivity(
+    init_topo: DiGraph,
+    final_topo: DiGraph,
+    switches: list[Switch],
+    hosts: list[Host],
+    predictions: dict[str, dict[str, float]],
+) -> tuple[list[ConnectionStatus], int, float]:
+    subset_counter = 0
+    states_checked = 0
+    extra_connections_detected: list[ConnectionStatus] = []
+    first_violation_time = 0
+    first_violation_found = False
+
+    # iterate over permuations
+    for single_sub in unique_subsets(switches):
+        logger.info("evaluating unique subset %s: %s", subset_counter, single_sub)
+
+        if PANTHER:
+            union_of_likely_hosts = set()
+            for s in single_sub:
+                union_of_likely_hosts |= {
+                    k for k in predictions[s.mac] if k.startswith("H")
+                }
+
+        # build topology
+        updated_topo = update_topology(init_topo, single_sub)
+
+        # test connectivity of all hosts
+        for host1, host2 in generate_host_pairs(hosts):
+            if PANTHER:
+                if (
+                    host1.mac not in union_of_likely_hosts
+                    and host2.mac not in union_of_likely_hosts
+                ):
+                    continue
+            states_checked += 1
+
+            connection_status = detect_extra_connectivity_of_pair(
+                host1, host2, init_topo, final_topo, single_sub, updated_topo
+            )
+            if connection_status.expectation == ConnectivityExpectation.EXTRA:
+                updates = ",".join([str(s) for s in single_sub])
+                logger.info(
+                    "Connectivity found between %s and %s for update %s",
+                    host1.mac,
+                    host2.mac,
+                    updates,
+                )
+                if first_violation_found == False:
+                    first_violation_time = time()
+                    first_violation_found = True
+
+                extra_connections_detected.append(connection_status)
+
+            # check both directions
+            connection_status = detect_extra_connectivity_of_pair(
+                host2, host1, init_topo, final_topo, single_sub, updated_topo
+            )
+            if connection_status.expectation == ConnectivityExpectation.EXTRA:
+                updates = ",".join([str(s) for s in single_sub])
+                logger.info(
+                    "Connectivity found between %s and %s for update %s",
+                    host2.mac,
+                    host1.mac,
+                    updates,
+                )
+                if first_violation_found == False:
+                    first_violation_time = time()
+                    first_violation_found = True
+
+                extra_connections_detected.append(connection_status)
+
+        subset_counter += 1
+
+    return extra_connections_detected, states_checked, first_violation_time
+
+
+def get_device_breakdown(
+    devices_on_path: list[Host | Switch],
+) -> tuple[Host, Host, list[Switch]]:
+    switches_on_path: list[Switch] = []
+    for s in devices_on_path[1:-1]:
+        if type(s) is not Switch:
+            raise ConnectionException(
+                "Path must only include switches except for endpoints"
+            )
+        switches_on_path.append(s)
+
+    source = devices_on_path[0]
+    if type(source) is not Host:
+        raise ConnectionException(
+            f"A connection must start at a host; this one starts at a {type(source)}"
+        )
+
+    dest = devices_on_path[-1]
+    if type(dest) is not Host:
+        raise ConnectionException(
+            f"A connection must end at a host; this one ends at a {type(dest)}"
+        )
+
+    return (source, dest, switches_on_path)
+
+
+def do_packets_match(
+    potential_extra_conn: ConnectionStatus, device_dict: dict[str, Host | Switch]
+) -> bool:
+    if not potential_extra_conn.path or len(potential_extra_conn.path) < 3:
+        raise ConnectionException(
+            f"A connection must have at least three nodes, a source host, a dest, and at least one switch; only {len(potential_extra_conn.path)} detected"
+        )
+
+    # filter out ConnectionNodes which are not real devices
+    devices_on_path = calculate_devices_on_path(device_dict, potential_extra_conn)
+
+    source, dest, switches_on_path = get_device_breakdown(devices_on_path)
+
+    # get which switches were updated and which were using orig rules
+    # iterate through list of switches checking if there is a match at each step
+    for switch in switches_on_path:
+        if switch in potential_extra_conn.updated_switches:
+            # check match on initial rules
+            for flowrule in switch.init_flowrules:
+                if not flowrule.packet_match(source.ip, dest.ip):
+                    return False
+        else:
+            # check match on new flow rules
+            for flowrule in switch.new_flowrules_add:
+                if not flowrule.packet_match(source.ip, dest.ip):
+                    return False
+
+    return True
+
+
+def is_connector_node_str(name: str) -> bool:
+    #return sum(element in name for element in {"H", "C", "A", "E"}) >= 2
+    return '-' in name
+
+def calculate_devices_on_path(
+    device_dict: dict[str, Switch | Host], conn: ConnectionStatus
+) -> list[Switch | Host]:
+    logger.info("Unfiltered devices on path: %s", conn.path)
+    logger.info("Device dict: %s", device_dict)
+    devices_on_path = [
+        device_dict[dev_str]
+        for dev_str in conn.path
+        if not is_connector_node_str(dev_str)
+    ]
+    logger.info("Devices on path: %s", devices_on_path)
+    return devices_on_path
+
+
+def prep_trial_cisco() -> tuple[list[Host], list[Switch], dict[str, Host | Switch], Graph]:
+    cisco_topology = create_cisco()
+
+    # create initial intent
+    first_pod_first_host = "H5"
+    last_pod_last_host = f"H9"
+    init_intent_path = shortest_path(
+        cisco_topology, first_pod_first_host, last_pod_last_host
+    )
+    logger.info("Initial intent path: %s", init_intent_path)
+
+    # create final intent
+    first_pod_second_host = "H6"
+    last_pod_first_host = f"H10"
+    final_intent_path = shortest_path(
+        cisco_topology, first_pod_second_host, last_pod_first_host
+    )
+    logger.info("Final intent path: %s", final_intent_path)
+
+    # create switch and host objects
+    hosts = []
+    switches = []
+    host_ip = IPv4Address("10.0.0.0")
+    for node_name in cisco_topology:
+        if node_name.startswith("H"):
+            hosts.append(Host(node_name, host_ip))
+        if node_name.startswith(("C")):
+            switches.append(Switch(node_name))
+
+    device_dict = {device.mac: device for device in switches + hosts}
+
+    # generate initial flow rules
+    for src_pair, dst_pair in pairwise(pairwise(init_intent_path)):
+        src, this_switch = src_pair
+        this_switch_2, dst = dst_pair
+        if not this_switch == this_switch_2:
+            raise Exception(
+                "Path misalignment: switches %s and %s", this_switch, this_switch_2
+            )
+
+        logger.info(
+            "Adding flow rule from %s to %s through switch %s", src, dst, this_switch
+        )
+        flowrule = FlowRule(
+            Action.INIT,
+            device_dict[src],
+            device_dict[dst],
+            source_match=IPv4Network("10.0.0.0/8"),
+            dest_match=IPv4Network("10.0.0.0/8"),
+        )
+
+        s = device_dict[this_switch]
+        if not type(s) == Switch:
+            raise Exception("Path error")
+
+        s.add_flow_rules(flowrule)
+
+    # create removal flowrules
+    removal_diff = set(init_intent_path) - set(final_intent_path)
+    logger.info("These devices are no longer on the path %s", removal_diff)
+    for switch in switches:
+        for flowrule in switch.init_flowrules:
+            if (
+                switch.mac in removal_diff
+                or flowrule.ingress.mac in removal_diff
+                or flowrule.egress.mac in removal_diff
+            ):
+                # remove any flow rules that contain the diff devices in the mac, ingress or egress
+                new_remove_flowrule = copy(flowrule)
+                new_remove_flowrule.action = Action.REMOVE
+                switch.add_flow_rules(new_remove_flowrule)
+
+    logger.info("finished removing unused flow rules")
+
+    # do the same thing as when i created all the flowrules
+    # but this time, check if the flow rule exists already before creating it
+    for src_pair, dst_pair in pairwise(pairwise(final_intent_path)):
+        src, this_switch = src_pair
+        this_switch_2, dst = dst_pair
+        if not this_switch == this_switch_2:
+            raise Exception(
+                "Path misalignment: switches %s and %s", this_switch, this_switch_2
+            )
+
+        exists = False
+        # check if flowrule exists already
+        for init_flowrule in device_dict[this_switch].init_flowrules:
+            # NOTE this will not work if there are multiple disjoint
+            # source or dest matching conditions
+            if init_flowrule.ingress.mac == src and init_flowrule.egress.mac == dst:
+                # it does exist
+                exists = True
+
+        # if the flow rule exists, don't need to create a new one
+        if exists:
+            continue
+
+        logger.info(
+            "Adding flow rule from %s to %s through switch %s", src, dst, this_switch
+        )
+        flowrule = FlowRule(
+            Action.ADD,
+            device_dict[src],
+            device_dict[dst],
+            source_match=IPv4Network("10.0.0.0/8"),
+            dest_match=IPv4Network("10.0.0.0/8"),
+        )
+
+        s = device_dict[this_switch]
+        if not type(s) == Switch:
+            raise Exception("Path error")
+
+        s.add_flow_rules(flowrule)
+
+    logger.info("finished adding new flow rules")
+    return hosts, switches, device_dict, cisco_topology
+
+def prep_trial_ministanford() -> tuple[list[Host], list[Switch], dict[str, Host | Switch], Graph]:
+    ministanford_topology = create_ministanford()
+
+    # create initial intent
+    first_pod_first_host = "H1"
+    last_pod_last_host = f"H26"
+    init_intent_path = shortest_path(
+        ministanford_topology, first_pod_first_host, last_pod_last_host
+    )
+    logger.info("Initial intent path: %s", init_intent_path)
+
+    # create final intent
+    first_pod_second_host = "H2"
+    last_pod_first_host = f"H25"
+    final_intent_path = shortest_path(
+        ministanford_topology, first_pod_second_host, last_pod_first_host
+    )
+    logger.info("Final intent path: %s", final_intent_path)
+
+    # create switch and host objects
+    hosts = []
+    switches = []
+    host_ip = IPv4Address("10.0.0.0")
+    for node_name in ministanford_topology:
+        if node_name.startswith("H"):
+            hosts.append(Host(node_name, host_ip))
+        if node_name.startswith(("C", "A", "E")):
+            switches.append(Switch(node_name))
+
+    device_dict = {device.mac: device for device in switches + hosts}
+
+    # generate initial flow rules
+    for src_pair, dst_pair in pairwise(pairwise(init_intent_path)):
+        src, this_switch = src_pair
+        this_switch_2, dst = dst_pair
+        if not this_switch == this_switch_2:
+            raise Exception(
+                "Path misalignment: switches %s and %s", this_switch, this_switch_2
+            )
+
+        logger.info(
+            "Adding flow rule from %s to %s through switch %s", src, dst, this_switch
+        )
+        flowrule = FlowRule(
+            Action.INIT,
+            device_dict[src],
+            device_dict[dst],
+            source_match=IPv4Network("10.0.0.0/8"),
+            dest_match=IPv4Network("10.0.0.0/8"),
+        )
+
+        s = device_dict[this_switch]
+        if not type(s) == Switch:
+            raise Exception("Path error")
+
+        s.add_flow_rules(flowrule)
+
+    # create removal flowrules
+    removal_diff = set(init_intent_path) - set(final_intent_path)
+    logger.info("These devices are no longer on the path %s", removal_diff)
+    for switch in switches:
+        for flowrule in switch.init_flowrules:
+            if (
+                switch.mac in removal_diff
+                or flowrule.ingress.mac in removal_diff
+                or flowrule.egress.mac in removal_diff
+            ):
+                # remove any flow rules that contain the diff devices in the mac, ingress or egress
+                new_remove_flowrule = copy(flowrule)
+                new_remove_flowrule.action = Action.REMOVE
+                switch.add_flow_rules(new_remove_flowrule)
+
+    logger.info("finished removing unused flow rules")
+
+    # do the same thing as when i created all the flowrules
+    # but this time, check if the flow rule exists already before creating it
+    for src_pair, dst_pair in pairwise(pairwise(final_intent_path)):
+        src, this_switch = src_pair
+        this_switch_2, dst = dst_pair
+        if not this_switch == this_switch_2:
+            raise Exception(
+                "Path misalignment: switches %s and %s", this_switch, this_switch_2
+            )
+
+        exists = False
+        # check if flowrule exists already
+        for init_flowrule in device_dict[this_switch].init_flowrules:
+            # NOTE this will not work if there are multiple disjoint
+            # source or dest matching conditions
+            if init_flowrule.ingress.mac == src and init_flowrule.egress.mac == dst:
+                # it does exist
+                exists = True
+
+        # if the flow rule exists, don't need to create a new one
+        if exists:
+            continue
+
+        logger.info(
+            "Adding flow rule from %s to %s through switch %s", src, dst, this_switch
+        )
+        flowrule = FlowRule(
+            Action.ADD,
+            device_dict[src],
+            device_dict[dst],
+            source_match=IPv4Network("10.0.0.0/8"),
+            dest_match=IPv4Network("10.0.0.0/8"),
+        )
+
+        s = device_dict[this_switch]
+        if not type(s) == Switch:
+            raise Exception("Path error")
+
+        s.add_flow_rules(flowrule)
+
+    logger.info("finished adding new flow rules")
+    return hosts, switches, device_dict, ministanford_topology
+
+def prep_trial(
+    k: int,
+) -> tuple[list[Host], list[Switch], dict[str, Host | Switch], Graph]:
+    fat_tree_topology = create_fat_tree(k)
+
+    # create initial intent
+    first_pod_first_host = "H0-0-0"
+    max_id = (k // 2) - 1
+    last_pod_last_host = f"H{k-1}-{max_id}-{max_id}"
+    init_intent_path = shortest_path(
+        fat_tree_topology, first_pod_first_host, last_pod_last_host
+    )
+    logger.info("Initial intent path: %s", init_intent_path)
+
+    # create final intent
+    first_pod_second_host = "H0-0-1"
+    last_pod_first_host = f"H{k-1}-0-0"
+    final_intent_path = shortest_path(
+        fat_tree_topology, first_pod_second_host, last_pod_first_host
+    )
+    logger.info("Final intent path: %s", final_intent_path)
+
+    # create switch and host objects
+    hosts = []
+    switches = []
+    host_ip = IPv4Address("10.0.0.0")
+    for node_name in fat_tree_topology:
+        if node_name.startswith("H"):
+            hosts.append(Host(node_name, host_ip))
+        if node_name.startswith(("C", "A", "E")):
+            switches.append(Switch(node_name))
+
+    device_dict = {device.mac: device for device in switches + hosts}
+
+    # generate initial flow rules
+    for src_pair, dst_pair in pairwise(pairwise(init_intent_path)):
+        src, this_switch = src_pair
+        this_switch_2, dst = dst_pair
+        if not this_switch == this_switch_2:
+            raise Exception(
+                "Path misalignment: switches %s and %s", this_switch, this_switch_2
+            )
+
+        logger.info(
+            "Adding flow rule from %s to %s through switch %s", src, dst, this_switch
+        )
+        flowrule = FlowRule(
+            Action.INIT,
+            device_dict[src],
+            device_dict[dst],
+            source_match=IPv4Network("10.0.0.0/8"),
+            dest_match=IPv4Network("10.0.0.0/8"),
+        )
+
+        s = device_dict[this_switch]
+        if not type(s) == Switch:
+            raise Exception("Path error")
+
+        s.add_flow_rules(flowrule)
+
+    # create removal flowrules
+    removal_diff = set(init_intent_path) - set(final_intent_path)
+    logger.info("These devices are no longer on the path %s", removal_diff)
+    for switch in switches:
+        for flowrule in switch.init_flowrules:
+            if (
+                switch.mac in removal_diff
+                or flowrule.ingress.mac in removal_diff
+                or flowrule.egress.mac in removal_diff
+            ):
+                # remove any flow rules that contain the diff devices in the mac, ingress or egress
+                new_remove_flowrule = copy(flowrule)
+                new_remove_flowrule.action = Action.REMOVE
+                switch.add_flow_rules(new_remove_flowrule)
+
+    logger.info("finished removing unused flow rules")
+
+    # do the same thing as when i created all the flowrules
+    # but this time, check if the flow rule exists already before creating it
+    for src_pair, dst_pair in pairwise(pairwise(final_intent_path)):
+        src, this_switch = src_pair
+        this_switch_2, dst = dst_pair
+        if not this_switch == this_switch_2:
+            raise Exception(
+                "Path misalignment: switches %s and %s", this_switch, this_switch_2
+            )
+
+        exists = False
+        # check if flowrule exists already
+        for init_flowrule in device_dict[this_switch].init_flowrules:
+            # NOTE this will not work if there are multiple disjoint
+            # source or dest matching conditions
+            if init_flowrule.ingress.mac == src and init_flowrule.egress.mac == dst:
+                # it does exist
+                exists = True
+
+        # if the flow rule exists, don't need to create a new one
+        if exists:
+            continue
+
+        logger.info(
+            "Adding flow rule from %s to %s through switch %s", src, dst, this_switch
+        )
+        flowrule = FlowRule(
+            Action.ADD,
+            device_dict[src],
+            device_dict[dst],
+            source_match=IPv4Network("10.0.0.0/8"),
+            dest_match=IPv4Network("10.0.0.0/8"),
+        )
+
+        s = device_dict[this_switch]
+        if not type(s) == Switch:
+            raise Exception("Path error")
+
+        s.add_flow_rules(flowrule)
+
+    logger.info("finished adding new flow rules")
+    return hosts, switches, device_dict, fat_tree_topology
+
+
+def detection_search(
+    hosts: list[Host],
+    switches: list[Switch],
+    device_dict: dict[str, Host | Switch],
+    predictions: dict,
+) -> tuple[int, int, float]:
+    init_topo = build_initial_topology(switches, hosts)
+    final_topo = build_final_topology(init_topo, tuple(switches))
+    logger.info("built initial topology: %s", init_topo)
+
+    (
+        extra_topology_connectivities,
+        states_checked,
+        first_violation_time,
+    ) = find_extra_connectivity(init_topo, final_topo, switches, hosts, predictions)
+
+    def do_packets_match_closure(potential_extra_conn: ConnectionStatus) -> bool:
+        return do_packets_match(potential_extra_conn, device_dict)
+
+    violations_found = 0
+    for verified_extra_conn in filter(
+        do_packets_match_closure, extra_topology_connectivities
+    ):
+        devices_on_path = calculate_devices_on_path(device_dict, verified_extra_conn)
+        source, dest, switches_on_path = get_device_breakdown(devices_on_path)
+
+        report_extra_connectivity(
+            source,
+            dest,
+            verified_extra_conn.updated_switches,
+            verified_extra_conn.topo,
+            draw_graph=False,
+        )
+        violations_found += 1
+    return states_checked, violations_found, first_violation_time
+
+
+def detection(
+    topo: Graph,
+    hosts: list[Host],
+    switches: list[Switch],
+    device_dict: dict[str, Host | Switch],
+    panther: bool,
+    panther_k: int = 20,
+    path_length: int = 4,
+):
+    global PANTHER
+    PANTHER = panther
+
+    start_panther = time()
+    if panther:
+        predictions = {
+            s.mac: panther_similarity(
+                topo,
+                source=s.mac,
+                path_length=path_length,
+                k=panther_k,
+                weight=None,
+            )
+            for s in switches
+        }
+    else:
+        predictions = dict()
+
+    end_panther = time()
+    precomputation_time = end_panther - start_panther
+
+    start_time = time()
+    states_checked, violations_found, first_violation_time = detection_search(
+        hosts, switches, device_dict, predictions
+    )
+    end_time = time()
+    return (
+        end_time - start_time,
+        states_checked,
+        precomputation_time,
+        violations_found,
+        first_violation_time - start_time,
+    )
+
+def cisco_trial(panther, panther_k, path_length, counter, csv_file):
+    logger.warning("Experiment for cisco topology")
+    hosts, switches, device_dict, cisco_topo = prep_trial_cisco()
+    (
+        time_taken,
+        states_checked,
+        precomputation_time,
+        violations_found,
+        first_detection_time,
+    ) = detection(
+        cisco_topo, hosts, switches, device_dict, panther, panther_k, path_length
+    )
+
+    # Write the data to the CSV file
+    csv_writer.writerow(
+        [
+            "cisco",
+            12,
+            8,
+            time_taken,
+            states_checked,
+            precomputation_time,
+            panther,
+            violations_found,
+            first_detection_time,
+            panther_k,
+            path_length,
+            counter,
+        ]
+    )
+    csv_file.flush()
+
+def ministanford_trial(panther, panther_k, path_length, counter, csv_file):
+    logger.warning("Experiment for ministanford topology")
+    hosts, switches, device_dict, ministanford_topo = prep_trial_ministanford()
+    (
+        time_taken,
+        states_checked,
+        precomputation_time,
+        violations_found,
+        first_detection_time,
+    ) = detection(
+        ministanford_topo, hosts, switches, device_dict, panther, panther_k, path_length
+    )
+
+    # Write the data to the CSV file
+    csv_writer.writerow(
+        [
+            "ministanford",
+            26,
+            25,
+            time_taken,
+            states_checked,
+            precomputation_time,
+            panther,
+            violations_found,
+            first_detection_time,
+            panther_k,
+            path_length,
+            counter,
+        ]
+    )
+    csv_file.flush()
+
+def trial(panther, fat_tree_k, panther_k, path_length, counter, csv_file):
+    logger.warning("Experiment for topology param k=%s", fat_tree_k)
+    hosts, switches, device_dict, fat_tree_topo = prep_trial(fat_tree_k)
+    (
+        time_taken,
+        states_checked,
+        precomputation_time,
+        violations_found,
+        first_detection_time,
+    ) = detection(
+        fat_tree_topo, hosts, switches, device_dict, panther, panther_k, path_length
+    )
+
+    # Write the data to the CSV file
+    csv_writer.writerow(
+        [
+            fat_tree_k,
+            (fat_tree_k**3) // 4,
+            (fat_tree_k // 2) ** 2 + fat_tree_k**2,
+            time_taken,
+            states_checked,
+            precomputation_time,
+            panther,
+            violations_found,
+            first_detection_time,
+            panther_k,
+            path_length,
+            counter,
+        ]
+    )
+    csv_file.flush()
+
+
+if __name__ == "__main__":
+    # silence loud debugging statements from imports
+    logging.getLogger("networkx").setLevel(logging.WARNING)
+    logging.getLogger("matplotlib").setLevel(logging.WARNING)
+    logging.getLogger("PIL").setLevel(logging.WARNING)
+
+    parser = ArgumentParser(description='Spotlight detection parameters')
+    parser.add_argument('--topo', choices=['fattree', 'stanford', 'cisco'], help='Choose between fattree, stanford, or cisco')
+    parser.add_argument('--start', type=int, help='Trial to start at', default=0)
+    args = parser.parse_args()
+
+    # setup logger
+    logging.basicConfig(
+        level=logging.DEBUG,
+        format="%(asctime)s [%(levelname)s]: %(message)s",
+        handlers=[
+            # log to file
+            logging.FileHandler(DEFAULT_LOG_FILE, mode="w"),
+            # log to console
+            logging.StreamHandler(stream=stderr),
+        ],
+    )
+
+    logger.debug("starting application")
+    current_datetime = datetime.now()
+    starting_trial = args.start
+
+    logger.info("Starting trial: %s", starting_trial)
+
+    # Formatting the datetime as a readable string
+    readable_datetime = current_datetime.strftime("%Y-%m-%d-%H_%M_%S")
+
+    # Open the CSV file in write mode
+    with open(f"timing-panther-{readable_datetime}.csv", mode="w") as csv_file:
+        # Create a CSV writer object
+        csv_writer = writer(csv_file)
+
+        csv_writer.writerow(
+            [
+                "k",
+                "hosts",
+                "switches",
+                "time(s)",
+                "states",
+                "precomputation_time",
+                "panther",
+                "violations_found",
+                "first_detection_time",
+                "panther_k",
+                "panther_path_length",
+                "trial",
+            ]
+        )
+
+        csv_file.flush()
+
+        data = []
+
+        path_length = 4
+
+        counter = -1
+        for _ in range(100):
+        # for _ in range(1):
+            for panther_k in [20]:
+            # for panther_k in [3, 5, 10, 15, 20]:
+                for fat_tree_k in range(16, 17, 3):
+                # for fat_tree_k in range(4, 17, 3):
+                    for panther in [False, True]:
+                    # for panther in [True]:
+                        counter += 1
+                        if counter < starting_trial:
+                            continue
+
+                        if args.topo == 'fattree':
+                            trial(
+                                panther,
+                                fat_tree_k,
+                                panther_k,
+                                path_length,
+                                counter,
+                                csv_file,
+                            )
+                        elif args.topo == 'stanford':
+                            ministanford_trial(panther=panther,
+                                            panther_k=20,
+                                            path_length=path_length,
+                                            counter=counter,
+                                            csv_file=csv_file)
+                        elif args.topo == 'cisco':
+                            cisco_trial(panther=panther,
+                                            panther_k=20,
+                                            path_length=path_length,
+                                            counter=counter,
+                                            csv_file=csv_file)
+                        else:
+                            logger.fatal("Unknown topology type: %s", args.topo)
+                            exit(1)
+
+    logger.debug("finished")

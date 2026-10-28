@@ -1,0 +1,11 @@
+{
+  "mode": "primary",
+  "cell": "V-nominal",
+  "run": "/home/justin/Documents/Hons/CyberSecurity/Solution_Architecture/Literature_Review/CA1/Emulation/runs/cos738-ovs-comparison-primary-v-nominal-1793081693153315741",
+  "manifest_sha256": "906476a7eae8e12d97737c3715f5d7b38f39a7ce284f37d937f05d6b1456ee1b",
+  "status": "FINISHED",
+  "started_utc": "2026-10-27T06:14:53.339243+00:00",
+  "exit_code": 0,
+  "ended_utc": "2026-10-27T06:16:34.687513+00:00",
+  "result_status": "PASS"
+}

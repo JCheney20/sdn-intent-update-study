@@ -1,0 +1,155 @@
+{
+  "status": "PASS",
+  "checks": 3707,
+  "primary_episodes": 30,
+  "primary_packets": 45,
+  "cells": [
+    {
+      "cell": "ordinary-nominal",
+      "episodes": 5,
+      "new_pass": 5,
+      "old_pass": 0,
+      "old_wrong": 0,
+      "unobserved": 0,
+      "late": 0,
+      "duplicates": 0,
+      "admission_wait_median_ms": 9.310877,
+      "new_service_age_median_ms": 261.539632,
+      "completion_median_ms": 18.307976,
+      "nonwait_median_ms": 18.307976,
+      "bundles": 2,
+      "extra_rows": 0,
+      "peak_switch_flows": 6
+    },
+    {
+      "cell": "Q-nominal",
+      "episodes": 5,
+      "new_pass": 5,
+      "old_pass": 0,
+      "old_wrong": 0,
+      "unobserved": 0,
+      "late": 0,
+      "duplicates": 0,
+      "admission_wait_median_ms": 1044.456106,
+      "new_service_age_median_ms": 1296.127652,
+      "completion_median_ms": 1044.651158,
+      "nonwait_median_ms": 43.613626,
+      "bundles": 4,
+      "extra_rows": 0,
+      "peak_switch_flows": 6
+    },
+    {
+      "cell": "V-nominal",
+      "episodes": 5,
+      "new_pass": 5,
+      "old_pass": 0,
+      "old_wrong": 0,
+      "unobserved": 0,
+      "late": 0,
+      "duplicates": 0,
+      "admission_wait_median_ms": 43.48259,
+      "new_service_age_median_ms": 294.635799,
+      "completion_median_ms": 1081.600378,
+      "nonwait_median_ms": 80.561759,
+      "bundles": 9,
+      "extra_rows": 1,
+      "peak_switch_flows": 7
+    },
+    {
+      "cell": "V-inflight",
+      "episodes": 5,
+      "new_pass": 5,
+      "old_pass": 5,
+      "old_wrong": 0,
+      "unobserved": 0,
+      "late": 0,
+      "duplicates": 0,
+      "admission_wait_median_ms": 46.880556,
+      "new_service_age_median_ms": 298.797507,
+      "completion_median_ms": 1087.715674,
+      "nonwait_median_ms": 86.670323,
+      "bundles": 9,
+      "extra_rows": 1,
+      "peak_switch_flows": 7
+    },
+    {
+      "cell": "Q-inflight",
+      "episodes": 5,
+      "new_pass": 5,
+      "old_pass": 5,
+      "old_wrong": 0,
+      "unobserved": 0,
+      "late": 0,
+      "duplicates": 0,
+      "admission_wait_median_ms": 1042.612083,
+      "new_service_age_median_ms": 1294.880388,
+      "completion_median_ms": 1042.752799,
+      "nonwait_median_ms": 41.714288,
+      "bundles": 4,
+      "extra_rows": 0,
+      "peak_switch_flows": 6
+    },
+    {
+      "cell": "ordinary-inflight",
+      "episodes": 5,
+      "new_pass": 5,
+      "old_pass": 0,
+      "old_wrong": 5,
+      "unobserved": 0,
+      "late": 0,
+      "duplicates": 0,
+      "admission_wait_median_ms": 9.247488,
+      "new_service_age_median_ms": 262.038141,
+      "completion_median_ms": 18.149785,
+      "nonwait_median_ms": 18.149785,
+      "bundles": 2,
+      "extra_rows": 0,
+      "peak_switch_flows": 6
+    }
+  ],
+  "resources": [
+    {
+      "cell": "ordinary-nominal",
+      "run": "cos738-ovs-comparison-primary-ordinary-nominal-1793081485380082902",
+      "whole_job_seconds": 100.08711884298827,
+      "launch_to_ready_seconds": 83.808593656,
+      "checkpoint_peak_bytes": 716365824
+    },
+    {
+      "cell": "Q-nominal",
+      "run": "cos738-ovs-comparison-primary-q-nominal-1793081585646226212",
+      "whole_job_seconds": 107.32344412594102,
+      "launch_to_ready_seconds": 90.783842688,
+      "checkpoint_peak_bytes": 642781184
+    },
+    {
+      "cell": "V-nominal",
+      "run": "cos738-ovs-comparison-primary-v-nominal-1793081693153315741",
+      "whole_job_seconds": 101.41364885400981,
+      "launch_to_ready_seconds": 85.212969762,
+      "checkpoint_peak_bytes": 624353280
+    },
+    {
+      "cell": "V-inflight",
+      "run": "cos738-ovs-comparison-primary-v-inflight-1793081832156058861",
+      "whole_job_seconds": 101.35912693594582,
+      "launch_to_ready_seconds": 84.95553789,
+      "checkpoint_peak_bytes": 706347008
+    },
+    {
+      "cell": "Q-inflight",
+      "run": "cos738-ovs-comparison-primary-q-inflight-1793081933709231134",
+      "whole_job_seconds": 98.94895941310097,
+      "launch_to_ready_seconds": 82.626897061,
+      "checkpoint_peak_bytes": 681852928
+    },
+    {
+      "cell": "ordinary-inflight",
+      "run": "cos738-ovs-comparison-primary-ordinary-inflight-1793082032861303353",
+      "whole_job_seconds": 101.29056981496979,
+      "launch_to_ready_seconds": 85.06091944,
+      "checkpoint_peak_bytes": 640925696
+    }
+  ],
+  "manifest_sha256": "906476a7eae8e12d97737c3715f5d7b38f39a7ce284f37d937f05d6b1456ee1b"
+}

@@ -1,0 +1,8 @@
+{
+  "status": "PASS",
+  "run": "cos738-ovs-comparison-duplicate-refusal-1793082333941919861",
+  "expected_exit": 2,
+  "original_attempt_sha256": "d917718a5fb2e315654e245f8f1b2bbc5a1f3606f7d0e5b89dbd8d1c80efc608",
+  "original_attempt_unchanged_check": "before/after shell SHA256 equality passed",
+  "network_result_created": false
+}

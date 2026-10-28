@@ -1,0 +1,3 @@
+REFERENCE_ENVIRONMENT BLOCKED_PREREQUISITES
+LIMITS_OK memory=2147483648 swap=0 quota=200000/100000 affinity=0,1 Julia_workers=1 scope=/user.slice/user-1000.slice/user@1000.service/app.slice/cos738-revision-1792952428981839853.scope
+RESULT PASS elapsed=5.309999999939464 CPU=5.252912 peak=187715584 documentary_limit_total=988 aggregate_cap=none

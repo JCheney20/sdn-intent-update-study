@@ -1,0 +1,5 @@
+LIMITS_OK memory=2147483648 swap=0 quota=200000/100000 affinity=0,1 Julia_workers=1 scope=/user.slice/user-1000.slice/user@1000.service/app.slice/cos738-revision-1792996109974263456.scope
+ORACLE_FIXTURE cisco checks=1058 cases=166 boundary_states=14281 joint_cases=56 joint_boundary_states=7620
+ORACLE_FIXTURE fat4 checks=1525 cases=270 boundary_states=37435 joint_cases=64 joint_boundary_states=14172
+CONTROLLER PASS fat4 assertions=601999 rows=26 unique_plans=8
+RESULT PASS elapsed=32.73999999999069 CPU=32.463385 peak=405413888 documentary_limit_total=2824 aggregate_cap=none

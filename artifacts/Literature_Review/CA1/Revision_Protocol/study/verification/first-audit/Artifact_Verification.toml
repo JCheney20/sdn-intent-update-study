@@ -1,0 +1,12 @@
+scope = "/user.slice/user-1000.slice/user@1000.service/app.slice/cos738-study-audit-1793000561925889007.scope"
+sensitivity_trials = 576
+primary_rows = 92
+primary_cells = 12
+checks = 1762
+historical_external_snapshots = 2
+frozen_manifest_sha256 = "7ca19f71f0d88d709e4e415e9b4b28e4ba013fd3d73d45f066ddbc1aff6a915e"
+memory_peak_at_checkpoint_bytes = 230313984
+historical_sealed_files = 194
+benchmark_jobs = 48
+status = "PASS"
+source_sha256 = "83ba5a758bf2e982233755cf18d6eda470e158412fb31572460404e54f67ea0c"

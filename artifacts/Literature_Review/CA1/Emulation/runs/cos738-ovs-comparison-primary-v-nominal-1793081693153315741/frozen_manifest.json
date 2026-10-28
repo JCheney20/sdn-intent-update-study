@@ -1,0 +1,111 @@
+{
+  "study_id": "cisco-emulation-v1",
+  "created_utc": "2026-10-27T06:09:16.845486+00:00",
+  "parameters": {
+    "study_id": "cisco-emulation-v1",
+    "validation_timing_run": "cos738-ovs-wire-timing-vector-1793079788777892588",
+    "procedures": [
+      "ordinary",
+      "Q",
+      "V"
+    ],
+    "scenarios": [
+      "nominal",
+      "inflight"
+    ],
+    "cell_order": [
+      "ordinary-nominal",
+      "Q-nominal",
+      "V-nominal",
+      "V-inflight",
+      "Q-inflight",
+      "ordinary-inflight"
+    ],
+    "repetitions": 5,
+    "delay_ms": 250,
+    "drain_wait_ns": 1000000000,
+    "retirement_wait_ns": 1000000000,
+    "observation_window_ns": 2500000000,
+    "resident_poll_timeout_ns": 150000000,
+    "tail_settle_ns": 20000000,
+    "warm_order": [
+      "ordinary-nominal",
+      "ordinary-inflight",
+      "Q-nominal",
+      "Q-inflight",
+      "V-nominal",
+      "V-inflight"
+    ],
+    "validation_cell": "Q-inflight",
+    "extra_forwarding_rows": {
+      "ordinary": 0,
+      "Q": 0,
+      "V": 1
+    },
+    "resources": {
+      "cpus": [
+        0,
+        1
+      ],
+      "cpu_max": "200000 100000",
+      "memory_max_bytes": 2147483648,
+      "swap_max_bytes": 0,
+      "whole_job_seconds": 120
+    },
+    "attempt_policy": "one validation-envelope attempt, then one primary attempt per cell; no selective retries",
+    "observation_semantics": "worker application monotonic receipt timestamps; one common deadline, late observations retained",
+    "wait_semantics": "fixed experimental operating parameters under declared tiny load, not H-derived or universal lifetime bounds"
+  },
+  "timing_audit": {
+    "status": "PASS",
+    "run": "cos738-ovs-wire-timing-vector-1793079788777892588",
+    "checks": 211,
+    "cases": 6,
+    "resource": {
+      "command": [
+        "bash",
+        "/home/justin/Documents/Hons/CyberSecurity/Solution_Architecture/Literature_Review/CA1/Emulation/Step3/run.sh",
+        "timing"
+      ],
+      "scope": "/user.slice/user-1000.slice/user@1000.service/app.slice/cos738-ovs-wire-timing-vector-1793079788777892588.scope",
+      "affinity": [
+        0,
+        1
+      ],
+      "memory_max_bytes": 2147483648,
+      "swap_max_bytes": 0,
+      "cpu_max": "200000 100000",
+      "entry_sha256": "4acfbf624050990ba7593e363158dc3ea1db2d374a0f73735924904a039ded57",
+      "exit_code": 0,
+      "elapsed_seconds": 74.9179219910875,
+      "memory_peak_at_checkpoint_bytes": 650756096
+    }
+  },
+  "sources": {
+    "Emulation/Comparison/Parameters.json": "e057f37980c0134ec0887188a2c30a48c6d11b4b572a2e4f18af1cdf6f797ffc",
+    "Emulation/Comparison/Protocol.md": "6a21e9d3c4a40e3428cfad106f6b0071172f3346b3254fbf29d896ea9b8b6f3d",
+    "Emulation/Comparison/controller.jl": "e90dca685783d0461a00649c581bc5d178e86fec879f799513697afe02f7dff9",
+    "Emulation/Comparison/guard.py": "ccd6c1bbccab80266c788ab932b02e992545b8bb35789823c6329845dda7f6f7",
+    "Emulation/Comparison/run.sh": "32fbf8c9f60a7b885346f331f1e62b5f0050a31c808c71159132af0f5fbda223",
+    "Emulation/Comparison/audit.py": "7d94cb9ee9ababe34ea0298970879f9e17705c3b0c25feda60c41c9c9016b7f7",
+    "Emulation/Step3/Wire.jl": "c853f870b1b7e888bd946ad90d0adf98b4c0201984a3ccf44b9f891a27fe17b7",
+    "Emulation/Step3/wire.py": "c40897158314e07c926ba167691ab6bf039cbccafb6184dbce2188cc758120f2",
+    "Emulation/Step2/CiscoAdapter.jl": "d721956ac99a77a73b53e10d46d5bf00964f5260054572efbee115e24698bbd1",
+    "Emulation/Step2/packet_worker.py": "6d8f428dbabe8c9b13c39e06630d6226cf8faa4a77c1bcad8f99245284d525d0",
+    "Emulation/Step2/Validated_Source_Manifest.sha256": "9b00d4aae4eac31872263f5bbf34fb8a54cfcf03089069afba54071e6f2f705f",
+    "Emulation/scope.sh": "b2aeb35dbe69e85c59a6d3c1ac61ee62fad0ef50afd7bfcf727c9a5e888d956a",
+    "Emulation/scope_entry.py": "4acfbf624050990ba7593e363158dc3ea1db2d374a0f73735924904a039ded57",
+    "Emulation/Components.json": "313c8ab553af2525fb64effd99b826b9962813a57487f73415374bfd34b50252",
+    "Emulation/Environment_Manifest.sha256": "0bb8c8855067a8aee7b0d56a709be81a6da91bfbc72164325d3d5caf869a5c37",
+    "Emulation/Interop/Components.json": "79b22fd5badb896fd4a1c07be7808735846fd054a457349ddf536291aa6c0983",
+    "Emulation/Interop/Environment_Manifest.sha256": "70c6500ae1f2bdac98f14313af0674314b5f4bce78a14798f36a0e9a47f4a4d2",
+    "Emulation/Interop/JuliaSources.json": "534608580565d82afc88bd0cf96ac43ca5a43906d79e84b233287444c2cad499",
+    "Emulation/Interop/flake.lock": "5c6f6c1e2ff5fb7a1e0adb62d7e4657c73f4582d7ea858cd6f617d745385bcf5",
+    "Emulation/Interop/Project.toml": "cff8f2068c136f26c725ba082ee85df0745fb5bad8ab9b68d954b827720eec08",
+    "Emulation/Interop/sandbox.sh": "a905755569ca784a3842b6df9d11ae1915d78146eb8d6646a7f5234f8fa48e67",
+    "Revision_Protocol/handover.jl": "ffe749d1802e5e60f25620b16f8d11db3010c4bcf411ef9224ceea8fbfd757c8",
+    "Revision_Protocol/Handover_Bounds.toml": "06689a5cf7c126e90293fa4d16ca02dab73f9e0d78e672e77f37be0f16a05fd4",
+    "Revision_Protocol/study/Manifest.toml": "7ca19f71f0d88d709e4e415e9b4b28e4ba013fd3d73d45f066ddbc1aff6a915e",
+    "Revision_Protocol/reference_capture/runs/cos738-reference-capture-1792956866366487215/trace.toml": "7d3d14b4518454102a18fd870f3e3c499e213adda06ac99ad7da868cc5d47241"
+  }
+}

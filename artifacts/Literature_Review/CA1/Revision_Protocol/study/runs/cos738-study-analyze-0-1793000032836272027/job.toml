@@ -1,0 +1,4 @@
+mode = "analyze"
+index = 0
+detail = "none"
+supervised_elapsed_nanoseconds = 20193008551

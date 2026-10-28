@@ -1,0 +1,11 @@
+{
+  "mode": "validation",
+  "cell": "Q-inflight",
+  "run": "/home/justin/Documents/Hons/CyberSecurity/Solution_Architecture/Literature_Review/CA1/Emulation/runs/cos738-ovs-comparison-envelope-1793081356920499347",
+  "manifest_sha256": "906476a7eae8e12d97737c3715f5d7b38f39a7ce284f37d937f05d6b1456ee1b",
+  "status": "FINISHED",
+  "started_utc": "2026-10-27T06:09:17.086338+00:00",
+  "exit_code": 0,
+  "ended_utc": "2026-10-27T06:10:57.231806+00:00",
+  "result_status": "PASS"
+}

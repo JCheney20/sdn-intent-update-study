@@ -1,0 +1,26 @@
+WARNING: Imported binding StyledStrings.@styled_str was undeclared at import time during import to Markdown.
+WARNING: Imported binding StyledStrings.styled was undeclared at import time during import to Markdown.
+*** Error setting resource limits. Mininet's performance may be affected.
+*** Configuring hosts
+H1 H2 H3 H4 H5 H6 H7 H8 H9 H10 H11 H12 
+*** Starting controller
+
+*** Starting 10 switches
+C1 C2 C3 C4 C5 C6 C7 C8 C9 C10 ...
+*** Stopping 0 controllers
+
+*** Stopping 29 links
+.............................
+*** Stopping 10 switches
+C1 C2 C3 C4 C5 C6 C7 C8 C9 C10 
+*** Stopping 13 hosts
+H1 H2 H3 H4 H5 H6 H7 H8 H9 H10 H11 H12 wire 
+*** Done
+TIMING CONTROL PASS 6900 residence_ns=250867984
+TIMING CONTROL PASS 7001 residence_ns=250730887
+TIMING CONTROL PASS 7002 residence_ns=250583140
+TIMING CONTROL PASS 7003 residence_ns=250541393
+TIMING CONTROL PASS 7011 residence_ns=250127818
+TIMING CONTROL PASS 7012 residence_ns=250574766
+TIMING CONTROL PASS 7013 residence_ns=250526646
+TIMING GATE PASS

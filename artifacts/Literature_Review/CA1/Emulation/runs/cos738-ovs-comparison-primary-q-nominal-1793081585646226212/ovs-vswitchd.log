@@ -1,0 +1,282 @@
+2026-10-27T06:14:10Z|00001|ovs_numa|INFO|Discovered 12 CPU cores on NUMA node 0
+2026-10-27T06:14:10Z|00002|ovs_numa|INFO|Discovered 1 NUMA nodes and 12 CPU cores
+2026-10-27T06:14:10Z|00003|reconnect|INFO|unix:/tmp/cos738-cisco-zxFnxx/db.sock: connecting...
+2026-10-27T06:14:10Z|00004|reconnect|INFO|unix:/tmp/cos738-cisco-zxFnxx/db.sock: connected
+2026-10-27T06:14:10Z|00005|bridge|INFO|ovs-vswitchd (Open vSwitch) 3.2.1
+2026-10-27T06:14:10Z|00006|pmd_perf|INFO|Estimated TSC frequency: 3295017 KHz
+2026-10-27T06:14:10Z|00007|dpif_netdev_extract|INFO|Default MFEX Extract implementation is scalar.
+2026-10-27T06:14:10Z|00008|dpif_netdev_impl|INFO|Default DPIF implementation is dpif_scalar.
+2026-10-27T06:14:10Z|00009|ofproto_dpif|INFO|netdev@ovs-netdev: Datapath supports recirculation
+2026-10-27T06:14:10Z|00010|ofproto_dpif|INFO|netdev@ovs-netdev: VLAN header stack length probed as 1
+2026-10-27T06:14:10Z|00011|ofproto_dpif|INFO|netdev@ovs-netdev: MPLS label stack length probed as 3
+2026-10-27T06:14:10Z|00012|ofproto_dpif|INFO|netdev@ovs-netdev: Datapath supports truncate action
+2026-10-27T06:14:10Z|00013|ofproto_dpif|INFO|netdev@ovs-netdev: Datapath supports unique flow ids
+2026-10-27T06:14:10Z|00014|ofproto_dpif|INFO|netdev@ovs-netdev: Datapath supports clone action
+2026-10-27T06:14:10Z|00015|ofproto_dpif|INFO|netdev@ovs-netdev: Max sample nesting level probed as 10
+2026-10-27T06:14:10Z|00016|ofproto_dpif|INFO|netdev@ovs-netdev: Datapath supports eventmask in conntrack action
+2026-10-27T06:14:10Z|00017|ofproto_dpif|INFO|netdev@ovs-netdev: Datapath supports ct_clear action
+2026-10-27T06:14:10Z|00018|ofproto_dpif|INFO|netdev@ovs-netdev: Max dp_hash algorithm probed to be 1
+2026-10-27T06:14:10Z|00019|ofproto_dpif|INFO|netdev@ovs-netdev: Datapath supports check_pkt_len action
+2026-10-27T06:14:10Z|00020|ofproto_dpif|INFO|netdev@ovs-netdev: Datapath supports timeout policy in conntrack action
+2026-10-27T06:14:10Z|00021|ofproto_dpif|INFO|netdev@ovs-netdev: Datapath supports ct_zero_snat
+2026-10-27T06:14:10Z|00022|ofproto_dpif|INFO|netdev@ovs-netdev: Datapath supports add_mpls action
+2026-10-27T06:14:10Z|00023|ofproto_dpif|INFO|netdev@ovs-netdev: Datapath supports ct_state
+2026-10-27T06:14:10Z|00024|ofproto_dpif|INFO|netdev@ovs-netdev: Datapath supports ct_zone
+2026-10-27T06:14:10Z|00025|ofproto_dpif|INFO|netdev@ovs-netdev: Datapath supports ct_mark
+2026-10-27T06:14:10Z|00026|ofproto_dpif|INFO|netdev@ovs-netdev: Datapath supports ct_label
+2026-10-27T06:14:10Z|00027|ofproto_dpif|INFO|netdev@ovs-netdev: Datapath supports ct_state_nat
+2026-10-27T06:14:10Z|00028|ofproto_dpif|INFO|netdev@ovs-netdev: Datapath supports ct_orig_tuple
+2026-10-27T06:14:10Z|00029|ofproto_dpif|INFO|netdev@ovs-netdev: Datapath supports ct_orig_tuple6
+2026-10-27T06:14:10Z|00030|ofproto_dpif|INFO|netdev@ovs-netdev: Datapath supports IPv6 ND Extensions
+2026-10-27T06:14:10Z|00031|ofproto_dpif_upcall|INFO|Setting n-handler-threads to 1, setting n-revalidator-threads to 1
+2026-10-27T06:14:10Z|00032|ofproto_dpif_upcall|INFO|Starting 2 threads
+2026-10-27T06:14:10Z|00033|dpif_netdev|INFO|pmd-rxq-affinity isolates PMD core
+2026-10-27T06:14:10Z|00034|dpif_netdev|INFO|PMD auto load balance interval set to 1 mins
+2026-10-27T06:14:10Z|00035|dpif_netdev|INFO|PMD auto load balance improvement threshold set to 25%
+2026-10-27T06:14:10Z|00036|dpif_netdev|INFO|PMD auto load balance load threshold set to 95%
+2026-10-27T06:14:10Z|00037|dpif_netdev|INFO|PMD auto load balance is disabled.
+2026-10-27T06:14:10Z|00038|dpif_netdev|INFO|PMD max sleep request is 0 usecs.
+2026-10-27T06:14:10Z|00039|dpif_netdev|INFO|PMD load based sleeps are disabled.
+2026-10-27T06:14:10Z|00040|bridge|INFO|bridge C1: added interface C1-eth3 on port 3
+2026-10-27T06:14:10Z|00041|bridge|INFO|bridge C1: added interface C1-eth2 on port 2
+2026-10-27T06:14:10Z|00042|bridge|INFO|bridge C1: added interface C1-eth1 on port 1
+2026-10-27T06:14:10Z|00043|bridge|INFO|bridge C1: added interface C1 on port 65534
+2026-10-27T06:14:10Z|00044|bridge|INFO|bridge C1: using datapath ID 0000000000000001
+2026-10-27T06:14:10Z|00045|connmgr|INFO|C1: added service controller "punix:/tmp/cos738-cisco-zxFnxx/C1.mgmt"
+2026-10-27T06:14:10Z|00046|bridge|INFO|bridge C2: added interface C2-eth3 on port 3
+2026-10-27T06:14:10Z|00047|bridge|INFO|bridge C2: added interface C2-eth5 on port 5
+2026-10-27T06:14:10Z|00048|bridge|INFO|bridge C2: added interface C2-eth4 on port 4
+2026-10-27T06:14:10Z|00049|bridge|INFO|bridge C2: added interface C2-eth2 on port 2
+2026-10-27T06:14:10Z|00050|bridge|INFO|bridge C2: added interface C2-eth1 on port 1
+2026-10-27T06:14:10Z|00051|bridge|INFO|bridge C2: added interface C2-eth6 on port 6
+2026-10-27T06:14:10Z|00052|bridge|INFO|bridge C2: added interface C2 on port 65534
+2026-10-27T06:14:10Z|00053|bridge|INFO|bridge C2: using datapath ID 0000000000000002
+2026-10-27T06:14:10Z|00054|connmgr|INFO|C2: added service controller "punix:/tmp/cos738-cisco-zxFnxx/C2.mgmt"
+2026-10-27T06:14:10Z|00055|bridge|INFO|bridge C3: added interface C3-eth3 on port 3
+2026-10-27T06:14:10Z|00056|bridge|INFO|bridge C3: added interface C3-eth4 on port 4
+2026-10-27T06:14:10Z|00057|bridge|INFO|bridge C3: added interface C3-eth2 on port 2
+2026-10-27T06:14:10Z|00058|bridge|INFO|bridge C3: added interface C3-eth1 on port 1
+2026-10-27T06:14:10Z|00059|bridge|INFO|bridge C3: added interface C3 on port 65534
+2026-10-27T06:14:10Z|00060|bridge|INFO|bridge C3: using datapath ID 0000000000000003
+2026-10-27T06:14:10Z|00061|connmgr|INFO|C3: added service controller "punix:/tmp/cos738-cisco-zxFnxx/C3.mgmt"
+2026-10-27T06:14:10Z|00062|bridge|INFO|bridge C4: added interface C4-eth2 on port 2
+2026-10-27T06:14:10Z|00063|bridge|INFO|bridge C4: added interface C4-eth1 on port 1
+2026-10-27T06:14:10Z|00064|bridge|INFO|bridge C4: added interface C4-eth4 on port 4
+2026-10-27T06:14:10Z|00065|bridge|INFO|bridge C4: added interface C4-eth3 on port 3
+2026-10-27T06:14:10Z|00066|bridge|INFO|bridge C4: added interface C4 on port 65534
+2026-10-27T06:14:10Z|00067|bridge|INFO|bridge C4: using datapath ID 0000000000000004
+2026-10-27T06:14:10Z|00068|connmgr|INFO|C4: added service controller "punix:/tmp/cos738-cisco-zxFnxx/C4.mgmt"
+2026-10-27T06:14:10Z|00069|bridge|INFO|bridge C5: added interface C5-eth2 on port 2
+2026-10-27T06:14:10Z|00070|bridge|INFO|bridge C5: added interface C5-eth3 on port 3
+2026-10-27T06:14:11Z|00071|bridge|INFO|bridge C5: added interface C5-eth1 on port 1
+2026-10-27T06:14:11Z|00072|bridge|INFO|bridge C5: added interface C5 on port 65534
+2026-10-27T06:14:11Z|00073|bridge|INFO|bridge C5: using datapath ID 0000000000000005
+2026-10-27T06:14:11Z|00074|connmgr|INFO|C5: added service controller "punix:/tmp/cos738-cisco-zxFnxx/C5.mgmt"
+2026-10-27T06:14:11Z|00075|bridge|INFO|bridge C6: added interface C6-eth3 on port 3
+2026-10-27T06:14:11Z|00076|bridge|INFO|bridge C6: added interface C6-eth1 on port 1
+2026-10-27T06:14:11Z|00077|bridge|INFO|bridge C6: added interface C6-eth2 on port 2
+2026-10-27T06:14:11Z|00078|bridge|INFO|bridge C6: added interface C6 on port 65534
+2026-10-27T06:14:11Z|00079|bridge|INFO|bridge C6: using datapath ID 0000000000000006
+2026-10-27T06:14:11Z|00080|connmgr|INFO|C6: added service controller "punix:/tmp/cos738-cisco-zxFnxx/C6.mgmt"
+2026-10-27T06:14:11Z|00081|bridge|INFO|bridge C7: added interface C7-eth2 on port 2
+2026-10-27T06:14:11Z|00082|bridge|INFO|bridge C7: added interface C7-eth1 on port 1
+2026-10-27T06:14:11Z|00083|bridge|INFO|bridge C7: added interface C7-eth3 on port 3
+2026-10-27T06:14:11Z|00084|bridge|INFO|bridge C7: added interface C7 on port 65534
+2026-10-27T06:14:11Z|00085|bridge|INFO|bridge C7: using datapath ID 0000000000000007
+2026-10-27T06:14:11Z|00086|connmgr|INFO|C7: added service controller "punix:/tmp/cos738-cisco-zxFnxx/C7.mgmt"
+2026-10-27T06:14:11Z|00087|ofproto_dpif_xlate|INFO|/proc/sys/net/core/netdev_max_backlog: open failed (No such file or directory)
+2026-10-27T06:14:11Z|00088|bridge|INFO|bridge C8: added interface C8-eth1 on port 1
+2026-10-27T06:14:11Z|00089|bridge|INFO|bridge C8: added interface C8-eth3 on port 3
+2026-10-27T06:14:11Z|00090|bridge|INFO|bridge C8: added interface C8-eth2 on port 2
+2026-10-27T06:14:11Z|00091|bridge|INFO|bridge C8: added interface C8 on port 65534
+2026-10-27T06:14:11Z|00092|bridge|INFO|bridge C8: using datapath ID 0000000000000008
+2026-10-27T06:14:11Z|00093|connmgr|INFO|C8: added service controller "punix:/tmp/cos738-cisco-zxFnxx/C8.mgmt"
+2026-10-27T06:14:11Z|00094|bridge|INFO|bridge C9: added interface C9-eth1 on port 1
+2026-10-27T06:14:11Z|00095|bridge|INFO|bridge C9: added interface C9-eth2 on port 2
+2026-10-27T06:14:11Z|00096|bridge|INFO|bridge C9: added interface C9-eth3 on port 3
+2026-10-27T06:14:11Z|00097|bridge|INFO|bridge C9: added interface C9-eth6 on port 6
+2026-10-27T06:14:11Z|00098|bridge|INFO|bridge C9: added interface C9-eth7 on port 7
+2026-10-27T06:14:11Z|00099|bridge|INFO|bridge C9: added interface C9-eth4 on port 4
+2026-10-27T06:14:11Z|00100|bridge|INFO|bridge C9: added interface C9-eth5 on port 5
+2026-10-27T06:14:11Z|00101|bridge|INFO|bridge C9: added interface C9 on port 65534
+2026-10-27T06:14:11Z|00102|bridge|INFO|bridge C9: using datapath ID 0000000000000009
+2026-10-27T06:14:11Z|00103|connmgr|INFO|C9: added service controller "punix:/tmp/cos738-cisco-zxFnxx/C9.mgmt"
+2026-10-27T06:14:11Z|00104|bridge|INFO|bridge C10: added interface C10-eth4 on port 4
+2026-10-27T06:14:11Z|00105|bridge|INFO|bridge C10: added interface C10-eth1 on port 1
+2026-10-27T06:14:11Z|00106|bridge|INFO|bridge C10: added interface C10-eth2 on port 2
+2026-10-27T06:14:11Z|00107|bridge|INFO|bridge C10: added interface C10-eth6 on port 6
+2026-10-27T06:14:11Z|00108|bridge|INFO|bridge C10: added interface C10-eth5 on port 5
+2026-10-27T06:14:11Z|00109|bridge|INFO|bridge C10: added interface C10-eth3 on port 3
+2026-10-27T06:14:11Z|00110|bridge|INFO|bridge C10: added interface C10 on port 65534
+2026-10-27T06:14:11Z|00111|bridge|INFO|bridge C10: using datapath ID 000000000000000a
+2026-10-27T06:14:11Z|00112|connmgr|INFO|C10: added service controller "punix:/tmp/cos738-cisco-zxFnxx/C10.mgmt"
+2026-10-27T06:14:13Z|00113|bridge|INFO|bridge C10: deleted interface C10-eth6 on port 6
+2026-10-27T06:14:13Z|00114|bridge|INFO|bridge C4: deleted interface C4-eth1 on port 1
+2026-10-27T06:14:13Z|00115|bridge|INFO|bridge C10: added interface C10-eth6 on port 6
+2026-10-27T06:14:13Z|00116|bridge|INFO|bridge C4: added interface C4-eth1 on port 1
+2026-10-27T06:14:14Z|00117|connmgr|INFO|C2<->unix#0: 6 flow_mods in the last 0 s (6 adds)
+2026-10-27T06:14:14Z|00118|connmgr|INFO|C1<->unix#2: 2 flow_mods in the last 0 s (2 adds)
+2026-10-27T06:14:14Z|00119|connmgr|INFO|C3<->unix#4: 2 flow_mods in the last 0 s (2 adds)
+2026-10-27T06:14:14Z|00120|connmgr|INFO|C4<->unix#6: 3 flow_mods in the last 0 s (3 adds)
+2026-10-27T06:14:14Z|00121|connmgr|INFO|C5<->unix#8: 3 flow_mods in the last 0 s (3 adds)
+2026-10-27T06:14:14Z|00122|connmgr|INFO|C6<->unix#10: 2 flow_mods in the last 0 s (2 adds)
+2026-10-27T06:14:14Z|00123|connmgr|INFO|C7<->unix#12: 2 flow_mods in the last 0 s (2 adds)
+2026-10-27T06:14:14Z|00124|connmgr|INFO|C8<->unix#14: 2 flow_mods in the last 0 s (2 adds)
+2026-10-27T06:14:14Z|00125|connmgr|INFO|C9<->unix#16: 2 flow_mods in the last 0 s (2 adds)
+2026-10-27T06:14:14Z|00126|connmgr|INFO|C10<->unix#18: 3 flow_mods in the last 0 s (3 adds)
+2026-10-27T06:14:19Z|00127|connmgr|INFO|C2<->unix#20: 3 flow_mods in the last 0 s (2 adds, 1 deletes)
+2026-10-27T06:14:20Z|00128|memory|INFO|629572 kB peak resident set size after 10.0 seconds
+2026-10-27T06:14:20Z|00129|memory|INFO|handlers:1 idl-cells-Open_vSwitch:3201 ports:52 revalidators:1 rules:67 udpif keys:46
+2026-10-27T06:14:20Z|00130|connmgr|INFO|C2<->unix#40: 8 flow_mods in the last 0 s (4 adds, 4 deletes)
+2026-10-27T06:14:20Z|00131|connmgr|INFO|C5<->unix#42: 1 flow_mods in the last 0 s (1 adds)
+2026-10-27T06:14:23Z|00132|connmgr|INFO|C2<->unix#44: 8 flow_mods in the last 0 s (4 adds, 4 deletes)
+2026-10-27T06:14:23Z|00133|connmgr|INFO|C5<->unix#52: 1 flow_mods in the last 0 s (1 adds)
+2026-10-27T06:14:23Z|00134|connmgr|INFO|C2<->unix#64: 8 flow_mods in the last 0 s (4 adds, 4 deletes)
+2026-10-27T06:14:23Z|00135|connmgr|INFO|C5<->unix#66: 1 flow_mods in the last 0 s (1 adds)
+2026-10-27T06:14:26Z|00136|connmgr|INFO|C2<->unix#68: 8 flow_mods in the last 0 s (4 adds, 4 deletes)
+2026-10-27T06:14:26Z|00137|connmgr|INFO|C5<->unix#76: 1 flow_mods in the last 0 s (1 adds)
+2026-10-27T06:14:26Z|00138|connmgr|INFO|C2<->unix#88: 3 flow_mods in the last 0 s (1 adds, 2 deletes)
+2026-10-27T06:14:27Z|00139|connmgr|INFO|C2<->unix#90: 2 flow_mods in the last 0 s (1 adds, 1 deletes)
+2026-10-27T06:14:27Z|00140|connmgr|INFO|C5<->unix#92: 1 flow_mods in the last 0 s (1 adds)
+2026-10-27T06:14:27Z|00141|connmgr|INFO|C2<->unix#94: 3 flow_mods in the last 0 s (2 adds, 1 deletes)
+2026-10-27T06:14:28Z|00142|connmgr|INFO|C2<->unix#96: 8 flow_mods in the last 0 s (4 adds, 4 deletes)
+2026-10-27T06:14:28Z|00143|connmgr|INFO|C5<->unix#104: 1 flow_mods in the last 0 s (1 adds)
+2026-10-27T06:14:28Z|00144|connmgr|INFO|C2<->unix#116: 3 flow_mods in the last 0 s (1 adds, 2 deletes)
+2026-10-27T06:14:29Z|00145|connmgr|INFO|C2<->unix#118: 2 flow_mods in the last 0 s (1 adds, 1 deletes)
+2026-10-27T06:14:29Z|00146|connmgr|INFO|C5<->unix#120: 1 flow_mods in the last 0 s (1 adds)
+2026-10-27T06:14:29Z|00147|connmgr|INFO|C2<->unix#122: 3 flow_mods in the last 0 s (2 adds, 1 deletes)
+2026-10-27T06:14:31Z|00148|connmgr|INFO|C2<->unix#124: 8 flow_mods in the last 0 s (4 adds, 4 deletes)
+2026-10-27T06:14:31Z|00149|connmgr|INFO|C5<->unix#132: 1 flow_mods in the last 0 s (1 adds)
+2026-10-27T06:14:31Z|00150|connmgr|INFO|C2<->unix#144: 4 flow_mods in the last 0 s (3 adds, 1 deletes)
+2026-10-27T06:14:31Z|00151|connmgr|INFO|C4<->unix#146: 1 flow_mods in the last 0 s (1 adds)
+2026-10-27T06:14:31Z|00152|connmgr|INFO|C5<->unix#148: 1 flow_mods in the last 0 s (1 adds)
+2026-10-27T06:14:31Z|00153|connmgr|INFO|C10<->unix#150: 1 flow_mods in the last 0 s (1 adds)
+2026-10-27T06:14:31Z|00154|connmgr|INFO|C2<->unix#152: 6 flow_mods in the last 0 s (3 adds, 3 deletes)
+2026-10-27T06:14:32Z|00155|connmgr|INFO|C2<->unix#154: 4 flow_mods in the last 0 s (2 adds, 2 deletes)
+2026-10-27T06:14:32Z|00156|connmgr|INFO|C4<->unix#156: 1 flow_mods in the last 0 s (1 deletes)
+2026-10-27T06:14:32Z|00157|connmgr|INFO|C5<->unix#158: 1 flow_mods in the last 0 s (1 deletes)
+2026-10-27T06:14:32Z|00158|connmgr|INFO|C10<->unix#160: 1 flow_mods in the last 0 s (1 deletes)
+2026-10-27T06:14:33Z|00159|connmgr|INFO|C2<->unix#162: 8 flow_mods in the last 0 s (4 adds, 4 deletes)
+2026-10-27T06:14:33Z|00160|connmgr|INFO|C4<->unix#168: 2 flow_mods in the last 0 s (1 adds, 1 deletes)
+2026-10-27T06:14:33Z|00161|connmgr|INFO|C5<->unix#170: 2 flow_mods in the last 0 s (1 adds, 1 deletes)
+2026-10-27T06:14:34Z|00162|connmgr|INFO|C10<->unix#180: 2 flow_mods in the last 0 s (1 adds, 1 deletes)
+2026-10-27T06:14:34Z|00163|connmgr|INFO|C2<->unix#182: 4 flow_mods in the last 0 s (3 adds, 1 deletes)
+2026-10-27T06:14:34Z|00164|connmgr|INFO|C4<->unix#184: 1 flow_mods in the last 0 s (1 adds)
+2026-10-27T06:14:34Z|00165|connmgr|INFO|C5<->unix#186: 1 flow_mods in the last 0 s (1 adds)
+2026-10-27T06:14:34Z|00166|connmgr|INFO|C10<->unix#188: 1 flow_mods in the last 0 s (1 adds)
+2026-10-27T06:14:34Z|00167|connmgr|INFO|C2<->unix#190: 6 flow_mods in the last 0 s (3 adds, 3 deletes)
+2026-10-27T06:14:35Z|00168|connmgr|INFO|C2<->unix#192: 4 flow_mods in the last 0 s (2 adds, 2 deletes)
+2026-10-27T06:14:35Z|00169|connmgr|INFO|C4<->unix#194: 1 flow_mods in the last 0 s (1 deletes)
+2026-10-27T06:14:35Z|00170|connmgr|INFO|C5<->unix#196: 1 flow_mods in the last 0 s (1 deletes)
+2026-10-27T06:14:35Z|00171|connmgr|INFO|C10<->unix#198: 1 flow_mods in the last 0 s (1 deletes)
+2026-10-27T06:14:36Z|00172|connmgr|INFO|C2<->unix#200: 8 flow_mods in the last 0 s (4 adds, 4 deletes)
+2026-10-27T06:14:36Z|00173|connmgr|INFO|C4<->unix#206: 2 flow_mods in the last 0 s (1 adds, 1 deletes)
+2026-10-27T06:14:36Z|00174|connmgr|INFO|C5<->unix#208: 2 flow_mods in the last 0 s (1 adds, 1 deletes)
+2026-10-27T06:14:36Z|00175|connmgr|INFO|C10<->unix#218: 2 flow_mods in the last 0 s (1 adds, 1 deletes)
+2026-10-27T06:14:36Z|00176|connmgr|INFO|C2<->unix#220: 3 flow_mods in the last 0 s (2 adds, 1 deletes)
+2026-10-27T06:14:36Z|00177|connmgr|INFO|C2<->unix#240: 3 flow_mods in the last 0 s (1 adds, 2 deletes)
+2026-10-27T06:14:37Z|00178|connmgr|INFO|C2<->unix#242: 2 flow_mods in the last 0 s (1 adds, 1 deletes)
+2026-10-27T06:14:37Z|00179|connmgr|INFO|C5<->unix#244: 1 flow_mods in the last 0 s (1 adds)
+2026-10-27T06:14:37Z|00180|connmgr|INFO|C2<->unix#246: 3 flow_mods in the last 0 s (2 adds, 1 deletes)
+2026-10-27T06:14:39Z|00181|connmgr|INFO|C2<->unix#248: 8 flow_mods in the last 0 s (4 adds, 4 deletes)
+2026-10-27T06:14:39Z|00182|connmgr|INFO|C5<->unix#256: 1 flow_mods in the last 0 s (1 adds)
+2026-10-27T06:14:39Z|00183|connmgr|INFO|C2<->unix#268: 3 flow_mods in the last 0 s (1 adds, 2 deletes)
+2026-10-27T06:14:40Z|00184|connmgr|INFO|C2<->unix#270: 2 flow_mods in the last 0 s (1 adds, 1 deletes)
+2026-10-27T06:14:40Z|00185|connmgr|INFO|C5<->unix#272: 1 flow_mods in the last 0 s (1 adds)
+2026-10-27T06:14:40Z|00186|connmgr|INFO|C2<->unix#274: 3 flow_mods in the last 0 s (2 adds, 1 deletes)
+2026-10-27T06:14:41Z|00187|connmgr|INFO|C2<->unix#276: 8 flow_mods in the last 0 s (4 adds, 4 deletes)
+2026-10-27T06:14:42Z|00188|connmgr|INFO|C5<->unix#284: 1 flow_mods in the last 0 s (1 adds)
+2026-10-27T06:14:42Z|00189|connmgr|INFO|C2<->unix#296: 3 flow_mods in the last 0 s (1 adds, 2 deletes)
+2026-10-27T06:14:43Z|00190|connmgr|INFO|C2<->unix#298: 2 flow_mods in the last 0 s (1 adds, 1 deletes)
+2026-10-27T06:14:43Z|00191|connmgr|INFO|C5<->unix#300: 1 flow_mods in the last 0 s (1 adds)
+2026-10-27T06:14:43Z|00192|connmgr|INFO|C2<->unix#302: 3 flow_mods in the last 0 s (2 adds, 1 deletes)
+2026-10-27T06:14:44Z|00193|connmgr|INFO|C2<->unix#304: 8 flow_mods in the last 0 s (4 adds, 4 deletes)
+2026-10-27T06:14:44Z|00194|connmgr|INFO|C5<->unix#312: 1 flow_mods in the last 0 s (1 adds)
+2026-10-27T06:14:44Z|00195|connmgr|INFO|C2<->unix#324: 3 flow_mods in the last 0 s (1 adds, 2 deletes)
+2026-10-27T06:14:45Z|00196|connmgr|INFO|C2<->unix#326: 2 flow_mods in the last 0 s (1 adds, 1 deletes)
+2026-10-27T06:14:45Z|00197|connmgr|INFO|C5<->unix#328: 1 flow_mods in the last 0 s (1 adds)
+2026-10-27T06:14:45Z|00198|connmgr|INFO|C2<->unix#330: 3 flow_mods in the last 0 s (2 adds, 1 deletes)
+2026-10-27T06:14:47Z|00199|connmgr|INFO|C2<->unix#332: 8 flow_mods in the last 0 s (4 adds, 4 deletes)
+2026-10-27T06:14:47Z|00200|connmgr|INFO|C5<->unix#340: 1 flow_mods in the last 0 s (1 adds)
+2026-10-27T06:14:47Z|00201|connmgr|INFO|C2<->unix#352: 3 flow_mods in the last 0 s (1 adds, 2 deletes)
+2026-10-27T06:14:48Z|00202|connmgr|INFO|C2<->unix#354: 2 flow_mods in the last 0 s (1 adds, 1 deletes)
+2026-10-27T06:14:48Z|00203|connmgr|INFO|C5<->unix#356: 1 flow_mods in the last 0 s (1 adds)
+2026-10-27T06:14:48Z|00204|connmgr|INFO|C2<->unix#358: 3 flow_mods in the last 0 s (2 adds, 1 deletes)
+2026-10-27T06:14:50Z|00205|netdev_linux|WARN|error receiving Ethernet packet on C9-eth3: Network is down
+2026-10-27T06:14:50Z|00206|dpif_netdev|ERR|error receiving data from C9-eth3: Network is down
+2026-10-27T06:14:50Z|00207|netdev_linux|WARN|error receiving Ethernet packet on C1-eth1: Network is down
+2026-10-27T06:14:50Z|00208|dpif_netdev|ERR|error receiving data from C1-eth1: Network is down
+2026-10-27T06:14:50Z|00209|netdev_linux|WARN|error receiving Ethernet packet on C1-eth2: Network is down
+2026-10-27T06:14:50Z|00210|dpif_netdev|ERR|error receiving data from C1-eth2: Network is down
+2026-10-27T06:14:50Z|00211|netdev_linux|WARN|error receiving Ethernet packet on C1-eth3: Network is down
+2026-10-27T06:14:50Z|00212|dpif_netdev|ERR|error receiving data from C1-eth3: Network is down
+2026-10-27T06:14:50Z|00213|netdev_linux|WARN|error receiving Ethernet packet on C2-eth1: Network is down
+2026-10-27T06:14:50Z|00214|dpif_netdev|ERR|error receiving data from C2-eth1: Network is down
+2026-10-27T06:14:50Z|00215|netdev_linux|WARN|error receiving Ethernet packet on C9-eth5: Network is down
+2026-10-27T06:14:50Z|00216|netdev_linux|WARN|error receiving Ethernet packet on C2-eth2: Network is down
+2026-10-27T06:14:50Z|00217|netdev_linux|WARN|error receiving Ethernet packet on C10-eth4: Network is down
+2026-10-27T06:14:50Z|00218|netdev_linux|WARN|error receiving Ethernet packet on C2-eth3: Network is down
+2026-10-27T06:14:50Z|00219|netdev_linux|WARN|error receiving Ethernet packet on C2-eth4: Network is down
+2026-10-27T06:14:50Z|00220|netdev_linux|WARN|error receiving Ethernet packet on C2-eth5: Network is down
+2026-10-27T06:14:50Z|00221|netdev_linux|WARN|error receiving Ethernet packet on C2-eth6: Network is down
+2026-10-27T06:14:50Z|00222|netdev_linux|WARN|error receiving Ethernet packet on C9-eth6: Network is down
+2026-10-27T06:14:50Z|00223|netdev_linux|WARN|error receiving Ethernet packet on C3-eth1: Network is down
+2026-10-27T06:14:50Z|00224|netdev_linux|WARN|error receiving Ethernet packet on C10-eth5: Network is down
+2026-10-27T06:14:50Z|00225|netdev_linux|WARN|error receiving Ethernet packet on C3-eth2: Network is down
+2026-10-27T06:14:50Z|00226|netdev_linux|WARN|error receiving Ethernet packet on C3-eth3: Network is down
+2026-10-27T06:14:50Z|00227|netdev_linux|WARN|error receiving Ethernet packet on C3-eth4: Network is down
+2026-10-27T06:14:50Z|00228|netdev_linux|WARN|error receiving Ethernet packet on C4-eth2: Network is down
+2026-10-27T06:14:50Z|00229|netdev_linux|WARN|error receiving Ethernet packet on C5-eth1: Network is down
+2026-10-27T06:14:50Z|00230|bridge|INFO|bridge C5: deleted interface C5 on port 65534
+2026-10-27T06:14:50Z|00231|bridge|INFO|bridge C5: deleted interface C5-eth2 on port 2
+2026-10-27T06:14:50Z|00232|bridge|INFO|bridge C5: deleted interface C5-eth3 on port 3
+2026-10-27T06:14:50Z|00233|bridge|INFO|bridge C5: deleted interface C5-eth1 on port 1
+2026-10-27T06:14:50Z|00234|bridge|INFO|bridge C3: deleted interface C3-eth3 on port 3
+2026-10-27T06:14:50Z|00235|bridge|INFO|bridge C3: deleted interface C3 on port 65534
+2026-10-27T06:14:50Z|00236|bridge|INFO|bridge C3: deleted interface C3-eth2 on port 2
+2026-10-27T06:14:50Z|00237|bridge|INFO|bridge C3: deleted interface C3-eth4 on port 4
+2026-10-27T06:14:50Z|00238|bridge|INFO|bridge C3: deleted interface C3-eth1 on port 1
+2026-10-27T06:14:51Z|00239|bridge|INFO|bridge C4: deleted interface C4-eth1 on port 1
+2026-10-27T06:14:51Z|00240|bridge|INFO|bridge C4: deleted interface C4-eth2 on port 2
+2026-10-27T06:14:51Z|00241|bridge|INFO|bridge C4: deleted interface C4 on port 65534
+2026-10-27T06:14:51Z|00242|bridge|INFO|bridge C4: deleted interface C4-eth3 on port 3
+2026-10-27T06:14:51Z|00243|bridge|INFO|bridge C4: deleted interface C4-eth4 on port 4
+2026-10-27T06:14:51Z|00244|bridge|INFO|bridge C9: deleted interface C9-eth1 on port 1
+2026-10-27T06:14:51Z|00245|bridge|INFO|bridge C9: deleted interface C9-eth2 on port 2
+2026-10-27T06:14:51Z|00246|bridge|INFO|bridge C9: deleted interface C9-eth3 on port 3
+2026-10-27T06:14:51Z|00247|bridge|INFO|bridge C9: deleted interface C9 on port 65534
+2026-10-27T06:14:51Z|00248|bridge|INFO|bridge C9: deleted interface C9-eth6 on port 6
+2026-10-27T06:14:51Z|00249|bridge|INFO|bridge C9: deleted interface C9-eth7 on port 7
+2026-10-27T06:14:51Z|00250|bridge|INFO|bridge C9: deleted interface C9-eth4 on port 4
+2026-10-27T06:14:51Z|00251|bridge|INFO|bridge C9: deleted interface C9-eth5 on port 5
+2026-10-27T06:14:51Z|00252|bridge|INFO|bridge C2: deleted interface C2-eth4 on port 4
+2026-10-27T06:14:51Z|00253|bridge|INFO|bridge C2: deleted interface C2-eth3 on port 3
+2026-10-27T06:14:51Z|00254|bridge|INFO|bridge C2: deleted interface C2-eth5 on port 5
+2026-10-27T06:14:51Z|00255|bridge|INFO|bridge C2: deleted interface C2-eth6 on port 6
+2026-10-27T06:14:51Z|00256|bridge|INFO|bridge C2: deleted interface C2-eth1 on port 1
+2026-10-27T06:14:51Z|00257|bridge|INFO|bridge C2: deleted interface C2-eth2 on port 2
+2026-10-27T06:14:51Z|00258|bridge|INFO|bridge C2: deleted interface C2 on port 65534
+2026-10-27T06:14:51Z|00259|bridge|INFO|bridge C1: deleted interface C1 on port 65534
+2026-10-27T06:14:51Z|00260|bridge|INFO|bridge C1: deleted interface C1-eth3 on port 3
+2026-10-27T06:14:51Z|00261|bridge|INFO|bridge C1: deleted interface C1-eth2 on port 2
+2026-10-27T06:14:51Z|00262|bridge|INFO|bridge C1: deleted interface C1-eth1 on port 1
+2026-10-27T06:14:51Z|00263|bridge|INFO|bridge C6: deleted interface C6-eth3 on port 3
+2026-10-27T06:14:51Z|00264|bridge|INFO|bridge C6: deleted interface C6-eth1 on port 1
+2026-10-27T06:14:51Z|00265|bridge|INFO|bridge C6: deleted interface C6 on port 65534
+2026-10-27T06:14:51Z|00266|bridge|INFO|bridge C6: deleted interface C6-eth2 on port 2
+2026-10-27T06:14:51Z|00267|bridge|INFO|bridge C10: deleted interface C10-eth4 on port 4
+2026-10-27T06:14:51Z|00268|bridge|INFO|bridge C10: deleted interface C10-eth1 on port 1
+2026-10-27T06:14:51Z|00269|bridge|INFO|bridge C10: deleted interface C10-eth2 on port 2
+2026-10-27T06:14:51Z|00270|bridge|INFO|bridge C10: deleted interface C10-eth6 on port 6
+2026-10-27T06:14:51Z|00271|bridge|INFO|bridge C10: deleted interface C10 on port 65534
+2026-10-27T06:14:51Z|00272|bridge|INFO|bridge C10: deleted interface C10-eth3 on port 3
+2026-10-27T06:14:51Z|00273|bridge|INFO|bridge C10: deleted interface C10-eth5 on port 5
+2026-10-27T06:14:51Z|00274|bridge|INFO|bridge C7: deleted interface C7-eth2 on port 2
+2026-10-27T06:14:51Z|00275|bridge|INFO|bridge C7: deleted interface C7 on port 65534
+2026-10-27T06:14:51Z|00276|bridge|INFO|bridge C7: deleted interface C7-eth3 on port 3
+2026-10-27T06:14:51Z|00277|bridge|INFO|bridge C7: deleted interface C7-eth1 on port 1
+2026-10-27T06:14:51Z|00278|bridge|INFO|bridge C8: deleted interface C8-eth1 on port 1
+2026-10-27T06:14:51Z|00279|bridge|INFO|bridge C8: deleted interface C8-eth3 on port 3
+2026-10-27T06:14:51Z|00280|bridge|INFO|bridge C8: deleted interface C8-eth2 on port 2
+2026-10-27T06:14:51Z|00281|bridge|INFO|bridge C8: deleted interface C8 on port 65534
+2026-10-27T06:14:51Z|00001|fatal_signal(urcu3)|WARN|terminating with signal 15 (Terminated)

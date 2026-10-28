@@ -1,0 +1,120 @@
+python_reference_executed = false
+julia_version = "1.13.1"
+process_ceiling_seconds = 120
+swap_max_bytes = 0
+cpu_period = 100000
+aggregate_reserved_core_seconds = 1232
+memory_max_bytes = 2147483648
+mode = "lifecycle"
+primary_execution = false
+scope = "/user.slice/user-1000.slice/user@1000.service/app.slice/cos738-revision-1792952659335178875.scope"
+aggregate_runtime_cap = "none"
+completed_utc = "2026-10-25T18:24:42.903"
+initial_budget_core_seconds = 600
+accounting = "documentary full two-core time-limit tickets plus 2 seconds margin; no cumulative stop; includes failures/startup"
+reserved_core_seconds = 244
+additional_budget_core_seconds = 2000
+scope_memory_peak_bytes_at_checkpoint = 311005184
+cpu_quota = 200000
+status = "PASS"
+elapsed_seconds_including_startup = 23.54999999993015
+scope_cpu_seconds = 23.013001
+
+[differential]
+historical_production_engine_validated = false
+scope = "candidate Q/V adapter versus standalone oracle; all single-probe boundary and packet-edge sets on two tiny fixtures"
+status = "PASS"
+checks = 198972
+candidate_Q_V_transition_agreement = true
+all_method_gate_D_complete = false
+python_reference_replay_validated = false
+
+    [[differential.fixtures]]
+    fixture = "cisco"
+    packet_transition_edges = 14115
+    checks = 54315
+    probe_cases = 166
+    ordinary_witness_agrees = true
+    boundary_state_visits = 14281
+    seeded_adapter_tag_fault_detected = true
+    [[differential.fixtures]]
+    fixture = "fat4"
+    packet_transition_edges = 37165
+    checks = 144657
+    probe_cases = 270
+    ordinary_witness_agrees = true
+    boundary_state_visits = 37435
+    seeded_adapter_tag_fault_detected = true
+
+[lifecycle]
+scope = "targeted Q/V joint engine correspondence and explicit source-slot/removed-edge component validation"
+reference_replay_validated = false
+status = "PASS"
+checks = 60939
+all_method_gate_D_complete = false
+general_controller_and_CCG_scheduler_validated = false
+
+    [[lifecycle.fixtures]]
+    joint_cases = 56
+    fixture = "cisco"
+    joint_packet_edges = 7564
+    source_slot_and_history_controls_passed = true
+    checks = 21229
+    joint_state_visits = 7620
+    [[lifecycle.fixtures]]
+    joint_cases = 64
+    fixture = "fat4"
+    joint_packet_edges = 14108
+    source_slot_and_history_controls_passed = true
+    checks = 39710
+    joint_state_visits = 14172
+
+[oracle]
+full_CCG_adapter_validated = false
+scope = "standalone raw-input Q/V oracle and listed defect controls; NOT production differential or Python replay"
+reduction = "single-probe projections under controller/packet independence; targeted joint Q/V projections checked; two-probe mask reduction checked against permutations through five switch batches"
+status = "PASS"
+checks = 2592
+production_transition_equivalence_validated = false
+python_reference_replay_validated = false
+
+    [[oracle.fixtures]]
+    packet_bound = 4
+    Q_V_probe_coverage_complete = true
+    controller_bound = 75
+    checks = 1058
+    ordinary_witness_confirmed = true
+    physical_ingress_admission_checked = true
+    probe_cases = 166
+    joint_probe_cases = 56
+    fixture = "cisco"
+    joint_boundary_state_visits = 7620
+    observation_horizon = 80
+    joint_projection_agreement = true
+    boundary_state_visits = 14281
+    [[oracle.fixtures]]
+    packet_bound = 5
+    Q_V_probe_coverage_complete = true
+    controller_bound = 126
+    checks = 1525
+    ordinary_witness_confirmed = true
+    physical_ingress_admission_checked = true
+    probe_cases = 270
+    joint_probe_cases = 64
+    fixture = "fat4"
+    joint_boundary_state_visits = 14172
+    observation_horizon = 132
+    joint_projection_agreement = true
+    boundary_state_visits = 37435
+
+[input_sha256]
+"Operational_Semantics_and_Bounds.md" = "c875818d84ec1e3ee44924e3d3721dfc1c4c6868e4794309dcc74f425b9c3519"
+"lifecycle.jl" = "8ee606bed4a322ea709549b2c406a78272b36bd93c8cbccac273fde83b8672ae"
+"validation/Three_Stage_Authorization.toml" = "35efaea1ad63cf39e3dccd61c35e3d5251f0e0d3122c70cf35051026f0db923f"
+"handover.jl" = "c968fb62879541ef846a427cd32b4755c698a2f515ff481d9035b34021685cf0"
+"Handover_Bounds.toml" = "06689a5cf7c126e90293fa4d16ca02dab73f9e0d78e672e77f37be0f16a05fd4"
+"validation/lifecycle_checks.jl" = "736afa9e0c55cbee2092cd29c722ef71e7556a13ca9a709086eb556ad26fa94b"
+"validation/run.sh" = "9dff77f85a442fac4c9b69211204db6d81eb9ec308d21d893cd15bcc32738f49"
+"validation/entry.jl" = "8315a0ff1cf7a55015b7436e735a6df61e499f5fd6dfff20dbbcea12667d8975"
+"validation/oracle.jl" = "058b65397b0382474174d0d9d69ba220b255f8260bbfb04ca4416dca6978f2c5"
+"validation/differential.jl" = "d89a293752e86081dc9395c9560c674ec04457f07ef63c05db51ea9c63383af6"

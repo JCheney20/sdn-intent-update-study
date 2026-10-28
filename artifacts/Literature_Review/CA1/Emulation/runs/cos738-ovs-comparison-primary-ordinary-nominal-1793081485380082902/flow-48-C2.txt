@@ -1,0 +1,6 @@
+cookie=0x10000000,table=0,priority=0,actions=goto_table:1
+cookie=0x10000000,table=1,priority=0,actions=drop
+cookie=0x30000000,table=0,in_port=4,priority=200,actions=drop
+cookie=0x30000000,table=0,in_port=5,priority=201,vlan_tci=0x1000/0x1000,actions=strip_vlan,goto_table:1
+cookie=0x30000000,table=0,in_port=5,priority=200,dl_vlan=0xffff,actions=goto_table:1
+cookie=0x20000000,table=1,priority=100,in_port=5,ip,nw_src=10.0.0.0/8,nw_dst=10.0.0.0/8,vlan_tci=0x0000/0x1fff,actions=output:2

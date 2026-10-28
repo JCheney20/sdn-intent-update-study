@@ -1,0 +1,23 @@
+[data]
+alarms = 2
+index = 1
+primary_data = false
+condition = 1
+implementation = "julia"
+elapsed_seconds = [0.690224691]
+states_checked = 198
+mode = "benchmark"
+measurement = "cold"
+allocated_bytes = [33010288]
+fixture = "cisco"
+k = 20
+status = "PASS"
+rows = []
+
+    [data.resources]
+    swap_max_bytes = 0
+    memory_peak_at_checkpoint_bytes = 227958784
+    cpu_usage_seconds = 8.864977
+    cpu_max = "200000 100000"
+    scope = "/user.slice/user-1000.slice/user@1000.service/app.slice/cos738-study-benchmark-julia-1-1792999751195797742.scope"
+    memory_max_bytes = 2147483648

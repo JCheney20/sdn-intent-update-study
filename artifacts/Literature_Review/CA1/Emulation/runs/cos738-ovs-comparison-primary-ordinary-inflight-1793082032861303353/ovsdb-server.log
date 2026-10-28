@@ -1,0 +1,4 @@
+2026-10-27T06:21:32Z|00001|ovsdb_server|INFO|ovsdb-server (Open vSwitch) 3.2.1
+2026-10-27T06:21:42Z|00002|memory|INFO|644728 kB peak resident set size after 10.0 seconds
+2026-10-27T06:21:42Z|00003|memory|INFO|atoms:3855 cells:3451 json-caches:1 monitors:2 n-weak-refs:0 sessions:1
+2026-10-27T06:22:12Z|00004|fatal_signal|WARN|terminating with signal 15 (Terminated)

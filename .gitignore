@@ -1,0 +1,12 @@
+__pycache__/
+*.pyc
+.venv/
+.DS_Store
+# Publication is research-only. Do not add course manuscripts or build caches.
+*.tex
+*.pdf
+*.xdv
+Typesetting/
+Manuscript_History/
+Peer_Review/
+Writing_Revision/

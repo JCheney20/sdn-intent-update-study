@@ -1,0 +1,315 @@
+{
+  "nodes": {
+    "CondaPkg": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1791835375,
+        "narHash": "sha256-ar684Yr1cC7L+yTeqhwrHoqLmJNWQxlUGt3qVK/A6PA=",
+        "owner": "JuliaPy",
+        "repo": "CondaPkg.jl",
+        "rev": "75932766c27e278cc04300353d5217d36d65781e",
+        "type": "github"
+      },
+      "original": {
+        "owner": "JuliaPy",
+        "ref": "v0.2.38",
+        "repo": "CondaPkg.jl",
+        "type": "github"
+      }
+    },
+    "DataAPI": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1705962601,
+        "narHash": "sha256-fy3qtZH0lIVbsbmZLQiOy4OYagkTqfWeLSWpU6Uqcdg=",
+        "owner": "JuliaData",
+        "repo": "DataAPI.jl",
+        "rev": "d6d1b053c0b82e0722abf3cb1c6e6c21bbe9746d",
+        "type": "github"
+      },
+      "original": {
+        "owner": "JuliaData",
+        "ref": "v1.16.0",
+        "repo": "DataAPI.jl",
+        "type": "github"
+      }
+    },
+    "DataValueInterfaces": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1561732945,
+        "narHash": "sha256-6FE9U6PRIY16wTNkW1kXlLDAT0eznWe6NSVJebCRXDw=",
+        "owner": "queryverse",
+        "repo": "DataValueInterfaces.jl",
+        "rev": "ff05c26814f1d03c4f6bfac94e347112038f3577",
+        "type": "github"
+      },
+      "original": {
+        "owner": "queryverse",
+        "ref": "v1.0.0",
+        "repo": "DataValueInterfaces.jl",
+        "type": "github"
+      }
+    },
+    "IteratorInterfaceExtensions": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1556306006,
+        "narHash": "sha256-Cah708wvvD0Vxm63YZK1k7399B3rfONfckhJ2IJXl+o=",
+        "owner": "queryverse",
+        "repo": "IteratorInterfaceExtensions.jl",
+        "rev": "832737f467bdfe08ad80eb9a3cceee522e1c5533",
+        "type": "github"
+      },
+      "original": {
+        "owner": "queryverse",
+        "ref": "v1.0.0",
+        "repo": "IteratorInterfaceExtensions.jl",
+        "type": "github"
+      }
+    },
+    "JSON": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1760662489,
+        "narHash": "sha256-d1/JnycKt6ujFaqF5lgedxJuuaw/py/gVBqPa4SuQg0=",
+        "owner": "JuliaIO",
+        "repo": "JSON.jl",
+        "rev": "9ea65ed07553999511516ed455546bbbc0dc7d72",
+        "type": "github"
+      },
+      "original": {
+        "owner": "JuliaIO",
+        "ref": "v1.2.0",
+        "repo": "JSON.jl",
+        "type": "github"
+      }
+    },
+    "MacroTools": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1744921038,
+        "narHash": "sha256-e5viL5cQZ7yTGUi7I0/2CXLGZ0/BT0Vmk/g85P4JVoA=",
+        "owner": "FluxML",
+        "repo": "MacroTools.jl",
+        "rev": "87ef1f8a7328174dee5df5fa7cfc5b7bb82f01a7",
+        "type": "github"
+      },
+      "original": {
+        "owner": "FluxML",
+        "ref": "v0.5.16",
+        "repo": "MacroTools.jl",
+        "type": "github"
+      }
+    },
+    "OrderedCollections": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1747927516,
+        "narHash": "sha256-mQlyGlMUf8g0UAzGJw9iU63KuNYrAHLpXnu7u212RCo=",
+        "owner": "JuliaCollections",
+        "repo": "OrderedCollections.jl",
+        "rev": "5ec176442763e9b6e5247a47dc6a8e7d1f678201",
+        "type": "github"
+      },
+      "original": {
+        "owner": "JuliaCollections",
+        "ref": "v1.8.1",
+        "repo": "OrderedCollections.jl",
+        "type": "github"
+      }
+    },
+    "Parsers": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1745590268,
+        "narHash": "sha256-rjtVt5lwiBHlHZ+KMw8eAjK94otSQOj2umsIS90ANnM=",
+        "owner": "JuliaData",
+        "repo": "Parsers.jl",
+        "rev": "6352c4bbce6f9df8cea268a39a3c43e1ee4944e7",
+        "type": "github"
+      },
+      "original": {
+        "owner": "JuliaData",
+        "ref": "v2.8.3",
+        "repo": "Parsers.jl",
+        "type": "github"
+      }
+    },
+    "PrecompileTools": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1709945673,
+        "narHash": "sha256-PsILgqfFdTMZuNogqlFl9jk9dvUtvUQN0v0P/epLZh0=",
+        "owner": "JuliaLang",
+        "repo": "PrecompileTools.jl",
+        "rev": "a99446373f9a4a46d62a2889b7efb242b4ad7471",
+        "type": "github"
+      },
+      "original": {
+        "owner": "JuliaLang",
+        "ref": "v1.2.1",
+        "repo": "PrecompileTools.jl",
+        "type": "github"
+      }
+    },
+    "Preferences": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1754830405,
+        "narHash": "sha256-/iv2KamPbrweYpkWQQ9kX6qG3qlIMLZLj+kcG2dnIiE=",
+        "owner": "JuliaPackaging",
+        "repo": "Preferences.jl",
+        "rev": "5c536fdea268838f2365e8e3b93397d2de752971",
+        "type": "github"
+      },
+      "original": {
+        "owner": "JuliaPackaging",
+        "ref": "v1.5.0",
+        "repo": "Preferences.jl",
+        "type": "github"
+      }
+    },
+    "PythonCall": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1791836217,
+        "narHash": "sha256-zbv+yqUEr96ecSJ2odBU8rXyOC3mTJH/TKMraMdt6Uo=",
+        "owner": "JuliaPy",
+        "repo": "PythonCall.jl",
+        "rev": "ae8f1731b9a8e0947afc8a7d6b9294c95f646ff0",
+        "type": "github"
+      },
+      "original": {
+        "owner": "JuliaPy",
+        "ref": "v0.9.37",
+        "repo": "PythonCall.jl",
+        "type": "github"
+      }
+    },
+    "Scratch": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1750262046,
+        "narHash": "sha256-vaIdp3tapq3eBtyanBGOVUz+Z+llh2sfLVDIwjWmZJw=",
+        "owner": "JuliaPackaging",
+        "repo": "Scratch.jl",
+        "rev": "ed2538678f2d6ba1f8499189f4df90a2f41f3ecb",
+        "type": "github"
+      },
+      "original": {
+        "owner": "JuliaPackaging",
+        "ref": "v1.3.0",
+        "repo": "Scratch.jl",
+        "type": "github"
+      }
+    },
+    "StructUtils": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1759786582,
+        "narHash": "sha256-wZUoDyP7/bZ6bK/gdNVOwkjjBJVx0MQNMGyTged7CWQ=",
+        "owner": "JuliaServices",
+        "repo": "StructUtils.jl",
+        "rev": "567a5c68c38637dafd29abc070c514dc8f06285e",
+        "type": "github"
+      },
+      "original": {
+        "owner": "JuliaServices",
+        "ref": "v2.5.1",
+        "repo": "StructUtils.jl",
+        "type": "github"
+      }
+    },
+    "TableTraits": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1617323686,
+        "narHash": "sha256-hKuGrmcOTiyoV8QyOUt1K7otbC0oKSwckqZyMIxYWiM=",
+        "owner": "queryverse",
+        "repo": "TableTraits.jl",
+        "rev": "511e0b6133a95692f3e084a03b81d4eca15947e4",
+        "type": "github"
+      },
+      "original": {
+        "owner": "queryverse",
+        "ref": "v1.0.1",
+        "repo": "TableTraits.jl",
+        "type": "github"
+      }
+    },
+    "Tables": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1749043340,
+        "narHash": "sha256-Q+oyIsu4UQKopOaJvMD184dz7ouY+ONBVnEFUG65tlw=",
+        "owner": "JuliaData",
+        "repo": "Tables.jl",
+        "rev": "06abc194d0cb0d245859d163258a6d5723898c9d",
+        "type": "github"
+      },
+      "original": {
+        "owner": "JuliaData",
+        "ref": "v1.12.1",
+        "repo": "Tables.jl",
+        "type": "github"
+      }
+    },
+    "UnsafePointers": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1621628387,
+        "narHash": "sha256-fX0iZDR/LREF2EEQ4TicaQ1TwfD7dEiDPgynsIY2++0=",
+        "owner": "cjdoris",
+        "repo": "UnsafePointers.jl",
+        "rev": "7ab00894108e1fd5749844ef1a87b6d1c0ce75a0",
+        "type": "github"
+      },
+      "original": {
+        "owner": "cjdoris",
+        "ref": "v1.0.0",
+        "repo": "UnsafePointers.jl",
+        "type": "github"
+      }
+    },
+    "nixpkgs": {
+      "locked": {
+        "lastModified": 1705708780,
+        "narHash": "sha256-5t5UEenKP0Kyebc0b7Xbxa/ma7deSOX+uGiFeV1PXEo=",
+        "owner": "NixOS",
+        "repo": "nixpkgs",
+        "rev": "dddccde11a6c6be45f58a76828a5f48d58262e9a",
+        "type": "github"
+      },
+      "original": {
+        "owner": "NixOS",
+        "repo": "nixpkgs",
+        "rev": "dddccde11a6c6be45f58a76828a5f48d58262e9a",
+        "type": "github"
+      }
+    },
+    "root": {
+      "inputs": {
+        "CondaPkg": "CondaPkg",
+        "DataAPI": "DataAPI",
+        "DataValueInterfaces": "DataValueInterfaces",
+        "IteratorInterfaceExtensions": "IteratorInterfaceExtensions",
+        "JSON": "JSON",
+        "MacroTools": "MacroTools",
+        "OrderedCollections": "OrderedCollections",
+        "Parsers": "Parsers",
+        "PrecompileTools": "PrecompileTools",
+        "Preferences": "Preferences",
+        "PythonCall": "PythonCall",
+        "Scratch": "Scratch",
+        "StructUtils": "StructUtils",
+        "TableTraits": "TableTraits",
+        "Tables": "Tables",
+        "UnsafePointers": "UnsafePointers",
+        "nixpkgs": "nixpkgs"
+      }
+    }
+  },
+  "root": "root",
+  "version": 7
+}
