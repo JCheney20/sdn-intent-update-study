@@ -110,7 +110,8 @@
         "src/match/types.jl": "3fbaa0897cd31a1a4eab5a21445b7ebf57718abe02e9639e05c4a3739080f49f",
         "src/match/union.jl": "ae9add5d1306d2543ed78564768cd13a23ce5f3ca9d53aa8d8a0cdc6176fe8b2",
         "src/structdef.jl": "3c8a4d775427776e6532b7f96c45a7d7ce20fc228ec9f6243647d7ef3fff8b00",
-        "src/utils.jl": "48b4be214afd48ef235cb85f803f3887c460312a05f15410c542a0e37ec6825f"
+        "src/utils.jl": "48b4be214afd48ef235cb85f803f3887c460312a05f15410c542a0e37ec6825f",
+        "animals.txt": "f151152cecf2b9a4513263df0a9abcb3e43146f4eb2ef2020b30e858a302e703"
       }
     },
     "OrderedCollections": {
@@ -618,6 +619,7 @@
     "mininet/mininet/topo.py": "466a8a918bcf0b6d1f6cce245568df863d3eec6405f06cd7bfc127ec2e7bdee6",
     "mininet/mininet/topolib.py": "a6529ab3dbc66c683863619edd5ed548e4e4b571f00c87dff5a6295427bcb688",
     "mininet/mininet/util.py": "6b5980809b4b0f230511dda9af7a301c102d4edf179831ef88cd5f47bda46aae",
-    "mininet/mnexec.c": "95b2258f617afcf65a393c7df950fcd832733e6119f79c470908e68de5d030a5"
+    "mininet/mnexec.c": "95b2258f617afcf65a393c7df950fcd832733e6119f79c470908e68de5d030a5",
+    "julia/MacroTools/animals.txt": "f151152cecf2b9a4513263df0a9abcb3e43146f4eb2ef2020b30e858a302e703"
   }
 }

@@ -16,12 +16,17 @@ def sha(path):
         return hashlib.file_digest(stream, 'sha256').hexdigest()
 
 def command(args, env=None):
-    return subprocess.run(args, env=env, check=True, capture_output=True, text=True, timeout=60).stdout.strip()
+    result = subprocess.run(args, env=env, capture_output=True, text=True, timeout=60)
+    if result.returncode:
+        raise RuntimeError(f'Environment command failed ({result.returncode}): {args}\n{result.stdout}\n{result.stderr}')
+    return result.stdout.strip()
 
 def python_env(config):
     env = {k: v for k, v in os.environ.items() if not k.startswith(('PYTHON', 'NIX_PYTHON')) and k != 'LD_LIBRARY_PATH'}
-    env.update(PYTHONNOUSERSITE='1', PYTHONHASHSEED='0', OPENBLAS_NUM_THREADS='1',
+    env.update(PYTHONNOUSERSITE='1', PYTHONDONTWRITEBYTECODE='1', PYTHONHASHSEED='0', OPENBLAS_NUM_THREADS='1',
                OMP_NUM_THREADS='1', MKL_NUM_THREADS='1', MPLBACKEND='Agg')
+    if config.get('cache_root'):
+        env.update(XDG_CACHE_HOME=config['cache_root'], MPLCONFIGDIR=str(Path(config['cache_root']) / 'matplotlib'))
     if config.get('library_paths'):
         env['LD_LIBRARY_PATH'] = ':'.join(config['library_paths'])
     if config['python_sites']:
@@ -36,7 +41,8 @@ def configure(args):
         raise SystemExit('Refusing to overwrite environment configuration: ' + str(output))
     config = {'schema': 1, 'route': args.route, 'python_sites': [], 'tool_components': {},
               'interop_components': {}, 'native_builds': False,
-              'library_paths': [str(Path(p).absolute()) for p in args.library_path]}
+              'library_paths': [str(Path(p).absolute()) for p in args.library_path],
+              'cache_root': str(output.parent / (output.stem + '-cache'))}
     if args.route == 'nix':
         def evaluate(folder, attribute):
             return json.loads(command(['nix', 'eval', '--no-write-lock-file', '--json', str(folder) + '#' + attribute]))
@@ -95,6 +101,18 @@ def configure(args):
     runtime = command([julia, '--startup-file=no', '--history-file=no', '-e', 'print(string(VERSION),"\\n",realpath(joinpath(Sys.BINDIR,"julia")))'], env).splitlines()
     assert runtime[0] == '1.13.1', runtime
     config['julia'] = runtime[1]
+    # Import the real vendored dependency closure before any scientific run.
+    # This includes runtime data (e.g. MacroTools/animals.txt), not just .jl files.
+    probe_env = dict(env)
+    project = CA1 / 'Emulation/Interop'
+    probe_env.update(JULIA_LOAD_PATH=str(ROOT / 'replication/vendor/julia') + ':' + str(project) + ':@stdlib',
+                     JULIA_DEPOT_PATH=str(output.parent / (output.stem + '-probe-depot')) + ':',
+                     JULIA_PKG_OFFLINE='true', JULIA_CONDAPKG_BACKEND='Null', JULIA_CONDAPKG_OFFLINE='true',
+                     JULIA_PYTHONCALL_EXE=config['python'], JULIA_PYTHONCALL_LIB=config['python_lib'],
+                     MININET_PYTHON_SOURCE=str(ROOT / 'replication/vendor/mininet'))
+    probe = 'using PythonCall, CondaPkg; @assert Base.pkgversion(PythonCall)==v"0.9.37"; @assert Base.pkgversion(CondaPkg)==v"0.2.38"; @assert CondaPkg.backend()==:Null; @assert startswith(pyconvert(String,pyimport("sys").version),"3.11.7"); pyimport("sys").path.insert(0,ENV["MININET_PYTHON_SOURCE"]); @assert pyconvert(String,pyimport("mininet.net").VERSION)=="2.3.1b4"; println("VENDORED INTEROP IMPORT PASS")'
+    command([config['julia'], '--project=' + str(project), '--startup-file=no', '--history-file=no', '--compiled-modules=no', '--threads=1', '--gcthreads=1', '-e', probe], probe_env)
+    config['vendored_interop_import_checked'] = True
     ovs = Path(config['tool_components']['openvswitch']['path']) / 'bin/ovs-vsctl'
     ovs_version = command([str(ovs), '--version'], env)
     assert 'Open vSwitch) 3.2.1' in ovs_version, ovs_version
