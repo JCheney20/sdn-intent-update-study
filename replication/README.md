@@ -6,7 +6,7 @@ Implementation status: clean-checkout validation is in progress; no completed re
 
 ## Prerequisites
 
-Use an isolated x86_64 Linux test host with CPUs 0 and 1 available, cgroup v2, systemd user scopes, and unprivileged user/network/PID/mount namespaces. Scientific jobs are serialized and enforce two CPUs, hard 2 GiB RAM, zero swap and 120 seconds per whole job. Missing isolation is a blocker; there is no unbounded or sudo fallback. Do not use a production network host.
+Use an isolated x86_64 Linux test host with CPUs 0 and 1 available, cgroup v2, systemd user scopes, and unprivileged user/network/PID/mount namespaces. Scientific jobs are serialized and enforce two CPUs, hard 2 GiB RAM and zero swap. New emulation jobs have an author-approved 130-second whole-job ceiling after a retained Nix-route timeout; model jobs retain their original ceilings of 120 seconds or less. The original frozen evidence is unchanged. Missing isolation is a blocker; there is no unbounded or sudo fallback. Do not use a production network host.
 
 Both routes require Julia **1.13.1**. Supply its real executable with `--julia`; do not rely on a wrapper that loads unrelated packages. Native tools include OVS **3.2.1**, `mnexec` compatible with the supplied Mininet **2.3.1b4** source, iproute2, tcpdump, net-tools, iputils, util-linux, ethtool, procps, psmisc and which. Installed binaries are not vendored. Runtime paths and executable/library hashes are recorded in the environment configuration.
 
@@ -72,7 +72,7 @@ python3 -I -B replication/run.py \
 
 For the native route use its environment JSON and a different fresh output path. The same script executes both routes. It first runs real embedded-Python/network doctor controls, then resource preflight, oracle/lifecycle/controller validation, fresh original-reference capture and exact replay, a fresh model freeze/catalogue, the full sensitivity/benchmark/primary grid, original audit/coverage, then fresh emulation controls, timing, source freeze, envelope validation, six primary cells and the packet audit. Finally it compares deterministic scientific outcomes with the original evidence, not wall-clock timings.
 
-Each child scientific job has its own 120-second ceiling; the complete serialized campaign takes longer than 120 seconds. There is no cumulative runtime cap. The coordinator does not launch concurrent jobs.
+Each emulation job has its own 130-second ceiling; model jobs retain ceilings of 120 seconds or less. The complete serialized campaign takes much longer. There is no cumulative runtime cap. The coordinator does not launch concurrent jobs.
 
 For inspection at stage barriers, use `--phase prepare`, then `--phase doctor`, `--phase validation`, `--phase model`, `--phase emulation`, and `--phase compare`, always with the same environment/output pair. Each phase can be attempted once; prerequisites must have passed. `--phase all` is the default and requires a fresh directory. A failed phase is retained and cannot be silently renewed. After fixing a launcher/setup defect, start a new replication ID rather than selectively retrying its primary cell.
 

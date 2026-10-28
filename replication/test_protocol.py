@@ -57,6 +57,17 @@ class ProtocolTests(unittest.TestCase):
             from workspace import sha
             self.assertEqual(tomllib.loads((w.model / 'validation/Controller_Inputs.toml').read_text())['reference_trace_sha256'], sha(fixture))
             w.kernel_check()
+            self.assertEqual(json.loads((w.output / 'RESOURCE_PROFILE.json').read_text())['emulation_hard_deadline_seconds'], 130)
+            self.assertIn('129s', (w.emu / 'scope.sh').read_text())
+            self.assertIn('128s', (w.emu / 'scope.sh').read_text())
+            self.assertIn('timeout=125', (w.emu / 'scope_entry.py').read_text())
+            audit = w.emu / 'Comparison/audit.py'
+            content = audit.read_bytes()
+            audit.write_bytes(content + b'\n# unauthorized non-resource modification\n')
+            with self.assertRaises(AssertionError):
+                w.kernel_check()
+            audit.write_bytes(content)
+            w.kernel_check()
             self.assertNotIn('external_context_snapshots', (w.tree / 'SDN_Model_Comparison/Delivery_Manifest.json').read_text())
             with self.assertRaises(AssertionError):
                 w.prepare(config)

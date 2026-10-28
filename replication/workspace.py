@@ -77,7 +77,14 @@ class Workspace:
 
     def kernel_check(self):
         for name in KERNELS:
-            assert sha(ROOT / 'artifacts' / name) == sha(self.tree / name), 'Scientific kernel changed: ' + name
+            original = (ROOT / 'artifacts' / name).read_bytes()
+            observed = (self.tree / name).read_bytes()
+            if name == 'Literature_Review/CA1/Emulation/Comparison/audit.py':
+                # Only the author-approved job budget changes, never packet/measurement checks.
+                new = b"['elapsed_seconds']<130"
+                assert observed.count(new) == 1, 'Missing explicit 130-second audit profile'
+                observed = observed.replace(new, b"['elapsed_seconds']<120", 1)
+            assert original == observed, 'Scientific kernel changed: ' + name
         vendor = json.loads((ROOT / 'replication/VENDOR.json').read_text())
         for name, expected in vendor['files'].items():
             assert sha(ROOT / 'replication/vendor' / name) == expected, name
@@ -163,6 +170,21 @@ class Workspace:
             base = '$PWD' if suffix == 'Interop/run.sh' else '$interop'
             self.replace(path, 'bash "' + base + '/sandbox.sh"',
                          'bash "' + base + '/replication_isolate.sh" "' + base + '/sandbox.sh"')
+        # Author-approved replication-only increase; frozen studies keep their 120-second profile.
+        self.replace('Literature_Review/CA1/Emulation/scope.sh', '120s', '129s')
+        self.replace('Literature_Review/CA1/Emulation/scope.sh', '118s', '128s')
+        entry = 'Literature_Review/CA1/Emulation/scope_entry.py'
+        self.replace(entry, 'timeout=115', 'timeout=125')
+        self.replace(entry, '115-second inner ceiling', '125-second inner ceiling; hard outer limit is 130 seconds')
+        for audit in ['Interop/verify_step1.py', 'Step2/audit.py', 'Comparison/audit.py']:
+            self.replace('Literature_Review/CA1/Emulation/' + audit,
+                         "['elapsed_seconds']<120", "['elapsed_seconds']<130")
+        write_json(self.output / 'RESOURCE_PROFILE.json', {
+            'emulation_hard_deadline_seconds': 130, 'outer_term_seconds': 129, 'kill_after_seconds': 1,
+            'inner_shell_deadline_seconds': 128, 'inner_process_deadline_seconds': 125,
+            'original_model_deadlines_unchanged': True, 'cpus': [0, 1],
+            'cpu_quota_percent': 200, 'memory_max_bytes': 2**31, 'memory_swap_max_bytes': 0,
+            'serialized': True, 'reason': 'Author authorized 130 seconds after retained Nix replication timeout.'})
         reference = self.model / 'reference_environment'
         write_json(reference / 'referenceComponents.json', config['reference_components'])
         setup = {'schema_version': 2, 'status': 'REPLICATION_ENVIRONMENT_PINNED', 'route': config['route'],

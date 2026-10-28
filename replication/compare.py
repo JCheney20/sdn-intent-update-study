@@ -72,7 +72,9 @@ def compare(output):
     assert (emulation['primary_episodes'], emulation['primary_packets']) == (30, 45)
     assert json.loads((w.output / 'EMULATION.json').read_text())['duplicate_refused']
     report = {'status': 'PASS', 'route': json.loads((w.output / 'environment.json').read_text())['route'],
-              'scientific_kernels_byte_identical': True, 'controller_checks': checks,
+              'scientific_kernels_byte_identical_except_declared_resource_audit': True,
+              'emulation_job_ceiling_seconds': 130, 'resource_audit_change': '120 to 130 seconds only',
+              'controller_checks': checks,
               'reference_replay_checks': replay['checks'], 'fresh_controller_catalogue_entries': len(catalogue),
               'primary_model_rows_equal_excluding_timing': len(current), 'sensitivity_records_equal': 576,
               'baseline_event_coverage_equal': True, 'benchmark_jobs': 48, 'benchmark_timings_required_equal': False,
