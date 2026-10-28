@@ -1,0 +1,18 @@
+cff-version: 1.2.0
+message: "Use this citation for the repository as a whole. See README.md for separate model-study and Cisco-emulation citations."
+type: software
+title: "SDN intent-update study: bounded handover and Cisco emulation"
+authors:
+  - family-names: Cheney
+    given-names: Justin Marc
+version: 1.0.0
+date-released: 2026-10-28
+url: "https://github.com/JCheney20/sdn-intent-update-study"
+repository-code: "https://github.com/JCheney20/sdn-intent-update-study"
+abstract: "Source code, frozen protocols, retained results and integrity verification for a bounded SDN intent-update model comparison and a separate Cisco packet-emulation study. See LICENSING.md for the original-code, writing and third-party license boundaries."
+keywords:
+  - software-defined networking
+  - consistent network updates
+  - bounded handover
+  - Mininet
+  - Open vSwitch
