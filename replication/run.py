@@ -94,12 +94,21 @@ class Replication:
                            'bash', self.w.emu / relative, *args, expected=expected, env=env)
 
     def doctor(self):
+        env = dict(self.env)
+        env.update(HOST_NETNS=os.readlink('/proc/self/ns/net'), HOST_MNTNS=os.readlink('/proc/self/ns/mnt'),
+                   HOST_PIDNS=os.readlink('/proc/self/ns/pid'))
+        probe = 'set -e; test -f "$1"; test -d "$2"; test -x "$3"; if [[ "$2" == /tmp/* ]]; then findmnt -no OPTIONS --target "$2" | grep -Eq "(^|,)ro(,|$)"; fi; printf "PATH_BINDINGS_PASS\\n" > "$COS738_OVS_RUN_DIR/path-check.txt"'
+        paths = self.script(self.w.emu / 'scope.sh', 'replication-path-check',
+            'unshare', '--user', '--map-root-user', '--net', '--pid', '--mount', '--fork', '--mount-proc',
+            'bash', self.w.emu / 'Interop/replication_isolate.sh', self.w.emu / 'Interop/sandbox.sh',
+            'bash', '-c', probe, 'path-check', self.w.emu / 'Interop/network_smoke.jl', ROOT, self.c['python'], env=env)
+        assert (paths / 'path-check.txt').read_text().strip() == 'PATH_BINDINGS_PASS'
         bridge = self.emulation_job('doctor-bridge', 'Interop/run.sh', 'bridge')
         network = self.emulation_job('doctor-network', 'Interop/run.sh', 'network')
         data = tomllib.loads((network / 'network_smoke.toml').read_text())
         assert data['status'] == 'PASS' and data['ovs_daemons_exited']
         assert data['mininet_interfaces_removed'] and data['mininet_node_processes_reaped']
-        write_json(self.w.output / 'DOCTOR.json', {'status': 'PASS', 'bridge': str(bridge), 'network': str(network),
+        write_json(self.w.output / 'DOCTOR.json', {'status': 'PASS', 'paths': str(paths), 'bridge': str(bridge), 'network': str(network),
             'configured_tmp_bindings': self.env['SDN_REPLICATION_TMP_BINDS'].splitlines()})
 
     def validation(self):
@@ -209,7 +218,7 @@ class Replication:
             for path, expected in self.c.get('library_sha256', {}).items():
                 assert sha(path) == expected, 'Configured native library changed: ' + path
             if name == 'compare':
-                self.execute([self.c['python'], '-I', '-B', ROOT / 'replication/compare.py', self.w.output])
+                self.bounded('scientific-comparison', [self.c['python'], '-I', '-B', ROOT / 'replication/compare.py', self.w.output])
             else:
                 getattr(self, name)()
             self.w.kernel_check()

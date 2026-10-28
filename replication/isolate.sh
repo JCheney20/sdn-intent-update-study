@@ -22,7 +22,8 @@ for ((i=0;i<count;i++)); do
   fd=$1; mode=$2; path=$3; shift 3
   [[ "$fd" =~ ^[0-9]+$ && "$path" == /tmp/* ]]
   mkdir -p -- "$path"
-  mount --bind "/proc/$parent/fd/$fd" "$path"
+  # libmount must not canonicalize the descriptor back to its now-hidden /tmp name.
+  mount --no-canonicalize --bind "/proc/$parent/fd/$fd" "$path"
   if [[ "$mode" == ro ]]; then
     mount -o remount,bind,ro,nosuid,nodev "$path"
   else
