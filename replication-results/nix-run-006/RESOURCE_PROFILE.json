@@ -1,0 +1,17 @@
+{
+  "emulation_hard_deadline_seconds": 130,
+  "outer_term_seconds": 129,
+  "kill_after_seconds": 1,
+  "inner_shell_deadline_seconds": 128,
+  "inner_process_deadline_seconds": 125,
+  "original_model_deadlines_unchanged": true,
+  "cpus": [
+    0,
+    1
+  ],
+  "cpu_quota_percent": 200,
+  "memory_max_bytes": 2147483648,
+  "memory_swap_max_bytes": 0,
+  "serialized": true,
+  "reason": "Author authorized 130 seconds after retained Nix replication timeout."
+}

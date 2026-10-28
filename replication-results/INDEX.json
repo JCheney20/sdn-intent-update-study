@@ -1,0 +1,98 @@
+{
+  "release": "v2.0.0",
+  "date": "2026-10-28",
+  "original_artifacts_unchanged": true,
+  "scope": "Same recorded NixOS host, separate clean Git checkouts. Native launcher uses no Nix commands; supplied runtimes can be Nix-built. No clean non-Nix OS or independent human replication claimed.",
+  "runs": [
+    {
+      "id": "native-run-001",
+      "status": "PREPARED_ONLY",
+      "note": "Prepared workspace only; no completed scientific phases or primary observations claimed.",
+      "archive": "native-run-001.tar.gz",
+      "archive_sha256": "a3b3ceb7bd4f2be3c7e77f0f26672e12931e745f1d44c5c8a93f13bdd2a17a5a",
+      "archive_bytes": 3287721,
+      "file_count": 148,
+      "files": "native-run-001/FILES.json",
+      "url": "https://github.com/JCheney20/sdn-intent-update-study/releases/download/v2.0.0/native-run-001.tar.gz"
+    },
+    {
+      "id": "nix-run-001",
+      "status": "FAIL",
+      "note": "Fresh controller trace checksum was not rebound after recapture; validation refused.",
+      "archive": "nix-run-001.tar.gz",
+      "archive_sha256": "1eead55e04928a8d58ed09696c8636426d8ce9939f47cdbc95394af40e0cd1e4",
+      "archive_bytes": 4198145,
+      "file_count": 218,
+      "files": "nix-run-001/FILES.json",
+      "url": "https://github.com/JCheney20/sdn-intent-update-study/releases/download/v2.0.0/nix-run-001.tar.gz"
+    },
+    {
+      "id": "nix-run-002",
+      "status": "FAIL",
+      "note": "Model passed; embedded-Python startup refused an incomplete MacroTools runtime subset (animals.txt).",
+      "archive": "nix-run-002.tar.gz",
+      "archive_sha256": "aa81d32c78927cb5f0d8866e10c27d7fed9889a4b02ed30b1280b840543ab1cd",
+      "archive_bytes": 4675098,
+      "file_count": 842,
+      "files": "nix-run-002/FILES.json",
+      "url": "https://github.com/JCheney20/sdn-intent-update-study/releases/download/v2.0.0/nix-run-002.tar.gz"
+    },
+    {
+      "id": "native-run-003",
+      "status": "FAIL",
+      "note": "Model passed; network startup could not read workspace files after the private /tmp mount.",
+      "archive": "native-run-003.tar.gz",
+      "archive_sha256": "643f7fe9860834b42af80d7747b81ec16b326c513c78ce7e52d7ce1a4bd5193c",
+      "archive_bytes": 4687489,
+      "file_count": 864,
+      "files": "native-run-003/FILES.json",
+      "url": "https://github.com/JCheney20/sdn-intent-update-study/releases/download/v2.0.0/native-run-003.tar.gz"
+    },
+    {
+      "id": "native-run-004",
+      "status": "FAIL",
+      "note": "Doctor refused the same path issue: libmount canonicalized descriptor paths to hidden names.",
+      "archive": "native-run-004.tar.gz",
+      "archive_sha256": "5319095c06721a887e53d421e2eb2e262dc7206ef9db1117e43bf69eb1959f54",
+      "archive_bytes": 3319185,
+      "file_count": 199,
+      "files": "native-run-004/FILES.json",
+      "url": "https://github.com/JCheney20/sdn-intent-update-study/releases/download/v2.0.0/native-run-004.tar.gz"
+    },
+    {
+      "id": "nix-run-005",
+      "status": "FAIL",
+      "note": "Model passed; fifth emulation primary cell exceeded its 115-second inner deadline. Failed, not promoted. Later bridge-only diagnostics are controls, not primary retries.",
+      "archive": "nix-run-005.tar.gz",
+      "archive_sha256": "9aaf1d9396388cd8a9913111c75d37c462488afd2776edfaf020109352853718",
+      "archive_bytes": 7951585,
+      "file_count": 2876,
+      "files": "nix-run-005/FILES.json",
+      "url": "https://github.com/JCheney20/sdn-intent-update-study/releases/download/v2.0.0/nix-run-005.tar.gz"
+    },
+    {
+      "id": "native-run-005",
+      "status": "PASS",
+      "note": "Complete clean-checkout comparison passed under the original 120-second job profile.",
+      "archive": "native-run-005.tar.gz",
+      "archive_sha256": "e1f568d37846474b0c93322789dfd1e9e451ef8c20bc9787afe7cb73c8b17782",
+      "archive_bytes": 8457367,
+      "file_count": 3074,
+      "files": "native-run-005/FILES.json",
+      "url": "https://github.com/JCheney20/sdn-intent-update-study/releases/download/v2.0.0/native-run-005.tar.gz",
+      "tested_commit": "24394f92b380a506370aec914fe86f6e0f158759"
+    },
+    {
+      "id": "nix-run-006",
+      "status": "PASS",
+      "note": "Complete clean-checkout comparison passed with the declared 130-second new emulation profile.",
+      "archive": "nix-run-006.tar.gz",
+      "archive_sha256": "e873a58d82404d9c8f3b69421e3efc4626be645d980b8c63da810f95fe582777",
+      "archive_bytes": 8459224,
+      "file_count": 3075,
+      "files": "nix-run-006/FILES.json",
+      "url": "https://github.com/JCheney20/sdn-intent-update-study/releases/download/v2.0.0/nix-run-006.tar.gz",
+      "tested_commit": "5f41f09573afc397708120ab34864e6ca579054e"
+    }
+  ]
+}

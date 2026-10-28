@@ -1,0 +1,23 @@
+{
+  "doctor": {
+    "status": "PASS",
+    "started_ns": 1793184599913721278,
+    "ended_ns": 1793184704919747235
+  },
+  "validation": {
+    "status": "PASS",
+    "started_ns": 1793184704920254318,
+    "ended_ns": 1793184867400884919
+  },
+  "model": {
+    "status": "PASS",
+    "started_ns": 1793184867401341677,
+    "ended_ns": 1793185668695458281
+  },
+  "emulation": {
+    "status": "FAIL",
+    "started_ns": 1793185668695761320,
+    "error": "RuntimeError('Command failed (124); retained log /tmp/sdn-replication-tests-20261028-vW1M4V/nix-run-005/coordinator/1793186721527381734.log')",
+    "ended_ns": 1793186836716592892
+  }
+}

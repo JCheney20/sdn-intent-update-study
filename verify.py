@@ -81,6 +81,19 @@ assert sum(cell['episodes'] for cell in result['cells']) == 30
 assert sum(cell['old_wrong'] for cell in result['cells']) == 5
 assert all(cell['new_pass'] == 5 for cell in result['cells'])
 assert all(cell['late'] == cell['unobserved'] == cell['duplicates'] == 0 for cell in result['cells'])
+published = json.loads((ROOT / 'replication-results/INDEX.json').read_text())
+assert {row['id'] for row in published['runs'] if row['status'] == 'PASS'} == {'native-run-005', 'nix-run-006'}
+for row in published['runs']:
+    files = json.loads((ROOT / 'replication-results' / row['files']).read_text())
+    assert len(files) == row['file_count']
+    if row['status'] == 'PASS':
+        comparison = json.loads((ROOT / 'replication-results' / row['id'] / 'COMPARISON.json').read_text())
+        assert comparison['status'] == 'PASS'
+        assert comparison['primary_model_rows_equal_excluding_timing'] == 92
+        assert comparison['sensitivity_records_equal'] == 576
+        assert comparison['emulation_cells_equal_excluding_timing'] == 6
+        assert (comparison['primary_episodes'], comparison['primary_packets']) == (30, 45)
 print(f'PASS: {len(inventory)} byte-preserved exported files; model 628-output seal; emulation 2041-output seal.')
 print('PASS: frozen source inputs and recorded study accounting. No experiment or replication performed.')
-print('LIMIT: private historical package/context and original machine environment are not reproduced; see REPRODUCIBILITY.md.')
+print('PASS: published Nix/native replication summaries. This command checks records, not a new execution.')
+print('LIMIT: no clean-OS or arbitrary-machine certification; full replication archives need separate download/verification. See REPRODUCIBILITY.md.')

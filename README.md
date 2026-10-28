@@ -44,6 +44,8 @@ The repository contains the two studies' source, prospective protocols, frozen m
 | [`verify.py`](verify.py), [`EXPORT.json`](EXPORT.json), [`SHA256SUMS`](SHA256SUMS) | Read-only verification, export provenance and release checksums. |
 | [`REPRODUCIBILITY.md`](REPRODUCIBILITY.md) / [`LICENSING.md`](LICENSING.md) | Execution boundaries and rights/provenance details. |
 | [`CITATION.cff`](CITATION.cff) | Machine-readable citation for the repository as a whole. |
+| [`replication/`](replication/README.md) | Validated new Nix/native launchers, hash-locked Python setup, vendored Julia/Mininet sources and declared replication protocol. |
+| [`replication-results/`](replication-results/README.md) | Frozen successful comparisons, retained failure index, per-file inventories and full-record release downloads. |
 
 The directory layout inside `artifacts/` preserves relative paths used by frozen sources. Repeated run snapshots remain where required by a seal. Historical reports retain their execution-time wording and may link to local-only material; the top-level documents describe the public release.
 
@@ -110,9 +112,11 @@ V opens new service earlier than Q but does not finish retirement/cleanup earlie
 
 ## Verification and independent reruns
 
-**Important distinction:** verifying the published evidence works without Nix. A complete independent experimental rerun is **not yet a supported turnkey route**, with or without Nix. The frozen launchers require private historical-context files and original machine paths; consumed primary-attempt records deliberately prevent overwriting the original experiments. Installing dependencies alone does not remove these gates.
+**v2.0.0 adds validated new replication entry points.** Separate clean-checkout Nix and native campaigns reproduced the original non-timing scientific outcomes: 92 primary model rows, 576 sensitivity records and six packet cells / 30 episodes / 45 packets. See [frozen replication evidence](replication-results/README.md) for results, tested commits, complete raw-record downloads and retained failures.
 
-The environment routes below explain how to inspect/reconstruct prerequisites. They are not claims that an independent clean-machine replication has passed. Do not delete attempt records or weaken source checks in the published evidence. New experiments need a separate working copy, output tree and declared replication protocol.
+Use [`replication/README.md`](replication/README.md) for the executable setup/run instructions, not the historical launchers inside `artifacts/`. The original source, results, seals and consumed attempts remain unchanged. The new layer binds public scientific dependencies, configured runtime paths, fresh outputs and new manifests. It supplies 16 pinned Julia package runtime subsets, Mininet Python sources and a hashed native Python lock; Julia/Python interpreters and Linux tool binaries remain external prerequisites.
+
+**Validation boundary:** both routes passed on the recorded NixOS host. Native mode performs no Nix configuration/evaluation commands but may use externally supplied Nix-built runtimes. This is not a demonstrated clean non-Nix OS, arbitrary-machine or independent human reproduction. Timing equality is not claimed.
 
 ### Verify the published evidence
 
@@ -153,11 +157,11 @@ nix build --no-link --max-jobs 0 "$EMU#openvswitch"
 
 This succeeds only if the required outputs are already present or available from configured substituters. Missing cache outputs are a setup blocker, not permission to substitute versions. The original reference environment used cached component paths rather than building its combined `python.withPackages` wrapper. A `nix develop` invocation alone is therefore not a verified reproduction procedure.
 
-Julia **1.13.1** is separately required; these flakes do not provision that recorded Julia executable. Reconstruct the Julia/PythonCall package-directory links and interpreter/library bindings from the retained manifests in a new replication workspace. Original hard-coded paths, private historical gates and attempt handling still need an explicitly documented portable replication adapter before the full campaign can run elsewhere.
+Julia **1.13.1** remains an explicit prerequisite; these flakes do not provision that recorded executable. The [Nix setup instructions](replication/README.md#nix-resolved-cached-components) use `replication/configure.py --route nix --julia /path/to/julia --output /outside/checkout/environment.json --realise`. Cache-only realization permits no local native builds. Configuration checks actual imports and versions; the new workspace reconstructs package links and runtime/provenance bindings. Follow the [complete study command](replication/README.md#run-the-complete-studies) after setup.
 
 ### Environment route without Nix
 
-Evidence verification above is already Nix-free. For a future experimental replication without Nix, match the recorded environment rather than assuming current distribution packages are equivalent:
+Evidence verification is already Nix-free. For a new experiment, use the [complete native setup](replication/README.md#native-environment-without-invoking-nix), which was validated with a separate hash-locked Python environment. Match these versions rather than assuming current distribution packages are equivalent:
 
 | Component | Recorded version / requirement |
 |---|---|
@@ -168,23 +172,23 @@ Evidence verification above is already Nix-free. For a future experimental repli
 | PythonCall / CondaPkg | 0.9.37 / 0.2.38 |
 | Linux facilities | Network/user/mount/PID namespaces, veth, cgroup v2, working systemd user scopes and CPU affinity controls. |
 
-A separate Python virtual environment can prepare the main reference dependencies. With **Python 3.11.7 already installed**, these are setup commands, not the study runner:
-
-```sh
-python3.11 -m venv /path/to/new-replication/python-env
-/path/to/new-replication/python-env/bin/python -m pip install \
-  numpy==1.26.2 networkx==3.2.1 matplotlib==3.8.2
-```
-
-Match the additional package versions against [`referenceVersions.json`](artifacts/Literature_Review/CA1/Revision_Protocol/reference_environment/referenceVersions.json) and [`transitiveVersions.json`](artifacts/Literature_Review/CA1/Revision_Protocol/reference_environment/transitiveVersions.json); the three-package command alone does not recreate all checked pins. Python patch version and Julia RNG/tie behavior matter to the reference comparison.
+Create the Python **3.11.7** virtual environment outside the checkout, install the pinned packaging tools, then use [`requirements-linux-x86_64.lock`](replication/requirements-linux-x86_64.lock) with `pip --require-hashes` as shown in the [native instructions](replication/README.md#native-environment-without-invoking-nix). The lock covers all 14 checked distributions; installing only NumPy, NetworkX and Matplotlib is insufficient. Native extensions use wheels, not local compilation. Olefile uses its hash-locked pure-Python source ZIP. Python patch version and Julia RNG/tie behavior matter.
 
 For emulation, obtain matching Mininet/OVS versions and Linux utilities from suitable upstream/distribution sources in an isolated Linux test environment. A similarly named PyPI package or a newer OVS release is not automatically equivalent to the recorded Nix packages. Bind PythonCall to the selected Python interpreter/shared library, use the pinned Julia packages, and retain the null/offline CondaPkg behavior after dependencies are prepared. Do not run these network experiments on a production host or infer a need to change host networking from a failed setup check.
 
-**The existing launchers still contain Nix-store paths and environment-hash gates.** A Nix-free installation requires a separate, validated launcher/environment binding and new manifests; the frozen scripts cannot simply be run unchanged after `pip install`. Such a portable adapter and a completed non-Nix rerun are not included in this release.
+The frozen launchers still retain their original paths and gates. **Use the included new `replication/configure.py --route native` and `replication/run.py`**, with explicit tool/runtime prefixes and fresh output paths. Those entry points were validated without invoking Nix, on the recorded NixOS host; no clean non-Nix operating-system validation is claimed.
 
 ### Experimental rerun sequence
 
-A new replication should follow the original order below. Links identify the executed source entry points, **not commands to rerun over the sealed results**.
+After configuring either environment, run the complete campaign from the checkout with a **non-existing output directory outside it**:
+
+```sh
+python3 -I -B replication/run.py \
+  --environment /path/outside/checkout/environment.json \
+  --output /path/outside/checkout/replication-001
+```
+
+The coordinator runs an early real embedded-Python/network doctor, then the stages below and a deterministic final comparison. Links identify the preserved source implementations, **not commands to run over sealed results**.
 
 | Order | Required stage | Original implementation |
 |---|---|---|
@@ -195,9 +199,9 @@ A new replication should follow the original order below. Links identify the exe
 | 5 | Separately validate Julia/PythonCall/Mininet, the Cisco adapter and real inflight timing. | [`Interop/run.sh`](artifacts/Literature_Review/CA1/Emulation/Interop/run.sh), [`Step2/run.sh`](artifacts/Literature_Review/CA1/Emulation/Step2/run.sh), [`Step3/run.sh`](artifacts/Literature_Review/CA1/Emulation/Step3/run.sh) |
 | 6 | Freeze a new emulation protocol; validate the envelope; execute the six ordinary/Q/V cells and audit raw packets. | [`Comparison/run.sh`](artifacts/Literature_Review/CA1/Emulation/Comparison/run.sh), [`Comparison/audit.py`](artifacts/Literature_Review/CA1/Emulation/Comparison/audit.py) |
 
-The original limits were **two CPUs, hard 2 GiB RAM, zero swap, 120 seconds per whole job, and one local job at a time**. Treat an unexplained failure as a stop condition. Keep failed/partial records, warm-ups and primary observations distinct. Do not pool a new replication with the original rows or treat matched seed labels as identical draws.
+The original limits were **two CPUs, hard 2 GiB RAM, zero swap, 120 seconds per whole job, and one local job at a time**. New emulation jobs use an explicitly authorized **130-second** ceiling after a retained Nix timeout; model deadlines remain unchanged. All other resource constraints, packet observation windows and scientific methods remain unchanged. Resource-audit threshold changes are explicitly recorded and checked. Treat an unexplained failure as a stop condition. Keep failed/partial records, warm-ups and primary observations distinct. Do not pool a new replication with the original rows or treat matched seed labels as identical draws.
 
-See [REPRODUCIBILITY.md](REPRODUCIBILITY.md) for the omitted historical-context dependency, machine-specific paths and why the read-only verifier differs from executing the original audits. These are explicit current release limitations, not evidence that either Nix or non-Nix experimental reproduction has passed.
+See [REPRODUCIBILITY.md](REPRODUCIBILITY.md) for the distinction between original integrity verification, demonstrated new scientific-outcome replication and untested clean-OS portability. Full successful and failed records are separately frozen in the [v2.0.0 release](https://github.com/JCheney20/sdn-intent-update-study/releases/tag/v2.0.0).
 
 ## How to cite
 
@@ -210,7 +214,7 @@ GitHub's **Cite this repository** menu uses [`CITATION.cff`](CITATION.cff) for a
 
 Suggested plain-text repository citation:
 
-> Cheney, J. M. (2026). *SDN intent-update study: bounded handover and Cisco emulation* [Source code and research artifacts]. GitHub. Version b05a1e02c40ea57f0b9ccb6112607c3e5f9cf305. https://github.com/JCheney20/sdn-intent-update-study/tree/b05a1e02c40ea57f0b9ccb6112607c3e5f9cf305
+> Cheney, J. M. (2026). *SDN intent-update study: bounded handover and Cisco emulation* (v2.0.0) [Source code, frozen research artifacts and replication evidence]. GitHub. https://github.com/JCheney20/sdn-intent-update-study/releases/tag/v2.0.0
 
 BibTeX options for the two studies:
 

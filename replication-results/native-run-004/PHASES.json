@@ -1,0 +1,8 @@
+{
+  "doctor": {
+    "status": "FAIL",
+    "started_ns": 1793181587283582098,
+    "error": "RuntimeError('Command failed (1); retained log /tmp/sdn-replication-tests-20261028-vW1M4V/native-run-004/coordinator/1793181637799359027.log')",
+    "ended_ns": 1793181639693173293
+  }
+}

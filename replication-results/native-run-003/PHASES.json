@@ -1,0 +1,18 @@
+{
+  "validation": {
+    "status": "PASS",
+    "started_ns": 1793179777190987206,
+    "ended_ns": 1793179937693060786
+  },
+  "model": {
+    "status": "PASS",
+    "started_ns": 1793179957985769140,
+    "ended_ns": 1793180755433922148
+  },
+  "emulation": {
+    "status": "FAIL",
+    "started_ns": 1793180755611248043,
+    "error": "RuntimeError('Command failed (1); retained log /tmp/sdn-replication-tests-20261028-vW1M4V/native-run-003/coordinator/1793180806383472840.log')",
+    "ended_ns": 1793180808583099914
+  }
+}

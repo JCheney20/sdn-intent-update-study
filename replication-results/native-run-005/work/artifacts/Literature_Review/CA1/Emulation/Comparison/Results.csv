@@ -1,0 +1,7 @@
+cell,episodes,new_pass,old_pass,old_wrong,unobserved,late,duplicates,admission_wait_median_ms,new_service_age_median_ms,completion_median_ms,nonwait_median_ms,bundles,extra_rows,peak_switch_flows
+ordinary-nominal,5,5,0,0,0,0,0,9.891447,262.33113,20.139825,20.139825,2,0,6
+Q-nominal,5,5,0,0,0,0,0,1041.179679,1292.289998,1041.300055,40.239806,4,0,6
+V-nominal,5,5,0,0,0,0,0,44.431816,295.994893,1082.756703,81.716045,9,1,7
+V-inflight,5,5,5,0,0,0,0,45.958806,297.894504,1089.392542,88.358074,9,1,7
+Q-inflight,5,5,5,0,0,0,0,1042.5115,1293.655731,1042.632287,41.555078,4,0,6
+ordinary-inflight,5,5,0,5,0,0,0,9.721477,262.117459,19.133533,19.133533,2,0,6

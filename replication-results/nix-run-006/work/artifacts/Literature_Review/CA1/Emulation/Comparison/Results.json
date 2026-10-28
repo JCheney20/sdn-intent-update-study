@@ -1,0 +1,155 @@
+{
+  "status": "PASS",
+  "checks": 3707,
+  "primary_episodes": 30,
+  "primary_packets": 45,
+  "cells": [
+    {
+      "cell": "ordinary-nominal",
+      "episodes": 5,
+      "new_pass": 5,
+      "old_pass": 0,
+      "old_wrong": 0,
+      "unobserved": 0,
+      "late": 0,
+      "duplicates": 0,
+      "admission_wait_median_ms": 8.857032,
+      "new_service_age_median_ms": 261.298609,
+      "completion_median_ms": 17.66983,
+      "nonwait_median_ms": 17.66983,
+      "bundles": 2,
+      "extra_rows": 0,
+      "peak_switch_flows": 6
+    },
+    {
+      "cell": "Q-nominal",
+      "episodes": 5,
+      "new_pass": 5,
+      "old_pass": 0,
+      "old_wrong": 0,
+      "unobserved": 0,
+      "late": 0,
+      "duplicates": 0,
+      "admission_wait_median_ms": 1040.502156,
+      "new_service_age_median_ms": 1292.652299,
+      "completion_median_ms": 1040.631208,
+      "nonwait_median_ms": 39.585952,
+      "bundles": 4,
+      "extra_rows": 0,
+      "peak_switch_flows": 6
+    },
+    {
+      "cell": "V-nominal",
+      "episodes": 5,
+      "new_pass": 5,
+      "old_pass": 0,
+      "old_wrong": 0,
+      "unobserved": 0,
+      "late": 0,
+      "duplicates": 0,
+      "admission_wait_median_ms": 42.644995,
+      "new_service_age_median_ms": 295.166919,
+      "completion_median_ms": 1082.262749,
+      "nonwait_median_ms": 81.203736,
+      "bundles": 9,
+      "extra_rows": 1,
+      "peak_switch_flows": 7
+    },
+    {
+      "cell": "V-inflight",
+      "episodes": 5,
+      "new_pass": 5,
+      "old_pass": 5,
+      "old_wrong": 0,
+      "unobserved": 0,
+      "late": 0,
+      "duplicates": 0,
+      "admission_wait_median_ms": 43.700158,
+      "new_service_age_median_ms": 295.45861,
+      "completion_median_ms": 1083.498193,
+      "nonwait_median_ms": 82.458357,
+      "bundles": 9,
+      "extra_rows": 1,
+      "peak_switch_flows": 7
+    },
+    {
+      "cell": "Q-inflight",
+      "episodes": 5,
+      "new_pass": 5,
+      "old_pass": 5,
+      "old_wrong": 0,
+      "unobserved": 0,
+      "late": 0,
+      "duplicates": 0,
+      "admission_wait_median_ms": 1039.18622,
+      "new_service_age_median_ms": 1290.87919,
+      "completion_median_ms": 1039.308931,
+      "nonwait_median_ms": 38.271663,
+      "bundles": 4,
+      "extra_rows": 0,
+      "peak_switch_flows": 6
+    },
+    {
+      "cell": "ordinary-inflight",
+      "episodes": 5,
+      "new_pass": 5,
+      "old_pass": 0,
+      "old_wrong": 5,
+      "unobserved": 0,
+      "late": 0,
+      "duplicates": 0,
+      "admission_wait_median_ms": 9.485313,
+      "new_service_age_median_ms": 261.68099,
+      "completion_median_ms": 18.578299,
+      "nonwait_median_ms": 18.578299,
+      "bundles": 2,
+      "extra_rows": 0,
+      "peak_switch_flows": 6
+    }
+  ],
+  "resources": [
+    {
+      "cell": "ordinary-nominal",
+      "run": "cos738-ovs-replication-primary-ordinary-nominal-1793189878815314625",
+      "whole_job_seconds": 102.70898380200379,
+      "launch_to_ready_seconds": 85.931503406,
+      "checkpoint_peak_bytes": 716972032
+    },
+    {
+      "cell": "Q-nominal",
+      "run": "cos738-ovs-replication-primary-q-nominal-1793189981725070091",
+      "whole_job_seconds": 97.8086892249994,
+      "launch_to_ready_seconds": 81.543513572,
+      "checkpoint_peak_bytes": 647217152
+    },
+    {
+      "cell": "V-nominal",
+      "run": "cos738-ovs-replication-primary-v-nominal-1793190079777074347",
+      "whole_job_seconds": 97.30482121394016,
+      "launch_to_ready_seconds": 81.297759383,
+      "checkpoint_peak_bytes": 637820928
+    },
+    {
+      "cell": "V-inflight",
+      "run": "cos738-ovs-replication-primary-v-inflight-1793190177306538981",
+      "whole_job_seconds": 98.50060757400934,
+      "launch_to_ready_seconds": 82.268787069,
+      "checkpoint_peak_bytes": 672120832
+    },
+    {
+      "cell": "Q-inflight",
+      "run": "cos738-ovs-replication-primary-q-inflight-1793190276015399844",
+      "whole_job_seconds": 98.90197720995639,
+      "launch_to_ready_seconds": 82.516119053,
+      "checkpoint_peak_bytes": 670416896
+    },
+    {
+      "cell": "ordinary-inflight",
+      "run": "cos738-ovs-replication-primary-ordinary-inflight-1793190375136414869",
+      "whole_job_seconds": 98.30009079992305,
+      "launch_to_ready_seconds": 81.784203455,
+      "checkpoint_peak_bytes": 645623808
+    }
+  ],
+  "manifest_sha256": "b17b9bde48a09b9bf5aa4a348c408c46d2f44245c26bd5d5a9130908c0a4c583"
+}

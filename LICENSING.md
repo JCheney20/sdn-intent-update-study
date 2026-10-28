@@ -7,6 +7,8 @@ Copyright © 2026 Justin Marc Cheney.
 - Original software, scripts and configuration are available under the [MIT License](LICENSES/MIT.txt).
 - Original documentation, research notes and original study records are available under [Creative Commons Attribution 4.0 International](LICENSES/CC-BY-4.0.txt).
 
+The same boundaries apply to `replication-results/` and the v2.0.0 full-record release archives: original records/writing are CC BY 4.0, original software is MIT, and copied upstream snapshots retain their original notices.
+
 These grants cover only material for which the author can grant rights. Quoted passages, copied upstream code, adapted algorithms and third-party metadata retain their applicable rights and notices. Inclusion in a run snapshot does not change ownership or license. A root-level blanket license must not be interpreted as relicensing those files.
 
 ## Spotlight: CC BY 4.0

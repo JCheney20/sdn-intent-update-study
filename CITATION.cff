@@ -5,11 +5,11 @@ title: "SDN intent-update study: bounded handover and Cisco emulation"
 authors:
   - family-names: Cheney
     given-names: Justin Marc
-version: 1.0.0
+version: 2.0.0
 date-released: 2026-10-28
 url: "https://github.com/JCheney20/sdn-intent-update-study"
 repository-code: "https://github.com/JCheney20/sdn-intent-update-study"
-abstract: "Source code, frozen protocols, retained results and integrity verification for a bounded SDN intent-update model comparison and a separate Cisco packet-emulation study. See LICENSING.md for the original-code, writing and third-party license boundaries."
+abstract: "Source code, frozen original protocols/results, validated Nix/native replication launchers, pinned source dependencies and separate successful/failed replication evidence for bounded SDN intent-update and Cisco packet-emulation studies. Both routes were tested on the recorded NixOS host, not a clean non-Nix operating system. See LICENSING.md for original-code, writing and third-party rights."
 keywords:
   - software-defined networking
   - consistent network updates

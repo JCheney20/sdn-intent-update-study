@@ -2,7 +2,7 @@
 
 This layer creates **new experiments and new evidence**, separate from the frozen original `artifacts/`. It does not renew the original attempts or rewrite the original results. Read [PROTOCOL.md](PROTOCOL.md) before execution.
 
-Implementation status: clean-checkout validation is in progress; no completed replication is claimed in this candidate revision.
+**Validated:** complete native-005 and Nix-006 clean-checkout campaigns passed on the recorded NixOS host. See [frozen results and full record downloads](../replication-results/README.md). Native-005 used the original 120-second profile; Nix-006 used the declared new 130-second emulation profile. This is not a clean non-Nix OS or arbitrary-machine certification.
 
 ## Prerequisites
 
@@ -80,7 +80,7 @@ Workspaces and checkouts may live under `/tmp`. The original sandbox's private t
 
 ## Outputs and checks
 
-- `environment.json`, `INPUTS.json`, `adaptations.json`: exact runtime bindings, original kernel identities and every launcher/provenance patch.
+- `environment.json`, `INPUTS.json`, `adaptations.json`, `RESOURCE_PROFILE.json`: exact runtime bindings, original kernel identities, resource profile and every launcher/provenance/budget patch.
 - `PHASES.json`, `commands.jsonl`, `coordinator/`: attempted phases and retained top-level stdout/stderr.
 - `DOCTOR.json`: early actual embedded-Python/network check and explicit temporary-directory bindings.
 - `REFERENCE_BINDING.json`, `VALIDATION.json`: fresh reference/correspondence gate locations and compatibility fixture binding.

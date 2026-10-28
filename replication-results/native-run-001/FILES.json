@@ -1,0 +1,594 @@
+{
+  "INPUTS.json": {
+    "sha256": "ab8291365f8c6a9b21df93bdf02e24e76d2c46268ab7a60dfd394419e2362715",
+    "bytes": 4904
+  },
+  "adaptations.json": {
+    "sha256": "127dd9a6e106f011563e234847fa0d8ac68262ba82f07ed6203d48e84de870f2",
+    "bytes": 16761
+  },
+  "environment.json": {
+    "sha256": "fd8cae2da48b376a760f6dc2a630c655e960bb9a95c7a3551e8252755eaf7077",
+    "bytes": 10913
+  },
+  "tools/bin/julia": {
+    "sha256": "b925a55e586a58b2e8a5a5da3560f31df43ebe5e45000fa016b8449499fa8468",
+    "bytes": 87
+  },
+  "tools/bin/python3": {
+    "sha256": "ff39fef27eed967f5ee4049da226c3b1bcdd994960d757c69bf2dbf75ebc759a",
+    "bytes": 91
+  },
+  "tools/bin/python3.11": {
+    "sha256": "ff39fef27eed967f5ee4049da226c3b1bcdd994960d757c69bf2dbf75ebc759a",
+    "bytes": 91
+  },
+  "work/artifacts/Literature_Review/CA1/Emulation/Comparison/Completion_Report.md": {
+    "sha256": "07dc22c35553e829ff292f2f045cfd93b3c95d93d9bf0fedce2390c0766d28e8",
+    "bytes": 7594
+  },
+  "work/artifacts/Literature_Review/CA1/Emulation/Comparison/Literature_Context.md": {
+    "sha256": "a1d4339815bce95034386c3999863375007fc9f2c94319de0f21a720b9ceceb8",
+    "bytes": 2411
+  },
+  "work/artifacts/Literature_Review/CA1/Emulation/Comparison/Parameters.json": {
+    "sha256": "e057f37980c0134ec0887188a2c30a48c6d11b4b572a2e4f18af1cdf6f797ffc",
+    "bytes": 1247
+  },
+  "work/artifacts/Literature_Review/CA1/Emulation/Comparison/Protocol.md": {
+    "sha256": "6a21e9d3c4a40e3428cfad106f6b0071172f3346b3254fbf29d896ea9b8b6f3d",
+    "bytes": 7908
+  },
+  "work/artifacts/Literature_Review/CA1/Emulation/Comparison/Results.md": {
+    "sha256": "d52e5dd038c07046257c8d9203c764b87a564f5fcca32a2f173497abf86e27bb",
+    "bytes": 1229
+  },
+  "work/artifacts/Literature_Review/CA1/Emulation/Comparison/Review_Stop.md": {
+    "sha256": "ffd1152d6a1558d3acca1e4c412d9f81d8c1e675d246e3cb301ca3d72d46e52d",
+    "bytes": 3777
+  },
+  "work/artifacts/Literature_Review/CA1/Emulation/Comparison/audit.py": {
+    "sha256": "7d94cb9ee9ababe34ea0298970879f9e17705c3b0c25feda60c41c9c9016b7f7",
+    "bytes": 18875
+  },
+  "work/artifacts/Literature_Review/CA1/Emulation/Comparison/controller.jl": {
+    "sha256": "e90dca685783d0461a00649c581bc5d178e86fec879f799513697afe02f7dff9",
+    "bytes": 11029
+  },
+  "work/artifacts/Literature_Review/CA1/Emulation/Comparison/guard.py": {
+    "sha256": "ccd6c1bbccab80266c788ab932b02e992545b8bb35789823c6329845dda7f6f7",
+    "bytes": 4453
+  },
+  "work/artifacts/Literature_Review/CA1/Emulation/Comparison/literature/mininet-hotnets2010.md": {
+    "sha256": "39a0ee8e0d7f38a4543a2876442f63ee0189bc476873e44fbe7df11911122ae4",
+    "bytes": 29829
+  },
+  "work/artifacts/Literature_Review/CA1/Emulation/Comparison/run.sh": {
+    "sha256": "f19b87702eeec9a7051fdcb1990505359b63e530fc05a1281ed3f39d9cecb877",
+    "bytes": 1860
+  },
+  "work/artifacts/Literature_Review/CA1/Emulation/Comparison/test_metadata.py": {
+    "sha256": "057a273dc2b35ceb4cf13c47e2a25b89f8baba570319c66d844e2c3889df4468",
+    "bytes": 1147
+  },
+  "work/artifacts/Literature_Review/CA1/Emulation/Components.json": {
+    "sha256": "2a0459c0d3bc2dbb1d86a5b8acf8b81f0aa83cc7c4bc265e16e02e0689a2cd4e",
+    "bytes": 526
+  },
+  "work/artifacts/Literature_Review/CA1/Emulation/Environment_Manifest.sha256": {
+    "sha256": "ecdee5b535ad214604b0857bf09c6112e132f5fda4c24fb7ee706a949174f862",
+    "bytes": 235
+  },
+  "work/artifacts/Literature_Review/CA1/Emulation/Experiment_Protocol_Draft.md": {
+    "sha256": "a8fa7bbb8e959a1ff394cf1c5f4faf39d180e17ec046f7a8ea30e1952cb51697",
+    "bytes": 8059
+  },
+  "work/artifacts/Literature_Review/CA1/Emulation/Interop/Components.json": {
+    "sha256": "c9f23f8b874ab061d63d4a74e70058a64fb24d0d92e152f66b8ba8eda3af2d84",
+    "bytes": 1382
+  },
+  "work/artifacts/Literature_Review/CA1/Emulation/Interop/Environment_Manifest.sha256": {
+    "sha256": "9e984008cd47dcd55b4570d7ddf5841f498fe25cfed24f253f9b0711862c8ee5",
+    "bytes": 1133
+  },
+  "work/artifacts/Literature_Review/CA1/Emulation/Interop/Feasibility_Report.md": {
+    "sha256": "e05681dcdd720d82aba6d32c51d6ede325cf032899ff6a4e2ca74e6a0ee8539e",
+    "bytes": 12020
+  },
+  "work/artifacts/Literature_Review/CA1/Emulation/Interop/JuliaSources.json": {
+    "sha256": "bb67043a31570316dd5ea87ee39006838fa3764171d6a79a24a9f3edac66dc98",
+    "bytes": 1877
+  },
+  "work/artifacts/Literature_Review/CA1/Emulation/Interop/Project.toml": {
+    "sha256": "cff8f2068c136f26c725ba082ee85df0745fb5bad8ab9b68d954b827720eec08",
+    "bytes": 165
+  },
+  "work/artifacts/Literature_Review/CA1/Emulation/Interop/bridge_smoke.jl": {
+    "sha256": "96629379077c33c8b40bff994a82b781d0a1f15ab371b5ef5c0e54d36cd28546",
+    "bytes": 2129
+  },
+  "work/artifacts/Literature_Review/CA1/Emulation/Interop/flake.lock": {
+    "sha256": "5c6f6c1e2ff5fb7a1e0adb62d7e4657c73f4582d7ea858cd6f617d745385bcf5",
+    "bytes": 8909
+  },
+  "work/artifacts/Literature_Review/CA1/Emulation/Interop/flake.nix": {
+    "sha256": "70d4d5ef3e565e93ac5ff0bc92353a0a43a18fae1da8a54d8734b468880ff1f4",
+    "bytes": 2432
+  },
+  "work/artifacts/Literature_Review/CA1/Emulation/Interop/network_smoke.jl": {
+    "sha256": "9cc1d5f15d22ade1b84ec11d77f767e207404ec0921f0ebcdfd831d0c72adee5",
+    "bytes": 8441
+  },
+  "work/artifacts/Literature_Review/CA1/Emulation/Interop/packet_io.py": {
+    "sha256": "df2d0634e541fba3550cc7697a39e8452414273a90a5f5728783edb198cd1750",
+    "bytes": 1693
+  },
+  "work/artifacts/Literature_Review/CA1/Emulation/Interop/run.sh": {
+    "sha256": "28b7f4029c8c65ec12e67c67ea2f3f783842949d2ef9e5c28c54f88a524f6cac",
+    "bytes": 1735
+  },
+  "work/artifacts/Literature_Review/CA1/Emulation/Interop/sandbox.sh": {
+    "sha256": "a905755569ca784a3842b6df9d11ae1915d78146eb8d6646a7f5234f8fa48e67",
+    "bytes": 624
+  },
+  "work/artifacts/Literature_Review/CA1/Emulation/Interop/verify_step1.py": {
+    "sha256": "66eacfceeec5411cc09529e18c1725bd51e38661eb093e347ab2ed9536740422",
+    "bytes": 4311
+  },
+  "work/artifacts/Literature_Review/CA1/Emulation/Protocol.md": {
+    "sha256": "e6f0ef8f79a2d8b8fbdf830df4c47a25f68cc7baab10c419289491f60cb9766f",
+    "bytes": 8243
+  },
+  "work/artifacts/Literature_Review/CA1/Emulation/README.md": {
+    "sha256": "641a25f59d2f6c7e363e490412935b9228631a88042fe573462f76f91561715b",
+    "bytes": 7800
+  },
+  "work/artifacts/Literature_Review/CA1/Emulation/Step2/CiscoAdapter.jl": {
+    "sha256": "d721956ac99a77a73b53e10d46d5bf00964f5260054572efbee115e24698bbd1",
+    "bytes": 16350
+  },
+  "work/artifacts/Literature_Review/CA1/Emulation/Step2/Validated_Source_Manifest.sha256": {
+    "sha256": "d72de4165493d62223d0a7955d0f7a07c6ed7ec3a98ff31d93c5da708010653c",
+    "bytes": 581
+  },
+  "work/artifacts/Literature_Review/CA1/Emulation/Step2/Validation_Plan.md": {
+    "sha256": "152d668f46f221fa85136380e5ec79fd48cfec4e267f335b124e514c886517de",
+    "bytes": 5595
+  },
+  "work/artifacts/Literature_Review/CA1/Emulation/Step2/Validation_Report.md": {
+    "sha256": "7135264383b8ed2736f3aff9942fd4fccbbe8ea9a5fe634cacbb14d908709593",
+    "bytes": 11903
+  },
+  "work/artifacts/Literature_Review/CA1/Emulation/Step2/audit.py": {
+    "sha256": "56737fb48af3fee46d7c451becb30b00b6e8151fde482362d26372cd35836bd9",
+    "bytes": 11797
+  },
+  "work/artifacts/Literature_Review/CA1/Emulation/Step2/packet_worker.py": {
+    "sha256": "6d8f428dbabe8c9b13c39e06630d6226cf8faa4a77c1bcad8f99245284d525d0",
+    "bytes": 3774
+  },
+  "work/artifacts/Literature_Review/CA1/Emulation/Step2/run.sh": {
+    "sha256": "605fd171144260d6fda24ddafa7ecb482d8cc48e228eb52df8d0058db1210315",
+    "bytes": 1722
+  },
+  "work/artifacts/Literature_Review/CA1/Emulation/Step2/validate.jl": {
+    "sha256": "4379ac9e5af9e73fd8d4d1ef4264c9f4e4895bc51a497f9b5d258398651a2689",
+    "bytes": 11398
+  },
+  "work/artifacts/Literature_Review/CA1/Emulation/Step3/Timing_Plan.md": {
+    "sha256": "2f85be32ce0b7ed3261d75e579a03d67e0d388171b16ade96e90e1764404b401",
+    "bytes": 3496
+  },
+  "work/artifacts/Literature_Review/CA1/Emulation/Step3/Timing_Status.md": {
+    "sha256": "659e3ffb553545a66f75aeed32e045ba5eca3655a5a19e45864c4422cff245d6",
+    "bytes": 1840
+  },
+  "work/artifacts/Literature_Review/CA1/Emulation/Step3/Wire.jl": {
+    "sha256": "c853f870b1b7e888bd946ad90d0adf98b4c0201984a3ccf44b9f891a27fe17b7",
+    "bytes": 4535
+  },
+  "work/artifacts/Literature_Review/CA1/Emulation/Step3/run.sh": {
+    "sha256": "b99a9906f0f467268f469b7ec66d8866ed97b7299da523c75a0e31e4d59e34c5",
+    "bytes": 1735
+  },
+  "work/artifacts/Literature_Review/CA1/Emulation/Step3/timing.jl": {
+    "sha256": "97eac8e029a471e323f8b8fa496bae5ce0ca9b62abe28811a1f54709f301aa02",
+    "bytes": 6203
+  },
+  "work/artifacts/Literature_Review/CA1/Emulation/Step3/wire.py": {
+    "sha256": "c40897158314e07c926ba167691ab6bf039cbccafb6184dbce2188cc758120f2",
+    "bytes": 6339
+  },
+  "work/artifacts/Literature_Review/CA1/Emulation/Timing_Preflight_Status.md": {
+    "sha256": "12d8909ff9b1d6f1aabf57bc85fb307daac03f16489c11efb6c702caa06fcaff",
+    "bytes": 2687
+  },
+  "work/artifacts/Literature_Review/CA1/Emulation/flake.lock": {
+    "sha256": "b67a12a7d8a98f3c47590dbd41a1b7ae7feca39662099e88a73e760d972feef2",
+    "bytes": 593
+  },
+  "work/artifacts/Literature_Review/CA1/Emulation/flake.nix": {
+    "sha256": "383a881eaac9696323c040daed34b12c839ce3116ca338077a4ce6081ad9f1f7",
+    "bytes": 1025
+  },
+  "work/artifacts/Literature_Review/CA1/Emulation/runs/cos738-ovs-comparison-envelope-1793081356920499347/sources/Frozen/CA1/Revision_Protocol/reference_capture/runs/cos738-reference-capture-1792956866366487215/trace.toml": {
+    "sha256": "7d3d14b4518454102a18fd870f3e3c499e213adda06ac99ad7da868cc5d47241",
+    "bytes": 2288849
+  },
+  "work/artifacts/Literature_Review/CA1/Emulation/runs/cos738-ovs-comparison-primary-ordinary-inflight-1793082032861303353/sources/Frozen/CA1/Revision_Protocol/reference_capture/runs/cos738-reference-capture-1792956866366487215/trace.toml": {
+    "sha256": "7d3d14b4518454102a18fd870f3e3c499e213adda06ac99ad7da868cc5d47241",
+    "bytes": 2288849
+  },
+  "work/artifacts/Literature_Review/CA1/Emulation/runs/cos738-ovs-comparison-primary-ordinary-nominal-1793081485380082902/sources/Frozen/CA1/Revision_Protocol/reference_capture/runs/cos738-reference-capture-1792956866366487215/trace.toml": {
+    "sha256": "7d3d14b4518454102a18fd870f3e3c499e213adda06ac99ad7da868cc5d47241",
+    "bytes": 2288849
+  },
+  "work/artifacts/Literature_Review/CA1/Emulation/runs/cos738-ovs-comparison-primary-q-inflight-1793081933709231134/sources/Frozen/CA1/Revision_Protocol/reference_capture/runs/cos738-reference-capture-1792956866366487215/trace.toml": {
+    "sha256": "7d3d14b4518454102a18fd870f3e3c499e213adda06ac99ad7da868cc5d47241",
+    "bytes": 2288849
+  },
+  "work/artifacts/Literature_Review/CA1/Emulation/runs/cos738-ovs-comparison-primary-q-nominal-1793081585646226212/sources/Frozen/CA1/Revision_Protocol/reference_capture/runs/cos738-reference-capture-1792956866366487215/trace.toml": {
+    "sha256": "7d3d14b4518454102a18fd870f3e3c499e213adda06ac99ad7da868cc5d47241",
+    "bytes": 2288849
+  },
+  "work/artifacts/Literature_Review/CA1/Emulation/runs/cos738-ovs-comparison-primary-v-inflight-1793081832156058861/sources/Frozen/CA1/Revision_Protocol/reference_capture/runs/cos738-reference-capture-1792956866366487215/trace.toml": {
+    "sha256": "7d3d14b4518454102a18fd870f3e3c499e213adda06ac99ad7da868cc5d47241",
+    "bytes": 2288849
+  },
+  "work/artifacts/Literature_Review/CA1/Emulation/runs/cos738-ovs-comparison-primary-v-nominal-1793081693153315741/sources/Frozen/CA1/Revision_Protocol/reference_capture/runs/cos738-reference-capture-1792956866366487215/trace.toml": {
+    "sha256": "7d3d14b4518454102a18fd870f3e3c499e213adda06ac99ad7da868cc5d47241",
+    "bytes": 2288849
+  },
+  "work/artifacts/Literature_Review/CA1/Emulation/scope.sh": {
+    "sha256": "b2aeb35dbe69e85c59a6d3c1ac61ee62fad0ef50afd7bfcf727c9a5e888d956a",
+    "bytes": 1517
+  },
+  "work/artifacts/Literature_Review/CA1/Emulation/scope_entry.py": {
+    "sha256": "4acfbf624050990ba7593e363158dc3ea1db2d374a0f73735924904a039ded57",
+    "bytes": 1573
+  },
+  "work/artifacts/Literature_Review/CA1/Emulation/smoke.py": {
+    "sha256": "25efbe841e8af75a96443033ff2b977bf2004fc9c84fb562e38a1cf31a5da596",
+    "bytes": 7685
+  },
+  "work/artifacts/Literature_Review/CA1/Evidence_Register.md": {
+    "sha256": "e6ab0a2e310832db724ca0ae8dff1b82067bde4f7b0434a2c5fa60cd900084cc",
+    "bytes": 5801
+  },
+  "work/artifacts/Literature_Review/CA1/Focused_Literature_Review.md": {
+    "sha256": "3d49515fb6f5b2321ddc24d869e0f4df8ebdf770d33210b7bd3a328e15bbaa2a",
+    "bytes": 17121
+  },
+  "work/artifacts/Literature_Review/CA1/Reading_Guide.md": {
+    "sha256": "907295ca5a9059d0c55e4c7cf6f7693a0e66b7b20dea1d07314d7538a2fe5cb8",
+    "bytes": 4931
+  },
+  "work/artifacts/Literature_Review/CA1/Revision_Protocol/Controller_Validation_Report.md": {
+    "sha256": "9148bff254559a66856fc03325eb5b4c72195e448b409952008f1bb30f9af222",
+    "bytes": 6202
+  },
+  "work/artifacts/Literature_Review/CA1/Revision_Protocol/Controller_Validation_Spec.md": {
+    "sha256": "1f13c78408febcd529c807c53c41499a5286f769e6c84b0d24b179dea532fa0c",
+    "bytes": 3751
+  },
+  "work/artifacts/Literature_Review/CA1/Revision_Protocol/Handover_Bounds.toml": {
+    "sha256": "06689a5cf7c126e90293fa4d16ca02dab73f9e0d78e672e77f37be0f16a05fd4",
+    "bytes": 4692
+  },
+  "work/artifacts/Literature_Review/CA1/Revision_Protocol/Operational_Semantics_and_Bounds.md": {
+    "sha256": "c875818d84ec1e3ee44924e3d3721dfc1c4c6868e4794309dcc74f425b9c3519",
+    "bytes": 20648
+  },
+  "work/artifacts/Literature_Review/CA1/Revision_Protocol/Revision_Validation_Protocol.md": {
+    "sha256": "f08c30ce26e35b2fe1d4ed7b71f576f030a6f339dbc920a24ed14b349b18f24b",
+    "bytes": 25397
+  },
+  "work/artifacts/Literature_Review/CA1/Revision_Protocol/Scientific_Contract_Draft.md": {
+    "sha256": "12f200eb0de290ede17f538a5ef5adf6cc197040ca47805ef227285016483b7d",
+    "bytes": 13100
+  },
+  "work/artifacts/Literature_Review/CA1/Revision_Protocol/Source_Provenance_Audit.md": {
+    "sha256": "ad14b456174f000cb30cc71f97be2c2c2ca154f71686d47fb9d348d795c2ce1e",
+    "bytes": 9984
+  },
+  "work/artifacts/Literature_Review/CA1/Revision_Protocol/Stage_1_Progress_and_Reference_Prerequisites.md": {
+    "sha256": "765a09bb0ca12ded07c2ed06a47b2566610733a0236feab5acc3a5a9862f11e7",
+    "bytes": 10718
+  },
+  "work/artifacts/Literature_Review/CA1/Revision_Protocol/Three_Stage_Execution_Plan.md": {
+    "sha256": "ff92e51ed98d2d282628567f0fc91792a6af168db4611a90bfb5f0dbd0d2e401",
+    "bytes": 10990
+  },
+  "work/artifacts/Literature_Review/CA1/Revision_Protocol/Tiny_Validation_Results.md": {
+    "sha256": "4852c2b5fead605bb42163711dec5d0ca0a3011a825b96515a51b72e83cc8a8f",
+    "bytes": 14467
+  },
+  "work/artifacts/Literature_Review/CA1/Revision_Protocol/Topology_Audit_Findings.json": {
+    "sha256": "4d9475eb73e3a903114e76abec9beb4fc04b4d002c908bf95b235ecdedfdabad",
+    "bytes": 3630
+  },
+  "work/artifacts/Literature_Review/CA1/Revision_Protocol/controllers.jl": {
+    "sha256": "2c56f9a79716cc07cbc9427b7ecafdd25409c05d89280d9b303e0a235a847aff",
+    "bytes": 9214
+  },
+  "work/artifacts/Literature_Review/CA1/Revision_Protocol/handover.jl": {
+    "sha256": "ffe749d1802e5e60f25620b16f8d11db3010c4bcf411ef9224ceea8fbfd757c8",
+    "bytes": 7919
+  },
+  "work/artifacts/Literature_Review/CA1/Revision_Protocol/inputs/Source_Receipt.json": {
+    "sha256": "641a2f30eef005793ac96f2fc12317621c0e60a4b57e21d63396c575eb2b90cf",
+    "bytes": 5276
+  },
+  "work/artifacts/Literature_Review/CA1/Revision_Protocol/inputs/detector-11642350.py.txt": {
+    "sha256": "04133cb3ce0e7bdf9282ee82593d84567b58b4de4cb334ce130d8cf58d3c5ee6",
+    "bytes": 36327
+  },
+  "work/artifacts/Literature_Review/CA1/Revision_Protocol/inputs/detector-12735280.py.txt": {
+    "sha256": "c4530e74d33c5d64b32a68be613135c4e4b8be020bbe03448ce8cb5732019595",
+    "bytes": 38054
+  },
+  "work/artifacts/Literature_Review/CA1/Revision_Protocol/inputs/fattree-11642350.py.txt": {
+    "sha256": "db8906f77813eb1a6b968b982b857ef43754ec9c716ee65453cf61a815e9d823",
+    "bytes": 5438
+  },
+  "work/artifacts/Literature_Review/CA1/Revision_Protocol/inputs/fattree-12735280.py.txt": {
+    "sha256": "db8906f77813eb1a6b968b982b857ef43754ec9c716ee65453cf61a815e9d823",
+    "bytes": 5438
+  },
+  "work/artifacts/Literature_Review/CA1/Revision_Protocol/inputs/spotlight-paper.md": {
+    "sha256": "01ca04910bf0ccdf89c5b14788df86a676649fec35f07e98888c82c0166725ab",
+    "bytes": 100741
+  },
+  "work/artifacts/Literature_Review/CA1/Revision_Protocol/inputs/zenodo-versions.json": {
+    "sha256": "506e9418d5267b6bc5d36f3134d2dab7d8123c58c193e6f846a2ca57f5f3aa62",
+    "bytes": 18547
+  },
+  "work/artifacts/Literature_Review/CA1/Revision_Protocol/lifecycle.jl": {
+    "sha256": "47bb711fd8b299804498e420508fe83a9bfae8aa52b130a504a2a4da1aae0311",
+    "bytes": 5083
+  },
+  "work/artifacts/Literature_Review/CA1/Revision_Protocol/reference_capture/Capture_Plan.toml": {
+    "sha256": "d7dfc93b014471af28848b56136a04e59bf773138b6bd708945b9e2755ee0a24",
+    "bytes": 1178
+  },
+  "work/artifacts/Literature_Review/CA1/Revision_Protocol/reference_capture/Reference_Replay_Report.md": {
+    "sha256": "7baeb446bab48a0e5c9563b1c83ff0f3769170b969120a4e54ba33e6e22cdcf4",
+    "bytes": 6052
+  },
+  "work/artifacts/Literature_Review/CA1/Revision_Protocol/reference_capture/capture.py": {
+    "sha256": "69daba873c62789d1c3315435c3b3ab735b854c30dc4d999f92e904467222620",
+    "bytes": 13817
+  },
+  "work/artifacts/Literature_Review/CA1/Revision_Protocol/reference_capture/replay.jl": {
+    "sha256": "1b90e8771caaa82ad0b8e8f01729efb35496e1e9b9760f6bce6395cef516b76d",
+    "bytes": 12805
+  },
+  "work/artifacts/Literature_Review/CA1/Revision_Protocol/reference_capture/run.sh": {
+    "sha256": "433a3f8536539dbefe78cbba2aa973560e66cd4bccc10b905ca893f75f164131",
+    "bytes": 2651
+  },
+  "work/artifacts/Literature_Review/CA1/Revision_Protocol/reference_capture/runs/cos738-reference-capture-1792956866366487215/trace.toml": {
+    "sha256": "7d3d14b4518454102a18fd870f3e3c499e213adda06ac99ad7da868cc5d47241",
+    "bytes": 2288849
+  },
+  "work/artifacts/Literature_Review/CA1/Revision_Protocol/reference_capture/sources/detector.py": {
+    "sha256": "c4530e74d33c5d64b32a68be613135c4e4b8be020bbe03448ce8cb5732019595",
+    "bytes": 38054
+  },
+  "work/artifacts/Literature_Review/CA1/Revision_Protocol/reference_capture/sources/detectortypes.py": {
+    "sha256": "28de9f5822fd41dbe81fe445c66302a5d6c79422d1d55d39ce9b2b06ff320517",
+    "bytes": 3287
+  },
+  "work/artifacts/Literature_Review/CA1/Revision_Protocol/reference_capture/sources/fattree.py": {
+    "sha256": "db8906f77813eb1a6b968b982b857ef43754ec9c716ee65453cf61a815e9d823",
+    "bytes": 5438
+  },
+  "work/artifacts/Literature_Review/CA1/Revision_Protocol/reference_environment/Provisioning_Approval.toml": {
+    "sha256": "56e0c507eecf60eea212e03587cf085bf4ef399e43eeba1a538cdc0e6db9b61e",
+    "bytes": 1015
+  },
+  "work/artifacts/Literature_Review/CA1/Revision_Protocol/reference_environment/README.md": {
+    "sha256": "00582852cd21f02036b8fbe892b6cd07932891739ec9d9ede1a7d3aeb8c40e4c",
+    "bytes": 6577
+  },
+  "work/artifacts/Literature_Review/CA1/Revision_Protocol/reference_environment/Setup_Status.toml": {
+    "sha256": "0a8063c76436d8d96273abe39edd39ab5e39a3b8e73fa127bc4c86f5a80a15d7",
+    "bytes": 525
+  },
+  "work/artifacts/Literature_Review/CA1/Revision_Protocol/reference_environment/cache-check.exit-code": {
+    "sha256": "ca2ebdf97d7469496b1f4b78958f9dc8447efdcb623953fee7b6996b762f6fff",
+    "bytes": 4
+  },
+  "work/artifacts/Literature_Review/CA1/Revision_Protocol/reference_environment/cache-check.stderr.log": {
+    "sha256": "86d0bfd91100f9b2b9f01945c0e6456235a6ea33801a1cb0d833377489c0f2f4",
+    "bytes": 31
+  },
+  "work/artifacts/Literature_Review/CA1/Revision_Protocol/reference_environment/cache-check.stdout.log": {
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "bytes": 0
+  },
+  "work/artifacts/Literature_Review/CA1/Revision_Protocol/reference_environment/check_runtime.py": {
+    "sha256": "36cb00ec82d4add430c73fd8fe208f46a31083bd9e2614ba0bbbf0588410d291",
+    "bytes": 3133
+  },
+  "work/artifacts/Literature_Review/CA1/Revision_Protocol/reference_environment/flake.lock": {
+    "sha256": "1a414c63ca8260ba742310ceeb7261123917feadfb8804b9a4913b20eef2ccaa",
+    "bytes": 1523
+  },
+  "work/artifacts/Literature_Review/CA1/Revision_Protocol/reference_environment/flake.nix": {
+    "sha256": "944da8fca8c776f65da9f112f2991fc7fad3b2ac3c415a0f524d4575857a007a",
+    "bytes": 2467
+  },
+  "work/artifacts/Literature_Review/CA1/Revision_Protocol/reference_environment/referenceComponents.json": {
+    "sha256": "ce59e0c536f6b596ab448dd7ff5cfc0e37a388aa07e7f603c030b6637c53eb93",
+    "bytes": 131
+  },
+  "work/artifacts/Literature_Review/CA1/Revision_Protocol/reference_environment/referenceVersions.json": {
+    "sha256": "c5bf1dd4a280b09bfee44b420cb65b74772e1543d7bd67a6687abaeb1a9fd893",
+    "bytes": 77
+  },
+  "work/artifacts/Literature_Review/CA1/Revision_Protocol/reference_environment/run_reference.py": {
+    "sha256": "6aadefd7dfc55edb85aefd743eb3026158f45cede748b318ecfc8a32c34e0953",
+    "bytes": 2306
+  },
+  "work/artifacts/Literature_Review/CA1/Revision_Protocol/reference_environment/transitiveVersions.json": {
+    "sha256": "d1eec29ec90255e0ebd253d90c924640318ee841bbf898616d0a8853a4a7a06b",
+    "bytes": 218
+  },
+  "work/artifacts/Literature_Review/CA1/Revision_Protocol/reference_environment/verify_cache_probes.py": {
+    "sha256": "be904008965e9a75bc0f0a7bc132679293f75062ad770c1db7110bc38f8a3325",
+    "bytes": 2630
+  },
+  "work/artifacts/Literature_Review/CA1/Revision_Protocol/reference_environment/verify_versions.py": {
+    "sha256": "158e790d684e03e1f0239d3f5216fd7159545ad79d95e9e1dcd330a3223884e5",
+    "bytes": 1385
+  },
+  "work/artifacts/Literature_Review/CA1/Revision_Protocol/study/Protocol.md": {
+    "sha256": "f7137700bca88c06b122da9384020f8733485f3ad154a020daccfcb310e541c7",
+    "bytes": 6864
+  },
+  "work/artifacts/Literature_Review/CA1/Revision_Protocol/study/Study.jl": {
+    "sha256": "03aff3e772fcacc79a0e57eeab88f689f8bc2871176fa03be1731b5d7d9b4e56",
+    "bytes": 5951
+  },
+  "work/artifacts/Literature_Review/CA1/Revision_Protocol/study/analyze.jl": {
+    "sha256": "5bc39985c221955f005791a96ea04ad54fa868cb0880048da767d4ebf1433f59",
+    "bytes": 9938
+  },
+  "work/artifacts/Literature_Review/CA1/Revision_Protocol/study/common.jl": {
+    "sha256": "a3f9b14373520066a5386a53d49cb46d05c697043c4e5ab96bbe78113df034fb",
+    "bytes": 2823
+  },
+  "work/artifacts/Literature_Review/CA1/Revision_Protocol/study/coverage.jl": {
+    "sha256": "ef9e8ee87833a0c53808ffa6b0c420aaa6ae87123cef3951b3a4df8a3a9e2ad9",
+    "bytes": 5041
+  },
+  "work/artifacts/Literature_Review/CA1/Revision_Protocol/study/entry.jl": {
+    "sha256": "1d0b81d1488aaa1119c61f7c2abda3c515c94d7e195f29666db5284b72dec487",
+    "bytes": 5013
+  },
+  "work/artifacts/Literature_Review/CA1/Revision_Protocol/study/freeze.jl": {
+    "sha256": "d0e75d0f80b47edf2064704a52a85c1f39f2f53a990838ea5c123df1a986b75b",
+    "bytes": 6391
+  },
+  "work/artifacts/Literature_Review/CA1/Revision_Protocol/study/python_study.py": {
+    "sha256": "5ce74926046143ecd10b0d8a57faa90c45ebecf4a29d1c5f0d5c5af8bc03e44e",
+    "bytes": 6593
+  },
+  "work/artifacts/Literature_Review/CA1/Revision_Protocol/study/run.sh": {
+    "sha256": "41436e23d5367434519e9a4a7c0f523352e386dabdb7b99543cdb869c49f733e",
+    "bytes": 3028
+  },
+  "work/artifacts/Literature_Review/CA1/Revision_Protocol/study/run_all.sh": {
+    "sha256": "c4a9a16d26ab871336150ea0656be378f8edab22df452ecebdfe0fef2d00ab2a",
+    "bytes": 1069
+  },
+  "work/artifacts/Literature_Review/CA1/Revision_Protocol/study/verify_artifacts.jl": {
+    "sha256": "83ba5a758bf2e982233755cf18d6eda470e158412fb31572460404e54f67ea0c",
+    "bytes": 5741
+  },
+  "work/artifacts/Literature_Review/CA1/Revision_Protocol/validation/Budget_Approval.toml": {
+    "sha256": "4fd081b4e80719686e39688f95850c8585be258b83c788429f9df7d2f112ea7a",
+    "bytes": 563
+  },
+  "work/artifacts/Literature_Review/CA1/Revision_Protocol/validation/Controller_Inputs.toml": {
+    "sha256": "7db62b3038d6a10b887f69fa9a57e99f894fd308c52b4467a48e5ccfff19bc5d",
+    "bytes": 542
+  },
+  "work/artifacts/Literature_Review/CA1/Revision_Protocol/validation/Three_Stage_Authorization.toml": {
+    "sha256": "35efaea1ad63cf39e3dccd61c35e3d5251f0e0d3122c70cf35051026f0db923f",
+    "bytes": 1023
+  },
+  "work/artifacts/Literature_Review/CA1/Revision_Protocol/validation/comparison_map.jl": {
+    "sha256": "aa9a202e8b980525aff95ee6fea514a1178966ef893de39ee860705d2c7bfd65",
+    "bytes": 850
+  },
+  "work/artifacts/Literature_Review/CA1/Revision_Protocol/validation/controller_checks.jl": {
+    "sha256": "71fbb76b67ecc67acaac72694a7531ca657c8ab48b82e64113fb7e320009b3ff",
+    "bytes": 10728
+  },
+  "work/artifacts/Literature_Review/CA1/Revision_Protocol/validation/differential.jl": {
+    "sha256": "73a4aa91ecb89b15faf407fa74b093d84b3fdc9473f602f2173f66219b2a01a7",
+    "bytes": 6013
+  },
+  "work/artifacts/Literature_Review/CA1/Revision_Protocol/validation/entry.jl": {
+    "sha256": "4593c0a35b31c6ef81453cc0add1878df9251f51be2649588f320e60372f44b4",
+    "bytes": 8910
+  },
+  "work/artifacts/Literature_Review/CA1/Revision_Protocol/validation/lifecycle_checks.jl": {
+    "sha256": "736afa9e0c55cbee2092cd29c722ef71e7556a13ca9a709086eb556ad26fa94b",
+    "bytes": 8729
+  },
+  "work/artifacts/Literature_Review/CA1/Revision_Protocol/validation/oracle.jl": {
+    "sha256": "e5e631561ebbc5f75f71c5e25cfa8ef76304e3689b75817cc09a4846180e70cc",
+    "bytes": 24959
+  },
+  "work/artifacts/Literature_Review/CA1/Revision_Protocol/validation/reference_environment.py": {
+    "sha256": "5940c96eb20f872227de4047fdcbe0a417ebabeed2297d3107a32abfc95ff58f",
+    "bytes": 1969
+  },
+  "work/artifacts/Literature_Review/CA1/Revision_Protocol/validation/run.sh": {
+    "sha256": "91642da6bcb03c49bc617e724b8c51eef605c3ae95432684865a2db5054b30d3",
+    "bytes": 2300
+  },
+  "work/artifacts/SDN_Model_Comparison/Delivery_Manifest.json": {
+    "sha256": "6a2f5b62da8a49b6fb25911e7a2d84a256a9a16c2097d46295f3b5b762e7aef3",
+    "bytes": 1867
+  },
+  "work/artifacts/SDN_Model_Comparison/source_fidelity/detector.jl": {
+    "sha256": "bd0a86eeeda3e6c6d5b0c267397693c961e3e415a8337cb8538d24079b27a106",
+    "bytes": 8339
+  },
+  "work/artifacts/SDN_Model_Comparison/source_fidelity/sources/Dockerfile.txt": {
+    "sha256": "585390d834f833fa009f164ea13be077deba2456b2dbc85b9c165c52d98e16db",
+    "bytes": 457
+  },
+  "work/artifacts/SDN_Model_Comparison/source_fidelity/sources/README.md.txt": {
+    "sha256": "791d2edb805d5780793a8ae88cd5f74e89434a1d92f985f27d9386edf79f8fb6",
+    "bytes": 4008
+  },
+  "work/artifacts/SDN_Model_Comparison/source_fidelity/sources/detector.py.txt": {
+    "sha256": "c4530e74d33c5d64b32a68be613135c4e4b8be020bbe03448ce8cb5732019595",
+    "bytes": 38054
+  },
+  "work/artifacts/SDN_Model_Comparison/source_fidelity/sources/detectortypes.py.txt": {
+    "sha256": "28de9f5822fd41dbe81fe445c66302a5d6c79422d1d55d39ce9b2b06ff320517",
+    "bytes": 3287
+  },
+  "work/artifacts/SDN_Model_Comparison/source_fidelity/sources/fattree.py.txt": {
+    "sha256": "db8906f77813eb1a6b968b982b857ef43754ec9c716ee65453cf61a815e9d823",
+    "bytes": 5438
+  },
+  "work/artifacts/SDN_Model_Comparison/source_fidelity/sources/flake.nix.txt": {
+    "sha256": "4265ea00a1940242c85cc01d24382cc146ebc60bfab2100f976649f7fdaaab55",
+    "bytes": 967
+  },
+  "work/artifacts/SDN_Model_Comparison/source_fidelity/sources/manifest.json": {
+    "sha256": "4b13d494a6f6198ebdd44610161ea9a519c21573b71a544ac89890a4799ec0d4",
+    "bytes": 1887
+  },
+  "work/artifacts/SDN_Model_Comparison/source_fidelity/sources/networkx-license-3.2.1.txt": {
+    "sha256": "50b5a27cb43f7a20cede7aa7b9ab2033552e0412c9a1fde51d38885c1417e95f",
+    "bytes": 1763
+  },
+  "work/artifacts/SDN_Model_Comparison/source_fidelity/sources/networkx-manifest.json": {
+    "sha256": "50984ae9ab1286f600a7e46f45cb2e330dae5c5662031f929ae6b62730b24c36",
+    "bytes": 755
+  },
+  "work/artifacts/SDN_Model_Comparison/source_fidelity/sources/networkx-similarity-3.2.1.txt": {
+    "sha256": "639191975356f88155ab0a2039d1c9b3e4801e6a6fd5281f37b30817bcbca1d4",
+    "bytes": 59062
+  },
+  "work/artifacts/SDN_Model_Comparison/source_fidelity/sources/networkx-unweighted-3.2.1.txt": {
+    "sha256": "12e89988711010eac5669994326e764e100d8f27d679684a60522b9efbbd1bfb",
+    "bytes": 15494
+  },
+  "work/artifacts/SDN_Model_Comparison/source_fidelity/sources/requirements.txt.txt": {
+    "sha256": "3383c0986bacad73611b2c9a6968a05a672106c9380044dbb4ca4ae63ece3d16",
+    "bytes": 2129
+  },
+  "work/artifacts/SDN_Model_Comparison/source_fidelity/sources/zenodo-record.json": {
+    "sha256": "24cf9b6144405aa719cb6e38534992cdbbf55383c9a8b811b091d6ba7c994793",
+    "bytes": 13011
+  }
+}

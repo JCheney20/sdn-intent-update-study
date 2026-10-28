@@ -1,39 +1,36 @@
 # Verification and reproduction boundaries
 
-## What can be checked from this repository
+## 1. Verify the frozen original evidence
 
-Run `python3 -I -B verify.py` with Python 3.11 or newer. It verifies:
+Run `python3 -I -B verify.py` with Python 3.11+. No experiment, installation, Julia, Nix or network isolation is needed. It checks the two original source freezes and every declared input; the model's **628-entry** and emulation's **2,041-entry** output seals; all **2,954** exported scientific files; vendored-source and release checksums; and fixed original study accounting. It also checks the published replication comparison summaries. Integrity is not independent replication or a general correctness proof.
 
-1. The two source-freeze identities and every input hash declared by those manifests.
-2. Every file in the model's 628-entry output seal and emulation's 2,041-entry output seal, including relative paths into retained emulation runs.
-3. Every exported file against `EXPORT.json`, with no unlisted files inside `artifacts/`.
-4. The model's 92 primary rows, 12 cells and 576 sensitivity / 48 benchmark accounting; emulation's six cells, 30 episodes, 45 packets and recorded packet outcomes.
+The original model used Julia 1.13.1 and Python 3.11.7, including NumPy 1.26.2 and NetworkX 3.2.1. The packet study used Mininet 2.3.1b4, OVS 3.2.1 userspace forwarding, PythonCall 0.9.37 and CondaPkg 0.2.38. Original jobs were serialized with two CPUs, hard 2 GiB memory, zero swap and 120-second whole-job limits. No original file, failure, consumed attempt or seal was changed for this release.
 
-No run is launched. No source, result, manifest or attempt record is rewritten. Integrity checking is not independent experimental replication, proof of deployed-switch fidelity, or certification that every claim is correct.
+## 2. Execute new replications
 
-## Original execution environment
+Use the new [`replication/README.md`](replication/README.md) instructions and [declared protocol](replication/PROTOCOL.md). Do not execute historical launchers over frozen results or delete their attempt ledgers.
 
-The model used Julia 1.13.1 and a pinned Python 3.11.7 reference environment, including NumPy 1.26.2 and NetworkX 3.2.1. The separate packet study used Mininet 2.3.1b4, OVS 3.2.1 userspace forwarding and PythonCall 0.9.37. The retained manifests, lock files, setup reports and receipts document the exact versions and boundaries. Original jobs were local, serialized, limited to two CPUs, hard 2 GiB memory, zero swap and 120 seconds per whole job.
+The new layer supplies:
 
-The original launchers intentionally enforce one-attempt primary execution and environment/source gates. They are not instructions to overwrite or retry the recorded primary cells. New replications need new output locations and a separately declared protocol. No replication was run to prepare this export.
+- The actually imported public historical detector dependency and attributed upstream snapshots. It replaces reliance on a full earlier 194-file package and two private assessment-context snapshots with an explicitly labelled public dependency manifest, not a counterfeit original delivery manifest.
+- Pinned runtime subsets of 16 Julia packages, including required package data, and Mininet Python sources/notices; `VENDOR.json` hashes every included file.
+- A hash-locked CPython 3.11/x86_64 Linux package environment and Nix-resolved pinned component route, with actual version/import checks. Nix cache realization forbids local native builds. Native Python extensions come from wheels; Olefile's pure-Python source ZIP is separately hash-locked.
+- Explicit interpreter, shared-library and native-tool bindings; external executable/library hashes; fresh outputs, source freezes, manifests, phases and attempt records. Runtime binaries remain external prerequisites, not bundled software.
+- Private network/user/PID/mount namespaces, read-only sysfs/proc-sys, and actual path/packet doctor controls. A namespace-local descriptor binding restores declared temporary-directory inputs without removing the original private-`/tmp` boundary.
+- New model/controller validation, capture/replay, catalogue, sensitivity/benchmark/primary grid, packet controls/timing/envelope/primary cells, audits, duplicate refusal and final non-timing comparison. No selective primary retry or unbounded fallback exists.
 
-## Why the original launcher is not a portable entry point
+All launcher/provenance changes are recorded as source hashes and diffs. Computation, packet handling, waits, observation windows and measurement logic remain unchanged. After a retained Nix timeout, the author approved **130 seconds for new emulation jobs**. The wrapper reserves cleanup time using a 125-second process deadline, 128-second shell deadline, and TERM at 129 seconds followed by KILL one second later. Resource-audit predicates change from 120 to 130 seconds only; the protected packet auditor is otherwise required to match byte-for-byte. Two CPUs, hard 2 GiB, zero swap and serialization remain unchanged. Original model-job deadlines remain at 120 seconds or less. This is a declared replication-profile difference, not reproduction of the original timing budget.
 
-- Model/reference launchers verify an earlier 194-file study plus two course-context snapshots. This release includes the required earlier detector module and its upstream provenance, not that entire earlier package. The private context includes assessment identifiers and is deliberately not published. The original historical-seal gate will therefore refuse execution here. It has not been weakened or silently patched.
-- Original manifests and runtime checks include machine-specific Nix-store paths, cgroup properties, namespace assumptions and saved absolute execution paths. Saved paths identify the original run, not paths guaranteed to exist on another machine.
-- Installed packages, mutable caches and Nix-store symlinks are not vendored. The original Julia/PythonCall package-directory links must be reconstructed from their pinned sources if a new execution environment is prepared.
-- Some historical audit routines expect original absolute attempt locations or write their reports beside frozen inputs. Do not run them over the distributed evidence merely to inspect it. The read-only top-level verifier avoids those operations.
+## 3. What has actually passed
 
-Consequently this is an inspectable source-and-evidence release, **not a demonstrated clean-machine or one-command reproduction**. Its missing private historical context does not prevent independent inspection of the two current studies' declared sources, retained raw outputs and seals. A future portable replication wrapper must be identified as new code and must not be confused with the frozen experiment code.
+Separate clean-checkout **native 005** (120-second profile) and **Nix 006** (new 130-second emulation profile) campaigns completed on the same recorded NixOS host. Each reproduced **92 non-timing model rows**, **576 sensitivity records**, fixed-event coverage, **16 plan identities**, **48 benchmark jobs**, **44,800 replay checks**, **227,590 / 601,999 controller checks**, and all **six emulation cells / 30 episodes / 45 packets**, with the **3,707-check packet audit** and duplicate refusal. The public-provenance model audits report 1,760 checks; the original 1,762-check audit remains distinct. Timings were not required to be identical and were not pooled with original measurements.
 
-## Interpreting the evidence
+See [`replication-results/`](replication-results/README.md) for the frozen comparisons, tested coordinator commits and exact archive/member hashes. Full successful and failed records are [v2.0.0 release assets](https://github.com/JCheney20/sdn-intent-update-study/releases/tag/v2.0.0). `replication-results/verify_archives.py` checks downloaded files without extracting or executing them.
 
-The model's bounded packet exploration and finite emulation observations have different scope. Cache-construction seed labels do not identify common random draws between implementations. Reusing a validated exact-plan fingerprint is not an independent safety replication. Warm full-snapshot search, cold process totals, logical rounds and packet-service milliseconds are distinct quantities.
+The native route used a separately installed hash-locked Python environment and no Nix evaluation/realization commands, but externally supplied Julia/Linux binaries could still be Nix-built. **No clean non-Nix OS, arbitrary hardware, independent human replication or one-command dependency provisioning has been demonstrated.** Both routes require a compatible x86_64 Linux host, exact runtimes, working cgroup v2/systemd user scopes, CPUs 0/1 and unprivileged namespaces. Cache/runtime unavailability or an unsupported host is a blocker, not permission to change versions or resource controls.
 
-The Cisco emulation has artificial residence time and fixed Q/V waits, a shared host and experimental userspace forwarding. It does not establish a hardware timing bound, production endurance, an SLA or correctness under arbitrary congestion. Failure/partial records are retained rather than rewritten as successes.
+## Interpretation and archive policy
 
-## Archive and distribution policy
+Bounded model coverage, native sampling, warm snapshot searches, cold process totals, logical rounds and finite packet-service measurements are different evidence domains. Matched seed labels are not common random draws. Exact-plan reuse is not an independent safety trial. Artificial residence, fixed Q/V waits and userspace OVS establish no hardware timing bound, production endurance, arbitrary-congestion guarantee or SLA. Timing variability does not establish that Nix itself caused a slowdown.
 
-The public tree excludes paper drafts, rendered paper copies, editorial/prompt records, obsolete typesetting attempts, TeX caches and unrelated proposals. Required sealed code/result snapshots remain, even when repeated, because deduplicating their paths would invalidate the original output manifests. Git can store identical file contents efficiently; visual tidiness does not justify changing scientific seals.
-
-The original local workspace is the historical archive. Its earlier status notes and absolute paths remain historical, not current publication instructions. Public files are byte-preserving copies; `EXPORT.json` records their original relative locations. No local frozen artifact was deleted or edited by export preparation.
+The public release excludes manuscript drafts, editorial/prompt records, course instructions, student contact details, mutable depots/caches and installed-software symlinks. Scientific snapshots remain in their sealed locations even when repeated. Full new-record archives omit only runtime caches/installed links, preserve source/scientific outputs and retain failures as failures. Historical absolute paths are provenance, not required future paths. Third-party works remain subject to their own attribution and redistribution rights; this repository does not replace their original publications.

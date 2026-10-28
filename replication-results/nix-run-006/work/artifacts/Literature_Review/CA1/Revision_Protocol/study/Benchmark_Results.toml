@@ -1,0 +1,178 @@
+pure_language_speedup_claim = false
+
+[[conditions]]
+supervised_process_median_seconds = 1.384561888
+samples = 5
+condition = 0
+inner_search_max_seconds = 0.0020637690322473645
+inner_search_median_seconds = 0.0020406850380823016
+inner_search_min_seconds = 0.002020647982135415
+inner_search_IQR_seconds = 7.192953489720821e-6
+implementation = "python_numpy"
+measurement = "cold"
+job_peak_checkpoint_median_bytes = 7.7717504e7
+[[conditions]]
+supervised_process_median_seconds = 1.495789629
+samples = 20
+condition = 0
+inner_search_max_seconds = 0.002140974043868482
+inner_search_median_seconds = 0.0016451974515803158
+inner_search_min_seconds = 0.0015977529110386968
+inner_search_IQR_seconds = 9.90609114523977e-5
+implementation = "python_numpy"
+measurement = "warm"
+job_peak_checkpoint_median_bytes = 8.3550208e7
+[[conditions]]
+supervised_process_median_seconds = 9.84528338
+samples = 5
+condition = 0
+inner_search_max_seconds = 0.752191052
+inner_search_median_seconds = 0.696219213
+inner_search_min_seconds = 0.678844186
+inner_search_IQR_seconds = 0.052573442000000026
+implementation = "julia"
+measurement = "cold"
+job_peak_checkpoint_median_bytes = 2.28642816e8
+[[conditions]]
+supervised_process_median_seconds = 10.000025681
+samples = 20
+condition = 0
+inner_search_max_seconds = 0.000325632
+inner_search_median_seconds = 0.00020625249999999998
+inner_search_min_seconds = 0.000181461
+inner_search_IQR_seconds = 1.7923499999999965e-5
+implementation = "julia"
+measurement = "warm"
+job_peak_checkpoint_median_bytes = 2.53952e8
+[[conditions]]
+supervised_process_median_seconds = 1.349316298
+samples = 5
+condition = 1
+inner_search_max_seconds = 0.005549919907934964
+inner_search_median_seconds = 0.005352040054276586
+inner_search_min_seconds = 0.005316170980222523
+inner_search_IQR_seconds = 7.446098607033491e-5
+implementation = "python_numpy"
+measurement = "cold"
+job_peak_checkpoint_median_bytes = 7.696384e7
+[[conditions]]
+supervised_process_median_seconds = 1.59986972
+samples = 20
+condition = 1
+inner_search_max_seconds = 0.005261449026875198
+inner_search_median_seconds = 0.0049209099961444736
+inner_search_min_seconds = 0.004865695955231786
+inner_search_IQR_seconds = 6.535020656883717e-5
+implementation = "python_numpy"
+measurement = "warm"
+job_peak_checkpoint_median_bytes = 8.9296896e7
+[[conditions]]
+supervised_process_median_seconds = 9.691035138
+samples = 5
+condition = 1
+inner_search_max_seconds = 0.728891212
+inner_search_median_seconds = 0.683771771
+inner_search_min_seconds = 0.681054824
+inner_search_IQR_seconds = 0.017837052000000075
+implementation = "julia"
+measurement = "cold"
+job_peak_checkpoint_median_bytes = 2.2552576e8
+[[conditions]]
+supervised_process_median_seconds = 9.75311027
+samples = 20
+condition = 1
+inner_search_max_seconds = 0.00044168
+inner_search_median_seconds = 0.000338381
+inner_search_min_seconds = 0.000305334
+inner_search_IQR_seconds = 5.608775000000006e-5
+implementation = "julia"
+measurement = "warm"
+job_peak_checkpoint_median_bytes = 2.34123264e8
+[[conditions]]
+supervised_process_median_seconds = 1.341738696
+samples = 5
+condition = 2
+inner_search_max_seconds = 0.009074173984117806
+inner_search_median_seconds = 0.00855784397572279
+inner_search_min_seconds = 0.008408783935010433
+inner_search_IQR_seconds = 0.0002874719211831689
+implementation = "python_numpy"
+measurement = "cold"
+job_peak_checkpoint_median_bytes = 7.7221888e7
+[[conditions]]
+supervised_process_median_seconds = 1.486593807
+samples = 20
+condition = 2
+inner_search_max_seconds = 0.007945555029436946
+inner_search_median_seconds = 0.00779136992059648
+inner_search_min_seconds = 0.007706004078499973
+inner_search_IQR_seconds = 0.00013010192196816206
+implementation = "python_numpy"
+measurement = "warm"
+job_peak_checkpoint_median_bytes = 7.6926976e7
+[[conditions]]
+supervised_process_median_seconds = 9.803276317
+samples = 5
+condition = 2
+inner_search_max_seconds = 0.74904493
+inner_search_median_seconds = 0.729462924
+inner_search_min_seconds = 0.720401826
+inner_search_IQR_seconds = 0.009137589999999918
+implementation = "julia"
+measurement = "cold"
+job_peak_checkpoint_median_bytes = 2.28663296e8
+[[conditions]]
+supervised_process_median_seconds = 9.908508051
+samples = 20
+condition = 2
+inner_search_max_seconds = 0.002049432
+inner_search_median_seconds = 0.0010543465
+inner_search_min_seconds = 0.000984942
+inner_search_IQR_seconds = 0.0001982952500000001
+implementation = "julia"
+measurement = "warm"
+job_peak_checkpoint_median_bytes = 2.4489984e8
+[[conditions]]
+supervised_process_median_seconds = 1.374069738
+samples = 5
+condition = 3
+inner_search_max_seconds = 0.031808021012693644
+inner_search_median_seconds = 0.02877166902180761
+inner_search_min_seconds = 0.028537407983094454
+inner_search_IQR_seconds = 0.0004714331589639187
+implementation = "python_numpy"
+measurement = "cold"
+job_peak_checkpoint_median_bytes = 7.749632e7
+[[conditions]]
+supervised_process_median_seconds = 2.100707682
+samples = 20
+condition = 3
+inner_search_max_seconds = 0.06115760398097336
+inner_search_median_seconds = 0.027039144013542682
+inner_search_min_seconds = 0.02673656598199159
+inner_search_IQR_seconds = 0.00024199829204007983
+implementation = "python_numpy"
+measurement = "warm"
+job_peak_checkpoint_median_bytes = 9.0558464e7
+[[conditions]]
+supervised_process_median_seconds = 9.886381082
+samples = 5
+condition = 3
+inner_search_max_seconds = 0.86856583
+inner_search_median_seconds = 0.755988205
+inner_search_min_seconds = 0.724429975
+inner_search_IQR_seconds = 0.04391654199999995
+implementation = "julia"
+measurement = "cold"
+job_peak_checkpoint_median_bytes = 2.30211584e8
+[[conditions]]
+supervised_process_median_seconds = 9.887859079
+samples = 20
+condition = 3
+inner_search_max_seconds = 0.025186952
+inner_search_median_seconds = 0.0020654469999999998
+inner_search_min_seconds = 0.001980413
+inner_search_IQR_seconds = 0.0004921227499999998
+implementation = "julia"
+measurement = "warm"
+job_peak_checkpoint_median_bytes = 2.48700928e8

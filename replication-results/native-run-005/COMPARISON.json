@@ -1,0 +1,22 @@
+{
+  "status": "PASS",
+  "route": "native",
+  "scientific_kernels_byte_identical": true,
+  "controller_checks": {
+    "cisco": 227590,
+    "fat4": 601999
+  },
+  "reference_replay_checks": 44800,
+  "fresh_controller_catalogue_entries": 16,
+  "primary_model_rows_equal_excluding_timing": 92,
+  "sensitivity_records_equal": 576,
+  "baseline_event_coverage_equal": true,
+  "benchmark_jobs": 48,
+  "benchmark_timings_required_equal": false,
+  "emulation_cells_equal_excluding_timing": 6,
+  "primary_episodes": 30,
+  "primary_packets": 45,
+  "new_source_manifest_sha256": "4a34e20e2376db14edae0249d095435eca45628c25cac83b21453e7fcd7c2a22",
+  "new_emulation_manifest_sha256": "acb883b51da37e010c2e9e741cc6ef013c12f37dd06e556869017c0e3ec73517",
+  "scope": "Fresh serialized bounded jobs from this checkout on the recorded host, not a clean operating-system or hardware certification."
+}

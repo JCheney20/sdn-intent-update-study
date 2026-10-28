@@ -1,0 +1,27 @@
+{
+  "doctor": {
+    "status": "PASS",
+    "started_ns": 1793188228062249794,
+    "ended_ns": 1793188336456109612
+  },
+  "validation": {
+    "status": "PASS",
+    "started_ns": 1793188336456420838,
+    "ended_ns": 1793188496059636149
+  },
+  "model": {
+    "status": "PASS",
+    "started_ns": 1793188496060034237,
+    "ended_ns": 1793189283798779118
+  },
+  "emulation": {
+    "status": "PASS",
+    "started_ns": 1793189283799068632,
+    "ended_ns": 1793190474858006897
+  },
+  "compare": {
+    "status": "PASS",
+    "started_ns": 1793190474858268429,
+    "ended_ns": 1793190478799232824
+  }
+}

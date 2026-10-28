@@ -1,0 +1,8 @@
+{
+  "validation": {
+    "status": "FAIL",
+    "started_ns": 1793177803942995268,
+    "error": "RuntimeError('Command failed (1); retained log /tmp/sdn-replication-tests-20261028-vW1M4V/nix-run-001/coordinator/1793177889273818887.log')",
+    "ended_ns": 1793177905146487220
+  }
+}

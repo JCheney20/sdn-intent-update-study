@@ -1,0 +1,12 @@
+scope = "/user.slice/user-1000.slice/user@1000.service/app.slice/cos738-study-replication-model-audit-1793189267047191377.scope"
+sensitivity_trials = 576
+primary_rows = 92
+primary_cells = 12
+checks = 1760
+historical_external_snapshots = 2
+frozen_manifest_sha256 = "1f4edc071d50a20aae394cc460c32bfa66b05097088500e5bcc87de5c0fe2b0e"
+memory_peak_at_checkpoint_bytes = 235319296
+historical_sealed_files = 194
+benchmark_jobs = 48
+status = "PASS"
+source_sha256 = "83ba5a758bf2e982233755cf18d6eda470e158412fb31572460404e54f67ea0c"
